@@ -1,0 +1,193 @@
+*-------- flexbox
+display : { flex, flex-inline }
+flex-direction : { row, row-reverse, column, column-reverse }
+flex-wrap : { wrap, no-wrap, wrap-reverse }
+flex-flow : { row  wrap, column wrap }
+justify-content : { flex-start, flex-end, center, space-around, space-between } [horizontal, X-axis]
+align-content : { flex-start, flex-end, center, space-around, space-between, stretch }[vertical, Y-axis]
+align-items	: { flex-start, flex-end, center, baseline, stretch }
+order : { 1, 2, 3, 4 }
+flex-grow : { 0 [default] 1, 2, 3 } [all the space they use]
+flex-shrink : { 0, 1} [ 1 is default, 0 can not be shrink ]
+flex-basis : { value[px, %] }
+flex : { 0 0 10%} [flex-grow, flex-shrink, flex-basis] or ([max] [min] [ideal size])
+flex : 0 1 calc(50% - 10px) --->[ 50% is width and 10px is padding left ,right  (dividing area of child's) ]
+align-self : { flex-start, flex-end, center } [important ]
+
+*-------- grid
+display : { grid, inline-grid }
+grid-template-areas : { 'header		header		header'
+					    'content	content		content'	
+					    'footer		footer		footer'}    [ height required ]  						
+.item { grid-area: header;}		
+grid-template-rows : { 30px auto, repeat(3, minmax(100px, auto)) , 3ch auto minmax(10px, 60px) }  [ minmax automatic area ka width le leta hai.]
+grid-template-columns : { 1fr 2fr, 20px repeat(3, 1fr) 20px, repeat(auto-fill, 100px), repeat(auto-fit, 100px), repeat(auto-fit, minmax(100px, 1fr)) } 
+grid-template : {  100px 1fr / 100px 1fr } [grid-template-rows / grid-template-columns values] [shortcut]
+grid-auto-rows : { auto, max-content, min-content, length, auto-fill, auto-fit }	    [implicit grid]
+grid-auto-columns : { repeat(auto-fit, minmax(25rem, 1fr)), auto, max-content, min-content, length }  [implicit grid]
+grid-auto-flow : { row [default], column, dense, row dense, column dense } [auto-placed grid items]
+grid-gap-rows : { length } [top, bottom]
+grid-gap-columns : { length } [left, right]
+grid-gap : { length length, length } [ grid-row-gap / grid-column-gap ]
+grid-column-start : { 1 }
+grid-column-end : { 3 }
+grid-column : { span 1 , 1 / 3, 1 / -1 }  [ -1 is all at the end ]
+grid-row-start : { 1 }
+grid-row-end : { 2 }
+grid-row : { 1 / 2, 1 / span 2 } [starting / ending] [span is grid cell]
+grid-area: { 2 / 1 / span 2 / span 3 } [ start on row 2 column 1, and span 2 rows and 3 columns ]
+order : { -1, -2, 3, 4 }
+justify-content : { start, end, center, space-around, space-between, space-evenly } [horizontal, X-axis]
+align-content : { start, end, center, space-around, space-between, space-evenly } [vertical, Y-axis]
+justify-items:flex-start, flex-end, center, stretch [default]
+align-items: stretch,flex-end,flex-start,center,baseline;  [all child div ke text ke line me ]  [vertical center,  Y-axis]
+justify-self:flex-start, flex-end, center, stretch; 
+align-self: start, end, center, stretch; 
+place-items: align-items + justify-items;
+
+*--------- Gradients
+Linear Gradients (goes down/up/left/right/diagonally)
+Radial Gradients (defined by their center) --->closest-side, farthest-side, closest-corner, farthest-corner
+conic-gradient(from 0.25turn at 50% 30%, #f69d3c, 10deg, #3f87a6, 350deg, #ebf8e1);
+
+background-image: linear-gradient(direction (to right) OR angle(-10deg) , color-stop1, color-stop2, ...);
+background: rgba(255, 0, 0, 0.25),url(image.jpg); --- background color and image together
+background:linear-gradient(to bottom,  #7abcff 0%,#4096ee 100%),url(image.png) repeat; 
+background-image: url("star.png"),url("lizard.png");
+
+*------------- Box Shadow 
+box-shadow: [horizontal] [vertical] [blur radius] [optional spread radius] [color];
+box-shadow: 12px 12px 16px 0 rgba(255, 255, 255, 0.3),inset -8px -8px 12px 0 rgba(0, 0, 0, .25);
+
+*---------- Counter 
+body {counter-reset: section;}
+h1 {counter-reset: subsection;}
+h1::before {counter-increment: section;content: "Section " counter(section) ": ";}
+h2::before {counter-increment: subsection;content: counter(section) "." counter(subsection) " ";} 
+
+
+*----------- @keyframes  Animations
+@keyframes animation_name {keyframes-selector {css-styles;}}
+@keyframes mymove { from {top: 0px;} to {top: 200px;}}
+@keyframes mymove { 0%   {top: 0px;} 25%  {top: 200px;} 50%  {top: 100px;} 75%  {top: 200px;} 100% {top: 0px;}}
+
+animation: name duration timing-function delay iteration-count direction fill-mode play-state;
+animation-fill-mode	:none|forwards|backwards|both|initial|inherit;
+animation-play-state : paused|running|initial|inherit;
+animation-timing-function : linear|ease|ease-in|ease-out|ease-in-out|step-start|step-end|steps(int,start|end)|cubic-bezier(n,n,n,n)|initial|inherit;
+animation-duration: time|initial|inherit;
+animation-delay: time|initial|inherit;
+animation-iteration-count: number|infinite|initial|inherit;
+animation-direction: normal|reverse|alternate|alternate-reverse|initial|inherit;
+
+*------- 2D  & 3D  Transforms
+transform: translate(), rotate(), scaleX(), scaleY(), scale(), skewX(), skewY(), skew(), matrix()
+transform-origin: x-axis y-axis z-axis|initial|inherit;
+transform-style: flat|preserve-3d|initial|inherit;
+transition-delay: time|initial|inherit;
+transition-duration: time|initial|inherit;
+transition-property: none|all|property|initial|inherit;
+transition-timing-function: linear|ease|ease-in|ease-out|ease-in-out|step-start|step-end|steps(int,start|end)|cubic-bezier(n,n,n,n)|initial|inherit;
+backface-visibility: visible|hidden|initial|inherit; (important)
+perspective: length|none;
+perspective-origin: x-axis y-axis|initial|inherit;
+	
+
+* ----------- columns
+columns: 6rem auto, 3;
+column-count: auto;
+column-width: 8rem;
+column-fill: auto, balance, balance-all;
+column-rule: thick inset blue, solid blue, dotted;
+column-rule-style: none, solid, dotted, thick;
+column-rule-color: red;
+column-rule-width: thin, medium, thick, 10px;
+column-span: none, all;
+
+*-------- Properties
+backdrop-filter [use filter properties]
+background-blend-mode: normal|multiply|screen|overlay|darken|lighten|color-dodge|color-burn|hard-light|soft-light|difference|exclusion|hue|saturation|color|luminosity
+background-clip: border-box|padding-box|content-box|initial|inherit;
+background-origin: padding-box|border-box|content-box|initial|inherit;
+border-collapse: separate|collapse|initial|inherit;
+box-decoration-break: slice|clone|initial|inherit|unset;
+
+caption-side: top|bottom|initial|inherit; [table's <caption> ]
+caret-color: auto|color;
+clear: none|left|right|both|initial|inherit;
+
+clip: auto|shape|initial|inherit;
+clip-path: inset, circle, polygon, ellipse;
+clip-path: clip-source|basic-shape|margin-box|border-box|padding-box|content-box|fill-box|stroke-box|view-box|none;
+
+* <display-box>
+display: none, content (parent will not be rendered);
+
+* <display-inside> 
+display:table, flow, grid, flex (inline), flow-root (The element generates a block element box that establishes a new block formatting context), ;    
+
+* <display-internal>
+display: table, table-cell (<td>), table-column (<col>), table-column-group (<colgroup>), table-footer-group (<tfoot>), table-header-group (<thead>), table-row (<tr>), and table-row-group (<tbody>);
+
+* <display-legacy>
+display: inline-block, inline-table, inline-flex, inline-grid;  (almost same as flow-root except inline-grid)
+
+* <display-listitem>
+display: list-style-type, list-style-position; (generate fake list items without ul li)
+
+* <display-outside>
+display: block, inline
+
+filter: none | blur() | brightness() | contrast() | drop-shadow() | grayscale() | hue-rotate() | invert() | opacity() | saturate() | sepia() | url();
+font-kerning: auto|normal|none; // how letters are spaced.
+
+mask-image
+
+overflow-wrap: normal | break-word | anywhere; (use inline element)
+page-break-after,page-break-before: auto|always|avoid|left|right|initial|inherit;
+page-break-inside: auto|avoid|initial|inherit;
+quotes: none|string|initial|inherit;
+scroll-behavior: auto|smooth|initial|inherit;
+text-align-last: auto|left|right|center|justify|start|end|initial|inherit; (effect last line of the paragraph)
+text-indent: length|initial|inherit; (first line in a text-block.)
+user-select: auto|none|text|all;
+white-space: normal|nowrap|pre|pre-line|pre-wrap|initial|inherit; (code)
+word-break: normal|break-all|keep-all|break-word|initial|inherit;
+word-wrap: normal|break-word|initial|inherit;
+word-spacing: normal|length|initial|inherit;
+writing-mode: horizontal-tb|vertical-rl|vertical-lr;
+inline-size: value; (depending on its writing mode)
+
+
+
+*--
+ :checked, :disabled, :nth-child(-n+2), :not(selector), :valid, :target, :required, :read-only, :only-of-type, :nth-of-type(n), :nth-last-of-type(n), :nth-last-child(n), :link, :selection, :first-letter, :first-line
+
+*------ root
+:root {
+  --checkbox: "\f14a";
+  --star: "\f005";
+  --bolt: "\f0e7";
+  --value : 5;
+  --clr-success: rgb(64, 209, 91);
+  --button-bg: rgb(219, 138, 52);
+  --clr-warning: rgb(206, 41, 26);
+  --value: 5;
+}
+.list-item {
+  --icon: var(--checkbox);
+}
+li::before {
+  content: var(--icon, "no icon");
+  color: var(--clr-warning, red);
+  background: var(--button-bg, #333); /* Default: #333 */ [given parameter not found so default use]
+  padding: var(--value) px;
+  padding: calc(var(--value) * 2px);
+  border-color: currentColor;
+}
+
+* 𝗟𝗼𝗯𝗼𝘁𝗼𝗺𝗶𝘇𝗲𝗱 𝗼𝘄𝗹 𝘀𝗲𝗹𝗲𝗰𝘁𝗼𝗿
+    * + *  
+* shape-outside: circle(50%);
+* mix-blend-mode
+
