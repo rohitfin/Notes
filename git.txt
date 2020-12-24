@@ -1,0 +1,11 @@
+
+*/ create repository 
+*/ create git clone := git clone <https://name-of-the-repository-link>
+*/ add user name :=  git config -global user.name "userName"
+*/ add email id := git config -global user.email "emailAddress"
+
+1/ pull
+2/ select file and click stage
+3/ type message 
+4/ click on commit
+5/ click on push

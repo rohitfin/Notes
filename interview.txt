@@ -1,0 +1,1125 @@
+HTML	Tim Berners-Lee 1990
+css     Håkon Wium Lie  10 oct 1994
+
+* December 17, 1996 by Håkon Wium Lie
+* 2 August 2002 First draft of revised CSS level 2.
+
+
+*------ Specificity 
+-- Inline styles 
+-- IDs  
+-- Classes, attributes and pseudo-classes 
+-- Elements and pseudo-elements 
+
+*------------- CSS Fonts
+In CSS, there are two types of font family names:
+generic family - a group of font families with a similar look (like "Serif" or "Sans-serif" or "Monospace")
+font family - a specific font family (like "Times New Roman" or "Arial")
+
+*--------- CSS Web Fonts
+Different Font Formats
+    TrueType Fonts (TTF)
+    OpenType Fonts (OTF)
+    The Web Open Font Format (WOFF)
+    Embedded OpenType Fonts (EOT)
+
+*----------- CSS Units
+cm	centimeters
+mm	millimeters
+in	inches (1in = 96px = 2.54cm)
+px *	pixels (1px = 1/96th of 1in)
+pt	points (1pt = 1/72 of 1in)
+pc	picas (1pc = 12 pt)
+em (16px)
+rem (16px)    
+*------ Combinators
+Adjacent sibling combinator A + B  ---> select B immediate after A 
+General sibling combinator A ~ B    --> select all B after A End (Outside)
+Child combinator A > B  ---> select B after A (inside) (direct descendent)
+Descendant combinator A B
+Column combinator A || B 
+
+
+
+*----------- @font-face
+@font-face {
+  font-family: myFirstFont;
+  src: url(sansation_light.woff);
+}
+
+*------------- @import
+@import "navigation.css"; /* Using a string */
+@import url("navigation.css"); /* Using a url */
+
+
+* ---------- center 
+*  parent div { text-align:center; } child div  { display:inline-block; }
+*   parent div {  display:grid; } child div { align-items:center;justify-content:center; }
+*   parent div { display:flex; } child div { align-items:center;justify-content:center;   }
+*   Center an Image mg {display: block;margin-left: auto;margin-right: auto;width: 40%;}
+*   Center Vertically - Using line-height
+
+
+*---------- Attribute Selectors
+[data-value] { /* Attribute exists */}
+[data-value="foo"] { /* Attribute has this exact value */}
+[data-value*="foo"] { /* Attribute value contains this value somewhere in it */}
+[data-value~="foo"] { /* Attribute has this value in a space-separated list somewhere */}
+[data-value|="foo"] { /* Attribute value starts with this in a dash-separated list */}
+[data-value^="foo"] {/* Attribute value starts with this */}
+[data-value$="foo"] { /* Attribute value ends with this */}
+
+*----- media query breakpoints
+320, 360, 480, 768, 992, 1024, 1200, 1280, 1366, 1440, 1680, 1920, 2560
+
+*---------- Browser Support Reference (prefix)
+Supported by Edge/Internet Explorer with prefix -ms-
+Supported by Firefox with prefix -moz-
+Supported by Google Chrome with prefix -webkit-
+Supported by Safari with prefix -webkit-
+Supported by Opera with prefix -o-
+
+
+*--------- CSS Entities
+h2:after {content: ' \0021';} ..[print ! (exclamation mark)](symbol code exclamation mark)
+!	0021	EXCLAMATION MARK, "	0022	QUOTATION MARK, #	0023	NUMBER SIGN, $	0024	DOLLAR SIGN, %	0025	PERCENT SIGN
+©  00A9  COPYRIGHT SIGN
+
+
+* ----------- Pseudo-elements
+::after / ::before, - ::first-letter, - ::first-line, - ::selection,- :placeholder
+
+* ----------- Pseudo-classes
+ placeholder-shown, :active, :checked, :disabled, :last-child, :nth-child(n), :not(selector), :valid, :target, :required, :read-only, :only-of-type, :nth-of-type(n), :nth-last-of-type(n), :nth-last-child(n), :link
+
+
+1.copyright symbol -- &copy; or &#169;
+
+2. HTML
+Answer : HTML stands for Hyper Text Markup Language. It is a language of World Wide Web. HTML is coding, but it is not scripting, nor is it programming. It's a markup language.
+
+3. semantic HTML
+Answer :	<b> </b> ,<i> </i> ,<strong></strong> and <em></em>, <h1>, <header>, <footer>, <p>, <section>, <nav>, and <div>
+
+4. What is the use of an iframe tag?
+	An iframe is used to display a web page within a web page.
+    The IFrame HTML element is often used to insert content from another source, such as an advertisement, into a Web page.
+    <iframe src="https://github.com" height="300px" width="300px"></iframe>
+
+5. Does a <!DOCTYPE html> tag is a HTML tag
+Answer :	No, the <!DOCTYPE html> declaration is not an HTML tag. 
+    <!DOCTYPE html> is used to instruct the web browser about the HTML page.
+
+----What Is The < !doctype > ? Is It Necessary To Use In Html5 ?
+    Answer : The <!DOCTYPE> is an instruction to the web browser about what version of HTML the page is written in. 
+    AND The <!DOCTYPE> tag does not have an end tag and It is not case sensitive.
+
+---- What does a DOCTYPE do?
+    DOCTYPE is an abbreviation for DOCument TYPE.
+    A DOCTYPE is always associated to a DTD for Document Type Definition. it controls whether the browsers uses "standards" or "quirks" mode to render the document.
+    Once a user agent has recognized a correct DOCTYPE, it will trigger the no-quirks mode matching this DOCTYPE for reading the document.
+If a user agent doesn't recognize a correct DOCTYPE, it will trigger the quirks mode.
+
+
+---- What happens when DOCTYPE is not given?
+The web page is rendered in quirks mode. The web browsers engines use quirks mode to support older browsers which does not follow the W3C spec.
+In quirks mode CSS class and id names are case insensitive. In standards mode they are case sensitive.
+
+---- What's the difference between standards mode and quirks mode?
+Quirks mode was to support websites built before standards became widely implemented.
+quirks mode in browser allows u to render page for as old browsers. This is for backward compatibility.
+
+
+6. What is SVG?
+Answer : Scalable Vector Graphics,  HTML SVG is used to describe the two-dimensional vector and vector/raster graphics.
+
+7.  type of video formats, audio tag (mp3)
+Answer :	mp4, WebM, Ogg --- mp3, wav, Ogg
+
+8.  figure tag
+Answer :	The figure tag is used to add a photo in the document on the web page.
+
+9. If I do not put <!DOCTYPE html> will HTML 5 work?
+	No, the browser will not be able to identify that it is an HTML document and HTML 5 tags do not function properly..
+
+10. Pseudo Elements (:after, :before, :first-letter, :first-line)
+
+11. Pseudo Class (:hover, :focus, :link, :active, :visited, :nth-child(), :root, :first-child, :last-child, etc..)
+
+12. w3c -- World Wide Web Consortium
+
+13. <a target="_blank|_self|_parent|_top">
+
+14. Why should a graphic containing several words should be saved in GIF instead of JPG?
+Answer :    It is preferable to store the image in GIF format if image consists of certain words because JPG has file compression 
+    features which may render the fonts unreadable.
+
+15. &nbsp for space 
+
+16. &#x---;  for icon shortcut  
+
+17. What Does Isnan Function Do?
+Answer : Return true if the argument is not a number.
+
+18. What Are Javascript Types?
+Answer : Number, String, Boolean, Function, Object, Null, Undefined.
+
+19. What Are The Five Possible Values For "position"?
+Answer : Values for position: static, relative, absolute, fixed, inherit.
+
+20. Is Css Case Sensitive?
+Answer : Cascading Style Sheets (CSS) is not case sensitive.
+
+21. How Do I Add Scrolling Text To My Page?
+Answer : with <marquee> tag <marquee direction="down" width="250" height="200" behavior="alternate" scrollamount="1">
+
+22. How Do I Make A Picture As A Background On My Web Pages?
+Answer : < body background="picture.gif"  bgproperties="fixed" >
+
+23.  What Is A Css File? It Is Used For What Purpose?
+Answer : CSS stands for "Cascading Style Sheets", and are used to control and manage font styles, font sizes, and web site 
+color combinations that are used in a web page. In order to retain continuity of "look and feel" throughout a website, all 
+pages within a website will often refer to a single CSS file. 
+
+24. List Out The Tags Those Are Mostly Used In Html?
+Answer : <a href=”URL”>Link</a> – Used for linking another page.
+        <h1> – heading1 tag.
+        <b> – Used for Bold.
+        <img src=”imageurl”> – To insert a image.
+
+25. Who Is Making The Web Standards?
+Answer : The World Wide Web Consortium (w3c Consortium).
+
+26. How Do We Comment A Css File?
+Answer : /* include your comment here*/.
+
+27. How Do We Comment A Html File?
+Answer : <!-- include your comment here -->.
+
+28. Why We Use 'clear' In Html?
+Answer : We use the clearance in HTML code for separating the content from one <div> content after floating the position of other<div> content.
+
+29. How Many Types Of Graphics?
+Answer : There are two types of graphics
+            Raster Graphics –pixels (photoshop).
+            Vector Graphics – Lines & Curves( Illustrator).
+
+30. What Is Gradient? How To Apply Gradient?
+Answer : Gradient is a mixing of two or more colors.
+
+31. What Is Dhtml?
+Answer : DHTML is a combination of HTML, XHTML, Javascript, Jquery and CSS.
+        DHTML is a TERM describing the art of making dynamic and interactive web pages.
+
+32. Are Html Tags Case Sensitive?
+Answer : No HTML tags are not case sensitive.
+
+33. What Is A Prompt Box?
+Answer : A prompt box allows the user to enter input by providing a text box.
+
+34. What Is The Difference Between An Alert Box And A Confirmation Box?
+Answer : An alert box displays only one button which is the OK button whereas the Confirm box displays two buttons namely OK and cancel.
+
+35.  What Does "1"+2+4 Evaluate To?
+Answer : Since 1 is a string, everything is a string, so the result is 124.
+
+36. How Do You Convert Numbers to String In Javascript?
+Answer : Use the  toString()  function
+
+37.  What Does Isnan Function Do?
+Answer : Return true if the argument is not a number.
+
+38. What Is A Tag?
+Answer : In HTML, a tag tells the browser what to do
+
+39. What Is A Hypertext Link?
+Answer : A hypertext link is a special tag that links one page to another page or resource. 
+If you click the link, the browser jumps to the link's destination.
+
+40. "&" character with "&amp;"
+
+41. "&lt;" character with "<" 
+
+42. "&gt;" character with ">"
+
+    &nbsp :- Non-breaking space
+
+43. How Do I Create A Link That Opens A New Window?
+Answer : <a target="_blank" href=...> opens a new, unnamed window.
+
+44. How Do I Create A Button Which Acts Like A Link?
+Answer : <INPUT TYPE=submit VALUE="Text on button">
+
+45.  How Do I Remove The Border Around Frames?
+Answer :  <FRAMESET ... BORDER=0 FRAMEBORDER=0 FRAMESPACING=0>. 
+
+46. How Can I Specify Background Images?
+Answer : <body background="imagefile.gif" bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#800080" alink="#000080"> 
+
+47. What is GET Method? 
+Answer : GET is used to request data from a specified resource. It appends form-data to the URL in name/ value pairs. The length of
+ the URL is limited by 2048 characters. This method must not be used if you have a password or some sensitive information to be 
+ sent to the server. It is used for submitting the form where the user can bookmark the result.
+    GET requests can be cached
+    GET requests remain in the browser history
+    GET requests can be bookmarked
+    GET requests should never be used when dealing with sensitive data
+    GET requests have length restrictions
+    GET requests are only used to request data (not modify)
+
+48. What is POST Method? 
+Answer : POST is used to send data to a server to create/update a resource.
+    POST requests are never cached
+    POST requests do not remain in the browser history
+    POST requests cannot be bookmarked
+    POST requests have no restrictions on data length
+
+49. How To Transferring User To New Web Page Automatically?
+Answer : <META HTTP-EQUIV="Refresh" CONTENT="2"; URL="http://www.yourname.com"> 
+
+50. Cell Spacing And Cell Padding?
+Answer: cellspacing : space between cells; cellpadding : space between the cell border and it's content.
+
+51. How Do I Combine Multiple Sheets Into One?
+Answer :    TITLE attribute
+            <LINK REL=Stylesheet HREF="default.css" TITLE="combined">
+        <LINK REL=Stylesheet HREF="fonts.css" TITLE="combined">
+
+52.  How Do I Have A Non-tiling (non-repeating) Background Image?
+Answer :     background: white url(example.gif) no-repeat ;
+
+53.  What Is Property?
+Answer : Property is a stylistic parameter (attribute) that can be influenced through CSS, e.g. FONT or WIDTH. 
+
+54.  What Is Initial Value?
+Answer :Initial value is a default value of the property, that is the value given to the root element of the document tree. 
+All properties have an initial value.
+
+55. What Does A <hgroup> Tag Do?
+Answer : It is used for heading sections. Header tags used are from <h1> to <h6>. The largest is the main heading of the section, 
+and the others are sub-headings.
+
+56. Which Video Format Is Supported By Ie?
+Answer :IE supports MP4 and WebM.
+
+57. 
+
+58. How To Add Video And Audio In Html5?
+<video  width="320" height="240" controls="controls">
+    <source src="pcds.mp4" type="video/mp4" />
+    <source src="pcds.ogg" type="video/ogg" />
+    </video>
+
+    <audio controls>
+    <source src="horse.ogg" type="audio/ogg">
+    <source src="horse.mp3" type="audio/mpeg">
+    </audio>
+
+59. What Are The Different Types Of Storage In Html 5?
+        cookie: A text file saved on the users computer to store and retrieve data
+    •localStorage object stores data for a longer period of time even if the browser is closed.
+    •sessionStorage object stores data for a specific session. 
+
+60.  What Are The Components Of A Css Style?
+Answer :  Selector, Property, Value 
+
+61.How To Select All Paragraph Elements Whose Lang Attribute Contains The Word "fr"?
+Answer : p[lang~="fr"] 
+
+62.  How To Select All Paragraph Elements Whose Lang Attribute Has A Value Of Exactly "fr"?
+Answer : p[lang="fr"]
+ 
+63. What Is The Syntax Of Word Wrap In Css3?
+Answer :  word-wrap: normal | break-word | initial | inherit;
+
+64. White-space
+Answer : white-space: normal, pre, no wrap, pre-wrap and pre-line.
+
+65. How do I reduce text in CSS?
+Answer :  lowercase, uppercase, capitalize
+
+66.  How do you shift text in CSS?
+Answer : position, top,  right 
+
+67.How To Page Break After An Html Element In Css?
+Answer :<p style=”page-break-after: always’>Place your text</p>
+
+68. What property is not affected by CSS3 transitions?
+Answer : font-style
+
+69. What Are Pseudo-elements?
+Answer : Pseudo-elements are fictional elements that do not exist in HTML.
+
+70.  What Is Cascade?
+Answer :   P {color: white ! important} /* increased weight */
+            P (color: black} /* normal weight */   
+
+71. Which Property Is Used To Create A Small-caps Effect?
+Answer : font-variant: normal|small-caps|initial|inherit;
+
+72. Which Property Is Used To Control The Flow And Formatting Of Text?
+Answer :  white-space property .
+
+73. How to target the first 4 elements of a list?
+Answer: .selector:nth-child(-n+4){}
+
+74.How are frames loaded into the browser window?
+Answer: Top-to-bottom, left-to-right
+
+75. Is Javascript Case Sensitive?
+Answer : Yes
+
+76.  Is Jquery Code Executed On The Client side, Or Server side?
+Answer : Client side
+
+77. What is WordPress?
+Answer: WordPress is an Open Source Content Management System (CMS) and a blogging tool, based on PHP and MySQL. It is free of cost, and you 
+can use it for any personal and commercial website.
+
+78. When was the Wordpress released initially? When is it announced as open source software?
+Answer: WordPress was initially released on 27th May 2003 by Matt Mullenweg and Mike Little. 
+    WordPress was announced as open source in October 2009.
+
+79. latest version of WordPress
+Answer: The latest WordPress version is 5.3.2, a maintenance update that was released on Dec. 18th, 2019
+
+80. What are the system requirements for installing WordPress?
+Answer: Database - MySQL 5.0 +
+        Web Server -
+        WAMP (Windows)
+        LAMP (Linux)
+        XAMP (Multi-platform)
+        MAMP (Macintosh)
+        Operating System - Cross-platform
+        Browser Support - IE (Internet Explorer 8+), Firefox, Google Chrome, Safari, Opera
+        PHP Compatibility - PHP 5.2+
+
+81. What are the hooks? Define different types of hooks in WordPress.
+    Hooks enable users to create WordPress themes or plug-ins with shortcode without changing the original files.
+    There are two types of hooks:
+    Action hooks: Action hooks facilitate you to insert an additional code from an outside resource.
+    Filter hooks: Filter hooks facilitate you to add content or text at the end of the post.
+
+82. How many tables are there in WordPress by default?
+    At present version, there are about 11 tables in WordPress by default. You can check the number of tables in WordPress by phpMyAdmin.
+    wp_commentmeta
+    wp_comments
+    wp_links
+    wp_options
+    wp_postmeta
+    wp_posts
+    wp_terms
+    wp_term_relationships
+    wp_term_taxonomy
+    wp_usermeta
+    wp_users    
+
+83. What is a loop in WordPress?
+    WordPress uses PHP codes to display posts. This PHP code is known as a loop.    
+
+84. Explain moderate comment in WordPress.
+Comments by visitors on a post are not published directly unless the admin provides it. It is called moderation. To change comment
+ moderation setting, select Settings option from the dashboard and check the option "Comment must be manually approved."
+
+85. Explain Avatar and Gravatar in WordPress.
+Word Avatar is used for a user's profile image in online communications. 
+Gravatar is a web-based service which allows its users to use the Avatar image.     
+
+86. How many types of users WordPress have?
+    WordPress user role determines access permission to the users of a WordPress site.
+        Administrator: They have full rights over a site.
+        Editor: They deal with the content section of a website.
+        Author: They only deal with their posts. They can delete their post even after publishing.
+        Contributor: A contributor doesn't have the right to publish their post or page. They need to send it to the administrator for review.
+        Subscriber: Users who are subscribed to your site can log in and update their profile.
+        Follower: They don't have any right. They can only read and comment on your post.
+        Viewer: They can only read and comment on a post.
+
+87. What are the plugins you can use to create a contact form in WordPress?
+     Gravity forms or a free plugin contact form 7
+
+88. Explain the difference between WordPress Themes and Plugins.
+    A theme is an external effect of a website's presentation and designing. Whereas, a plugin is an interior effect which adds or remove 
+    some functions to a site.
+    You can customize some functionality in themes instead of installing the plugin, but plugins can't replace themes.    
+
+89. Which licensing authority is responsible for WordPress?
+    WordPress is licensed under GPLv2 (GNU General Public License) which makes it free and open-source software. Each copy 
+    of WordPress has a licensed copy with it.  
+
+90. Where is WordPress content stored?
+    WordPress contents are stored in MySQL database on Server.
+
+91.  Define CSS image sprites.
+Answer: CSS image sprites are a group of images that are placed into one image. It reduces the load time and request number to the server while projecting multiple images into a single web page. Each image would have a corresponding CSS class with background-image, background-position and background-size properties defined.
+
+    --Advantages:
+    Reduce the number of HTTP requests for multiple images (only one single request is required per spritesheet). But with HTTP2, loading multiple images is no longer much of an issue.
+    Advance downloading of assets that won't be downloaded until needed, such as images that only appear upon :hover pseudo-states. Blinking wouldn't be seen.
+    When you have multiple images/ icons, browser makes separate call to the server for each one of them. sprite is a technique to combine all/ some of them (usually similar one in terms of type of image. For example, you will put jpg in one sprite) in one image. To display the icon you set height, width and background position.
+
+    --Alternatives:
+        Data URIs - allow you to embed the image data directly into a stylesheet. This avoids additional HTTP requests for images, making it essentially the same thing as a sprite, without the fancy positioning.
+        Icon Fonts
+        SVGs
+
+
+92. If you have a page of search results and want to highlight the search term, what HTML tag would you use?
+	<strong>, <mark>, <em>
+
+93 What is the origin of CSS?
+	SGML (Standard Generalized Markup Language) is the origin of CSS
+
+94 integrate CSS
+	Inline method,Embedded/Internal method,Linked/Imported/External method
+
+95 CSS frameworks
+	Bootstrap, Foundation, Semantic UI, Gumby, Ulkit
+
+96 W3C	
+	W3C stands for World Wide Web Consortium. Its purpose is to deliver the 
+	information of the World Wide Web. It also develops rules and guidelines for the Web.
+
+97 difference between CSS2 and CSS3
+	 CSS3 contains new General Sibling Combinators
+
+98 RWD
+	RWD stands for Responsive Web Design. This technique is used to display the
+	 designed page perfectly on every screen size and device
+
+99 What benefits and demerits do External Style Sheets have? 
+    Benefits:
+    One file can be used to control multiple documents having different styles.
+    Multiple HTML elements can have many documents, which can have classes.
+    To group styles in composite situations, methods as selector and grouping are used.
+
+    Demerits:
+    You can create classes for reusing it in many documents.
+	By using it, you can control the styles of multiple documents from one file.
+	In complex situations, you can use selectors and grouping methods to apply styles.
+
+    Extra download is needed to import documents having style information.
+    To render the document, the external style sheet should be loaded.
+    Not practical for small style definitions.
+	
+
+ ---   Discuss the merits and demerits of Embedded Style Sheets?
+        Merits of Embedded Style Sheets:
+        Multiple tag types can be created in a single document.
+        Styles, in complex situations, can be applied by using Selector and Grouping methods.
+        Extra download is unnecessary.
+
+        Demerits of Embedded Style Sheets:
+        Multiple documents cannot be controlled.
+
+100. Does setting margin-top and margin-bottom have an affect on an inline element?
+Top and bottom margins do not affect inline elements because inline elements flow with content on the page.You can set left and right margins/padding on an inline element but not top or bottom because it would disrupt the flow of content.width, height, margin-bottom, margin-top not working in this property.
+    respect left & right margins and padding, but not top & bottom
+    cannot have a width and height set
+    margin and padding will push other elements horizontally not vertically
+    allow other elements to sit to their left and right.
+    elements do not break the flow
+
+101.  Does setting padding-top and padding-bottom on an inline element add to its dimensions? 
+When it comes to margins and padding, browsers treat inline elements differently. You can add space to the left and right on an inline element, but you cannot add height to the top or bottom padding or margin of an inline element.
+
+102. Is BR a block element?
+<HR /> is a block-level element and <BR /> is an inline element.
+
+103. What is CSS float?
+The float CSS property places an element on the left or right side of its container,
+
+104. Can you explain CSS box model?
+The CSS box model is essentially a box that wraps around every HTML element. It consists of: margins, borders, padding, and the actual content.
+
+105. What is the display block?
+Block: Displays an element as a block element. It starts on a new line and takes up take up as much horizontal space as they can. 
+
+106. What are some examples of text level elements?
+Special Text level Elements. Anchors, IMG, APPLET, FONT, BR and MAP.
+
+107. URI   ----Uniform Resource Identifier (URI)
+
+108. List of block level elements
+p, h1, h2, h3, h4, h5, h6, ol, ul, pre, address, blockquote, dl, div, fieldset, form, hr, noscript, table
+
+109. List of inline elements
+b, big, i, small, tt
+abbr, acronym, cite, code, dfn, em, kbd, strong, samp, var
+a, bdo, br, img, map, object, q, script, span, sub, sup
+button, input, label, select, textarea
+
+110. How do I reduce the number of DOM elements?
+    How to improve your YSlow score
+    Make fewer HTTP requests. ...
+    Use a content delivery network (CDN) ...
+    Avoid empty src or href. ...
+    Add expires headers. ...
+    Compress components with Gzip. ...
+    Put CSS at top. ...
+    Put JavaScript at bottom. ...
+    Avoid CSS expressions.
+
+111. What is &nbsp in HTML?
+Alternatively referred to as a fixed space or hard space, NBSP (non-breaking space) is used in programming,    
+
+112. What is Z index in CSS?
+   The z-index property specifies the stack order of an element. An element with greater stack order is always in front of 
+   an element with a lower stack order.
+
+   Overlapping may occur while using CSS for positioning HTML elements. Z index helps in specifying the overlapping element. It is a number which can be positive or negative, the default value being zero.
+
+113. What is top in CSS?
+The top property affects the vertical position of a positioned element. This property has no effect on non-positioned elements
+
+114.  How do you animate CSS?
+keyframes for the animation
+
+115. Can we use Li without UL?
+If you just use <li></li> without <ul> or <ol> the rendered result will be a un ordered list with bullet icons preceding each list item, 
+and when you see the DOM there won't be any <ul> or <li> tag added.
+
+116. What is a Clearfix?
+A clearfix is a way for an element to automatically clear or fix its elements, so that do not need to add additional markup.
+ It is generally used in float layout where elements are floated to be stacked horizontally.
+   
+117. What is new in CSS?
+It brings a lot of new features and additions, like rounded corners, shadows, gradients, transitions or animations, 
+as well as new layouts like multi-columns, flexible box or grid layouts.
+
+118.What are the advantages of CSS? 
+   Easier to maintain and update.
+Greater consistency in design.
+More formatting options.
+Lightweight code.
+Faster download times.
+Search engine optimization benefits.
+Ease of presenting different styles to different viewers.
+Greater accessibility.
+Bandwidth
+Site-wide consistency
+Page reformatting
+Accessibility
+Content separated from presentation
+
+119. What is difference between CSS and css3?
+The main difference between CSS and CSS3 is that CSS3 has modules. CSS is the basic version and it does not support responsive design.
+ CSS3, on the other hand, is the latest version and supports responsive design. CSS cannot be split into modules but CSS3 can be 
+ split in modules.
+   
+120. Is HTML coding?
+HTML is coding, but it is not scripting, nor is it programming. It's a markup language.
+   
+121. What are the disadvantages of CSS?
+List of Disadvantages of Cascading Style Sheets
+Come in different levels. There's CSS, CSS 1 up to CSS3, which has resulted in confusion among developers and web browsers.
+ One type of CSS should be enough. Fragmentation. With CSS, what works with one browser may not always work with another. Lack of security.
+
+Ascending by selectors is not possible
+Limitations of vertical control
+No expressions
+No column declaration
+Pseudo-class not controlled by dynamic behavior
+Rules, styles, targeting specific text not possible
+   
+122. Sass (First appeared	November 28, 2006, latest version 3.5. 7 - July 18, 2018 (313 KB))
+   Sass (which stands for Syntactically Awesome Style Sheets) is an extension to CSS. ... Saas includes various features such as variables,
+    nested rules, mixins, inline imports, built-in functions to manipulate color and other values, all with a fully CSS-compatible syntax.
+    Sass (short for syntactically awesome style sheets) is a style sheet language initially designed by Hampton Catlin and developed by Natalie Weizenbaum.
+
+123. What is SASS programming?
+Sass (stylesheet language) ... Sass is a preprocessor scripting language that is interpreted or compiled into Cascading Style Sheets (CSS).
+ SassScript is the scripting language itself. Sass consists of two syntaxes. The original syntax, called "the indented syntax," 
+ uses a syntax similar to Haml.
+
+124. What is the benefit of using sass?
+Advantages. Sass facilitates you to write clean, easy and less CSS in a programming construct. It contains fewer codes so you can write CSS quicker.
+ It is more stable, powerful, and elegant because it is an extension of CSS.
+
+125. What is a Sass mixin?
+Mixins allow you to define styles that can be re-used throughout your stylesheet.
+   @mixin horizontal-list { }
+    nav ul { @include horizontal-list; }
+
+126. What is the difference between SCSS and sass?
+The basic difference is the syntax. While SASS has a loose syntax with white space and no semicolons, the SCSS resembles more to CSS. 
+SASS stands for Syntactically Awesome StyleSheets. SCSS --Sassy CSS
+
+127. What are the key features of Sass include?
+7 Sass features you should be familiar with
+Reference symbol ( & ) You might be familiar with the reference symbol, which allows you to reference a parent element as such: ...
+Partials and @import directive. ...
+Interpolation. ...
+@content directive. ...
+%placeholders. ...
+Functions. ...
+Lists and @each directive.
+   
+128. What is the use of Sass @import function?
+SASS @import directive is used to include one stylesheet inside another stylesheet
+@import "test.css";
+@import "css/test.css";
+@import url("http://check.com/css/test.css");
+
+129. Explain the Data Types of Sass supports?
+    SASS has the following Data Types:- Number, String, Colour, Map, Booleans and Null
+   
+130. What is the use of @extend function in Sass?
+By using @extend function same style can be copied to the other classes also and there is no need to rewrite the code again.
+   
+131. Explain how to define a variable in Sass?
+Variables in Sass begin with a ($) sign and variable assignment is done with a colon(:).
+
+132. Explain when can you use the %placeholders in Sass?
+%placeholders in Sass is useful when you want to write styles that were meant to be extended, 
+but you don’t want the base styles to be seen in output CSS styles
+
+133.  Explain what is LESS?
+LESS is dynamic style sheet producing language. LESS is a CSS pre-processors and extends CSS with dynamic behaviour. 
+It allows for variables, mixins, operations and functions. LESS runs on server side and client side both.
+
+134. In what ways LESS can be used?
+Via npm LESS can be used on the command line
+Download as a script file for the browser
+For third party tools, it is used
+
+135. Explain what is the use of &combinator ?
+&combinator concatenates nested selector with the parent selector. It is useful for Pseudo classes such as :hover and :focus
+
+136. What are the new color properties in CSS3?
+HSLA (Hue-saturation-lightness-alpha), HSL, and RGBA (red green blue alpha.).
+
+137. What are the media types?
+It has a total of 10 media types supported it. Here are those:
+    All - Intended for all devices
+    Braille - Braille tactile feedback devices
+    Aural – Used for speech synthesizers
+    Embossed – Used for paged Braille printers
+    Print – Applies for printed documents
+    Handheld – Applies for handheld devices
+    TTY – Used for media including a fixed-pitch character grid
+    TV – Used for television-type devices
+    Screen – Required for computer screens
+    Projection – Used for projected presentations
+
+138. Explain CSS3 Selectors.
+    Universal Selector, 
+    ID Selector, 
+    Element Type Selector, 
+    Class Selector, 
+    Child selector  (>), 
+    Descendant selector  (space), 
+    General Sibling selector  (~), 
+    Adjacent Sibling selector  (+), 
+    Attribute Selector, 
+    Pseudo-element
+
+139.  How we can add border to a image?
+    border-image 
+
+140. What is the use of calc()?
+The calc() function in CSS3 is used for simple calculations to determine CSS property values present right in CSS. 
+It allows mathematical expressions with addition, subtraction, multiplication, and division to be used as component values.
+   
+141. What is the Geolocation API in HTML5? Explain
+The Geolocation API in HTML5 allows the users to share their physical location with selected websites. Since this can compromise privacy, the position is not available unless the user approves it.
+   
+142. How many tags were removed in HTML5?
+    <frame>, <basefront>, <applet>, <frameset>, <big>, <center>, <bigcenter>, <noframes>, <dir>, <tt>, <acronym>, <basefont>
+
+143. SASS is…
+    More concise
+    Easier to read
+    “Complains” less about semi-colons
+    Supported by a larger community of developers
+
+144. SCSS is…
+    More expressive
+    Encourages modular code
+    Integrates well with CSS
+
+145. Mixins
+Mixins allow you to group multiple lines of code together that you can reuse throughout your code.
+
+146. Partials and Importing
+SASS partials allow us to break up our files into smaller files. We can essentially modularize CSS to make more maintainable code. 
+You can create a partial file that only contains relevant code per section. This is useful if your SASS file is getting too large.
+   
+147. What is CSS rule?
+   A CSS rule consists of a selector and declaration and holds for all instances of an element
+   
+148. @charset — Defines the character set used by the style sheet.
+   
+149. @import — Tells the CSS engine to include an external style sheet.
+   
+150. @media — A conditional group rule that will apply its content if the device meets the criteria of the condition defined using a media query.
+
+    @supports — A conditional group rule that will apply its content if the browser meets the criteria of the given condition.
+
+    @document  — A conditional group rule that will apply its content if the document in which the style sheet is applied meets the criteria of the given condition. (deferred to Level 4 of CSS Spec)
+
+    @page — Describes the aspect of layout changes that will be applied when printing the document.
+
+    @font-face — Describes the aspect of an external font to be downloaded.
+
+    @keyframes — Describes the aspect of intermediate steps in a CSS animation sequence.
+
+    @viewport  — Describes the aspects of the viewport for small screen devices.
+
+151. Which CSS property is used for controlling the layout?
+display property, The display property is the most important CSS property for controlling layout.
+
+152.  Explicit and Implicit Grid
+When we use grid-template-columns and grid-template-rows we create an Explicit Grid. However if we try and place an item outside of that grid the browser will create an Implicit Grid line or lines in order to hold that item.
+
+153. Name Some Online Resources You Reference When Having Css Issues.
+Mozilla, Stack Overflow, CSS-Tricks . . .
+
+154.  If You Have An Issue With Your Page, How Do You Debug It, What Tools Do You Use?
+looking for common debugging practices like W3c validator, Firebug, Chrome Dev Tools.
+   
+155.Describe Any Two New Features Of Html5?
+HTML 5 comes up with many new features including video/audio elements for media playback and better support for local offline storage.
+
+156.Give An Example Of Adding Canvas In Html5?
+<canvas id="myCanvas" width="200" height="100"></canvas>
+   
+157.What Is The Difference Between Html And Html5 ?
+HTML5 is nothing more then upgreaded version of HTML where in HTML5 Lot of new future like Video, Audio/mp3, date select function , placeholder , Canvas, 2D/3D Graphics, Local SQL Database added so that no need to do external plugin like Flash player or other library.
+
+158.What The Use Of Canvas Element In Html5?
+The canvas element is used to draw graphics images on a web page by using javascript
+
+160. What is the recommended order for styling an <a> tag?
+a:link { } , a:visited { } , a:hover { } , a:active { }
+
+161.What is the order of the cascade for CSS?
+ when two rules apply that have equal specificity the one that comes last in the CSS is the one that will be used. 
+   
+162.How do I override a CSS class to another?
+ Add another CSS rule with ! important , and either give the selector a higher specificity (adding a tag, id or class to the selector), or add a CSS rule with the same selector at a later point than the existing one.
+   
+163. Which CSS has highest priority?
+Properties of CSS: Inline CSS has the highest priority, then comes Internal/Embedded followed by External CSS which has the least priority.
+   
+164.Does order of CSS rules matter?
+CSS Order Matters
+In CSS, the order in which we specify our rules matters. If a rule from the same style sheet, with the same level of specificity exists, the rule that is declared last in the CSS document will be the one that is applied.
+   
+165.How do you organize properties in CSS?
+    Here are some general suggestions for ways to keep your stylesheets organised and tidy.
+        - Does your project have a coding style guide? ...
+        - Keep it consistent. ...
+        - Formatting readable CSS. ...
+        - Comment your CSS. ...
+        - Create logical sections in your stylesheet. ...
+        - Avoid overly-specific selectors. ...
+        - Break large stylesheets into multiple smaller ones.
+   
+166. How do I ignore a class in CSS?
+How to exclude particular class name from CSS selector ? In CSS, to exclude a particular class, we can use the pseudo-class :not selector also known as negation pseudo-class or not selector. This selector is used to set the style to every element that is not the specified by given selector.
+   
+167. How do I force CSS override?
+Overriding the ! important modifier
+Simply add another CSS rule with ! important , and give the selector a higher specificity (adding an additional tag, id or class to the selector)
+add a CSS rule with the same selector at a later point than the existing one (in a tie, the last one defined wins).
+   
+168. How is the concept of inheritance applied in CSS?
+In CSS, inheritance controls what happens when no value is specified for a property on an element.
+   
+169. How do you avoid important in CSS?
+all you need to do is increase specificity. In your case, both of your selectors have identical specificity. 
+   
+170. What does important do in CSS?
+The ! important property in CSS means that all subsequent rules on an element are to be ignored, and the rule denoted by ! important is to be applied. This rule overrides all previous styling rules ​-- the !
+It overrides the cascade and gives the style rule the highest precedence
+
+171. the following function flips an element’s colors, for use by the filter property?
+invert()
+   
+172. What is the CSS Property Equivalent for the attribute
+ text-decoration:no-text
+   
+173. the following Color Format is a CSS3 HSL value with a fourth value to set the alpha channel value for the color to define the opacity of the element?
+   HSLa Color
+
+174. the following property adjusts the font-size of the fallback fonts defined with font-family, so that the x-height is the same no matter what font is used?
+font-size-adjust
+   
+175. A ___________ is used to define a special state of an element.
+pseudo-class
+   
+176. Which of the following selectors selects any tag with an id attribute set?
+#id
+   
+177. the specificity of this “ul ol li.red”.
+specificity = 0,0,1,3
+   
+178. the specificity of this “ul ol+li”.
+specificity = 0,0,0,3
+   
+179. @media only screen and (orientation: landscape) {background: blue;}
+web page will have a blue background if the orientation is in landscape mode
+   
+180. used to set the image as border instead of the border style?
+. border-image-source
+   
+191. The outline-style CSS property is used to set the style of the outline of an element. An outline is a line that is drawn around elements, outside the border edge, to make the element stand out.
+   
+192. the following property specifies the size of the mask?
+box-reflect
+   
+193.The World Wide Web Consortium (W3C) is the main international standards organization for the World Wide Web (abbreviated WWW or W3).
+   
+194. The ___________ of an item is the value of its element’s itemid attribute.
+global identifier
+The global identifier of an item is the value of its element’s itemid attribute, if it has one, resolved relative to the element on which the attribute is specified. If the itemid attribute is missing or if resolving it fails, it is said to have no global identifier.
+   
+194. Which of the following is the first web browser?
+Nexus
+The first web browser was invented in 1990 called World Wide Web which was later renamed to Nexus.
+   
+195. ______________ should include data of two types; the first should be the URL using the type text/uri-list, and the second is the URL using the text/plain type.
+Dragging Links
+   
+196. The __________ begins with a series of parameter entity definitions.
+DTD
+The HTML DTD begins with a series of parameter entity definitions. A parameter entity definition defines a kind of macro that may be referenced and expanded elsewhere in the DTD. These macros may not appear in HTML documents, only in the DTD. Other types of macros, called character references, may be used in the text of an HTML document or within attribute values.
+   
+197.  The ______________ parameter identifies a character encoding, which is a method of converting a sequence of bytes into a sequence of characters.
+charset
+   
+198.  the following defines graphic drawing using JavaScript?
+The canvas tag is only a container for graphics, you must use a script to actually draw the graphics.
+   
+199. When is the mouseout event fired?
+When mouse is no longer over an element
+When the mouse moves so that it is no longer over an element, the browser fires a mouseout event on that element.
+   
+200.  When is the mouseover event fired?
+When mouse is moved over a new element
+When the user moves the mouse so that it goes over a new element, the browser fires a mouseover event on that element.
+   
+201. Why is bootstrap popular?
+Bootstrap was launched as a mobile-first framework for web development. ... The main reason Bootstrap is so popular in the web design industry is its unique and compelling features that empower developers to build well-functioning, fully responsive websites without any hassle.
+
+202.Who made bootstrap?
+Bootstrap was created at Twitter in mid-2010 by Mark Otto and Jacob Thornton. Prior to being an open-sourced framework, Bootstrap was known as Twitter Blueprint.
+
+203. Bootstrap’s global default line-height
+ 1.428
+
+204.  Glyphicons is mainly used for?
+providing different icons
+
+204. How do I remove the gutter space in bootstrap?
+Approach: By default, Bootstrap 4 has class=”no-gutters” to remove gutter spaces of any specific div.
+
+205.What are offset columns in Bootstrap?
+Offset Columns in Bootstrap. An offset is used to push columns over for more spacing.
+
+206. What is the difference between Bootstrap and Foundation?
+Bootstrap	                                                        Foundation
+– Bootstrap offers unlimited number of UI elements	            – In Foundation UI element options are very limited in numbers
+– Bootstraps uses pixels	                                    – Foundation use REMs
+– Bootstrap encourages to design for both desktop and mobile.	– Foundation encourages to design mobile first
+– Bootstrap support LESS as its preprocessor	                – Foundation support Sass and Compass as its preprocessor
+
+207. In Bootstrap what are the two ways you can display the code?
+<code> tag : If you are going to display code inline, you should use <code> tag
+<pre> tag: If you want to display the code as a standalone block element or it has multiple lines then you should use <pre> tag
+
+208.  Define the key components of Bootstrap.
+Scaffolding: It has the grid system, background, styles.
+JS Plugins: Contains JS and jQuery plugins.
+Customize: Can customize frameworks.
+CSS: Contains CSS files.
+
+209. How many types of layouts are there in Bootstrap?
+Fluid Layout : Fluid Layout is useful when you need to make an app that involves the full width of the screen i.e. Fluid Layout adjusts itself according to the browser size.
+Fixed Layout :  A fixed layout is responsive and easy to use but just like the fluid layout, it cannot adjust itself according to the browser size. The fixed layout should be 940 px in most cases.
+
+210.What are Grid classes in the Bootstrap?
+Answer: There are four grid classes in Bootstrap.
+xs (It is used for phone screens less than 786px wide).
+sm (It is used for the tablet screens which are greater than 786px wide).
+md (It is for small laptop screen of size equal to or greater than 992px wide).
+LG ( It is for laptop and desktop screens which are equal to greater than 1200px wide).
+ 
+211. Which property will be used for changing the face of font in CSS?
+“font family” property can be used for changing the face of font.
+
+212. List out any 5 properties of cursor in CSS?
+Pointer
+Help
+Wait
+Hand
+Crosshair
+
+213. List out some of the properties in added in CSS3?
+Border Images
+New Web fonts
+Multi Column layout
+Box Shadows
+Text Shadows
+Transform property
+Word-wrap
+Text-overflow
+Word- break
+
+214. What is the property used for formatting the texts in CSS?
+Property – “white-space” is used for formatting the text.
+ 
+214. What you mean by pseudo classes in CSS?
+Pseudo classes will allow you to identify the HTML elements
+
+215.  What are CSS frameworks?
+It is a pre-planned libraries, which allows easier and more standards-compliant webpage styling, using CSS language.
+
+216. Describe ‘ruleset’?
+Ruleset : Selectors can be attached to other selectors to be identified by ruleset.
+It has two parts:
+Selector, e.g. R and
+declaration {text-indent: 11pt}
+
+Rule, which is applicable in the entire sheet and not partly, is known as at-rule. It is preceded by @ followed by A-Z, a-z or 0-9.
+
+217.  about css 
+CSS Full Form	Cascading Style Sheets
+CSS is used	for styling web pages.
+CSS is developed By	Håkon Wium Lie; Bert Bos; World Wide Web Consortium
+CSS file Extension	.css
+CSS Rule consists of	selector and a declaration block
+CSS first release date	December 17, 1996
+
+218. Why background and color are the separate properties if they should always be set together?
+Color is an inherited property while background is not. So this can make confusion further.
+
+219. What is tweening?
+It is the process of generating intermediate frames between two images.
+It gives the impression that the first image has smoothly evolved into the second one.
+It is an important method used in all types of animations.
+In CSS3, Transforms (matrix, translate, rotate, scale etc.) module can be used to achieve tweening.
+
+220. What is pseudo element? what is pseudo class?
+pseudo elements helps you to add cosmetics contents. pseudo elements generates content where as pseudo class deals with state of the element
+
+221. the most popular CSS preprocessors:
+    SASS (SCSS)
+    LESS
+    Stylus
+    PostCSS
+
+222. BFC(Block Formatting Context)
+
+223.  Define Attribute Selector ?
+It is defined by a set of elements, value and its parts.
+
+224. Why you would like to use semantic tag. Why Semantic HTML is Important?
+Search Engine Optimization, accessibility, repurposing, light code. Many visually impaired person rely on browser speech and semantic tag helps to interpret page content clearly. Search engine needs to understand page content to rank and semantic tag helps.
+Semantic HTML is the practice of using more descriptive and meaningful tags when coding in HTML. A tag is simply anything you use to wrap content in. Some of the most common are <h1>, <header>, <footer>, <p>, <section>, <nav>, and <div>.
+ 
+224. Which of listed CSS properties are inherited?
+position
+font-size
+color
+background-color
+
+225. What is the difference between em and rem units?
+em units inherit their value from the font-size of the parent element
+rem units inherit their value from the font-size of the root element (html)
+In most browsers, the font-size of the root element is set to 16px by default.
+
+226. What is the difference between span and div?
+div is a block element and span is inline element.
+It is illegal to put block element inside inline element. div can have a p tag and a p tag can have a span. However, span can't have a div or p tag inside
+
+227. Are all websites www?
+All websites have http:// or https:// but browsers sometimes doesn't show them. All main websites have www but it can omitted as by default if nothing is specified then server takes it as www.
+
+228. What's the difference between WWW and HTTP?
+Simply put, HTTP is the protocol that enables communication online, transferring data from one machine to another. WWW is the set of linked hypertext documents that can be viewed on web browsers (such as Firefox, Google Chrome, and more). A major similarity, though, is that both HTTP and WWW are used in website URLs.
+
+229.Why do we use .com?
+com in .com stands for commercial and the domains ending with .com represents a site which is related to something commercial but this is not true for all the websites nowadays. The .com at the end of many web addresses is called a top-level domain (TLD). 
+
+220.What is a URL made up of?
+A URL (Uniform Resource Locator) is a unique identifier used to locate a resource on the internet. It is also referred to as a web address. URLs consist of multiple parts -- including a protocol and domain name -- that tell a web browser how and where to retrieve a resource.
+ 
+231.What does .com .org .gov mean?
+Com, . Org. ... org and . net, are abbreviations for "commercial," "organization" and "network" respectively, but common use has moved away from these definitions, with .com becoming the most popular TLD even for sites with no commercial activity.
+
+232.Can .org be trusted?
+Be careful with the domain . org, because . org is usually used by non-profit organizations which may have an agenda of persuasion rather than education
+ in general org is better for organisations helping the "public" 
+
+233..net ?
+net is better for other websites both commercial and personal
+
+234.Is a .biz domain good?
+biz sounds like it should be perfect for a business, it's not the first choice for many reasons
+
+234. What’s the difference between window.onload vs document.onload?
+window.onload is fired when the DOM is ready and all the content including images, CSS, scripts, subframes, etc. finish loaded.
+It means that everything is loaded.
+document.onload is fired when the DOM is ready, which can be before images and other external content is loaded.
+
+235. What’s the fastest way to query DOM?
+The fastest way to select an element is by ID if the ID exists.
+The second quickest is getElementByClassName .
+The longer the selector, the slower it will be.
+querySelectorAll will be the slowest since it has to search for all kinds of CSS selectors.
+Other methods like getElementById and getElementsByTagName only search for specific kinds of selectors.
+
+236.
+
+237.
+
+238.
+
+239.
+
+230.
+
+
+
+----------- websites
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

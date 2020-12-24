@@ -1,0 +1,709 @@
+
+-----------------------------------------------------------------------JQuery
+--------  Selectors 
+     $("*"), $(this), $("p:first"), $("ul li:first-child"),$("[href]"),$("a[target='_blank']"), $(":button"), $("tr:even"), $("tr:odd"), $("ul li:eq(3)"), $("input:not(:empty)"),$(":contains('Hello')"), $("div:has(p)"),$("ul li:gt(3)") [ greater than 3], $("ul li:lt(3)") [ less than 3],	
+
+--------  Events	 
+	Mouse Events -  click, dblclick, mouseenter, mouseleave	
+	Keyboard Events	- keypress, keydown, keyup	
+	Form Events - submit, change, focus, blur 	
+	Document/Window Events - load, resize, scroll, unload
+
+	$(selector).event(function(){ // action goes here!!  });
+	$(selector).on("event", function(){ // action goes here!! });
+	$(document).on("event", "selector" function(){ // action goes here!! });
+
+	$(selector).on({
+		event: function(){  // action goes here!! },
+		event: function(){  // action goes here!! },
+		event: function(){  // action goes here!! }
+	});
+	
+--------  HTML
+* Get & Set Content - text(), html(), and val()	
+----Get  the value of an attribute:
+	$(selector).attr("attribute")
+	$('input[type="radio"]:checked').val()
+	$(select option:selected).val()
+
+----Set the attribute and value:
+	$(selector).attr("attribute","value")
+
+----Set multiple attributes and values:
+	$(selector).attr({attribute:"value", attribute:"value",...});
+
+* Methods 
+    on, off, append(), prepend(), after(), before(), appendTo(), prependTo(),remove(), empty(), clone(), replaceWith(), replaceAll(), wrap(), Unwrap(), wrapAll(), wrapInner(),width(), innerWidth(), outerWidth(),  position(), offset(), scrollTop(), scrollLeft(),hasClass(), addClass(), removeClass(), toggleClass(), has(), each()	
+
+	remove() - Removes the selected element (and its child elements)
+	empty() - Removes the child elements from the selected element
+	position()- exact location [only top, and left location gives]
+	offset()- start location [only top, and left location gives]
+
+	$(selector).addClass("className");
+	$(selector).append("Some appended text.");
+	$(selector).has(selector-children).css("color","red");
+	$("<h2>Hello world!</h2>").replaceAll("p");
+
+* Chaining method
+	$(selector).css('color','red').slideUp().slideDown();
+
+* css() Method - 
+	css("propertyname","value");
+	css({"propertyname":"value","propertyname":"value",...});
+
+* Effects 
+	hide(), show(), toggle(speed,callback), fadeIn(), fadeOut(), fadeToggle(), fadeTo(), slideDown(), slideUp(), slideToggle() 	
+	
+	$(selector).hide(speed,callback);
+	
+----Animation Effects - $(selector).animate({params},speed,callback);	
+
+	$(selector).animate({
+		left: "px",
+		opacity: "px",
+		width: "px",
+		height: "px"
+	},3000);
+	
+----Stop Animations - $(selector).stop();	
+
+* Traversing
+<div id="main-outer">
+	<ul id="outer">
+		<li id="inner">
+			<span> </span>	
+		</li>
+		<li id="inner">
+			<b> </b>
+		</li>
+	</ul>
+</div>
+
+* The <div> element is the parent of <ul>, and an ancestor of everything inside of it
+* The <span> element is a child of the left <li> and a descendant of <ul> and <div>
+* The two <li> elements are siblings (they share the same parent)
+* jQuery Traversing - Ancestors :- parent(), parents(), parentsUntil(), closest(), offsetParent()
+
+	 $("span").parent();
+	 $("span").parents("ul");	[kha tak]
+	 $("span").parentsUntil("div"); [kha tak]
+
+* Traversing - Descendants :- children(), find()
+	$("li").children().css("color","red");
+	$('li').children('b').css('font-weight','bold');
+
+* Traversing - Siblings :-  siblings(), next(), nextAll(), nextUntil(), prev(), prevAll(), prevUntil()
+	$("h2").nextUntil("h6");
+
+* Traversing - Filtering :- first(), last(), eq(), filter() and not(), slice()
+		$(selector).filter(".intro");  [other than .intro]
+
+-----------------------------------------------------------------------
+			19-12-2018
+
+* Selectors
+	document.getElementById('selectorName')
+	document.getElementsByTagName('selectorName')
+	document.getElementsByClassName('selectorName')
+	document.querySelector('selectorName')
+
+* get and set the data
+	element.innerHTML =  new html content
+	element.attribute = new value
+	element.style.property = new style 		 -->[document.getElementById("selector").style.color = "blue";], [document.style.cssFloat = "right";]
+	element.setAttribute(attribute, value)   ---> [document.getElementById("myImage").src = "landscape.jpg";]
+	element.getAttribute(attribute)   ---> [document.getElementById("myImage").getAttribute('src')]
+
+	.value, .id, .name, .type, .form.id, .innerHTML, .target, .href, .hreflang, .rel, .alt, .width, .height, availWidth, .availHeight, .src,  .length,	
+	,.coords, .protocol, .hostname, .pathname, #SELECT__OPTION.options[#SELECT__OPTION.selectedIndex].text 
+
+* get  of select form
+		function getOption() {
+		var obj = document.getElementById("mySelect");
+		document.getElementById("demo").innerHTML = 
+		obj.options[obj.selectedIndex].text;
+		}
+		
+		function removeOption() {
+		var x = document.getElementById("mySelect");
+		x.remove(x.selectedIndex);
+		}
+
+* Adding and Deleting Elements
+	document.createElement(element)
+	document.removeChild(element)
+	document.appendChild(element)
+	document.replaceChild(new, old)
+	document.write(text)
+	document.getElementById(id).deleteRow(0);
+	document.getElementById(id).insertRow(0);
+
+*  EventListener, removeEventListener() ---> attachEvent(), detachEvent()
+	element.addEventListener(event, function, useCapture);
+
+	document.getElementById("ID__NAME").addEventListener("click", FUNCTION__NAME);
+	document.getElementById("myBtn").addEventListener("click", function() {	alert("Hello World!");  });
+	element.addEventListener("click", function(){ myFunction(p1, p2); });
+	
+
+* DOM 
+	------- attribute
+	.getNamedItem(EVENT__NAME).value;  -->[check function name]
+	.item().name -->[check event name (ex. onclick)]
+	.removedNameItem('ATTRIBUTE__NAME') --> [removing attribute]
+	.setNamedItem() --> setting attribute
+	.createAttribute('NEW__ATTRIBUTE__NAME') ---> new attribute name
+
+	-------- document
+	.baseURI ---> URL 
+	URL, .domain, .anchors, .body, .forms, .head, .images, .links, .title, .characterSet, .createComment(), createAttribute(), .createElement(), createEvent(), createTextNode(), .defaultView, .designMode,
+	.doctype, .documentURI, .lastModified, .querySelectorAll, .querySelector, .readyState, write
+
+	document.designMode = "on"; --> editable or not
+	document.doctype.name 
+	document.documentElement.nodeName;
+	document.documentMode;
+
+	------ Element
+	.addEventListener, .appendChild, childElementCount, children, classList.add(), classList.remove(), .className, .firstChild, .lastChild, firstElementChild, lastElementChild, .getAttribute(), id, innerHTML, innerText, insertBefore, outerHTML, querySelector, querySelectorAll, remove, removeAttribute, removeChild, removeEventListener, replaceChild, textContent, tagName, title
+
+	.classList.add('NEW__CLASS') ---> ADDING NEW CLASS
+	.className = 'NEW__CLASS' ---> ADDING NEW CLASS
+	.getAttribute('ATTRIBUTE__NAME')	--> GET ATTRIBUTE DETAILS
+
+
+
+	------ Events
+	afterprint, beforeprint, 
+	blur, canplay, change, click, dblclick, contextmenu, 
+	drag, dragstart, dragover, dragleave, dragend, dragenter, 
+	error [use for image not shown], unload,
+	focus, focusin, focusout, 
+	fullscreenchange, fullscreenerror, 
+	input, 
+	keydown, keypress, keyup, 
+	load, loadeddata, loadedmetadata, loadstart, 
+	mousedown, mouseenter, mouseleave, mousemove, mouseover, mouseout, mouseup,
+	pause, play, 
+	preventDefault(), resize, reset, scroll, submit, select,
+	copy, paste, cut, 
+	screenX, screenY, pageX, pageY, offsetX, offsetY, clientX, clientY, movementX, movementY
+
+	document.getElementById(id).onclick = function(){code}	
+
+	.contextmenu ---> for right click
+	var a = event.pageX; ---> cursor position
+
+	
+
+* setTimeout(function(){ alert("Hello"); }, 3000);	
+
+* <button onclick="myFunction()">Click me</button>
+
+* <button type="button" onclick="document.getElementById('IDNAME').style.color = 'red'">Click Me!</button>
+
+* two different kinds of data, primitive and objects.
+	primitive -- string, number, boolean, null, undefined
+
+* 6  data types  in primitives - number, string, boolean, null, undefined, object
+
+* data store in variable in javascript.
+
+* javascript types dynamics
+
+* declare variable
+	var, let, const
+
+* fill data on alert with the help of prompt. prompt by default give string value.
+
+	prompt("Enter Your Name?");  
+
+*  type of 	--> for checking  type of variables
+
+	console.log(typeof varName);
+
+* check length of the var or text
+
+	console.log(varName.length);
+
+* convert string to number with the help of -->  parseInt(); or 1*
+
+	var x = parseInt(a);
+
+* convert number into  string with -->     toString(); 
+
+	var x = a.toString();
+
+* NaN means not a number
+
+* Math.ceil();      increasing number select
+
+* Math.floor();   decreasing number select    [ex (3.4)=3, (-2.1)= -3]
+
+* Math.max();     big number select
+
+* Math.min();   small number select
+
+* Math.random();	random no.
+
+* Comparison  Operators 
+ 	
+	1. == 		 [ 1 == 1 (true), 1 == "1" (true) ]	 ( only compar value )
+
+	2. ===		 [ 1 === 1 (true), 1 === "1" (false) ]	( compar value and type both )
+	
+	3. !=, >, >= [ 1 != 1 (false), 1 != "1" (false) ]	( not equal to value ) ( ! means not equal )
+	
+	4. !== 		 [ 1 !== 1 (true), 1 !== "1" (true) ]	( not equal operator, not equal to value and type) ( ! = NOT ,  ' ! '  MEAN NOT )	
+
+	5. &&  [ 1 !== 1 && 1 !== "1" ] ( equal operator, check both condition same time)  (if both condition is true then true other-wise condition is false )
+
+	6. ||		 [ 1 !== 1 || 1 !== "1" ] ( or operator, check one condition)  (if one condition is true then true , when both condition false then false )
+
+	7. ! 		 [ !1 > 1 ] 	( not operator )	
+	
+* falsy value --- [ null,'' '', undefine, false, 0 ]
+
+* \n 	
+	( just like a break </br> ) for line  break, giving break in prompt text list.
+
+	prompt("1- what is your name?\n 2- how many year's old?\n 3- enter your pet name?\n");
+
+* variable can only store one value. variable like empty container. we put any think in variable.
+  Variables are containers that you can store values in. You start by declaring a variable with the var, let or const keyword.
+
+* console.log(); is same as console.warn(); 
+
+* index.of 	
+	show position of the value if value match than position is 0 
+
+	"abhishek".indexOf("z");	 = -1
+	"abhishek".indexOf("a") 	 = 0
+
+* f8 = go to next debugger if there is no debugger finish the debugging.
+
+* f10 = go to next statement 
+
+* f11 = to debug inside
+
+* break keyword 
+	if condition is true break keyword stop the condition, and stop before true condition.
+	important things is break keyword stop before true condition.
+
+	var i = 0;
+	while( i < 10 ) {
+		i++;
+		if( i === 5 ) {
+			break;
+		}
+		console.log(i);
+	}
+
+* continue keyword
+	if condition is true, leave the true condition and run as on. jump out the true condition.
+	important things is continue keyword is leave the true condition.
+
+	var i = 0;
+	while( i < 10 ) {
+		i++;
+		if( i === 5 ) {
+			continue;
+		}
+		console.log(i);
+	}
+
+* initialization or starter or starting point
+* condition for when our loop should end
+* increment or decrement || continues up or down
+
+* for(var i = 5; i < 10; i++ ) {		}
+
+* i++ means i = i + 1; or i += 1;
+
+* loop condition is true, when loop condition is false loop will stop working.
+
+* for loop 
+
+	*forward count
+	for (var i = 5; i < 10; i++ ) {
+		console.log(i);
+	}
+
+	*backward count
+	for (var i = 5; i > 0; i-- ) {
+		console.log(i);
+	}
+
+* while loop
+	var i = 0;
+	while(i <= 10 ){
+		console.log(i);
+		i++;
+	}	
+
+* do while loop 
+	var i = 0;
+	do{
+		console.log(i);
+		i++;
+	}while( i <= 10 );
+
+ * nesting loop
+	loop inside loop called nesting loop.OR loop within a loop. nesting loop parent loop run one time then child loop run all condition, then parent loop run second time then child loop run all condition as on.
+
+	for(var i = 0; i < 10; i++) {
+		for(var j = 0; j <= 10, j++){
+			consol.log(i + j);
+		}
+	}
+
+* in single variable store multiple value is called array. array is collection of data.
+	array can hold function. array is numeric index number. in javascript array start with 0 (zero) index number.
+	adding items to the array using push() and unshift(). push() method add the array at the end, unshift method add 
+	the array at the starting of the array.
+
+
+	var cars = [ "mahindra bolero", "tata indica", "tata safari", "fortuner" ];
+
+	cars.indexOf(fortuner);  // find value position and if value match than 1, if not match -1
+	cars.indexOf(fortuner, 0);  // array.indexOf(item, start)
+
+	cars.unshift('swift'); 	// adds new items to the beginning of an array
+
+	cars.push('jeep');	// adds new items to the end of an array
+
+	cars.shift();	// removes the first element of an array
+
+	cars.pop(); 	// removes the last element of an array
+
+	cars[cars.length] = "honda";          		 // add new items to the end of an array
+
+	cars[cars.length];          		 // length of the array
+
+	cars[cars.length - 3 ] = "Maruti Suziki"    // changing array  
+
+	cars[cars.length - 1];         // check last array 
+	
+	Array.isArray(cars) // checking cars is array or not
+
+	cars.slice(1,3); // slice between 1 to 3;
+
+	cars.toString();  // converting in to string
+
+	cars.valueOf()
+	
+	cars.reverse(); // reverse array
+
+* string to array
+	var a =  'hello';
+	var b = a.split();
+
+* array to string
+	var a = ["a", "b", "c", "d"];
+	var b = a.join("");
+
+
+* string last value
+	var a = 'hello!';
+	var b = a.substr(-2);
+
+* indexOf  in array 
+	checking element in array with indexOf method, if not found or not match indexOf gives -1 and if match give 0 to n-1.
+
+		var cars = ["mahindra","tata"];
+		var res = cars.indexOf("tata");
+		console.log(res);
+
+* concat array
+  concat array use for merging two or more array
+
+	var cars = ["mahindra","tata"];
+	var fruits = ["apple","mango"];
+	var res = cars.concat(fruits);
+
+* array within array called two dimensional array.
+	var cars = [["running"],["mahindra bolero","tata indica"],["potato"],["football","cricket"]];
+
+* join Array
+
+ 	var cars = [["mahindra bolero","tata indica"],["potato"],["football","cricket"]];
+	var bike = cars.join(" ");			//	join array  with empty space
+	var bike = cars.join("*");			//	join array  with * symbol
+	var bike = cars.join("+");			//	join array 	with + symbol
+
+
+* sort
+the sort method converts the elements into strings then compares their sequences of UTF-16 code units values.
+
+const num = [80,1,30,10,50,70,20,40,100,5,60,90];
+console.log(num.sort(function(value1, value2){
+  return value1 - value2})
+           );
+
+const fruits = ["Apple", "Mango", "Kiwi", "Orange", "Strawberry"];
+console.log(fruits.sort());
+
+
+* filter method
+	comparing the array. greater-than, smaller-than with filter method.
+
+	var numberList = [["2"],["10","12","6"],"5",["15","7","20"]];	
+	var res = numberList.filter(function(element, index, array){
+		return element < 2;                        // compar with greater-than		
+		return element.length > 2;                        // compar with length		
+	})
+	console.log(typeof res);
+
+* map method 
+  add, minus, multiply, divide with map method.
+
+  var numberList = [2,4,5,1,6];
+  var res = numberList.map(function(element, index, array){
+	  return element + 2;
+  })
+
+* reduce method 
+	reduce method is combination of filter and map method.
+
+	const numbers = [450, 200, 75, 80, 90];
+	const resultSum = numbers.reduce((accumulator, currentElement, index, array) => {
+		return accumulator + currentElement;
+	}, 0);
+
+	//or
+	const resultSum = numbers.reduce((value1, value2, index, array) => {
+		return value1 + value2;
+	}); // where to start not given so start with value1 and value2
+
+
+	var numberList = [10,2,5,67,3,45,];
+	var res = numberList.reduce(function(accumulator, element, index, array){ 
+	    if(element > 10){
+	        accumulator.push(element);
+	        return accumulator;
+	    }else{
+	        return accumulator;
+	    }
+
+	},[]);               // where to start value
+	console.log(res);
+
+
+	var printPrice = herosPrice.reduce(function(accumulator, element, index, array){
+		//return accumulator + element;
+		if(element > accumulator){
+			return element;
+		}else {
+			return accumulator;
+		}
+		
+	
+	},0);
+
+
+* forEach
+	var cars = [ "mahindra bolero", "tata indica", "tata safari", "fortuner" ];
+	var each = cars.forEach(function(element, index, array){
+		console.log(index + " : " + element);
+	});
+
+
+* object
+	A collection of name value pairs.
+	key value frame
+	object same as array and in object, we can call function.
+	 
+	var player = {
+		name : "Chou",
+		role : "Fighter",
+		price : 24000,
+		rank : "A+",
+		build : ['b1', 'b2', 'b3'],
+		details : function(){
+			return this.name + ' is ' + this.role
+		}
+		
+	};
+
+* Using Object.values()
+Any JavaScript object can be converted to an array using Object.values():
+
+	var person = {name:"John", age:30, city:"New York"};
+	var myArray = Object.values(person);
+
+*  compare objects and string
+var x = "John";             
+var y = new String("John");
+(x === y) // is false because x is a string and y is an object.
+
+* cannot compare objects
+var x = new String("John");             
+var y = new String("John");
+(x == y) // is false because you cannot compare objects.
+
+** Don't Use new Object()
+Use {} instead of new Object()
+Use "" instead of new String()
+Use 0 instead of new Number()
+Use false instead of new Boolean()
+Use [] instead of new Array()
+Use /()/ instead of new RegExp()
+Use function (){} instead of new Function()
+
+
+* Constructor functions  
+function Human (firstName, lastName) {
+  this.firstName = firstName
+  this.lastName = lastName
+}
+* Using Constructor functions :- Constructors are functions that contain a this keyword.
+
+const chris = new Human('Chris', 'Coyier')
+console.log(chris.firstName); 
+
+* Class syntax :- Classes are said to be the “syntactic sugar” of Constructor functions. 
+
+class Human {
+  constructor(firstName, lastName) {
+    this.firstName = firstName
+    this.lastName = lastName
+    
+    this.sayHello = function () {
+        console.log(`Hello, I'm ${firstName}`)
+      }
+  }
+}
+// or 
+/*
+class Human {
+  constructor (firstName, lastName) {
+    this.firstName = firstName
+    this.lastName = lastName
+  }
+
+  sayHello () {
+    console.log(`Hello, I'm ${this.firstName}`)
+  }
+}
+*/
+
+const chris = new Human('Chris', 'Coyier')
+console.log(chris.firstName);
+
+
+
+* Objects Linking to Other Objects (OLOO)
+
+const Human = {
+  init (firstName, lastName) {
+    this.firstName = firstName
+    this.lastName = lastName
+    this.sayHello = function () {
+      console.log(`Hello, I'm ${firstName}`)
+    }
+
+    return this
+  }
+}
+
+//const chris = Object.create(Human)
+//chris.init('Chris', 'Coyier');
+// or
+const chris = Object.create(Human).init('Chris', 'Coyier');
+
+console.log(chris.firstName);
+
+
+
+* scope
+ two type of scope 1.global, 2. local
+
+* paramenter and argument
+ 
+ function func(paramenter-1, paramenter-2){
+	 console.log("hello");
+ }
+ func(argument-1, argument-2);
+
+* hoisting 
+  function declaration on top is hoisting.
+ Hoisting is process of moving function declaration to the top of the file and this is done  
+ automatically by the  javascript engine that is executing this code.
+ hoisting only work for function declarations. Functions are Objects.
+
+* Define function two ways
+	1. function declaration
+	2. function Expression
+
+1. function declaration
+
+	function walk(){
+		console.log("Walk");
+	}
+	walk();
+
+	OR
+	[ this is a hoisting ]
+	walk();
+	function walk(){
+		console.log("Walk");
+	}
+	
+
+2. function Expression  or anonymous function
+	var run = function() {
+		console.log("run");
+	}
+	run();
+
+* Function() Constructor
+	var myFunction = new Function("a", "b", "return a * b");
+	var x = myFunction(4, 3);
+	console.log(x);
+
+	OR 
+
+	var myFunction = function(a,b){return a * b};
+	console.log(myFunction(1,5));
+
+
+
+
+* api ajax
+		$.ajax({
+            url: 'array_of_object.json', //'content.txt'
+            type: 'get', 
+            error: function(error){
+                console.log('Error: ' + error);
+              },
+            success: function(result){
+              for(var i = 0; i < result.length; i++){
+                  console.log(result[i].name + " " +  result[i].lastName);
+                }
+              }
+        
+        });
+
+* json 
+JSON is a syntax for storing and exchanging data.
+JSON stands for JavaScript Object Notation
+JSON is a lightweight data-interchange format
+JSON is "self-describing" and easy to understand
+JSON is language independent *
+JSON uses JavaScript syntax, but the JSON format is text only.
+Text can be read and used as a data format by any programming language.
+
+When receiving data from a web server, the data is always a string.
+Parse the data with JSON.parse(), and the data becomes a JavaScript object.
+
+When sending data to a web server, the data has to be a string.
+Convert a JavaScript object into a string with JSON.stringify().
+
+
+	myJSON = JSON.stringify(myObj);  //{name: "John", age: 31, city: "New York"};
+	myJSON = JSON.parse(myObj);    // '{"name":"John", "age":31, "city":"New York"}';
+
+
+
+

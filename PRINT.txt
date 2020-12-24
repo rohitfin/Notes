@@ -1,0 +1,160 @@
+
+-default page size
+
+@page {
+  size: 5.5in 8.5in;
+}
+
+
+-paper size keywords
+
+@page {
+  size: A4;
+}
+
+
+-keyword to specify the page’s orientation — “portrait” or “landscape.”
+
+@page {
+  size: A4 landscape;
+}
+
+
+-LEFT AND RIGHT PAGE SPREADS
+
+@page :left {
+  margin-left: 3cm;
+}
+
+@page :right {
+  margin-left: 4cm;
+}
+
+
+-The :first selector targets the first page of a document
+
+@page :first {
+
+}
+
+
+-The :blank pseudo-class selector targets any page that is “intentionally left blank.”
+ To add this text, we can use generated content that targets the top-center margin box.
+
+@page :blank {
+  @top-center { content: "This page is intentionally left blank." }
+}
+
+
+
+
+-To force this heading to always be the beginning of a page, set page-break-before to always.
+
+h1 {
+  page-break-before: always;
+}
+
+
+
+-To avoid breaks directly after a heading, use page-break-after.
+
+
+h1, h2, h3, h4, h5 {
+  page-break-after: avoid;
+}
+
+
+
+-To avoid breaking figures and tables, use the page-break-inside property.
+
+table, figure {
+  page-break-inside: avoid;
+}
+
+
+======	page counter
+
+-page numbers to the bottom-right of right-hand pages
+
+@page:right{
+  @bottom-right {
+    content: counter(page);
+  }
+}
+
+
+-page numbers to the bottom-left of left-hand  pages
+
+@page:left{
+  @bottom-left {
+    content: counter(page);
+  }
+}
+
+
+-created a counter named pages==“Page 3 of 120,”
+
+@page:left{
+  @bottom-left {
+    content: "Page " counter(page) " of " counter(pages);
+  }
+}
+
+
+
+
+-create your own named counters and increment and reset them as you require.
+
+body {
+  counter-reset: chapternum;
+}
+
+h1.chapter:before {
+  counter-increment: chapternum;
+  content: counter(chapternum) ". ";
+}
+
+
+
+-A common way to number figures is to use chapternum.figurenum.===“Figure 3-2”
+
+body {
+  counter-reset: chapternum figurenum;
+}
+
+h1 {
+  counter-reset: figurenum;
+}
+
+h1.title:before {
+  counter-increment: chapternum;
+  content: counter(chapternum) ". ";
+}
+
+figcaption:before {
+  counter-increment: figurenum;
+  content: counter(chapternum) "-" counter(figurenum) ". ";
+}
+
+
+
+======CROSS-REFERENCES
+-target-counter
+
+<a class="xref" href="#ch1" title="Chapter 1">Chapter 1</a>
+
+
+a.xref:after {
+  content: " (page " target-counter(attr(href, url), page) ")";
+}
+
+
+
+
+
+
+
+
+
+
+

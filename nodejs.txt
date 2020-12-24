@@ -1,0 +1,7 @@
+1 nodejs  --> run javascript code on sever
+2 node fileName --> run nodejs file
+3 npm init --> create package.json
+4 express js --> to create server (package)
+5 nodemon fileName --> auto run server
+
+

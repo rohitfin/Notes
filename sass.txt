@@ -1,0 +1,114 @@
+********  SASS (syntactically awesome style sheet)     **********
+Varialble, Nesting, Partials & Imports, Mixins, Extends, Operators, Functions, Conditional Directives, Loops
+
+1.) Mixins
+=circle($border-radius, $bg)
+  -webkit-border-radius: $border-radius
+  border-radius: $borde-radius
+  background : $bg
+
+.text 
+  +circle(100%, lightblue)
+
+*************** LESS ***********
+1.) Variable
+@width: 10px;
+@height: @width + 10px;
+#header { width: @width; height: @height; }
+
+2.) Mixin
+.bordered { border-top: dotted 1px black; border-bottom: solid 2px black; }
+#text a { color: #111; .bordered(); }
+
+
+********* SCSS **********
+
+1.)  Variable
+  $color: red;  h1{ color : $color; }
+
+2.) Nesting  
+  ul{ li { float:left; a {color:red; } }  }
+
+3.) Mixin
+  @mixin border-radius($value) { -webkit-border-radius: $value;  -moz-border-radius: $value;  border-radius: $value;  }  
+  .abc {  @include border-radius(10px);  }
+
+4.) Extends 
+    i.) .abc{width:100px; height: 200px; padding: 50px; border-radius: 50%;}  
+        .xyz { @extend .abc; padding:10px; border-radius:5px; }
+    ii.)  Extends with Placeholder [%]
+         %abc{width:100px; height: 200px; padding: 50px; border-radius: 50%;}  
+        .xyz { @extend %abc;  padding:10px; border-radius:5px;}
+
+5.) Operators [Equality(=,!=), Relational(>,<,>=,<=), Numeric(+,-,*,/,%), String(+), Boolean(or,and,not) ] [ True/False ]
+
+6.) Interpolation [ #{} ]
+    @mixin padding-direction($direction, $value){ padding + #{$direction} : $value + px; }
+    .abc{ @include padding-direction(left, 10px)  }
+
+7.) Function [Number, Strings, Color, Lists, Selectors, Maps,  Introspection]
+  @function function-name($value) { @return($value/2) + px; }
+  .abc{ width: function-name(1000); }
+
+  @function function-name($value) { @return($value/2); }
+  .abc{ width: function-name(1000) * 1px; }
+
+      i.) Number Function [ abs(), ceil(), floor(), max(), min(), comparable(), percentage(), random(), unit(), unitless()  ]
+          .test{width: -100px; height: 100.50px; padding-top: 10.5px, } [abs, ceil, floor]
+
+      ii.) Strings Function [ quote(), unquote(), to-upper-case(), to-lowe-case(), str-index(), str-insert(), str-length(), str-slice(), str-unique-id()  ]    
+
+      iii.) Color Function [ lighten(), darken(), adjust-hue(), saturate(), desaturate(), mix(), transparentize()  ]
+
+      iv.) Lists Function [ length(), nth(), set-nth(), join(), append(), zip(), index(), list-separator(), is-bracketd()  ]
+          $list : 10px 20px 30px   or $list2 : 40xp, 50px, 60px   or $list3 : [70px, 80px, 90px ]
+          .test{ padding: nth($list, 3); }, .test { padding: set-nth($list, 10rem, 2); }, .test{padding: join($list, $list2); }
+
+      v.) Selectors Functions [ selector-nest(), selector-append(), selector-replace(), is-superselector(), simple-selector(), selector-unify(), selector-extend()  ]
+
+      vi.) Maps Function [ map-get(), map-merge(), map-remove(), map-keys(), map-values()(), map-has-key()  ]
+        $font-weight : ( "regular":400, "medium":500, "bold":900 );
+        .test{font-weight: map-get($font-weight,"medium");  }
+
+      vii.) Introspection function [ variable-exists(), global-variable-exists(), mixin-exists(), function-exists(), type-of(), inspect() ]  
+
+8.) Conditional Directives [ @content, @media, @at-root, @if & @else, @for loop, @each loop, @while loop ]
+    i.) @content  Directives
+    @mixin bd-radius($value) { border-radius: $value; @content; }
+    .text {   @include bd-radius(10px) {border-style:dashed; };     }
+
+    @mixin hover{ &:hover{ @content;}  }
+    .text{color:red; @include hover{color:green;}  }
+
+    @mixin media($width){ @media screen and (max-width: $width) { @content }     }
+    @include media(768px) {body{background:#000;}
+
+    ii.) @media Directives
+      .container{width:1100px;margin:0 auto; @media screen and (max-width:900px){ width:900px; }   @media screen and (max-width:768px){ width:768px; }    }
+
+    iii.) @at-root Directives 
+      ul{float:right; li{float:left  @at-root{ a{color:red;&:hover{color:#000;}} }     }    }   [without parent ]
+
+      @media print{.container{font-size:14px;color:#000;  @at-root(without:media){ font-size:16px;color:red;  }      }} [use in print media]
+
+    iv.) @if and @else  [ control Directives ]
+      $test : 5;
+      p { @if $test = 10 {color:red;}   @else if $test > 10 and $test < 10 {color:blue;} @else{color:green;} }
+
+    v.) @for-loop [control Directives]  
+      @for $i from 1 through 3 { .list-#{$i} { width: 100 * $i + px; background: darken(pink, $i * 10%); padding: 10px * $i;  }  }
+
+    vi.) @each [control Directives , only run for list or map ] 
+        $list : [normal, bold, italic] 
+      @each $i in $list { .#{$i}{font-weight: $i; }  } 
+      or
+      @each $value in (100, 300, 400, normal, 700, bold, 900) {
+        .fw-#{$value} {
+          font-weight: $value;
+        }
+      }
+
+    vii.) @while Directives [control Directives ]
+        $i : 10;
+        @while $i <= 30 { .padding-#{$i} {  padding-#{$i}: 1px *  $i;  } $i : $i + 10   }
+

@@ -1,0 +1,171 @@
+----------------DOM MANIPULATION-----------------
+
+attribute
+
+value  inside of tag.ex-id, class, src, alt, href, data-rohit
+
+ $("#img2").attr("src");-----------$("#img2").attr("src", "images/home-3-blog-img-1.jpg");
+
+to get value.
+
+    h1 - $("#one").html();  ------------$("#one").html("Heading");
+    p - $("#one p").html(); ------------$("#one").html("Paragraph");
+    a - $('#ankr').html();  ------------$("#one").html("anker");
+
+    input - $('input[type="text"]').val(); ----------- $('input[type="text"]').val("input_text");
+    dropdown - $( "#drp" ).val();   ----------- $('#drp').val("drp_option_value");
+
+    radio -  $("input[type='radio']").prop('checked'); ------------ $("input[type='radio']").prop('checked',true);
+    checkbox - $("input[name='vehicle2']").prop("checked"); -------$("input[name='vehicle2']").prop("checked",true);
+                                                            --------- $('#checkbox_2').removeAttr('checked')
+
+-------------------- EVENT ------------------
+
+$(document).on(eventName, selector, function(){ });
+
+function functionName() {
+    console.log("u clicked here.");
+}
+functionName();
+
+.......click  
+ $(document).on("click", ".btn", functionName); 
+
+ $(document).on("click", ".btn" , function() {
+           alert("click on button");
+        });
+
+ $(document).on("click", ".btn" , function() {
+           functionName();
+        });
+
+ $(document).on("click", "#text" , function(e) {
+           console.log("value",e.target.value);
+            console.log("this.value",this.value);
+            console.log("value with id",$("#text").val());
+        }); 
+
+.......... right click
+    $(document).contextmenu(function(){
+        console.log("scroll On page.");
+    });
+
+.................. 
+    function showName(){
+        console.log("work");
+    }
+
+    $("#btn_function").click(function(){
+        console.log("You Click On Me");
+        showName();
+    });
+
+
+---------------------------jquery--------------------------------
+....... append   
+     $("p").append("<b>Appended text</b>");
+
+........ 
+    var _html = "";
+        _html = _html + "<li>"+i+"</li>"
+
+
+--------------------------if and else-------------------------------
+        if(i%2 == 0){
+            table = table + "<tr class='green'><td>" + i + " </td><td>Number  " + i +" </td><td>Even </td></tr>"
+
+        }else{
+            table = table + "<tr class='red'><td>" + i + " </td><td>Number  " + i +" </td><td>Odd </td></tr>"
+        }
+
+--------------------------array []  ------------------------------------
+collection of data.
+var a = [];
+var b = [3];
+var b = [3,83,22,33];
+var d = ["name","lastname"];
+var e = [{"name" : "Abhishek","Age" : "28"},{"name" : "Ankit","Age" : "21"}];
+
+How to access array value ?
+b[__INDEXNUMBER__] = b[1]
+__INDEXNUMBER__   --> it's mean page number.
+
+Array length
+b.length = It gives the values position number of value present in array.
+
+How to Changes Array's value?
+b[1] = "Abhishek";
+
+----------------------------object {} -------------------------------------
+key value pair.
+var e = {"name" : "Abhishek","Age" : "28"};
+var object = { KEY : VALUE, KEY1 : VALUE1};
+
+How to access object value?
+1.  object.KEY ---> e.name
+2.  object["KEY"] ---> e["name"] 
+  
+-------------------------- ajax post ------------------------------------------
+
+$.ajax({
+        url: "http://localhost:4500/api/getTopWatchList",
+        type:"post",
+        data: {limit:10},
+         success: function(result){
+             console.log(result);
+    }
+    });
+
+-------------------------- function ------------------------------------------
+var b = "";
+function functionName(data){
+	var a = 10;
+	b = a;
+	
+ showData(a); 
+
+}
+console.log(a); // a= undefined
+console.log(b); // b= ''
+
+functionName("abcdef");  // calling function
+
+console.log(b); // b= 10;
+
+
+function showData(val){
+ console.log(val);
+}
+
+we cannot access local variable outside of function.ex var a
+if we want to that value 
+ 1. assign that value to global variable ex.var b
+ 2. create one function and pass the value
+
+--------------------------------------------------------------
+
+console.log(11,val);
+
+---------------------for loop--------------------------------------
+
+for(var i = 0; i< data.length;i++){
+ console.log(data[i]);
+}
+
+-------------------------------------------------------------------
+
+event.preventDefault()
+
+The event.preventDefault() method stops the default action of an element from happening.
+Prevent a submit button from submitting a form
+Prevent a link from following the URL
+
+
+
+
+
+
+
+
+
+

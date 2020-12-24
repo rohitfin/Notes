@@ -1,0 +1,106 @@
+
+install xampp
+
+create database :- xampp- mySql - admin or localhost/phpmyadmin 
+
+.) On localhost upload wordpress file, set username root and password blank than run or install than set username, password as per your wish. 
+.) On panel upload wordpress file, add all the details and run or install then enter username and password which you like.
+.) Create database on phpmyadmin
+.) Increase upload file size : .htaccess, web-config, function.php, best way upload theme from fileZilla
+.) Change password from phpmyadmin useroption md5
+
+
+
+.) Login 
+.) Change Password
+.) Change Permalinks 
+.) Update WordPress
+.) Delete Plugins
+.) Delete Pages and Posts
+.) Install Astra Theme 
+.) Install Astra Starter Sites 
+.) Import Website
+
+.) Install WooCommerce
+.) Add Products
+.) Install WooCommerce Stripe Payment Gateway -- stripe.com or Pay Pal Payment Method
+.) Sign Up For Amazon Affiliate 
+.) Google Analytics
+
+----------------------
+.) Salient 
+Salient Core
+Salient Demo Importer
+Salient Home Slider
+Salient Nectar Slider
+Salient Portfolio
+Salient WPBakery Page Builder
+ 
+------------
+
+
+
+.) Theme Builder
+    Elementor Website Builder
+    WPBakery Page Builder
+    Salient Plugin
+    Page Builder by SiteOrigin
+    Page Builder: KingComposer – Free Drag and Drop page builder by King-Theme
+    Brizy
+
+.) Slider 
+    Smart Slider 3
+    Master Slider – Responsive Touch Slider
+    Responsive Slider by MetaSlider – Slider and Carousel Plugin for WordPress
+
+.) Child Theme
+    Child Theme Configurator
+
+.) E-Commerce
+    WooCommerce
+    Enhanced Ecommerce Google Analytics Plugin for WooCommerce
+    Mailchimp for WooCommerce
+
+.) Payment
+    WooCommerce Stripe Payment Gateway    
+    WooCommerce PayPal Checkout Payment Gateway
+
+.) Image Optimizer
+    Smush – Lazy Load Images, Optimize & Compress Images
+    EWWW Image Optimizer
+
+.) SEO
+    Yoast SEO    
+    All in One SEO Pack
+    Rank Math – SEO Plugin for WordPress
+
+.) SSL
+    Really Simple SSL
+    WP Encryption – One Click Free SSL Certificate & SSL / HTTPS Redirect to fix Insecure Content
+
+.) Contact Form
+    Contact Form 7
+    Contact Form by WPForms – Drag & Drop Form Builder for WordPress 
+
+.) Error
+    Redirection
+    404page – your smart custom 404 error page
+
+.) Security
+    Sucuri Security – Auditing, Malware Scanner and Security Hardening
+    Wordfence Security – Firewall & Malware Scan
+    Jetpack – WP Security, Backup, Speed, & Growth
+    iThemes Security (formerly Better WP Security)
+
+.) Backup
+    UpdraftPlus WordPress Backup Plugin
+    Jetpack – WP Security, Backup, Speed, & Growth
+    BackWPup – WordPress Backup Plugin
+
+.) Google Analytics
+    Google Analytics Dashboard Plugin for WordPress by MonsterInsights       
+
+
+
+
+

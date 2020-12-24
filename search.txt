@@ -1,0 +1,88 @@
+﻿GitHub
+git
+ajax
+api integration.
+JSON
+InDesign, Sketch, Figma,  InVision, Vision
+Wireframe.cc and In Vision
+Integration with third party API’s such as FB, Twitter, Sound cloud
+
+
+-----------------------css  😈
+
+* :focus-within
+* shape-outside 
+* clip 
+* diff between align-items and align-content and align-self.
+* mix-blend-mode
+* diff background-blend-mode and mix-blend-mode 
+* box-reflect 
+* style="--i:1;"   [variable]
+* animation-play-state
+* Neumorphism and CSS
+* appearance: none; 
+* select::-ms-expand { }
+* -webkit-overflow-scrolling: touch;
+* srcset 
+* image- density and resolution switching, art directory
+* flow-root
+* backdrop-filter: blur(10px);
+* transition: transform 0.2s, width 0.5s 0.2s;
+* in grid predefine 8, 12, 16 columns
+* font-size: calc(12px + (20–8) * ((100vw — 320px) / (1600–320)));
+* mask-image
+* filter: invert(1);
+
+
+
+----------- angular
+* Components
+* Directives
+* Structural directive
+* Local reference
+* Fetch data
+
+
+
+
+
+
+
+--------------------Front-end
+javaScript, HTML, CSS, Pug, Django, SASS/SCSS, Stylus, LESS, PostCSS, CSSinJS/JSS, Styled Components, Backbone, React, Redux, CoffeeScript, jQuery (Core, UI), Handlebars, Mustache, Bootstrap, Foundation
+
+-----------------------Versioning
+Git, SVN, GitHub, BitBucket, GitLab, Beanstalk, Versions
+
+---------------------CMS & Generators
+WordPres, Contentfu, Ghos, Gatsb, Wintersmith
+
+-----------------------Design
+Sketch, InVision, PhotoShop, Illustrator, Zeplin, Craft, Sketchpacks, FontBase
+
+-----------------------Management
+Slack, JIRA, Confluence, GitHub, Trello, Basecamp, Exchange, G-Suite, Skype, Lync
+
+-----------------------APIs
+Postman, StrongLoop, Google (Maps, Auth, Firebase), Facebook, Twitter, Last.fm, YouTube, AWS
+
+-----------------------E-Commerce
+Shopify, WooCommerce
+
+-----------------------Testing & Linting
+Mocha, Chai, Jest, Enzyme, Nightwatch, Jasmine, ESLint, Travis CI, Circle CI, Appveyor, SauceLabs, Browserstack
+
+-----------------------Databases
+MySQL, PostgreSQL, MongoDB, Redis, PHPMyAdmin, Mongoose, GraphQL, XML, JSON, Graphiql, Mongotron, Medis
+
+
+
+
+
+
+
+
+
+
+
+    

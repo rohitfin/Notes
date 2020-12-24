@@ -1,0 +1,39 @@
+    HTML TAGS
+
+<header>
+<body>
+<title>
+<h1>                 --- done    --- done
+<p>                  --- done    --- done
+<img src="">         --- done    --- done
+<a href="">          --- done    --- done
+<section> 
+<aside>
+<article>
+<footer>            --- done
+<html>              --- done
+<figure>
+input text          --- done     --- done 
+radio               --- done     --- done
+checkbox            --- done     --- done
+dropdown            --- done
+<div>   
+<head>
+<span>
+<hr>
+<br>
+<bold>
+<i>
+<strong>
+
+
+---------------------events----------------------------
+1- click                --- done
+2- double click         --- done
+3- key down             --- done                
+4- key up               --- done
+5- hover                --- done
+6- scroll               --- done
+7- Mouse Enter  & Exit  --- done
+8- right click          --- done
+ 

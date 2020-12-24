@@ -1,0 +1,55 @@
+
+
+
+vs code short cut 
+    (figure.gallery__item.gallery__item--$>img.gallery__img[src='images/img-$'][alt="gallery img $"])*13
+
+    
+<link rel='stylesheet' id='form_styles-css'  href='forms/assets/css/style.css' type='text/css' media='all' />
+
+<img width="1920" height="607" src="image.png" class="attachment-full size-full" alt="" loading="lazy" 
+srcset="image.png 1920w, 
+image-300x95.png 300w, 
+image-1024x324.png 1024w, 
+image-768x243.png 768w, 
+image-1536x486.png 1536w" sizes="(max-width: 1920px) 100vw, 1920px">
+
+
+:root {
+    --syntax-background-color: #08090a;
+    --syntax-text-color: #f8f8f2;
+    --syntax-comment-color: #808080;
+    --syntax-declaration-color: #f39c12;
+    --syntax-literal-color: #dda0dd;
+    --syntax-error-color: #f9690e;
+    --syntax-name-color: #7ed07e;
+    --syntax-string-color: #f2ca27;
+}
+
+* body {
+  min-height: 100vh;
+  /* mobile viewport bug fix */
+  min-height: -webkit-fill-available;
+  scroll-behavior: smooth
+}
+
+
+background-clr: 
+background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
+
+box shadow
+box-shadow: 0px 15px 35px -5px rgba(50, 88, 130, 0.32);
+
+
+------- sam as tab
+ <p>This is a paragraph about <details>
+    <summary>Gutenberg</summary>Johannes Gensfleisch 
+  </details>
+    
+</p>
+  
+  <details class="tooltip">
+  <summary>3 days ago</summary>
+  <p>January 27th, 2020</p>
+</details>
+---------
