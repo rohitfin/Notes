@@ -1,0 +1,55 @@
+1 npm install -g @angular/cli@latest 
+2 ng new myWebPage -- create new project
+3 ng serve -- start
+4 ng generate component xyz -- generate component
+5 component -- basic block of code which contains view 
+6 routing and navigation -- on changing of URL load the component
+7 service -- to access the common method
+8 http -- ajax
+
+---code---
+0. ctr + c -- stop server
+1. npm i jquery or npm install jquery :-
+    npm i bootstrap@3
+2. npm i -- package.json dependencies get downloaded in node_modules folder
+3. component -- ng generate component firstComponent || ng g c firstComponent
+  import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'firstProject';
+}
+
+4. SPEC.TS test file 
+
+5. routing 
+  collection of array with path to view components.Routing basically means navigating between pages.
+  A Router is a process of selecting path along which the data can be transferred from source to the destination
+
+6. data binding 
+  {{data}}  --> using interpolation to value binding
+  [property]="data" --> attribute Binding to DOM  
+  (click)="save()" --> Event Binding 
+  [(ngModel)]="data" --> two way data biding [formModule] 
+  
+  <button [disabled]="!isVisible" [style.color]="textColor" [class.active]="isActive" (click)="save()">Save</button>
+
+7. for loop
+  *ngFor="let value of arrayName;let i=index"  
+
+8. pipe [|] ---> [ CommonModule ]   --> uppercase, lowercase  
+  {{ object | json }}
+
+  {{ varName | uppercase}}
+
+  pipe is function, use for data manipulation.
+
+9 service
+  access from any where.  
+
+10. directive
+  directives are instructions in the DOM.
