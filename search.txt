@@ -41,6 +41,8 @@ Integration with third party API’s such as FB, Twitter, Sound cloud
 * Structural directive
 * Local reference
 * Fetch data
+* metadata
+* decorators
 
 
 

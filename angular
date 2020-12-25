@@ -48,8 +48,12 @@ export class AppComponent {
 
   pipe is function, use for data manipulation.
 
-9 service
-  access from any where.  
+9 service := access from any where.  
 
-10. directive
-  directives are instructions in the DOM.
+10. directive := directives are instructions in the DOM.
+
+11. decorators := 4 types of decorators := use to talk between components, same as service.
+  Class decorators, e.g. @Component and @NgModule.
+  Property decorators for properties inside classes, e.g. @Input and @Output.
+  Method decorators for methods inside classes, e.g. @HostListener.
+  Parameter decorators for parameters inside class constructors, e.g. @Inject.
