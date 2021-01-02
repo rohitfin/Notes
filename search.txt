@@ -43,6 +43,7 @@ Integration with third party API’s such as FB, Twitter, Sound cloud
 * Fetch data
 * metadata
 * decorators
+* initialization
 
 
 
@@ -87,4 +88,13 @@ MySQL, PostgreSQL, MongoDB, Redis, PHPMyAdmin, Mongoose, GraphQL, XML, JSON, Gra
 
 
 
-    
+\#10 Money Heist 
+\#9 The Boys
+\#7 Fargo 
+\#8 Kingdom 
+\#6 Prison Break 
+\#5 Cobra Kai 
+\#4 Black Mirror 
+\#3 Stranger Things 
+\#2 Breaking Bad
+\#1 Game of Thrones 
