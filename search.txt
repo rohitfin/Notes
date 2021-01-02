@@ -88,13 +88,13 @@ MySQL, PostgreSQL, MongoDB, Redis, PHPMyAdmin, Mongoose, GraphQL, XML, JSON, Gra
 
 
 
-\#10 Money Heist 
-\#9 The Boys
-\#7 Fargo 
-\#8 Kingdom 
-\#6 Prison Break 
-\#5 Cobra Kai 
-\#4 Black Mirror 
-\#3 Stranger Things 
-\#2 Breaking Bad
-\#1 Game of Thrones 
+\#10 Money Heist (2017) 
+\#9 The Boys (2019)
+\#7 Fargo (2014)
+\#8 Kingdom (2019)
+\#6 Prison Break (2005)
+\#5 Cobra Kai (2018)
+\#4 Black Mirror (2011)
+\#3 Stranger Things (2016)
+\#2 Breaking Bad (2008)
+\#1 Game of Thrones (2011)
