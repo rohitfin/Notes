@@ -5,3 +5,4 @@ About Meta tags (use for search engine optimization (SEO) and read by web crawle
     <meta name="author" content="Name of the author" />
     <meta name="copyright" content="Copyright information" />
     <meta name="robots" content="follow"/>
+    

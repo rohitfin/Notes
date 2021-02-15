@@ -120,24 +120,6 @@ clip: auto|shape|initial|inherit;
 clip-path: inset, circle, polygon, ellipse;
 clip-path: clip-source|basic-shape|margin-box|border-box|padding-box|content-box|fill-box|stroke-box|view-box|none;
 
-* <display-box>
-display: none, content (parent will not be rendered);
-
-* <display-inside> 
-display:table, flow, grid, flex (inline), flow-root (The element generates a block element box that establishes a new block formatting context), ;    
-
-* <display-internal>
-display: table, table-cell (<td>), table-column (<col>), table-column-group (<colgroup>), table-footer-group (<tfoot>), table-header-group (<thead>), table-row (<tr>), and table-row-group (<tbody>);
-
-* <display-legacy>
-display: inline-block, inline-table, inline-flex, inline-grid;  (almost same as flow-root except inline-grid)
-
-* <display-listitem>
-display: list-style-type, list-style-position; (generate fake list items without ul li)
-
-* <display-outside>
-display: block, inline
-
 filter: none | blur() | brightness() | contrast() | drop-shadow() | grayscale() | hue-rotate() | invert() | opacity() | saturate() | sepia() | url();
 font-kerning: auto|normal|none; // how letters are spaced.
 
@@ -172,7 +154,6 @@ inline-size: value; (depending on its writing mode)
   --clr-success: rgb(64, 209, 91);
   --button-bg: rgb(219, 138, 52);
   --clr-warning: rgb(206, 41, 26);
-  --value: 5;
 }
 .list-item {
   --icon: var(--checkbox);

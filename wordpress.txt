@@ -3,11 +3,13 @@ install xampp
 
 create database :- xampp- mySql - admin or localhost/phpmyadmin 
 
-.) On localhost upload wordpress file, set username root and password blank than run or install than set username, password as per your wish. 
-.) On panel upload wordpress file, add all the details and run or install then enter username and password which you like.
-.) Create database on phpmyadmin
+.) Create database on phpmyadmin 
+.) On localhost, first create database(phpmyadmin) than upload wordpress file, set username root and password blank than run or install than 
+    set username, password as per your wish. 
+.) On panel, first create database(phpmyadmin) & user than upload wordpress file, add all the details and run or 
+    install then enter username and password which you like.
 .) Increase upload file size : .htaccess, web-config, function.php, best way upload theme from fileZilla
-.) Change password from phpmyadmin useroption md5
+.) Change password from database, phpmyadmin useroption md5
 
 
 
@@ -17,26 +19,17 @@ create database :- xampp- mySql - admin or localhost/phpmyadmin
 .) Update WordPress
 .) Delete Plugins
 .) Delete Pages and Posts
+.) Install theme
+
 .) Install Astra Theme 
 .) Install Astra Starter Sites 
 .) Import Website
-
 .) Install WooCommerce
 .) Add Products
 .) Install WooCommerce Stripe Payment Gateway -- stripe.com or Pay Pal Payment Method
 .) Sign Up For Amazon Affiliate 
 .) Google Analytics
 
-----------------------
-.) Salient 
-Salient Core
-Salient Demo Importer
-Salient Home Slider
-Salient Nectar Slider
-Salient Portfolio
-Salient WPBakery Page Builder
- 
-------------
 
 
 
@@ -49,6 +42,7 @@ Salient WPBakery Page Builder
     Brizy
 
 .) Slider 
+    Slider Revolution
     Smart Slider 3
     Master Slider – Responsive Touch Slider
     Responsive Slider by MetaSlider – Slider and Carousel Plugin for WordPress
@@ -80,6 +74,8 @@ Salient WPBakery Page Builder
 
 .) Contact Form
     Contact Form 7
+    Recaptcha v2 for contact form 7 
+    Contact form 7 Conditional Fields
     Contact Form by WPForms – Drag & Drop Form Builder for WordPress 
 
 .) Error
@@ -100,7 +96,39 @@ Salient WPBakery Page Builder
 .) Google Analytics
     Google Analytics Dashboard Plugin for WordPress by MonsterInsights       
 
+.) WP User Avtar
+    for use profile image change
 
+.) All-in-One WP Migration Unlimited Extension
+    for Backup, import and export  
+      
+.) Zip Code      
+.) Pop Builder
+.) Pop Maker      
+.) Latest Post Shortcode 
+.) Shortcodes Ultimate
+.) WhatsApp Chat
+.) Tawk.to
+.) Join.chat
+.) QSM for Quiz
+.) Wp File Manager
 
+.) Meta box
+.) MB Custom Post Type
+.) itheme Security
+.) CF Page or Post Duplicator
+.) Flatsome
+.) UX Blocks
+.) Beaver Builder
 
+.) bbPress
+.) Black Studio TinyMCE Widget
+.) Coaching Demo Data
+.) LearnPress
+.) MC4WP: Mailchimp for WordPress
+.) Page Builder by SiteOrigin
+.) Pricing Table Plus
+.) Recent Post Slider with Widget
+.) Social Login, Social Sharing by miniOrange
+.) WP Events Manager
 

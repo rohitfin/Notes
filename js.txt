@@ -1,5 +1,4 @@
-
------------------------------------------------------------------------JQuery
+---- 19 12 18
 --------  Selectors 
      $("*"), $(this), $("p:first"), $("ul li:first-child"),$("[href]"),$("a[target='_blank']"), $(":button"), $("tr:even"), $("tr:odd"), $("ul li:eq(3)"), $("input:not(:empty)"),$(":contains('Hello')"), $("div:has(p)"),$("ul li:gt(3)") [ greater than 3], $("ul li:lt(3)") [ less than 3],	
 
@@ -30,10 +29,10 @@
 	$(selector).attr("attribute","value")
 
 ----Set multiple attributes and values:
-	$(selector).attr({attribute:"value", attribute:"value",...});
+	$(selector).attr({"attribute":"value", "attribute":"value",...});
 
 * Methods 
-    on, off, append(), prepend(), after(), before(), appendTo(), prependTo(),remove(), empty(), clone(), replaceWith(), replaceAll(), wrap(), Unwrap(), wrapAll(), wrapInner(),width(), innerWidth(), outerWidth(),  position(), offset(), scrollTop(), scrollLeft(),hasClass(), addClass(), removeClass(), toggleClass(), has(), each()	
+   addClass(), removeClass(), toggleClass(), on, append(), prepend(), after(), before(),remove(), empty(), clone(), replaceWith(), replaceAll(), wrap(), Unwrap(), wrapAll(), wrapInner(),width(), innerWidth(), outerWidth(),  position(), offset(), scrollTop(), scrollLeft(), has(), each(), hasClass(), 	
 
 	remove() - Removes the selected element (and its child elements)
 	empty() - Removes the child elements from the selected element
@@ -42,7 +41,7 @@
 
 	$(selector).addClass("className");
 	$(selector).append("Some appended text.");
-	$(selector).has(selector-children).css("color","red");
+	$(selector).has(selector-children).css("color","red"); or $("selector:has(selector-children)").css("border", "solid red");
 	$("<h2>Hello world!</h2>").replaceAll("p");
 
 * Chaining method
@@ -85,6 +84,7 @@
 * The two <li> elements are siblings (they share the same parent)
 * jQuery Traversing - Ancestors :- parent(), parents(), parentsUntil(), closest(), offsetParent()
 
+* Traversing - Ancestors
 	 $("span").parent();
 	 $("span").parents("ul");	[kha tak]
 	 $("span").parentsUntil("div"); [kha tak]
@@ -99,103 +99,86 @@
 * Traversing - Filtering :- first(), last(), eq(), filter() and not(), slice()
 		$(selector).filter(".intro");  [other than .intro]
 
------------------------------------------------------------------------
-			19-12-2018
+----------------------------------------------------------------------- 
 
 * Selectors
 	document.getElementById('selectorName')
 	document.getElementsByTagName('selectorName')
 	document.getElementsByClassName('selectorName')
 	document.querySelector('selectorName')
+	document.querySelectorAll('selectorName')
 
 * get and set the data
 	element.innerHTML =  new html content
 	element.attribute = new value
-	element.style.property = new style 		 -->[document.getElementById("selector").style.color = "blue";], [document.style.cssFloat = "right";]
-	element.setAttribute(attribute, value)   ---> [document.getElementById("myImage").src = "landscape.jpg";]
-	element.getAttribute(attribute)   ---> [document.getElementById("myImage").getAttribute('src')]
 
-	.value, .id, .name, .type, .form.id, .innerHTML, .target, .href, .hreflang, .rel, .alt, .width, .height, availWidth, .availHeight, .src,  .length,	
-	,.coords, .protocol, .hostname, .pathname, #SELECT__OPTION.options[#SELECT__OPTION.selectedIndex].text 
+	element.style.property = new style 	
+		[
+			document.getElementById("selector").style.color = "blue";
+			document.style.cssFloat = "right";
+			document.querySelector('selector').style.cssText = 'padding: 10px 20px;color: white'; 
+		]
 
-* get  of select form
-		function getOption() {
-		var obj = document.getElementById("mySelect");
-		document.getElementById("demo").innerHTML = 
-		obj.options[obj.selectedIndex].text;
-		}
-		
-		function removeOption() {
-		var x = document.getElementById("mySelect");
-		x.remove(x.selectedIndex);
-		}
+	element.setAttribute(attribute, value)  
+		[
+			document.getElementById("myImage").src = "landscape.jpg";
+					OR 	
+			var sel = document.getElementById("myImage");
+			sel.src = '../images/img.jpg';
+			sel.title = 'this is custom title';
+		]
 
-* Adding and Deleting Elements
-	document.createElement(element)
-	document.removeChild(element)
-	document.appendChild(element)
-	document.replaceChild(new, old)
-	document.write(text)
-	document.getElementById(id).deleteRow(0);
-	document.getElementById(id).insertRow(0);
-
-*  EventListener, removeEventListener() ---> attachEvent(), detachEvent()
-	element.addEventListener(event, function, useCapture);
-
-	document.getElementById("ID__NAME").addEventListener("click", FUNCTION__NAME);
-	document.getElementById("myBtn").addEventListener("click", function() {	alert("Hello World!");  });
-	element.addEventListener("click", function(){ myFunction(p1, p2); });
+	element.getAttribute(attribute)    
+		[
+			document.getElementById("myImage").getAttribute('src');
+				OR
+			var sel = document.getElementById("myImage");
+			console.log(sel.src);
+			console.log(sel.title);
+		]
 	
 
-* DOM 
-	------- attribute
-	.getNamedItem(EVENT__NAME).value;  -->[check function name]
-	.item().name -->[check event name (ex. onclick)]
-	.removedNameItem('ATTRIBUTE__NAME') --> [removing attribute]
-	.setNamedItem() --> setting attribute
-	.createAttribute('NEW__ATTRIBUTE__NAME') ---> new attribute name
+	** select option
+		var sel = document.getElementById('selector').selectedIndex;
+		var res = document.getElementsByTagName('option')[sel].value;
+			OR
+		var sel = document.getElementById('ed');
+		var res = sel.options[sel.selectedIndex].value;
+		console.log(res);
+			OR
+		var res = document.getElementById('selector').options[document.getElementById('selector').selectedIndex].text;
+		console.log(res);
 
+	** toggle, add and remove class
+		.classList.add('NEW__CLASS') ---> ADDING NEW CLASS
+		.className = 'NEW__CLASS' ---> ADDING NEW CLASS
+		.classList.toggle('NEW__CLASS') ---> toggle  CLASS
+		.classList.remove('NEW__CLASS') ---> remove  CLASS
+
+	.value, .innerHTML, #SELECT__OPTION.options[#SELECT__OPTION.selectedIndex].text, offsetWidth, .offsetHeight, screen.width, screen.height, screen.availWidth, screen.availHeight, innerWidth, innerHeight, window.open, window.close
+
+*  EventListener, removeEventListener() ---> attachEvent(), detachEvent()
+	element.addEventListener("click", FUNCTION__NAME);
+	element.addEventListener("click", function() {	alert("Hello World!");  });
+	element.addEventListener("click", function(){ myFunction(p1, p2); });
+	
+* DOM 
 	-------- document
-	.baseURI ---> URL 
-	URL, .domain, .anchors, .body, .forms, .head, .images, .links, .title, .characterSet, .createComment(), createAttribute(), .createElement(), createEvent(), createTextNode(), .defaultView, .designMode,
-	.doctype, .documentURI, .lastModified, .querySelectorAll, .querySelector, .readyState, write
+	URL, .domain, .body, .forms, .head, .images, .links, .title, 
+	createAttribute(), .createElement(), createEvent(), createTextNode(), .designMode
 
 	document.designMode = "on"; --> editable or not
 	document.doctype.name 
-	document.documentElement.nodeName;
 	document.documentMode;
 
-	------ Element
-	.addEventListener, .appendChild, childElementCount, children, classList.add(), classList.remove(), .className, .firstChild, .lastChild, firstElementChild, lastElementChild, .getAttribute(), id, innerHTML, innerText, insertBefore, outerHTML, querySelector, querySelectorAll, remove, removeAttribute, removeChild, removeEventListener, replaceChild, textContent, tagName, title
+	.addEventListener, .getAttribute(), innerHTML, innerText, querySelector, querySelectorAll, append,
+	.appendChild, childElementCount, classList.add(), classList.remove(), .className, .firstChild, .lastChild, firstElementChild, lastElementChild, insertBefore, outerHTML, remove, removeAttribute, removeChild, removeEventListener, replaceChild, textContent, tagName, title, dataset
 
-	.classList.add('NEW__CLASS') ---> ADDING NEW CLASS
-	.className = 'NEW__CLASS' ---> ADDING NEW CLASS
-	.getAttribute('ATTRIBUTE__NAME')	--> GET ATTRIBUTE DETAILS
-
+* DOM Event 
+	mousemove, mouseout, mouseleave, mouseenter, mousedown, mouseup
 
 
-	------ Events
-	afterprint, beforeprint, 
-	blur, canplay, change, click, dblclick, contextmenu, 
-	drag, dragstart, dragover, dragleave, dragend, dragenter, 
-	error [use for image not shown], unload,
-	focus, focusin, focusout, 
-	fullscreenchange, fullscreenerror, 
-	input, 
-	keydown, keypress, keyup, 
-	load, loadeddata, loadedmetadata, loadstart, 
-	mousedown, mouseenter, mouseleave, mousemove, mouseover, mouseout, mouseup,
-	pause, play, 
-	preventDefault(), resize, reset, scroll, submit, select,
-	copy, paste, cut, 
-	screenX, screenY, pageX, pageY, offsetX, offsetY, clientX, clientY, movementX, movementY
-
-	document.getElementById(id).onclick = function(){code}	
-
-	.contextmenu ---> for right click
-	var a = event.pageX; ---> cursor position
-
-	
+* .contextmenu ---> for right click
 
 * setTimeout(function(){ alert("Hello"); }, 3000);	
 
@@ -208,32 +191,19 @@
 
 * 6  data types  in primitives - number, string, boolean, null, undefined, object
 
-* data store in variable in javascript.
-
 * javascript types dynamics
-
-* declare variable
-	var, let, const
 
 * fill data on alert with the help of prompt. prompt by default give string value.
 
 	prompt("Enter Your Name?");  
 
-*  type of 	--> for checking  type of variables
+*  type of 	--> for checking  type of variables   --> console.log(typeof varName);
 
-	console.log(typeof varName);
+* check length of the var or text  -->  console.log(varName.length);
 
-* check length of the var or text
+* convert string to number with the help of -->  parseInt(); or 1*  -->  var x = parseInt(a);
 
-	console.log(varName.length);
-
-* convert string to number with the help of -->  parseInt(); or 1*
-
-	var x = parseInt(a);
-
-* convert number into  string with -->     toString(); 
-
-	var x = a.toString();
+* convert number into  string with -->     toString();   -->  var x = a.toString();
 
 * NaN means not a number
 
@@ -275,12 +245,6 @@
 
 * console.log(); is same as console.warn(); 
 
-* index.of 	
-	show position of the value if value match than position is 0 
-
-	"abhishek".indexOf("z");	 = -1
-	"abhishek".indexOf("a") 	 = 0
-
 * f8 = go to next debugger if there is no debugger finish the debugging.
 
 * f10 = go to next statement 
@@ -288,8 +252,7 @@
 * f11 = to debug inside
 
 * break keyword 
-	if condition is true break keyword stop the condition, and stop before true condition.
-	important things is break keyword stop before true condition.
+	if condition is true break keyword will stop the condition, and stop before true condition.
 
 	var i = 0;
 	while( i < 10 ) {
@@ -302,7 +265,6 @@
 
 * continue keyword
 	if condition is true, leave the true condition and run as on. jump out the true condition.
-	important things is continue keyword is leave the true condition.
 
 	var i = 0;
 	while( i < 10 ) {
@@ -321,19 +283,15 @@
 
 * i++ means i = i + 1; or i += 1;
 
-* loop condition is true, when loop condition is false loop will stop working.
+* loop work on the only true condition, when loop condition is false loop will stop working.
 
 * for loop 
 
-	*forward count
-	for (var i = 5; i < 10; i++ ) {
-		console.log(i);
-	}
+	-----forward count
+	for (var i = 5; i < 10; i++ ) { console.log(i); }
 
-	*backward count
-	for (var i = 5; i > 0; i-- ) {
-		console.log(i);
-	}
+	-----backward count
+	for (var i = 5; i > 0; i-- ) { console.log(i); }
 
 * while loop
 	var i = 0;
@@ -360,39 +318,22 @@
 
 * in single variable store multiple value is called array. array is collection of data.
 	array can hold function. array is numeric index number. in javascript array start with 0 (zero) index number.
-	adding items to the array using push() and unshift(). push() method add the array at the end, unshift method add 
-	the array at the starting of the array.
-
 
 	var cars = [ "mahindra bolero", "tata indica", "tata safari", "fortuner" ];
 
-	cars.indexOf(fortuner);  // find value position and if value match than 1, if not match -1
+	cars.indexOf(fortuner);  // find value position and if value match than give position of the value, if not match -1
 	cars.indexOf(fortuner, 0);  // array.indexOf(item, start)
-
-	cars.unshift('swift'); 	// adds new items to the beginning of an array
-
-	cars.push('jeep');	// adds new items to the end of an array
-
-	cars.shift();	// removes the first element of an array
-
-	cars.pop(); 	// removes the last element of an array
-
-	cars[cars.length] = "honda";          		 // add new items to the end of an array
-
-	cars[cars.length];          		 // length of the array
-
+	cars.unshift('swift'); 	// beginning add
+	cars.push('jeep');	// end add
+	cars.shift();	// first remove
+	cars.pop(); 	// last remove
+	cars[cars.length] = "honda";	// add to the end
+	cars[cars.length];	// length of the array
 	cars[cars.length - 3 ] = "Maruti Suziki"    // changing array  
-
 	cars[cars.length - 1];         // check last array 
-	
-	Array.isArray(cars) // checking cars is array or not
-
+	Array.isArray(cars) // checking is array or not
 	cars.slice(1,3); // slice between 1 to 3;
-
-	cars.toString();  // converting in to string
-
-	cars.valueOf()
-	
+	cars.toString();  // converting array to string
 	cars.reverse(); // reverse array
 
 * string to array
@@ -403,51 +344,47 @@
 	var a = ["a", "b", "c", "d"];
 	var b = a.join("");
 
-
-* string last value
+* subtract string value
 	var a = 'hello!';
 	var b = a.substr(-2);
 
 * indexOf  in array 
-	checking element in array with indexOf method, if not found or not match indexOf gives -1 and if match give 0 to n-1.
+	var JSArr = ["A", "B", "C", "D"];
+	console.log(JSArr.indexOf("A")) // 0  found at postion 0 
+	console.log(JSArr.indexOf("B")) // 1  found at postion 1 
+	console.log(JSArr.indexOf("F")) // -1  not found
 
-		var cars = ["mahindra","tata"];
-		var res = cars.indexOf("tata");
-		console.log(res);
+* includes in array
+	var list = ["A", "B", "C", "D", "E"];
+	console.log(list.includes("A")); // true
+	console.log(list.includes("A",1)); //returns false, as "A" is not present at index 1. 
+	console.log(list.includes("B",1)); //returns True , as "B" is present at index 1. 
+	console.log(list.indexOf("A") !== -1 ); // true
 
 * concat array
-  concat array use for merging two or more array
-
-	var cars = ["mahindra","tata"];
-	var fruits = ["apple","mango"];
-	var res = cars.concat(fruits);
-
-* array within array called two dimensional array.
-	var cars = [["running"],["mahindra bolero","tata indica"],["potato"],["football","cricket"]];
+	var one = ["A", "B",];
+	var two = ["C", "D", "E"];
+	var res = one.concat(two);
 
 * join Array
-
  	var cars = [["mahindra bolero","tata indica"],["potato"],["football","cricket"]];
 	var bike = cars.join(" ");			//	join array  with empty space
 	var bike = cars.join("*");			//	join array  with * symbol
 	var bike = cars.join("+");			//	join array 	with + symbol
 
-
 * sort
-the sort method converts the elements into strings then compares their sequences of UTF-16 code units values.
+	the sort method converts the elements into strings then compares their sequences of UTF-16 code units values.
 
-const num = [80,1,30,10,50,70,20,40,100,5,60,90];
-console.log(num.sort(function(value1, value2){
-  return value1 - value2})
-           );
+	const num = [80,1,30,10,50,70,20,40,100,5,60,90];
+	console.log(num.sort(function(value1, value2){   return value1 - value2})   );
 
-const fruits = ["Apple", "Mango", "Kiwi", "Orange", "Strawberry"];
-console.log(fruits.sort());
+	const fruits = ["Apple", "Mango", "Kiwi", "Orange", "Strawberry"];
+	console.log(fruits.sort());
 
 
-* filter method
-	comparing the array. greater-than, smaller-than with filter method.
-
+* filter method (<, >)
+	for comparing, greater-than, smaller-than 
+	
 	var numberList = [["2"],["10","12","6"],"5",["15","7","20"]];	
 	var res = numberList.filter(function(element, index, array){
 		return element < 2;                        // compar with greater-than		
@@ -685,7 +622,6 @@ console.log(chris.firstName);
         
         });
 
-* json 
 JSON is a syntax for storing and exchanging data.
 JSON stands for JavaScript Object Notation
 JSON is a lightweight data-interchange format
@@ -701,9 +637,10 @@ When sending data to a web server, the data has to be a string.
 Convert a JavaScript object into a string with JSON.stringify().
 
 
-	myJSON = JSON.stringify(myObj);  //{name: "John", age: 31, city: "New York"};
-	myJSON = JSON.parse(myObj);    // '{"name":"John", "age":31, "city":"New York"}';
+	myJSON = JSON.stringify(myObj);  // '{"name":"John", "age":31, "city":"New York"}';
+	myJSON = JSON.parse(myObj);    	//{name: "John", age: 31, city: "New York"};
 
-
+JSON in table format in console
+	console.table(data);	
 
 

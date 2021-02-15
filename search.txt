@@ -8,6 +8,8 @@ Wireframe.cc and In Vision
 Integration with third party API’s such as FB, Twitter, Sound cloud
 
 
+google map key for map
+
 -----------------------css  😈
 
 * :focus-within
@@ -90,8 +92,8 @@ MySQL, PostgreSQL, MongoDB, Redis, PHPMyAdmin, Mongoose, GraphQL, XML, JSON, Gra
 
 \#10 Money Heist (2017) 
 \#9 The Boys (2019)
-\#7 Fargo (2014)
-\#8 Kingdom (2019)
+\#8 Fargo (2014)
+\#7 Kingdom (2019)
 \#6 Prison Break (2005)
 \#5 Cobra Kai (2018)
 \#4 Black Mirror (2011)

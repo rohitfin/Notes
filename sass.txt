@@ -1,4 +1,4 @@
-********  SASS (syntactically awesome style sheet)     **********
+********  SASS (syntactically awesome style sheet)     *********
 Varialble, Nesting, Partials & Imports, Mixins, Extends, Operators, Functions, Conditional Directives, Loops
 
 1.) Mixins

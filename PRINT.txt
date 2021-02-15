@@ -5,7 +5,6 @@
   size: 5.5in 8.5in;
 }
 
-
 -paper size keywords
 
 @page {
@@ -13,7 +12,7 @@
 }
 
 
--keyword to specify the page’s orientation — “portrait” or “landscape.”
+-keyword to specify the pageï¿½s orientation ï¿½ ï¿½portraitï¿½ or ï¿½landscape.ï¿½
 
 @page {
   size: A4 landscape;
@@ -38,7 +37,7 @@
 }
 
 
--The :blank pseudo-class selector targets any page that is “intentionally left blank.”
+-The :blank pseudo-class selector targets any page that is ï¿½intentionally left blank.ï¿½
  To add this text, we can use generated content that targets the top-center margin box.
 
 @page :blank {
@@ -92,7 +91,7 @@ table, figure {
 }
 
 
--created a counter named pages==“Page 3 of 120,”
+-created a counter named pages==ï¿½Page 3 of 120,ï¿½
 
 @page:left{
   @bottom-left {
@@ -116,7 +115,7 @@ h1.chapter:before {
 
 
 
--A common way to number figures is to use chapternum.figurenum.===“Figure 3-2”
+-A common way to number figures is to use chapternum.figurenum.===ï¿½Figure 3-2ï¿½
 
 body {
   counter-reset: chapternum figurenum;

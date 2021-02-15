@@ -142,7 +142,7 @@ if we want to that value
  1. assign that value to global variable ex.var b
  2. create one function and pass the value
 
---------------------------------------------------------------
+-------------------------------------------------------------
 
 console.log(11,val);
 

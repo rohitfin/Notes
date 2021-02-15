@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <!-- or  <meta http-equiv="content-type" content="text/html; charset=UTF-8"> -->
+        <!-- Page Information -->
+        <meta name="application-name" content="OpenStreetMap">
+        <meta name="author" content="Your Name">
+        <!-- Google usually uses only the first 20-25 words of your description -->
+        <meta name="description" content="Page Description">
+        <meta name="keywords" content="Keyword1, Keyword2">
+
+        <!-- Facebook / Open Graph -->
+        <meta property="fb:app_id" content="123456789">
+        <meta property="og:url" content="https://example.com/page.html">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Content Title">
+        <meta property="og:image" content="https://example.com/image.jpg">
+        <meta property="og:description" content="Description Here">
+        <meta property="og:site_name" content="Site Name">
+        <meta property="og:locale" content="en_US">
+        <meta property="article:author" content="">
+
+        <!-- Facebook / Instant Articles -->
+        <meta property="op:markup_version" content="v1.0">
+        <!-- The URL of the web version of your article -->
+        <link rel="canonical" href="http://example.com/article.html">
+        <!-- The style to be used for this article -->
+        <meta property="fb:article_style" content="myarticlestyle">
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@site_account">
+        <meta name="twitter:creator" content="@individual_account">
+        <meta name="twitter:url" content="https://example.com/page.html">
+        <meta name="twitter:title" content="Content Title">
+        <meta name="twitter:description" content="Content description less than 200 characters">
+        <meta name="twitter:image" content="https://example.com/image.jpg">
+
+        <!-- Google+ / Schema.org -->
+        <link href="https://plus.google.com/+YourPage" rel="publisher">
+        <meta itemprop="name" content="Content Title">
+        <meta itemprop="description" content="Content description less than 200 characters">
+        <meta itemprop="image" content="https://example.com/image.jpg">
+
+
+        <!-- Automatic Refresh -->
+        <meta http-equiv="refresh" content="5">
+
+        <!-- Phone Number Recognition -->
+        <meta name="format-detection" content="telephone=no">
+
+        <!-- Automatic redirect -->
+        <meta http-equiv="refresh" content="5;url=https://www.example.com/" />
+
+        <!-- Web App -->
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="theme-color" content="black">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+
+
+    </head>
+    <body>
+
+        <!-- Mail -->
+        <a href="mailto:example@example.com">Send email</a>
+        <!-- Cc and Bcc -->
+        <a href="mailto:example@example.com?cc=john@example.com&bcc=jane@example.com">Send email</a>
+        <!-- Subject and body text -->
+        <a href="mailto:example@example.com?subject=Example+subject&body=Message+text">Send email</a>
+
+        <!-- list -->
+        <dl>
+            <dt>name 1</dt>
+            <dd>value for 1 and 2</dd>
+        </dl>
+           
+        <!-- table -->
+        <td colspan="3"></td>
+        <td rowspan="3"></td>
+
+        <!-- colgroup  rowgroup col row -->
+        <table>
+            <colgroup>
+              <col span="2" style="background-color:red">
+              <col style="background-color:yellow">
+            </colgroup>
+            <tr>
+              <th>ISBN</th>
+              <th>Title</th>
+              <th>Price</th>
+            </tr>
+            <tr>
+              <td>3476896</td>
+              <td>My first HTML</td>
+              <td>$53</td>
+            </tr>
+        </table>
+
+
+
+        <!-- Responsive image using the srcset attribute -->
+        <img sizes="(min-width: 1200px) 580px,
+            (min-width: 640px) 48vw,
+            98vw"
+            srcset="img/hello-300.jpg 300w,
+            img/hello-600.jpg 600w,
+            img/hello-900.jpg 900w,
+            img/hello-1200.jpg 1200w"
+            src="img/hello-900.jpg" alt="hello">
+
+            <!-- Using srcset without sizes -->
+            <img src="img/hello-300.jpg" alt="hello"
+            srcset="img/hello-300.jpg 1x,
+            img/hello-600.jpg 2x,
+            img/hello-1200.jpg 3x">
+
+            <!-- Responsive image using picture element -->
+        <picture>
+        <source media="(min-width: 600px)" srcset="large_image.jpg">
+        <source media="(min-width: 450px)" srcset="small_image.jpg">
+        <img src="default_image.jpg" style="width:auto;">
+        </picture>
+            
+        <!-- for big image  -->
+        <link rel="preload" href="image.png">
+        
+        <!-- form -->
+        <form action="" method="post" enctype="multipart/form-data"> </form>
+        <input type="file" accept="image/x-png,image/gif,image/jpeg" />
+
+        <form action="/login" method="POST">
+
+            <label for="Username">Username:</label>
+            <input id="Username" type="text" name="username" />
+            <label for="Pass">Password:</label>
+            <input id="Pass" type="password" name="pass" />
+            <input type="submit" name="submit" />
+        </form>
+
+
+        <!-- video -->
+        <video width="480" controls poster="https://archive.org/download/WebmVp8Vorbis/webmvp8.gif" >
+            <source src="video-file.webm" type="video/webm">
+            <source src="video-file.mp4" type="video/mp4">
+            <source src="video-file.ogv" type="video/ogg">
+        </video>
+           
+        <embed type="video/mp4" src="video.mp4" width="640" height="480">
+
+
+        <!-- audio -->
+        <audio controls autoplay muted>
+            <source src="horse.ogg" type="audio/ogg">
+            <source src="horse.mp3" type="audio/mpeg">
+        </audio>
+
+        <!-- iframe -->
+        <iframe  src="base.html" width="800" height="600"></iframe>
+
+        <!-- Using Anchors with IFrames -->
+        <iframe src="webpage.html" name="myIframe"></iframe>
+        <a href="different_webpage.html" target="myIframe">Change the Iframe content to
+        different_webpage.html</a>
+
+        <!-- Tabindex -->
+        <div tabindex="0">Some button</div>
+        <div tabindex="2">Second</div>
+        <div tabindex="1">First</div>
+
+        <!-- Character Entities -->
+        <input type="text" placeholder=" &#128269; Search"/>
+
+        <!-- ARIA  role-->
+        <div role="main" role="form" role="link" role="grid" role="gridcell" role="group"     role="document" role="alert"  role="banner"  role="button" role="heading"> </div>
+        <input type="checkbox" role="checkbox" aria-checked="false">
+        <th role="columnheader">Day 1</th>
+        <h1>Introduction</h1>
+        <figure role="img">
+            <img alt="A cute cat." src="albert.jpg">
+            <figcaption>This is my cat, Albert.</figcaption>
+        <figure>
+
+
+
+
+
+    </body>
+</html>

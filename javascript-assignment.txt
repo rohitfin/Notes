@@ -1,5 +1,5 @@
 Javascript Exercise:
--------------------------------------------------------------
+----------------------------------------------------------
 
 1) create a text box , get value from the same. do the validation for mobile number & show result in paragraph ( below textbox)
 

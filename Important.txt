@@ -7,6 +7,11 @@ vs code short cut
     
 <link rel='stylesheet' id='form_styles-css'  href='forms/assets/css/style.css' type='text/css' media='all' />
 
+   <!-- <img width="1099" height="965" src="images/" class="attachment-full size-full" alt="image" 
+    srcset="images/ab1.jpg 1099w, images/ab1-300x263.jpg 300w, images/ab1-1024x899.jpg 1024w, images/ab1-768x674.jpg 768w" 
+    sizes="(max-width: 1099px) 100vw, 1099px"> -->
+	
+  
 <img width="1920" height="607" src="image.png" class="attachment-full size-full" alt="" loading="lazy" 
 srcset="image.png 1920w, 
 image-300x95.png 300w, 
@@ -24,15 +29,48 @@ image-1536x486.png 1536w" sizes="(max-width: 1920px) 100vw, 1920px">
     --syntax-error-color: #f9690e;
     --syntax-name-color: #7ed07e;
     --syntax-string-color: #f2ca27;
+        --primary-color: hsla(211,28%,24%,1);
+    --primary-hover-color: hsla(211,39%,19%);
+        --color-tertiary: #1cc4ca;
+    --color-tertiary-hover-color: #24d0d6;
+    --color-quaternary: #1ab7bc;
+    --color-quaternary-hover-color: #1ab7bc;
+        --deep-blue: hsla(205,42%,17%,1);
 }
+html {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+body {
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;  // for mac
 
-* body {
   min-height: 100vh;
   /* mobile viewport bug fix */
   min-height: -webkit-fill-available;
+
   scroll-behavior: smooth
+  text-rendering: optimizeLegibility;
+
+  hyphens: manual;
+
 }
 
+------------------------------
+.post h1,
+.post h2,
+.post h3 {
+    line-height: 1.2;
+}
+
+.post :is(h1, h2, h3) {
+    line-height: 1.2;
+}
+----------------------------
 
 background-clr: 
 background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
@@ -53,3 +91,16 @@ box-shadow: 0px 15px 35px -5px rgba(50, 88, 130, 0.32);
   <p>January 27th, 2020</p>
 </details>
 ---------
+
+<div class="phone"></div>
+.phone {
+    border: 40px solid #ffffff;
+    border-width: 55px 7px;
+    border-radius: 40px;
+    margin: 50px auto;
+    overflow: hidden;
+    width: 380px;
+    height: 650px;
+    transition: all 0.5s ease;
+    box-shadow: 0px 3px 0 #bbb, 0px 4px 0 #bbb, 0px 5px 0 #bbb, 0px 7px 0 #bbb, 0px 10px 20px #666;
+}
