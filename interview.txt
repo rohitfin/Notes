@@ -90,7 +90,8 @@ h2:after {content: ' \0021';} ..[print ! (exclamation mark)](symbol code exclama
 ::after / ::before, - ::first-letter, - ::first-line, - ::selection,- :placeholder
 
 * ----------- Pseudo-classes
- placeholder-shown, :active, :checked, :disabled, :last-child, :nth-child(n), :not(selector), :valid, :target, :required, :read-only, :only-of-type, :nth-of-type(n), :nth-last-of-type(n), :nth-last-child(n), :link
+ placeholder-shown, :active, :checked, :disabled, :last-child, :nth-child(n), :not(selector), :valid, :target, :required, :read-only, 
+ :only-of-type, :nth-of-type(n), :nth-last-of-type(n), :nth-last-child(n), :link
 
 
 1.copyright symbol -- &copy; or &#169;
@@ -451,15 +452,22 @@ Gravatar is a web-based service which allows its users to use the Avatar image.
     WordPress contents are stored in MySQL database on Server.
 
 91.  Define CSS image sprites.
-Answer: CSS image sprites are a group of images that are placed into one image. It reduces the load time and request number to the server while projecting multiple images into a single web page. Each image would have a corresponding CSS class with background-image, background-position and background-size properties defined.
+Answer: CSS image sprites are a group of images that are placed into one image. It reduces the load time and request number to the server 
+while projecting multiple images into a single web page. Each image would have a corresponding CSS class with background-image, 
+background-position and background-size properties defined.
 
     --Advantages:
-    Reduce the number of HTTP requests for multiple images (only one single request is required per spritesheet). But with HTTP2, loading multiple images is no longer much of an issue.
-    Advance downloading of assets that won't be downloaded until needed, such as images that only appear upon :hover pseudo-states. Blinking wouldn't be seen.
-    When you have multiple images/ icons, browser makes separate call to the server for each one of them. sprite is a technique to combine all/ some of them (usually similar one in terms of type of image. For example, you will put jpg in one sprite) in one image. To display the icon you set height, width and background position.
+    Reduce the number of HTTP requests for multiple images (only one single request is required per spritesheet). But with HTTP2, 
+    loading multiple images is no longer much of an issue.
+    Advance downloading of assets that won't be downloaded until needed, such as images that only appear upon :hover pseudo-states.
+    Blinking wouldn't be seen.
+    When you have multiple images/ icons, browser makes separate call to the server for each one of them. sprite is a technique to 
+    combine all/ some of them (usually similar one in terms of type of image. For example, you will put jpg in one sprite) in one image. 
+    To display the icon you set height, width and background position.
 
     --Alternatives:
-        Data URIs - allow you to embed the image data directly into a stylesheet. This avoids additional HTTP requests for images, making it essentially the same thing as a sprite, without the fancy positioning.
+        Data URIs - allow you to embed the image data directly into a stylesheet. This avoids additional HTTP requests for images, 
+        making it essentially the same thing as a sprite, without the fancy positioning.
         Icon Fonts
         SVGs
 
@@ -513,7 +521,9 @@ Answer: CSS image sprites are a group of images that are placed into one image. 
         Multiple documents cannot be controlled.
 
 100. Does setting margin-top and margin-bottom have an affect on an inline element?
-Top and bottom margins do not affect inline elements because inline elements flow with content on the page.You can set left and right margins/padding on an inline element but not top or bottom because it would disrupt the flow of content.width, height, margin-bottom, margin-top not working in this property.
+Top and bottom margins do not affect inline elements because inline elements flow with content on the page.You can set left and right 
+margins/padding on an inline element but not top or bottom because it would disrupt the flow of content.width, height, margin-bottom, 
+margin-top not working in this property.
     respect left & right margins and padding, but not top & bottom
     cannot have a width and height set
     margin and padding will push other elements horizontally not vertically
@@ -521,7 +531,8 @@ Top and bottom margins do not affect inline elements because inline elements flo
     elements do not break the flow
 
 101.  Does setting padding-top and padding-bottom on an inline element add to its dimensions? 
-When it comes to margins and padding, browsers treat inline elements differently. You can add space to the left and right on an inline element, but you cannot add height to the top or bottom padding or margin of an inline element.
+When it comes to margins and padding, browsers treat inline elements differently. You can add space to the left and right on an inline element,
+ but you cannot add height to the top or bottom padding or margin of an inline element.
 
 102. Is BR a block element?
 <HR /> is a block-level element and <BR /> is an inline element.
@@ -567,7 +578,8 @@ Alternatively referred to as a fixed space or hard space, NBSP (non-breaking spa
    The z-index property specifies the stack order of an element. An element with greater stack order is always in front of 
    an element with a lower stack order.
 
-   Overlapping may occur while using CSS for positioning HTML elements. Z index helps in specifying the overlapping element. It is a number which can be positive or negative, the default value being zero.
+   Overlapping may occur while using CSS for positioning HTML elements. Z index helps in specifying the overlapping element. 
+   It is a number which can be positive or negative, the default value being zero.
 
 113. What is top in CSS?
 The top property affects the vertical position of a positioned element. This property has no effect on non-positioned elements
@@ -723,7 +735,8 @@ The calc() function in CSS3 is used for simple calculations to determine CSS pro
 It allows mathematical expressions with addition, subtraction, multiplication, and division to be used as component values.
    
 141. What is the Geolocation API in HTML5? Explain
-The Geolocation API in HTML5 allows the users to share their physical location with selected websites. Since this can compromise privacy, the position is not available unless the user approves it.
+The Geolocation API in HTML5 allows the users to share their physical location with selected websites. Since this can compromise privacy,
+the position is not available unless the user approves it.
    
 142. How many tags were removed in HTML5?
     <frame>, <basefront>, <applet>, <frameset>, <big>, <center>, <bigcenter>, <noframes>, <dir>, <tt>, <acronym>, <basefont>
@@ -757,7 +770,8 @@ You can create a partial file that only contains relevant code per section. This
 
     @supports — A conditional group rule that will apply its content if the browser meets the criteria of the given condition.
 
-    @document  — A conditional group rule that will apply its content if the document in which the style sheet is applied meets the criteria of the given condition. (deferred to Level 4 of CSS Spec)
+    @document  — A conditional group rule that will apply its content if the document in which the style sheet is applied meets 
+    the criteria of the given condition. (deferred to Level 4 of CSS Spec)
 
     @page — Describes the aspect of layout changes that will be applied when printing the document.
 
@@ -771,7 +785,8 @@ You can create a partial file that only contains relevant code per section. This
 display property, The display property is the most important CSS property for controlling layout.
 
 152.  Explicit and Implicit Grid
-When we use grid-template-columns and grid-template-rows we create an Explicit Grid. However if we try and place an item outside of that grid the browser will create an Implicit Grid line or lines in order to hold that item.
+When we use grid-template-columns and grid-template-rows we create an Explicit Grid. However if we try and place an item outside of that 
+grid the browser will create an Implicit Grid line or lines in order to hold that item.
 
 153. Name Some Online Resources You Reference When Having Css Issues.
 Mozilla, Stack Overflow, CSS-Tricks . . .
@@ -786,7 +801,8 @@ HTML 5 comes up with many new features including video/audio elements for media 
 <canvas id="myCanvas" width="200" height="100"></canvas>
    
 157.What Is The Difference Between Html And Html5 ?
-HTML5 is nothing more then upgreaded version of HTML where in HTML5 Lot of new future like Video, Audio/mp3, date select function , placeholder , Canvas, 2D/3D Graphics, Local SQL Database added so that no need to do external plugin like Flash player or other library.
+HTML5 is nothing more then upgreaded version of HTML where in HTML5 Lot of new future like Video, Audio/mp3, date select function , 
+placeholder , Canvas, 2D/3D Graphics, Local SQL Database added so that no need to do external plugin like Flash player or other library.
 
 158.What The Use Of Canvas Element In Html5?
 The canvas element is used to draw graphics images on a web page by using javascript
@@ -798,14 +814,16 @@ a:link { } , a:visited { } , a:hover { } , a:active { }
  when two rules apply that have equal specificity the one that comes last in the CSS is the one that will be used. 
    
 162.How do I override a CSS class to another?
- Add another CSS rule with ! important , and either give the selector a higher specificity (adding a tag, id or class to the selector), or add a CSS rule with the same selector at a later point than the existing one.
+ Add another CSS rule with ! important , and either give the selector a higher specificity (adding a tag, id or class to the selector),
+  or add a CSS rule with the same selector at a later point than the existing one.
    
 163. Which CSS has highest priority?
 Properties of CSS: Inline CSS has the highest priority, then comes Internal/Embedded followed by External CSS which has the least priority.
    
 164.Does order of CSS rules matter?
 CSS Order Matters
-In CSS, the order in which we specify our rules matters. If a rule from the same style sheet, with the same level of specificity exists, the rule that is declared last in the CSS document will be the one that is applied.
+In CSS, the order in which we specify our rules matters. If a rule from the same style sheet, with the same level of specificity exists, 
+the rule that is declared last in the CSS document will be the one that is applied.
    
 165.How do you organize properties in CSS?
     Here are some general suggestions for ways to keep your stylesheets organised and tidy.
@@ -818,7 +836,8 @@ In CSS, the order in which we specify our rules matters. If a rule from the same
         - Break large stylesheets into multiple smaller ones.
    
 166. How do I ignore a class in CSS?
-How to exclude particular class name from CSS selector ? In CSS, to exclude a particular class, we can use the pseudo-class :not selector also known as negation pseudo-class or not selector. This selector is used to set the style to every element that is not the specified by given selector.
+How to exclude particular class name from CSS selector ? In CSS, to exclude a particular class, we can use the pseudo-class :not selector 
+also known as negation pseudo-class or not selector. This selector is used to set the style to every element that is not the specified by given selector.
    
 167. How do I force CSS override?
 Overriding the ! important modifier
@@ -832,7 +851,8 @@ In CSS, inheritance controls what happens when no value is specified for a prope
 all you need to do is increase specificity. In your case, both of your selectors have identical specificity. 
    
 170. What does important do in CSS?
-The ! important property in CSS means that all subsequent rules on an element are to be ignored, and the rule denoted by ! important is to be applied. This rule overrides all previous styling rules ​-- the !
+The ! important property in CSS means that all subsequent rules on an element are to be ignored, and the rule denoted by ! important is to be applied. 
+This rule overrides all previous styling rules ​-- the !
 It overrides the cascade and gives the style rule the highest precedence
 
 171. the following function flips an element’s colors, for use by the filter property?
@@ -844,7 +864,8 @@ invert()
 173. the following Color Format is a CSS3 HSL value with a fourth value to set the alpha channel value for the color to define the opacity of the element?
    HSLa Color
 
-174. the following property adjusts the font-size of the fallback fonts defined with font-family, so that the x-height is the same no matter what font is used?
+174. the following property adjusts the font-size of the fallback fonts defined with font-family, so that the x-height is the same no matter 
+what font is used?
 font-size-adjust
    
 175. A ___________ is used to define a special state of an element.
@@ -865,7 +886,8 @@ web page will have a blue background if the orientation is in landscape mode
 180. used to set the image as border instead of the border style?
 . border-image-source
    
-191. The outline-style CSS property is used to set the style of the outline of an element. An outline is a line that is drawn around elements, outside the border edge, to make the element stand out.
+191. The outline-style CSS property is used to set the style of the outline of an element. An outline is a line that is drawn around elements,
+ outside the border edge, to make the element stand out.
    
 192. the following property specifies the size of the mask?
 box-reflect
@@ -874,18 +896,22 @@ box-reflect
    
 194. The ___________ of an item is the value of its element’s itemid attribute.
 global identifier
-The global identifier of an item is the value of its element’s itemid attribute, if it has one, resolved relative to the element on which the attribute is specified. If the itemid attribute is missing or if resolving it fails, it is said to have no global identifier.
+The global identifier of an item is the value of its element’s itemid attribute, if it has one, resolved relative to the element on which 
+the attribute is specified. If the itemid attribute is missing or if resolving it fails, it is said to have no global identifier.
    
 194. Which of the following is the first web browser?
 Nexus
 The first web browser was invented in 1990 called World Wide Web which was later renamed to Nexus.
    
-195. ______________ should include data of two types; the first should be the URL using the type text/uri-list, and the second is the URL using the text/plain type.
+195. ______________ should include data of two types; the first should be the URL using the type text/uri-list, and the second is the URL using 
+the text/plain type.
 Dragging Links
    
 196. The __________ begins with a series of parameter entity definitions.
 DTD
-The HTML DTD begins with a series of parameter entity definitions. A parameter entity definition defines a kind of macro that may be referenced and expanded elsewhere in the DTD. These macros may not appear in HTML documents, only in the DTD. Other types of macros, called character references, may be used in the text of an HTML document or within attribute values.
+The HTML DTD begins with a series of parameter entity definitions. A parameter entity definition defines a kind of macro that may be referenced 
+and expanded elsewhere in the DTD. These macros may not appear in HTML documents, only in the DTD. Other types of macros, called character references, 
+may be used in the text of an HTML document or within attribute values.
    
 197.  The ______________ parameter identifies a character encoding, which is a method of converting a sequence of bytes into a sequence of characters.
 charset
@@ -902,10 +928,12 @@ When mouse is moved over a new element
 When the user moves the mouse so that it goes over a new element, the browser fires a mouseover event on that element.
    
 201. Why is bootstrap popular?
-Bootstrap was launched as a mobile-first framework for web development. ... The main reason Bootstrap is so popular in the web design industry is its unique and compelling features that empower developers to build well-functioning, fully responsive websites without any hassle.
+Bootstrap was launched as a mobile-first framework for web development. ... The main reason Bootstrap is so popular in the web design industry is 
+its unique and compelling features that empower developers to build well-functioning, fully responsive websites without any hassle.
 
 202.Who made bootstrap?
-Bootstrap was created at Twitter in mid-2010 by Mark Otto and Jacob Thornton. Prior to being an open-sourced framework, Bootstrap was known as Twitter Blueprint.
+Bootstrap was created at Twitter in mid-2010 by Mark Otto and Jacob Thornton. Prior to being an open-sourced framework, Bootstrap was known as
+ Twitter Blueprint.
 
 203. Bootstrap’s global default line-height
  1.428
@@ -937,8 +965,10 @@ Customize: Can customize frameworks.
 CSS: Contains CSS files.
 
 209. How many types of layouts are there in Bootstrap?
-Fluid Layout : Fluid Layout is useful when you need to make an app that involves the full width of the screen i.e. Fluid Layout adjusts itself according to the browser size.
-Fixed Layout :  A fixed layout is responsive and easy to use but just like the fluid layout, it cannot adjust itself according to the browser size. The fixed layout should be 940 px in most cases.
+Fluid Layout : Fluid Layout is useful when you need to make an app that involves the full width of the screen i.e. Fluid Layout adjusts itself 
+according to the browser size.
+Fixed Layout :  A fixed layout is responsive and easy to use but just like the fluid layout, it cannot adjust itself according to the browser size.
+ The fixed layout should be 940 px in most cases.
 
 210.What are Grid classes in the Bootstrap?
 Answer: There are four grid classes in Bootstrap.
@@ -1017,8 +1047,10 @@ pseudo elements helps you to add cosmetics contents. pseudo elements generates c
 It is defined by a set of elements, value and its parts.
 
 224. Why you would like to use semantic tag. Why Semantic HTML is Important?
-Search Engine Optimization, accessibility, repurposing, light code. Many visually impaired person rely on browser speech and semantic tag helps to interpret page content clearly. Search engine needs to understand page content to rank and semantic tag helps.
-Semantic HTML is the practice of using more descriptive and meaningful tags when coding in HTML. A tag is simply anything you use to wrap content in. Some of the most common are <h1>, <header>, <footer>, <p>, <section>, <nav>, and <div>.
+Search Engine Optimization, accessibility, repurposing, light code. Many visually impaired person rely on browser speech and semantic tag helps to 
+interpret page content clearly. Search engine needs to understand page content to rank and semantic tag helps.
+Semantic HTML is the practice of using more descriptive and meaningful tags when coding in HTML. A tag is simply anything you use to wrap content in.
+ Some of the most common are <h1>, <header>, <footer>, <p>, <section>, <nav>, and <div>.
  
 224. Which of listed CSS properties are inherited?
 position
@@ -1033,25 +1065,33 @@ In most browsers, the font-size of the root element is set to 16px by default.
 
 226. What is the difference between span and div?
 div is a block element and span is inline element.
-It is illegal to put block element inside inline element. div can have a p tag and a p tag can have a span. However, span can't have a div or p tag inside
+It is illegal to put block element inside inline element. div can have a p tag and a p tag can have a span. However, span can't 
+have a div or p tag inside
 
 227. Are all websites www?
-All websites have http:// or https:// but browsers sometimes doesn't show them. All main websites have www but it can omitted as by default if nothing is specified then server takes it as www.
+All websites have http:// or https:// but browsers sometimes doesn't show them. All main websites have www but it can omitted as by default 
+if nothing is specified then server takes it as www.
 
 228. What's the difference between WWW and HTTP?
-Simply put, HTTP is the protocol that enables communication online, transferring data from one machine to another. WWW is the set of linked hypertext documents that can be viewed on web browsers (such as Firefox, Google Chrome, and more). A major similarity, though, is that both HTTP and WWW are used in website URLs.
+Simply put, HTTP is the protocol that enables communication online, transferring data from one machine to another. WWW is the set of linked 
+hypertext documents that can be viewed on web browsers (such as Firefox, Google Chrome, and more). A major similarity, though, is that 
+both HTTP and WWW are used in website URLs.
 
 229.Why do we use .com?
-com in .com stands for commercial and the domains ending with .com represents a site which is related to something commercial but this is not true for all the websites nowadays. The .com at the end of many web addresses is called a top-level domain (TLD). 
+com in .com stands for commercial and the domains ending with .com represents a site which is related to something commercial but this is 
+not true for all the websites nowadays. The .com at the end of many web addresses is called a top-level domain (TLD). 
 
 220.What is a URL made up of?
-A URL (Uniform Resource Locator) is a unique identifier used to locate a resource on the internet. It is also referred to as a web address. URLs consist of multiple parts -- including a protocol and domain name -- that tell a web browser how and where to retrieve a resource.
+A URL (Uniform Resource Locator) is a unique identifier used to locate a resource on the internet. It is also referred to as a web address.
+ URLs consist of multiple parts -- including a protocol and domain name -- that tell a web browser how and where to retrieve a resource.
  
 231.What does .com .org .gov mean?
-Com, . Org. ... org and . net, are abbreviations for "commercial," "organization" and "network" respectively, but common use has moved away from these definitions, with .com becoming the most popular TLD even for sites with no commercial activity.
+Com, . Org. ... org and . net, are abbreviations for "commercial," "organization" and "network" respectively, but common use has moved away 
+from these definitions, with .com becoming the most popular TLD even for sites with no commercial activity.
 
 232.Can .org be trusted?
-Be careful with the domain . org, because . org is usually used by non-profit organizations which may have an agenda of persuasion rather than education
+Be careful with the domain . org, because . org is usually used by non-profit organizations which may have an agenda of persuasion rather 
+than education
  in general org is better for organisations helping the "public" 
 
 233..net ?

@@ -1,6 +1,7 @@
 ---- 19 12 18
 --------  Selectors 
-     $("*"), $(this), $("p:first"), $("ul li:first-child"),$("[href]"),$("a[target='_blank']"), $(":button"), $("tr:even"), $("tr:odd"), $("ul li:eq(3)"), $("input:not(:empty)"),$(":contains('Hello')"), $("div:has(p)"),$("ul li:gt(3)") [ greater than 3], $("ul li:lt(3)") [ less than 3],	
+     $("*"), $(this), $("p:first"), $("ul li:first-child"),$("[href]"),$("a[target='_blank']"), $(":button"), $("tr:even"), $("tr:odd"), $("ul li:eq(3)"), 
+	 $("input:not(:empty)"),$(":contains('Hello')"), $("div:has(p)"),$("ul li:gt(3)") [ greater than 3], $("ul li:lt(3)") [ less than 3],	
 
 --------  Events	 
 	Mouse Events -  click, dblclick, mouseenter, mouseleave	
@@ -32,7 +33,8 @@
 	$(selector).attr({"attribute":"value", "attribute":"value",...});
 
 * Methods 
-   addClass(), removeClass(), toggleClass(), on, append(), prepend(), after(), before(),remove(), empty(), clone(), replaceWith(), replaceAll(), wrap(), Unwrap(), wrapAll(), wrapInner(),width(), innerWidth(), outerWidth(),  position(), offset(), scrollTop(), scrollLeft(), has(), each(), hasClass(), 	
+   addClass(), removeClass(), toggleClass(), on, append(), prepend(), after(), before(),remove(), empty(), clone(), replaceWith(), replaceAll(), wrap(), 
+   Unwrap(), wrapAll(), wrapInner(),width(), innerWidth(), outerWidth(),  position(), offset(), scrollTop(), scrollLeft(), has(), each(), hasClass(), 	
 
 	remove() - Removes the selected element (and its child elements)
 	empty() - Removes the child elements from the selected element
@@ -150,13 +152,14 @@
 		console.log(res);
 
 	** toggle, add and remove class
-		.classList.add('NEW__CLASS') ---> ADDING NEW CLASS
-		.className = 'NEW__CLASS' ---> ADDING NEW CLASS
-		.classList.toggle('NEW__CLASS') ---> toggle  CLASS
-		.classList.remove('NEW__CLASS') ---> remove  CLASS
+		[
+			.classList.add('NEW__CLASS') ---> ADDING NEW CLASS
+			.className = 'NEW__CLASS' ---> ADDING NEW CLASS
+			.classList.toggle('NEW__CLASS') ---> toggle  CLASS
+			.classList.remove('NEW__CLASS') ---> remove  CLASS
+		]
 
-	.value, .innerHTML, #SELECT__OPTION.options[#SELECT__OPTION.selectedIndex].text, offsetWidth, .offsetHeight, screen.width, screen.height, screen.availWidth, screen.availHeight, innerWidth, innerHeight, window.open, window.close
-
+	
 *  EventListener, removeEventListener() ---> attachEvent(), detachEvent()
 	element.addEventListener("click", FUNCTION__NAME);
 	element.addEventListener("click", function() {	alert("Hello World!");  });
@@ -171,8 +174,12 @@
 	document.doctype.name 
 	document.documentMode;
 
+	.value, .innerHTML, #SELECT__OPTION.options[#SELECT__OPTION.selectedIndex].text, offsetWidth, .offsetHeight, screen.width, screen.height, 
+	screen.availWidth, screen.availHeight, innerWidth, innerHeight, window.open, window.close
+
 	.addEventListener, .getAttribute(), innerHTML, innerText, querySelector, querySelectorAll, append,
-	.appendChild, childElementCount, classList.add(), classList.remove(), .className, .firstChild, .lastChild, firstElementChild, lastElementChild, insertBefore, outerHTML, remove, removeAttribute, removeChild, removeEventListener, replaceChild, textContent, tagName, title, dataset
+	.appendChild, childElementCount, classList.add(), classList.remove(), .className, .firstChild, .lastChild, firstElementChild, lastElementChild, 
+	insertBefore, outerHTML, remove, removeAttribute, removeChild, removeEventListener, replaceChild, textContent, tagName, title, dataset
 
 * DOM Event 
 	mousemove, mouseout, mouseleave, mouseenter, mousedown, mouseup
@@ -308,7 +315,8 @@
 	}while( i <= 10 );
 
  * nesting loop
-	loop inside loop called nesting loop.OR loop within a loop. nesting loop parent loop run one time then child loop run all condition, then parent loop run second time then child loop run all condition as on.
+	loop inside loop called nesting loop.OR loop within a loop. nesting loop parent loop run one time then child loop run all condition, 
+	then parent loop run second time then child loop run all condition as on.
 
 	for(var i = 0; i < 10; i++) {
 		for(var j = 0; j <= 10, j++){

@@ -1,3 +1,8 @@
+// chrome shortcut
+1. ctr + shift + c (Toggle Inspect Element Mode)
+2. ctr + shift + m (Toggle Device user)
+3. ctr + shift + j (open console)
+
 
 
 

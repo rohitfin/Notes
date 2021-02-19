@@ -50,9 +50,6 @@ google map key for map
 
 
 
-
-
-
 --------------------Front-end
 javaScript, HTML, CSS, Pug, Django, SASS/SCSS, Stylus, LESS, PostCSS, CSSinJS/JSS, Styled Components, Backbone, React, Redux, CoffeeScript, jQuery (Core, UI), Handlebars, Mustache, Bootstrap, Foundation
 
@@ -88,15 +85,3 @@ MySQL, PostgreSQL, MongoDB, Redis, PHPMyAdmin, Mongoose, GraphQL, XML, JSON, Gra
 
 
 
-
-
-\#10 Money Heist (2017) 
-\#9 The Boys (2019)
-\#8 Fargo (2014)
-\#7 Kingdom (2019)
-\#6 Prison Break (2005)
-\#5 Cobra Kai (2018)
-\#4 Black Mirror (2011)
-\#3 Stranger Things (2016)
-\#2 Breaking Bad (2008)
-\#1 Game of Thrones (2011)

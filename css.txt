@@ -143,7 +143,8 @@ inline-size: value; (depending on its writing mode)
 
 
 *--
- :checked, :disabled, :nth-child(-n+2), :not(selector), :valid, :target, :required, :read-only, :only-of-type, :nth-of-type(n), :nth-last-of-type(n), :nth-last-child(n), :link, :selection, :first-letter, :first-line
+ :checked, :disabled, :nth-child(-n+2), :not(selector), :valid, :target, :required, :read-only, :only-of-type, :nth-of-type(n), 
+ :nth-last-of-type(n), :nth-last-child(n), :link, :selection, :first-letter, :first-line
 
 *------ root
 :root {
@@ -172,3 +173,17 @@ li::before {
 * shape-outside: circle(50%);
 * mix-blend-mode
 
+* img[loading=lazy] {
+    outline: 10px solid var(--warning-color) !important;
+}
+script[src] {
+    display: block;
+    border: 10px solid var(--violation-color);;
+}
+script[src]::before {
+        content: attr(src);
+        font-size: 1rem;
+    }
+    script[src][async], script[src][defer], script[src][type=module] {
+        display: none;
+    }
