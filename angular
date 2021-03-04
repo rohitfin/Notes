@@ -3,7 +3,7 @@
 3 ng serve -- start
 4 ng generate component xyz -- generate component
 5 component -- basic block of code which contains view 
-6 routing and navigation -- on changing of URL load the component
+6 routing and navigation -- on changing of URL load the component - <router-outlet></router-outlet>
 7 service -- to access the common method
 8 http -- ajax
 
@@ -12,7 +12,7 @@
 1. npm i jquery or npm install jquery :-
     npm i bootstrap@3
 2. npm i -- package.json dependencies get downloaded in node_modules folder
-3. component -- ng generate component firstComponent || ng g c firstComponent
+3. component -- ng generate component firstComponent || ng g c firstComponent   (ng g c NewCompo --spec=false)
   import { Component } from '@angular/core';
 
 @Component({
@@ -28,7 +28,7 @@ export class AppComponent {
 
 5. routing 
   collection of array with path to view components.Routing basically means navigating between pages.
-  A Router is a process of selecting path along which the data can be transferred from source to the destination
+  A Router is a process of selecting path along which the data can be transferred from source to the destination.
 
 6. data binding 
   {{data}}  --> using interpolation to value binding
@@ -50,9 +50,14 @@ export class AppComponent {
 
 9 service := access from any where.  
 
-10. directive := directives are instructions in the DOM.
+10. 'padding-top': true ? '0' : '30px' // if and else condition 
 
-11. decorators := 4 types of decorators := use to talk between components, same as service.
+
+
+
+* . directive := directives are instructions in the DOM.
+
+* . decorators := 4 types of decorators := use to talk between components, same as service.
   Class decorators, e.g. @Component and @NgModule.
   Property decorators for properties inside classes, e.g. @Input and @Output.
   Method decorators for methods inside classes, e.g. @HostListener.

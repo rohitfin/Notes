@@ -4,6 +4,13 @@
 3. ctr + shift + j (open console)
 
 
+img {
+  /* ...existing styles */
+  max-height: max(10rem, 30vh);
+}
+
+
+
 
 
 vs code short cut 
@@ -52,13 +59,13 @@ body {
   -ms-word-wrap: break-word;
   word-wrap: break-word;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;  // for mac
+  -moz-osx-font-smoothing: grayscale;  /* for mac */ 
 
   min-height: 100vh;
   /* mobile viewport bug fix */
   min-height: -webkit-fill-available;
 
-  scroll-behavior: smooth
+  scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
 
   hyphens: manual;
