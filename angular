@@ -34,7 +34,7 @@ export class AppComponent {
   {{data}}  --> using interpolation to value binding
   [property]="data" --> attribute Binding to DOM  
   (click)="save()" --> Event Binding 
-  [(ngModel)]="data" --> two way data biding [formModule] 
+  [(ngModel)]="data" --> two way data biding [FormsModule] 
   
   <button [disabled]="!isVisible" [style.color]="textColor" [class.active]="isActive" (click)="save()">Save</button>
 
@@ -52,14 +52,4 @@ export class AppComponent {
 
 10. 'padding-top': true ? '0' : '30px' // if and else condition 
 
-
-
-
-* . directive := directives are instructions in the DOM.
-
-* . decorators := 4 types of decorators := use to talk between components, same as service.
-  Class decorators, e.g. @Component and @NgModule.
-  Property decorators for properties inside classes, e.g. @Input and @Output.
-  Method decorators for methods inside classes, e.g. @HostListener.
-  Parameter decorators for parameters inside class constructors, e.g. @Inject. 
-  
+11.  #ngForm --> is variable
