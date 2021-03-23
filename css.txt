@@ -5,7 +5,7 @@ flex-wrap : { wrap, no-wrap, wrap-reverse }
 flex-flow : { row  wrap, column wrap }
 justify-content : { flex-start, flex-end, center, space-around, space-between } [horizontal, X-axis]
 align-content : { flex-start, flex-end, center, space-around, space-between, stretch }[vertical, Y-axis]
-align-items	: { flex-start, flex-end, center, baseline, stretch }
+align-items	: { flex-start, flex-end, center, baseline, stretch } [vertical, Y-axis]
 order : { 1, 2, 3, 4 }
 flex-grow : { 0 [default] 1, 2, 3 } [all the space they use]
 flex-shrink : { 0, 1} [ 1 is default, 0 can not be shrink ]

@@ -10,3 +10,13 @@
 3/ type message 
 4/ click on commit
 5/ click on push
+
+
+
+
+
+
+--------------------------
+
+remove another user  from computer
+    - Credential Manager

@@ -1,4 +1,3 @@
-
 install xampp
 
 create database :- xampp- mySql - admin or localhost/phpmyadmin 
@@ -112,6 +111,7 @@ create database :- xampp- mySql - admin or localhost/phpmyadmin
 .) Join.chat
 .) QSM for Quiz
 .) Wp File Manager
+.) header footer script
 
 .) Meta box
 .) MB Custom Post Type
@@ -131,4 +131,3 @@ create database :- xampp- mySql - admin or localhost/phpmyadmin
 .) Recent Post Slider with Widget
 .) Social Login, Social Sharing by miniOrange
 .) WP Events Manager
-

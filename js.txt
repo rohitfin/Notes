@@ -181,8 +181,9 @@
 	.appendChild, childElementCount, classList.add(), classList.remove(), .className, .firstChild, .lastChild, firstElementChild, lastElementChild, 
 	insertBefore, outerHTML, remove, removeAttribute, removeChild, removeEventListener, replaceChild, textContent, tagName, title, dataset
 
-* DOM Event 
-	mousemove, mouseout, mouseleave, mouseenter, mousedown, mouseup
+* Event 
+	mouseover, mouseout, change, click, dblclick, keydown, load, submit, select,
+	keypress, mousemove, mouseleave, mouseenter, mousedown, mouseup
 
 
 * .contextmenu ---> for right click

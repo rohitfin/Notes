@@ -12,6 +12,8 @@ google map key for map
 
 -----------------------css  😈
 
+*  aspect-ratio: 1/1;  VIDEO (16:9) aspect-ratio: 16 / 9
+scroll-margin-top: 2ex;
 * :focus-within
 * shape-outside 
 * clip 
@@ -35,6 +37,12 @@ google map key for map
 * mask-image
 * filter: invert(1);
 
+
+
+<picture>
+    <source srcset="/images/linkedin-white.webp" media="(prefers-color-scheme: dark)" />
+    <img class="linkedin" src="/images/linkedin.webp" alt="LinkedIn Profile" loading="lazy" decoding="async" />
+</picture>
 
 
 ----------- angular
