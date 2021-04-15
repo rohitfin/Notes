@@ -4,14 +4,79 @@
         <meta charset="UTF-8">
         <!-- or  <meta http-equiv="content-type" content="text/html; charset=UTF-8"> -->
         <!-- Page Information -->
+        <meta name="viewport" content="width=device-width initial-scale=1 shrink-to-fit=no" />
+        <!-- <meta name="viewport" content="width=device-width initial-scale=1 shrink-to-fit=no user-scalable=no" /> -->
         <meta name="application-name" content="OpenStreetMap">
         <meta name="author" content="Your Name">
         <!-- Google usually uses only the first 20-25 words of your description -->
-        <meta name="description" content="Page Description">
+        <meta name="description" content="I can tell you everything about this webpage under 160 characters">
         <meta name="keywords" content="Keyword1, Keyword2">
+        <meta name="copyright" content="Copyright information" />
+        <meta name="robots" content="index,follow"/> 
 
-        <!-- Facebook / Open Graph -->
-        <meta property="fb:app_id" content="123456789">
+
+        <title>All tags for head part</title>
+        
+
+        <!-- Automatic Refresh -->
+        <meta http-equiv="refresh" content="5">
+
+        <!-- Automatic redirect -->
+        <meta http-equiv="refresh" content="5;url=https://www.example.com/" />
+
+
+        <!-- Phone Number Recognition -->
+        <meta name="format-detection" content="telephone=no">
+
+        <!-- Web App -->
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="theme-color" content="black">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+        <!-- theme color -->
+        <meta name="theme-color" content="">
+
+        <!-- Android devices -->
+        <link rel="shortcut icon" sizes="196x196" href="logo-android-196.png">
+
+        <!-- General favicon -->
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="mask-icon" href="favicons.svg" color="#ffffff">
+
+        <!-- favicon sizes -->
+        <link rel="icon" type="image/png" sizes="196x196" href="favicon.png">
+        <link rel="icon" type="image/png" sizes="160x160" href="favicon.png">
+        <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+        
+        <!-- iOS devices -->
+        <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+
+        <!-- Windows Phone -->
+        <meta name="msapplication-config" content="/static-assets/favicons/browserconfig.xml">
+        <meta name="msapplication-config" content=”none”>
+        <meta name="msapplication-TileColor" content=”#fff”>
+        <meta name="msapplication-TileImage" content=”logo-wp-144.png”/>
+        <meta name="msapplication-square70x70logo" content=”logo-wp-70.png”>
+        <meta name="msapplication-square150x150logo" content=”logo-wp-150.png”>
+        <meta name="msapplication-square310x310logo" content=”logo-p-310.png”>
+
+        <!-- canonical link -->
+        <link class="mymeta" rel="canonical" href="">  <!-- Web link -->
+    
+        
+        
+        <!--  Open Graph -->
         <meta property="og:url" content="https://example.com/page.html">
         <meta property="og:type" content="website">
         <meta property="og:title" content="Content Title">
@@ -21,6 +86,9 @@
         <meta property="og:locale" content="en_US">
         <meta property="article:author" content="">
 
+        <!-- Facebook  -->
+        <meta property="fb:app_id" content="123456789">
+
         <!-- Facebook / Instant Articles -->
         <meta property="op:markup_version" content="v1.0">
         <!-- The URL of the web version of your article -->
@@ -28,7 +96,7 @@
         <!-- The style to be used for this article -->
         <meta property="fb:article_style" content="myarticlestyle">
 
-        <!-- Twitter -->
+        <!-- Twitter  -->
         <meta name="twitter:card" content="summary">
         <meta name="twitter:site" content="@site_account">
         <meta name="twitter:creator" content="@individual_account">
@@ -43,23 +111,30 @@
         <meta itemprop="description" content="Content description less than 200 characters">
         <meta itemprop="image" content="https://example.com/image.jpg">
 
-
-        <!-- Automatic Refresh -->
-        <meta http-equiv="refresh" content="5">
-
-        <!-- Phone Number Recognition -->
-        <meta name="format-detection" content="telephone=no">
-
-        <!-- Automatic redirect -->
-        <meta http-equiv="refresh" content="5;url=https://www.example.com/" />
-
-        <!-- Web App -->
-        <meta name="mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="theme-color" content="black">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <!-- google verification -->
+        <meta name="google-site-verification" content="">
 
 
+
+        <!-- mainfest -->
+        <link rel="manifest" href="https://example.com/site.webmanifest">
+
+        <!--site.webmanifest name ka file bana ke usme ye sab data
+              {
+            "name": "Web site name",
+            "short_name": "short name of the website",
+            "icons": [
+                {
+                    "src": "https://example.com/android-chrome-192x192.png",
+                    "sizes": "192x192",
+                    "type": "image/png"
+                }
+            ],
+            "theme_color": "#ffffff",
+            "background_color": "#ffffff",
+            "display": "standalone",
+            "start_url": "/?utm_source=homescreen"
+          } -->
 
     </head>
     <body>
@@ -100,9 +175,9 @@
         </table>
 
 
-
+        <!-- Resolution Switching -->
         <!-- Responsive image using the srcset attribute -->
-        <img sizes="(min-width: 1200px) 580px,
+        <img loading="lazy" sizes="(min-width: 1200px) 580px,
             (min-width: 640px) 48vw,
             98vw"
             srcset="img/hello-300.jpg 300w,
@@ -119,9 +194,9 @@
 
             <!-- Responsive image using picture element -->
         <picture>
-        <source media="(min-width: 600px)" srcset="large_image.jpg">
-        <source media="(min-width: 450px)" srcset="small_image.jpg">
-        <img src="default_image.jpg" style="width:auto;">
+            <source media="(min-width: 600px)" srcset="large_image.jpg">
+            <source media="(min-width: 450px)" srcset="small_image.jpg">
+            <img src="default_image.jpg" style="width:auto;">
         </picture>
             
         <!-- for big image  -->
@@ -132,7 +207,6 @@
         <input type="file" accept="image/x-png,image/gif,image/jpeg" />
 
         <form action="/login" method="POST">
-
             <label for="Username">Username:</label>
             <input id="Username" type="text" name="username" />
             <label for="Pass">Password:</label>
@@ -174,7 +248,7 @@
         <input type="text" placeholder=" &#128269; Search"/>
 
         <!-- ARIA  role-->
-        <div role="main" role="form" role="link" role="grid" role="gridcell" role="group"     role="document" role="alert"  role="banner"  role="button" role="heading"> </div>
+        <div role="main" role="form" role="link" role="grid" role="gridcell" role="group" role="document" role="alert"  role="banner"  role="button" role="heading"> </div>
         <input type="checkbox" role="checkbox" aria-checked="false">
         <th role="columnheader">Day 1</th>
         <h1>Introduction</h1>
@@ -182,6 +256,8 @@
             <img alt="A cute cat." src="albert.jpg">
             <figcaption>This is my cat, Albert.</figcaption>
         <figure>
+
+
 
 
 

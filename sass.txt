@@ -244,3 +244,93 @@ Varialble, Nesting, Partials & Imports, Mixins, Extends, Operators, Functions, C
             $i : $i + 10   
         }
 
+
+
+
+--------------------------------
+
+$colors: (
+  primary: (
+    100: hsl(14, 100%, 80%),
+    200: hsl(14, 100%, 70%),
+    300: hsl(14, 100%, 60%),
+    400: hsl(12, 100%, 43%),
+    500: hsl(14, 100%, 20%),
+  ),
+  secondary: (
+    100: hsl(219, 89%, 80%),
+    200: hsl(219, 89%, 70%),
+    300: hsl(219, 89%, 60%),
+    400: hsl(212, 61%, 37%),
+    500: hsl(219, 89%, 20%),
+  )
+)
+
+
+
+// creating variables
+:root {
+  @each $color, $shades in $colors {
+
+    @each $shade, $value in $shades {
+      --clr-#{$color}-#{$shade}: #{$value}
+    }
+  }
+
+}
+
+// utilities classes
+@each $color, $shades in $colors {
+
+    @each $shade, $value in $shades {
+      .text-#{$color}-#{$shade} {
+        color: #{$value};
+      }
+    }
+  }
+--------------------------------
+
+$breakpoints: (
+  small: 480px,
+  medium: 768px,
+  large: 1024px
+);
+
+@mixin mediaQuery($key){
+  $size: map.get($breakpoints, $key);
+
+  @media(max-width: $size){
+    @content;
+  }
+}
+
+.abc {
+  @include mediaQuery(medium){
+    font-size: 10px;
+  }
+
+  color: rgba(#4f5660, 0.5);
+}
+
+-------------------------------------
+$columns: 12;
+@for $i from 1 through $columns {
+  .col-#{$i} {
+    flex: 0 0 (100% / ($columns / $i));
+  }
+  .col-offset-#{$i} {
+    margin-left: 100% / (($columns / $i));
+  }
+}
+
+
+-------------------------------------
+
+
+
+-------------------------------------
+
+
+
+-------------------------------------
+

@@ -172,7 +172,8 @@ Answer : Values for position: static, relative, absolute, fixed, inherit.
 Answer : Cascading Style Sheets (CSS) is not case sensitive.
 
 21. How Do I Add Scrolling Text To My Page?
-Answer : with <marquee> tag <marquee direction="down" width="250" height="200" behavior="alternate" scrollamount="1">
+Answer : with <marquee> tag <marquee direction="down" width="250" height="200" behavior="alternate" scrollamount="1"> 
+The default speed of the marquee value is 6
 
 22. How Do I Make A Picture As A Background On My Web Pages?
 Answer : < body background="picture.gif"  bgproperties="fixed" >

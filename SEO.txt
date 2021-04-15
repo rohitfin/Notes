@@ -1,8 +1,15 @@
 
 About Meta tags (use for search engine optimization (SEO) and read by web crawlers or browsers.)
+
     <meta charset="UTF-8">
+
     <meta name="description" content="I can tell you everything about this webpage under 160 characters"/>
+
     <meta name="author" content="Name of the author" />
+
+    <meta name="keywords" content="" />
+
     <meta name="copyright" content="Copyright information" />
-    <meta name="robots" content="follow"/>
-    
+
+    <meta name="robots" content="follow"/> -- Robots meta tag is used to provide index information to search engine crawlers.The following meta tags are used to determine whether a page is available for a web search and if it is added to a search engine index. This tag is one of the most relevant meta tags for SEO.
+       

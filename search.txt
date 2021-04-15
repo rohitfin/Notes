@@ -7,42 +7,20 @@ InDesign, Sketch, Figma,  InVision, Vision
 Wireframe.cc and In Vision
 Integration with third party API’s such as FB, Twitter, Sound cloud
 
+express js, Jinja2, Razor View Engine, Blade (Laravel)
 
 google map key for map
 
 -----------------------css  😈
 
 *  aspect-ratio: 1/1;  VIDEO (16:9) aspect-ratio: 16 / 9
-scroll-margin-top: 2ex;
-* :focus-within
-* shape-outside 
-* clip 
-* diff between align-items and align-content and align-self.
+* clip, clip-path 
 * mix-blend-mode
-* diff background-blend-mode and mix-blend-mode 
-* box-reflect 
+* background-blend-mode and mix-blend-mode 
 * style="--i:1;"   [variable]
-* animation-play-state
-* Neumorphism and CSS
-* appearance: none; 
-* select::-ms-expand { }
-* -webkit-overflow-scrolling: touch;
-* srcset 
-* image- density and resolution switching, art directory
-* flow-root
-* backdrop-filter: blur(10px);
-* transition: transform 0.2s, width 0.5s 0.2s;
-* in grid predefine 8, 12, 16 columns
 * font-size: calc(12px + (20–8) * ((100vw — 320px) / (1600–320)));
-* mask-image
-* filter: invert(1);
 
 
-
-<picture>
-    <source srcset="/images/linkedin-white.webp" media="(prefers-color-scheme: dark)" />
-    <img class="linkedin" src="/images/linkedin.webp" alt="LinkedIn Profile" loading="lazy" decoding="async" />
-</picture>
 
 
 ----------- angular

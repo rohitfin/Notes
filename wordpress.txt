@@ -33,12 +33,17 @@ create database :- xampp- mySql - admin or localhost/phpmyadmin
 
 
 .) Theme Builder
-    Elementor Website Builder
+    Elementor  Builder
     WPBakery Page Builder
-    Salient Plugin
+    Beaver Builder
+    Divi Builder
+    Thrive Architect
     Page Builder by SiteOrigin
-    Page Builder: KingComposer – Free Drag and Drop page builder by King-Theme
+    Themify Builder
+    KingComposer
     Brizy
+    WP Page Builder
+ 
 
 .) Slider 
     Slider Revolution
@@ -112,6 +117,7 @@ create database :- xampp- mySql - admin or localhost/phpmyadmin
 .) QSM for Quiz
 .) Wp File Manager
 .) header footer script
+.) header footer code Manager
 
 .) Meta box
 .) MB Custom Post Type

@@ -1,4 +1,3 @@
-
 *) hover effect 
     button - right click- create dynamic panel - Interaction - mouseenter, mouseout
     or Interaction - mouse style effects
