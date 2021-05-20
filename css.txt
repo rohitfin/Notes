@@ -13,6 +13,7 @@ flex-basis : { value[px, %] }
 flex : { 0 0 10%} [flex-grow, flex-shrink, flex-basis] or ([max] [min] [ideal size])
 flex : 0 1 calc(50% - 10px) --->[ 50% is width and 10px is padding left ,right  (dividing area of child's) ]
 align-self : { flex-start, flex-end, center } [important ]
+gap: em, rem, px;
 
 *-------- grid
 display : { grid, inline-grid }
@@ -83,13 +84,13 @@ animation-direction: normal|reverse|alternate|alternate-reverse|initial|inherit;
 
 *------- 2D  & 3D  Transforms
 transform: translate(), rotate(), scaleX(), scaleY(), scale(), skewX(), skewY(), skew(), matrix()
-transform-origin: x-axis y-axis z-axis|initial|inherit;
+transform-origin: x-axis y-axis z-axis|initial|inherit|top|bottom|left|right;
 transform-style: flat|preserve-3d|initial|inherit;
 transition-delay: time|initial|inherit;
 transition-duration: time|initial|inherit;
 transition-property: none|all|property|initial|inherit;
 transition-timing-function: linear|ease|ease-in|ease-out|ease-in-out|step-start|step-end|steps(int,start|end)|cubic-bezier(n,n,n,n)|initial|inherit;
-backface-visibility: visible|hidden|initial|inherit; (important)
+backface-visibility: visible|hidden|initial|inherit; (important) [use for 3D]
 perspective: length|none;
 perspective-origin: x-axis y-axis|initial|inherit;
 	
@@ -106,13 +107,16 @@ column-rule-width: thin, medium, thick, 10px;
 column-span: none, all;
 
 *-------- Properties
-backdrop-filter : blur(1px) | brightness(1.5) | contrast(0.5) | drop-shadow() | grayscale(1) | hue-rotate(10deg) | invert(0.5) | opacity(0.5) 
-  | saturate(0.5) | sepia(0.5) [use filter properties]
+all: unset, initial, inherit
+backdrop-filter : blur(1px) | brightness(1.5) | contrast(0.5) | drop-shadow() | grayscale(1) | hue-rotate(10deg) 
+  | invert(0.5) | opacity(0.5) | saturate(0.5) | sepia(0.5) [use filter properties]
 
 backface-visibility: visible|hidden|initial|inherit; [property relates to 3D transforms.]
  
+
 background-blend-mode: normal|multiply|screen|overlay|darken|lighten|color-dodge|color-burn|hard-light|soft-light|
-  difference|exclusion|hue|saturation|color|luminosity
+    difference|exclusion|hue|saturation|color|luminosity [mix background colors or background images ]
+
 background-clip: border-box|padding-box|content-box|initial|inherit;
 background-origin: padding-box|border-box|content-box|initial|inherit;
 border-collapse: separate|collapse|initial|inherit;
@@ -128,17 +132,23 @@ clip: auto|shape|initial|inherit;
 clip-path: inset, circle, polygon, ellipse;
 clip-path: clip-source|basic-shape|margin-box|border-box|padding-box|content-box|fill-box|stroke-box|view-box|none;
 
+display: flow-root; [fixe margin collapsing issue or use padding-top: 0.1px]
+
 filter: none | blur() | brightness() | contrast() | drop-shadow() | grayscale() | hue-rotate() | invert() | opacity() 
         | saturate() | sepia() | url();
 
-font-kerning: auto|normal|none; //  letters  spacing.
+font-kerning: auto|normal|none; [ letters  spacing. ]
 
 mask-image : - sets the image that is used as mask layer for an element. 
   {width: 100px; height: 100px;, background-color: red;, -webkit-mask-image: url(star.svg);, mask-image: url(star.svg);}
 
+mix-blend-mode: normal|multiply|screen|overlay|darken|lighten|color-dodge|color-burn|
+        difference|exclusion|hue|saturation|color|luminosity; [mix background colors or 2 background images ]
+
+
 object-fit: fill|contain|cover|scale-down|none|initial|inherit;
 object-position: position|initial|inherit;
-overflow-wrap: normal | break-word | anywhere; (use inline element)
+overflow-wrap: normal | break-word | anywhere; (use inline element or text wrap)
 
 page-break-after,page-break-before: auto|always|avoid|left|right|initial|inherit;
 page-break-inside: auto|avoid|initial|inherit;
@@ -159,6 +169,7 @@ text-decoration-line: none|underline|overline|line-through|initial|inherit;
 text-decoration-color: color|initial|inherit; 
 text-indent: length|initial|inherit; (first line in a text-block.)
 text-overflow: clip|ellipsis|string|initial|inherit; (...)
+text-underline-offset:  [for underline]
 user-select: auto|none|text|all;
 white-space: normal|nowrap|pre|pre-line|pre-wrap|initial|inherit; (code)
 word-break: normal|break-all|keep-all|break-word|initial|inherit;
@@ -167,8 +178,6 @@ word-spacing: normal|length|initial|inherit;
 writing-mode: horizontal-tb|vertical-rl|vertical-lr;
 inline-size: value; (depending on its writing mode)
 
-
-:focus-within
 
 * Combinators
     Adjacent sibling combinator A + B  ---> select B immediate after A 
@@ -187,25 +196,78 @@ inline-size: value; (depending on its writing mode)
 [data-value$="foo"] { /* Attribute value ends with this */}
 
 
-=> calc, => clamp, => :is
+=> calc, => clamp, => :is, => :where, => :any, => :any-link, => :not, => :focus-within, => :focus-visible
+
+
+-------------------------------------------------------
+
+=> css specificity
+    style attribute [inline]
+    IDs => (div[id=a])
+    Classes, attributes and pseudo-classes
+    Elements and pseudo-elements
+
+    Equal specificity: the latest rule counts
 
 
 
+#main-navigation          /* ID (Fastest) */ 
+li a.nav-link             /* Class * 
+div                       /* Tag (Slow)*/ 
+nav ul li a               /* Tag (Slower)*/ 
+*                         /* Universal (Slowest) */ 
+[disabled]                /* Universal */
+
+---------------------------------------------------
+=> Important 
+  img {
+    width: clamp(90%, 90% - 2%, 100%); // min, actual, max
+  }
+ body {
+    font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width]))); [flexible typography]
+  font-size: calc(16px + (26–16) * ((100vw — 320px) / (1600–320)));
 
 
+    padding: 100vw — min(max-width, (100vw — (left-gap + right-gap))) / 2;
+    padding: 15px calc((100vw - min(900px, calc(100vw - 50px))) / 2);
+
+  // position 20px from the right and 10px from the bottom
+  background-position: calc(100% - 20px) calc(100% - 10px);
 
 
+ } 
+ 
 
+*--------------------------- 
+:root {
+  --checkbox: "\f14a";
+  --star: "\f005";
+  --bolt: "\f0e7";
+  --value : 5;
+  --clr-success: rgb(64, 209, 91);
+  --button-bg: rgb(219, 138, 52);
+  --clr-warning: rgb(206, 41, 26);
+  --big: 85%;
+  --pretty-big: 65%;
+  --pretty-small: 40%;
+  --faded: .75;
 
-
-
-*------ in css
+}
+* {
+  box-sizing: border-box;
+  font-stretch: normal;
+}
+*::selection {
+    background-color: hsl(0deg 0% 0% / 20%);
+}
 html {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
+
+    font-size: 62.5%;
 }
 body {
   -ms-word-wrap: break-word;
@@ -225,63 +287,128 @@ body {
   scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
 
+  cursor: url("images/cursor.png"), auto;
 
-  font-size: calc(12px + (20–8) * ((100vw — 320px) / (1600–320)));
+  line-height: 1.73;
+  font-size: calc(16px + (26–16) * ((100vw — 320px) / (1600–320)));
 
-}
-.heading__section :is(h1, h2, h3) {
-    font-weight: 600;
 }
 img {
   width: clamp(90%, 90% - 2%, 100%); // min, actual, max
   max-height: max(10rem, 30vh);
-
 }
-  
-
-
-:root {
-  --checkbox: "\f14a";
-  --star: "\f005";
-  --bolt: "\f0e7";
-  --value : 5;
-  --clr-success: rgb(64, 209, 91);
-  --button-bg: rgb(219, 138, 52);
-  --clr-warning: rgb(206, 41, 26);
+p {
+  -webkit-line-clamp: 5; [Set a limited content in a paragraph]
 }
+.heading__section :is(h1, h2, h3) {
+    font-weight: 600;
+}
+
+
+
+
+.border-left:not(:first-child):before {
+    content: '|';
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
 .list-item {
   --icon: var(--checkbox);
 }
-li::before {
+.list-item::before {
   content: var(--icon, "no icon");
   color: var(--clr-warning, red);
-  background: var(--button-bg, #333); /* Default: #333 */ [given parameter not found so default use]
+  background: var(--button-bg, #333); /* Default: #333  [given parameter not found so default use] */
   padding: var(--value) px;
   padding: calc(var(--value) * 2px);
   border-color: currentColor;
 }
 
+---------------------------------------
+
+=> .abc > * + * {} => [select all inside abc expect fist element]
 * 𝗟𝗼𝗯𝗼𝘁𝗼𝗺𝗶𝘇𝗲𝗱 𝗼𝘄𝗹 𝘀𝗲𝗹𝗲𝗰𝘁𝗼𝗿
     * + *  
-* shape-outside: circle(50%);
-* mix-blend-mode
+=>  img[loading=lazy] {
+      outline: 10px solid var(--warning-color) !important;
+    }
+    script[src] {
+        display: block;
+        border: 10px solid var(--violation-color);;
+    }
+      script[src]::before {
+          content: attr(src);
+          font-size: 1rem;
+      }
+      script[src][async], script[src][defer], script[src][type=module] {
+          display: none;
+      }
 
-* img[loading=lazy] {
-    outline: 10px solid var(--warning-color) !important;
-}
-script[src] {
-    display: block;
-    border: 10px solid var(--violation-color);;
-}
-script[src]::before {
-        content: attr(src);
-        font-size: 1rem;
-    }
-    script[src][async], script[src][defer], script[src][type=module] {
-        display: none;
-    }
+=> @supports (display: grid) { div {display: grid;} }
+=> @supports not (display: grid) {div {float: right;} }
+-------------------------------
+
+content-visibility: auto; 
+[This can help optimize page load performance if a large quantity of your page’s content is offscreen, 
+including content which uses <img> elements. ]
+
+-------------------------------
+
+ background-image: repeating-radial-gradient(
+    circle,
+    red 0,
+    red 30px,
+    black 30px,
+    black 60px
+  );
 
 
 -------------------------------
 
+text-shadow: [x-offset] [y-offset] [blur-radius] [color];
+.neonText {
+  color: #fff;
+  text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 21px #fff,
+      0 0 42px #0fa,
+      0 0 82px #0fa,
+      0 0 92px #0fa,
+      0 0 102px #0fa,
+      0 0 151px #0fa;
+}
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    text-shadow:
+      0 0 4px #fff,
+      0 0 11px #fff,
+      0 0 19px #fff,
+      0 0 40px #0fa,
+      0 0 80px #0fa,
+      0 0 90px #0fa,
+      0 0 100px #0fa,
+      0 0 150px #0fa;
+  }
+  20%, 24%, 55% {       
+    text-shadow: none;
+  }
+}
 
+-------------------------------
+
+-------------------------------
+
+
+-------------------------------
+
+-------------------------------
+
+
+-------------------------------
+
+-------------------------------
+
+
+-------------------------------

@@ -5,7 +5,7 @@
 
 0/ stash
 1/ pull
-1.1/ stash out
+1.1/ stash out (pop stash)
 2/ select file and click stage
 3/ type message 
 4/ click on commit

@@ -9,7 +9,7 @@
 
 ---code---
 0. ctr + c -- stop server
-1. npm i jquery or npm install jquery :-
+1. npm i jquery or npm install jquery :- 
     npm i bootstrap@3
 2. npm i -- package.json dependencies get downloaded in node_modules folder
 3. component -- ng generate component firstComponent || ng g c firstComponent   (ng g c NewCompo --spec=false)
@@ -53,3 +53,22 @@ export class AppComponent {
 10. 'padding-top': true ? '0' : '30px' // if and else condition 
 
 11.  #ngForm --> is variable
+
+12 this.router.navigateByUrl('/dashboard'); // navigate to component to component on click.
+
+13 npm ng build => build
+
+
+
+-------------------------------------
+
+* generate new component 
+  ng g c NewComponentName
+  creating 4 file : html, css, ts. spec.ts
+  adding path in app.module.ts file
+  for view component use sector from .html file.
+
+* routing 
+  use for navigation
+  for navigation first put <rout-outlet> and give condition on app.routing.module.ts file.
+  if not match (for 404 page), if blank, if match

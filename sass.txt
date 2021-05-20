@@ -70,7 +70,7 @@ Varialble, Nesting, Partials & Imports, Mixins, Extends, Operators, Functions, C
 6.) Interpolation [ #{} ]
 
     @mixin padding-direction($direction, $value){ 
-      padding + #{$direction} : $value + px; 
+      padding-#{$direction} : $value + px; 
       }
 
     .abc{ 
@@ -209,7 +209,7 @@ Varialble, Nesting, Partials & Imports, Mixins, Extends, Operators, Functions, C
 
       @for $i from 1 through 3 { 
         .list-#{$i} { 
-          width: 100 * $i + px; background: darken(pink, $i * 10%); padding: 10px * $i; 
+              width: 100 * $i + px; background: darken(pink, $i * 10%); padding: 10px * $i; 
            }  
       }
 

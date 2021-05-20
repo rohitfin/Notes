@@ -1,19 +1,22 @@
 
 ------------- HTML---------------
 !DOCTYPE
-    No, the <!DOCTYPE html> declaration is not an HTML tag. 
+    the <!DOCTYPE html> declaration is not an HTML tag. 
     <!DOCTYPE html> is used to instruct the web browser about the HTML page.
     The <!DOCTYPE> is an instruction to the web browser about what version of HTML the page is written in. 
     AND The <!DOCTYPE> tag does not have an end tag and It is not case sensitive.
 
  What does a DOCTYPE do?
     DOCTYPE is an abbreviation for DOCument TYPE.
-    A DOCTYPE is always associated to a DTD for Document Type Definition. it controls whether the browsers uses "standards" or "quirks" mode to render the document.
-    Once a user agent has recognized a correct DOCTYPE, it will trigger the no-quirks mode matching this DOCTYPE for reading the document. If a user agent doesn't recognize a correct DOCTYPE, it will trigger the quirks mode.
+    A DOCTYPE is always associated to a DTD for Document Type Definition. it controls whether the browsers uses 
+    "standards" or "quirks" mode to render the document.
+    Once a user agent has recognized a correct DOCTYPE, it will trigger the no-quirks mode matching this DOCTYPE for reading the document.
+     If a user agent doesn't recognize a correct DOCTYPE, it will trigger the quirks mode.
 
 
  What happens when DOCTYPE is not given?
-    The web page is rendered in quirks mode. The web browsers engines use quirks mode to support older browsers which does not follow the W3C spec.In quirks mode CSS class and id names are case insensitive. In standards mode they are case sensitive.
+    The web page is rendered in quirks mode. The web browsers engines use quirks mode to support older browsers which does not follow
+     the W3C spec.In quirks mode CSS class and id names are case insensitive. In standards mode they are case sensitive.
 
 
 Cell Spacing And Cell Padding?
@@ -43,6 +46,18 @@ What The Use Of Canvas Element In Html5?
 
 How many tags were removed in HTML5?
     <frame>, <basefront>, <applet>, <frameset>, <big>, <center>, <bigcenter>, <noframes>, <dir>, <tt>, <acronym>, <basefont>
+
+What are Semantic Elements?
+    A semantic element clearly describes its meaning to both the browser and the developer.
+    Examples of non-semantic elements: <div> and <span> - Tells nothing about its content.
+    Examples of semantic elements: <article>, <aside>, <details>, <figcaption>, <figure>, <footer>, <header>, <main>, 
+    <mark>, <nav>, <section>, <summary>, <time> 
+    Clearly defines its content.
+
+    section => "A section is a thematic grouping of content, typically with a heading." defines section in a document.
+    <article>, aside => element specifies independent, self-contained content.
+
+
 
 
 ------------- Css ---------------
@@ -111,8 +126,8 @@ h2:after {content: ' \0021';} ..[print ! (exclamation mark)](symbol code exclama
 ::after / ::before, - ::first-letter, - ::first-line, - ::selection,- :placeholder
 
 * ----------- Pseudo-classes
- placeholder-shown, :active, :checked, :disabled, :last-child, :nth-child(n), :not(selector), :valid, :target, :required, :read-only, 
- :only-of-type, :nth-of-type(n), :nth-last-of-type(n), :nth-last-child(n), :link
+ placeholder-shown, :active, :checked, :disabled, :last-child, :nth-child(n), :not(selector), :valid, :target, :required, 
+ :read-only, :only-of-type, :nth-of-type(n), :nth-last-of-type(n), :nth-last-child(n), :link
 
 
 ::before / ::after
@@ -191,6 +206,17 @@ h2:after {content: ' \0021';} ..[print ! (exclamation mark)](symbol code exclama
   The :root selector allows you to target the highest-level “parent” element in the DOM, or document tree.
 
 
+css specificity
+    style attribute [inline]
+    IDs => (div[id=a])
+    Classes, attributes and pseudo-classes
+    Elements and pseudo-elements
+
+    Equal specificity: the latest rule counts
+
+target="_blank|_self|_parent|_top|
+
+
 What is z-index?
     The z-index property specifies the stack order of an element. An element with greater stack order is always in front of
     an element with a lower stack order.
@@ -228,32 +254,32 @@ How to target the first 4 elements of a list?
 Answer: .selector:nth-child(-n+4){}
 
 What is pseudo element? what is pseudo class?
-    pseudo elements helps you to add cosmetics contents. pseudo elements generates content where as pseudo class deals with state of the element
+    pseudo elements helps you to add cosmetics contents. pseudo elements generates content where as pseudo class deals with 
+    state of the element
 
 
 Define CSS image sprites.
-    Answer: CSS image sprites are a group of images that are placed into one image.It is commonly used technique for icons. It reduces the load time and request number to the server  while projecting multiple images into a single web page.
+    Answer: CSS image sprites are a group of images that are placed into one image.It is commonly used technique for icons.
+     It reduces the load time and request number to the server  while projecting multiple images into a single web page.
 
 Inline Elements
     Will ignore top and bottom margin settings, but will apply left and right margins, and any padding
     Will ignore the width and height properties
 
 Does setting margin-top and margin-bottom have an affect on an inline element?
-    Top and bottom margins do not affect inline elements because inline elements flow with content on the page.
+    No, Top and bottom margins do not affect inline elements because inline elements flow with content on the page.
     width, height, margin-bottom, margin-top not working in this property.
 
  What is the use of calc()?
-    The calc() function in CSS3 is used for simple calculations to determine CSS property values present right in CSS. 
+    simple calculations to determine CSS property values present right in CSS. 
     It allows mathematical expressions with addition, subtraction, multiplication, and division to be used as component values.
     
 Explicit and Implicit Grid
-    When we use grid-template-columns and grid-template-rows we create an Explicit Grid. However if we try and place an item outside of that 
-    grid the browser will create an Implicit Grid line or lines in order to hold that item. 
-
+    When we use grid-template-columns and grid-template-rows we create an Explicit Grid. However if we try and place an item outside 
+    of that grid the browser will create an Implicit Grid line or lines in order to hold that item. 
 
 What are the new color properties in CSS3?
     HSLA (Hue-saturation-lightness-alpha), HSL, and RGBA (red green blue alpha.).
-
 
 What is a Clearfix?
     A clearfix is a way for an element to automatically clear or fix its elements, so that do not need to add additional markup.
@@ -285,12 +311,13 @@ Explain CSS3 Selectors.
     Pseudo-element
 
 What is the recommended order for styling an <a> tag?
-a:link { } , a:visited { } , a:hover { } , a:active { }
+    a:link { } , a:visited { } , a:hover { } , a:active { }
 
 
 @charset — Defines the character set used by the style sheet.
    
 @import — Tells the CSS engine to include an external style sheet.
+ we can include a stylesheet in another stylesheet. When we are working on a large project, having @import makes the code cleaner
    
 @media — A conditional group rule that will apply its content if the device meets the criteria of the condition defined using a media query.
 
@@ -308,14 +335,14 @@ a:link { } , a:visited { } , a:hover { } , a:active { }
     @viewport  — Describes the aspects of the viewport for small screen devices.
 
 
- How do I ignore a class in CSS?
-    How to exclude particular class name from CSS selector ? In CSS, to exclude a particular class, we can use the pseudo-class :not selector 
-    also known as negation pseudo-class or not selector. This selector is used to set the style to every element that is not the specified by given selector.
+ How do I ignore a class in CSS?, How to exclude particular class name from CSS selector ? 
+    In CSS, to exclude a particular class, we can use the pseudo-class :not selector also known as negation pseudo-class or not selector. 
+    This selector is used to set the style to every element that is not the specified by given selector.
    
 How do I force CSS override?
     Overriding the ! important modifier
-    Simply add another CSS rule with ! important , and give the selector a higher specificity (adding an additional tag, id or class to the selector)
-    add a CSS rule with the same selector at a later point than the existing one (in a tie, the last one defined wins).
+    Simply add another CSS rule with ! important , and give the selector a higher specificity (adding an additional tag,
+     id or class to the selector) add a CSS rule with the same selector at a later point than the existing one (in a tie, the last one defined wins).
     
 How is the concept of inheritance applied in CSS?
     In CSS, inheritance controls what happens when no value is specified for a property on an element.
@@ -324,32 +351,41 @@ How do you avoid important in CSS?
     all you need to do is increase specificity. In your case, both of your selectors have identical specificity. 
    
 What does important do in CSS?
-    This rule overrides all previous styling rules ​-- the ! It overrides the cascade and gives the style rule the highest precedence
-    the following property adjusts the font-size of the fallback fonts defined with font-family, so that the x-height is the same no matter 
+    This rule overrides all previous styling rules ​-- the ! It overrides the cascade and gives the style rule the highest 
+    precedences following property adjusts 
 
 what font is used?
     font-size-adjust
 
+in button 
+    we have to use (padding)em instead of px and for margin rem consistence spacing.
+    in rem, M stand for root.
+    pixels are solid unit they are not changed.
+
 What is the difference between em and rem units?
-    While em is relative to the font-size of its direct or nearest parent, rem is only relative to the html (root) font-size. em gives the ability to control an area of a design. As in, scale the type in that specific area relatively. rem gives the ability to scale type across the entire page easily.
+    While em is relative to the font-size of its direct or nearest parent, rem is only relative to the html (root) font-size. 
+    em gives the ability to control an area of a design. As in, scale the type in that specific area relatively. rem gives
+     the ability to scale type across the entire page easily.
 
 Should I use em or REM?
-    Use em units for sizing that should scale depending on the font size of an element other than the root. Use rem units for sizing that doesn't need em units, and that should scale depending on browser font size settings.
+    Use em units for sizing that should scale depending on the font size of an element other than the root. Use rem units 
+    for sizing that doesn't need em units, and that should scale depending on browser font size settings.
 
 What is the difference between REM and em and px?
-    px is not scalable, it is an absolute unit. ... Element ( em ) and Root element ( rem ) are responsive units interpreted into equivalent px unit by the browser.
+    px is not scalable, it is an absolute unit. ... Element ( em ) and Root element ( rem ) are responsive units 
+    interpreted into equivalent px unit by the browser. em is Relative to the parent element, rem Relative to the root element.
 
 PX: Pixels (px) are considered absolute units, although they are relative to the DPI and resolution of the viewing device. But on the device itself, the PX unit is fixed and does not change based on any other element. Using PX can be problematic for responsive sites, but they are useful for maintaining consistent sizing for some elements. If you have elements that should not be resized, then using PX is a good choice.
 
-EM: Relative to the parent element
+    EM: Relative to the parent element
 
-REM: Relative to the root element (HTML tag)
+    REM: Relative to the root element (HTML tag) [R stands for root]
 
-%: Relative to the parent element
+    %: Relative to the parent element
 
-VW: Relative to the viewport’s width
+    VW: Relative to the viewport’s width
 
-VH: Relative to the viewport’s height
+    VH: Relative to the viewport’s height
 
 What is the difference between span and div?
 div is a block element and span is inline element.
@@ -358,11 +394,11 @@ what is caret-color property in css
     the text input cursor.the caret is typically a thin vertical line that flashes to help make it more noticeable.
 
 Why background and color are the separate properties if they should always be set together?
-    Color is an inherited property while background is not. So this can make confusion further.
+    Color is an inherited property while background is not. 
 
 What is the CSS Box model and what are its elements?
-    The CSS box model is used to define the design and layout of elements of CSS.
-    The elements are: , Margin , Border , Padding , Content
+    define the design and layout of elements of CSS. wraps around every HTML element
+    The elements are: margins, borders, padding, and the actual content.
 
 CSS Flexbox or Grid ?
      Flexbox is mainly meant for 1-dimensional layouts while Grid is meant for 2-dimensional layouts.
@@ -370,69 +406,71 @@ CSS Flexbox or Grid ?
 What's the difference between a relative, fixed, absolute and statically positioned element?
     static - The default position; the element will flow into the page as it normally would. 
     relative - The element's position is adjusted relative to itself, without changing layout 
-    absolute - The element is removed from the flow of the page and positioned at a specified position relative to its closest 
-        positioned ancestor if any.
-    fixed - The element is removed from the flow of the page and positioned at a specified position relative to the viewport and 
-        doesn't move when scrolled.
-    sticky - Sticky positioning is a hybrid of relative and fixed positioning. The element is treated as relative positioned until 
-        it crosses a specified threshold, at which point it is treated as fixed positioned.
+    absolute - The element is removed from the flow of the page and positioned at a specified position relative to its 
+         closest positioned ancestor if any.
+    fixed - The element is removed from the flow of the page and positioned at a specified position relative to the 
+            viewport and doesn't move when scrolled.
+    sticky - Sticky positioning is a hybrid of relative and fixed positioning. The element is treated as relative 
+            positioned until it crosses a specified threshold, at which point it is treated as fixed positioned.
 
 What is transition all in CSS?
     it provide a way to control animation speed when changing CSS properties.
     CSS transitions allows you to change property values smoothly, over a given duration.
 
 What is the transform in CSS?
-   It applies a 2D or 3D transformation to an element. This property allows you to rotate, scale, move, skew, etc., elements.
+   This property allows you to rotate, scale, move, skew, etc., elements.It applies a 2D or 3D transformation to an element. 
 
 How do I change transform?
-    The transform-origin property allows you to change the position of transformed elements. 2D transformations can change 
+    to change the position of transformed elements. 2D transformations can change 
     the x- and y-axis of an element. 3D transformations can also change the z-axis of an element. 
 
 What is display inline CSS?
-    An inline element does not start on a new line. An inline element only takes up as much width as necessary. 
-     does not add a line-break after the element and the layout used for its children, such as flow layout, grid or flex.
+    only takes up as much width as necessary. does not start on a new line.
+    top and bottom margins are restricted. 
 
-What does inline-block do in CSS?
-    take up as much width as they are allowed and typically start on a new line.top and bottom margins/paddings are restricted.
+What does inline-block or block do in CSS?
+    only takes up as much width as necessary. does not add a line-break. not restricted margin/padding.
+
+display block
+    take up as much width as they are allowed and typically start on a new line.
 
 
 what is hyphens?
-    The hyphens property defines whether hyphenation is allowed to create more soft wrap opportunities within a line of text.
+    is allowed to create more soft wrap opportunities within a line of text.
     hyphens: none|manual|auto|initial|inherit;
 
 what is word-wrap?
-    The word-wrap property allows long words to be able to be broken and wrap onto the next
+    property allows long words to be able to be broken and wrap onto the next
     word-wrap: normal|break-word|initial|inherit;
     
 what is word-break?
-    The word-break property specifies how words should break when reaching the end of a line.
+    how words should break when reaching the end of a line.
     word-break: normal|break-all|keep-all|break-word|initial|inherit;
 
 
 what is outline?
-    Outline differs from borders! Unlike border, the outline is drawn outside the element's border, and may overlap other content.
-     Also, the outline is NOT a part of the element's dimensions; the element's total width and height is not affected by 
-     the width of the outline.
+    Outline differs from borders! Unlike border, the outline is drawn outside the element's border, and may overlap other 
+    content. Also, the outline is NOT a part of the element's dimensions; the element's total width and height is not 
+    affected by the width of the outline.
 
 What is the  keyframe?
     Keyframing is the simplest form of animating an object. Based on the notion that an object has a beginning state or 
     condition and will be changing over time, in position, form, color, luminosity, or any other property.
      
 what is  @import in css    
-     The @import rule allows you to import a style sheet into another style sheet. The @import rule must be at the top of the document (but after any @charset declaration). The @import rule also supports media queries, so you can allow the import to be media-dependent.
+     The @import rule allows you to import a style sheet into another style sheet. The @import rule must be at the top of
+     the document (but after any @charset declaration).
 
-How do you import a link in CSS?
-    Note: There are two different ways to import a CSS file into another using @import url(“style2. css”); or
-     @import “style2. css”; or directly import any CSS file or multiple CSS file in the HTML file directly 
-     within <style>@import “style1.
+    There are two different ways to import a CSS file into another using 
+    @import url(“style2. css”); or
+    @import “style2. css”; 
 
 font-kerning
     Kerning defines how letters are spaced.
     For fonts that do not include kerning data, this property will have no visible effect.
 
 what is float?
-    The float CSS property places an element on the left or right side of its container, allowing text and inline 
-    elements to wrap around it.
+    places an element on the left or right side of its container, allowing text and inline elements to wrap around it.
 
 what is clear?
     Do not allow floating elements on the left or the right side of a specified  element.
@@ -440,7 +478,10 @@ what is clear?
     The clear property applies to floating and non-floating elements.
     clear: none|left|right|both|initial|inherit;
 
-
+What is aspect ratio CSS?
+    The aspect ratio of an element describes the proportional relationship between its width and its height.
+    ratio value representing the width-to-height aspect ratio of the viewport. It is a range feature, meaning you can 
+    also use the prefixed min-aspect-ratio and max-aspect-ratio variants to query minimum and maximum  values, respectively.
 
 width: max-content;
     not wrap
@@ -448,18 +489,19 @@ width: max-content;
 
 ------------- sass ---------------
 
-Sass (First appeared	November 28, 2006, latest version 3.5. 7 - July 18, 2018 (313 KB))
-   Sass (which stands for Syntactically Awesome Style Sheets) is an extension to CSS. ... Saas includes various features such as variables,
-    nested rules, mixins, inline imports, built-in functions to manipulate color and other values, all with a fully CSS-compatible syntax.
-    Sass (short for syntactically awesome style sheets) is a style sheet language initially designed by Hampton Catlin and developed by Natalie Weizenbaum.
+Sass (First appeared November 28, 2006)
+   Sass (which stands for Syntactically Awesome Style Sheets) is an extension to CSS. ... Saas includes various features 
+   such as variables, nested rules, mixins, inline imports, built-in functions to manipulate color and other values, all 
+   with a fully CSS-compatible syntax. Sass designed by Hampton Catlin and developed by Natalie Weizenbaum.
 
 What is SASS programming?
-    Sass (stylesheet language) ... Sass is a preprocessor scripting language that is interpreted or compiled into Cascading Style Sheets (CSS).
-    SassScript is the scripting language itself. Sass consists of two syntaxes. The original syntax, called "the indented syntax," 
-    uses a syntax similar to Haml.
+    Sass (stylesheet language) ... Sass is a preprocessor scripting language that is interpreted or compiled into Cascading 
+    Style Sheets (CSS). SassScript is the scripting language itself. Sass consists of two syntaxes. The original syntax,
+     called "the indented syntax,"
 
 What is the benefit of using sass?
-    Advantages. Sass facilitates you to write clean, easy and less CSS in a programming construct. It contains fewer codes so you can write CSS quicker.
+    Advantages. Sass facilitates you to write clean, easy and less CSS in a programming construct. It contains fewer 
+    codes so you can write CSS quicker.
     It is more stable, powerful, and elegant because it is an extension of CSS.
 
 What is a Sass mixin?
@@ -468,18 +510,12 @@ What is a Sass mixin?
     nav ul { @include horizontal-list; }
 
 What is the difference between SCSS and sass?
-    The basic difference is the syntax. While SASS has a loose syntax with white space and no semicolons, the SCSS resembles more to CSS. 
+    The basic difference is the syntax. While SASS has a loose syntax with white space and no semicolons, 
+    the SCSS resembles more to CSS. 
     SASS stands for Syntactically Awesome StyleSheets. SCSS --Sassy CSS
 
 What are the key features of Sass include?
-    7 Sass features you should be familiar with
-    Reference symbol ( & ) You might be familiar with the reference symbol, which allows you to reference a parent element as such: ...
-    Partials and @import directive. ...
-    Interpolation. ...
-    @content directive. ...
-    %placeholders. ...
-    Functions. ...
-    Lists and @each directive.
+    Reference symbol ( & )  which allows you to reference a parent element, Partials and @import directive, Interpolation., @content directive., %placeholders., Functions., Lists and @each directive.
    
 What is the use of Sass @import function?
     SASS @import directive is used to include one stylesheet inside another stylesheet
@@ -491,17 +527,16 @@ Explain the Data Types of Sass supports?
     SASS has the following Data Types:- Number, String, Colour, Map, Booleans and Null
    
 What is the use of @extend function in Sass?
-    By using @extend function same style can be copied to the other classes also and there is no need to rewrite the code again.
+    same style can be copied to the other classes
    
 Explain how to define a variable in Sass?
     Variables in Sass begin with a ($) sign and variable assignment is done with a colon(:).
 
 Explain when can you use the %placeholders in Sass?
-    %placeholders in Sass is useful when you want to write styles that were meant to be extended, 
-    but you don’t want the base styles to be seen in output CSS styles
+    you don’t want the base styles to be seen in output CSS styles
 
 Explain what is the use of &combinator ?
-    &combinator concatenates nested selector with the parent selector. It is useful for Pseudo classes such as :hover and :focus
+    &combinator concatenates nested selector with the parent selector
 
 
 
@@ -525,6 +560,49 @@ Answer : Scalable Vector Graphics,  HTML SVG is used to describe the two-dimensi
 Is Jquery Code Executed On The Client side, Or Server side?
 Answer : Client side
 
+What is jQuery and why it is used?
+    Introduced in 2006
+    jQuery is a lightweight, "write less, do more", JavaScript library. 
+    jQuery is a JavaScript library designed to simplify HTML DOM tree traversal and manipulation, 
+    as well as event handling, CSS animation, and Ajax. It is free, open-source
+
+window.onload() - https://www.dotnetbull.com/2013/08/document-ready-vs-window-onload.html
+The load event fires when all the content on your page fully loaded including the DOM 
+(document object model) content, asynchronous javascript, frames and images
+
+$(window).load(function () { alert("window load complete"); });
+
+window.onload = function () {alert("window load complete"); }
+
+
+$document.ready() -
+Jquery $document.ready function event executes a bit earlier than window.onload and called once the 
+DOM(Document object model) is loaded on your page. DOM means all the html tags/script 
+I.e.(anchor tag, table, div tag, paragraph tag etc..). It will not wait for the images, 
+frames to get fully load. It means that it is the earliest stage in page load process.
+
+The main difference is that $document.ready() event gets called as soon as your DOM is loaded. 
+It does not wait for the contents to get loaded fully. For example, there are very heavy images 
+on any web page and takes time to load. If you have used window.onload then it will wait until 
+all your images are loaded fully, hence it slows down the execution. On the other side, 
+$document.ready() does not wait for elements to get loaded.
+
+
+what is document.ready() ?
+$( document ).ready() will only run once the page Document Object Model (DOM) is ready for JavaScript code to execute.
+
+what is window.onload() ?
+
+
+.load()
+The load event is sent to an element when it and all sub-elements have been completely loaded. 
+
+
+
+
+
+
+
 
 
 ------------- Javascript -----------
@@ -532,14 +610,17 @@ var
     var is function scoped, can be re-declared.
     access 'var' before initialization gives 'undefined' (means hoisting)
 
+    var a = 10;
+    var a = 20; // re-declared
+    a = 30; // re-assigning
+
 let 
-    block level scope,can not re-declared.let variables can be updated but not re-declared.
+    block level scope, can not re-declared.let variables can be updated but not re-declared.
     Cannot access 'let' before initialization gives 'error' (means hoisting)
 
 const 
-    block level scope,can not re-assignment to constant variable. const variables can neither be updated nor re-declared. 
+    block level scope, can not re-assignment to constant variable. const variables can neither be updated nor re-declared. 
     Cannot access 'const' before initialization gives 'error' (means hoisting)
-
 
 Is Const faster than let?
     It appears that using const would inherently make code a little faster, because it seems to reduce the amount 
@@ -554,8 +635,14 @@ What does != Mean in programming?
     The not-equal-to operator ( != ) returns true if the operands don't have the same value; otherwise, it returns false
 
 What is ++ i in JavaScript?
-    The value of ++i is the value of i after the increment. Example: var i = 42; alert(i++); 
-    // shows 42 alert(i); // shows 43        
+    The value of ++i is the value of i after the increment. 
+    var i = 42;
+    alert(i++); // shows 42
+    alert(i); // shows 43
+    i = 42;
+    alert(++i); // shows 43
+    alert(i); // shows 43
+      
 
 
 The difference between i++ and ++i is the value of the expression.
@@ -590,6 +677,17 @@ how to solve?
 
 
 ------------- SEO -----------
+what is seo?
+
+
+important of seo?
+
+
+how to seo?
+
+
+
+
 
 
 
@@ -598,15 +696,12 @@ how to solve?
 
 
 What is WordPress?
-Answer: WordPress is an Open Source Content Management System (CMS) and a blogging tool, based on PHP and MySQL. It is free of cost, and you 
-can use it for any personal and commercial website.
+Answer: WordPress is an Open Source Content Management System (CMS) and a blogging tool, based on PHP and MySQL. 
+It is free of cost, and you can use it for any personal and commercial website.
 
 When was the Wordpress released initially? When is it announced as open source software?
 Answer: WordPress was initially released on 27th May 2003 by Matt Mullenweg and Mike Little. 
     WordPress was announced as open source in October 2009.
-
-latest version of WordPress
-Answer: The latest WordPress version is 5.3.2, a maintenance update that was released on Dec. 18th, 2019
 
 What are the system requirements for installing WordPress?
 Answer: Database - MySQL 5.0 +
@@ -626,7 +721,8 @@ What are the hooks? Define different types of hooks in WordPress.
     Filter hooks: Filter hooks facilitate you to add content or text at the end of the post.
 
 How many tables are there in WordPress by default?
-    At present version, there are about 11 tables in WordPress by default. You can check the number of tables in WordPress by phpMyAdmin.
+    At present version, there are about 11 tables in WordPress by default. You can check the number of tables in WordPress
+     by phpMyAdmin.
     wp_commentmeta
     wp_comments
     wp_links
@@ -643,8 +739,9 @@ What is a loop in WordPress?
     WordPress uses PHP codes to display posts. This PHP code is known as a loop.    
 
 Explain moderate comment in WordPress.
-    Comments by visitors on a post are not published directly unless the admin provides it. It is called moderation. To change comment
-    moderation setting, select Settings option from the dashboard and check the option "Comment must be manually approved."
+    Comments by visitors on a post are not published directly unless the admin provides it. It is called moderation. 
+    To change comment moderation setting, select Settings option from the dashboard and check the option "Comment must 
+    be manually approved."
 
 Explain Avatar and Gravatar in WordPress.
     Word Avatar is used for a user's profile image in online communications. 
@@ -655,7 +752,8 @@ How many types of users WordPress have?
         Administrator: They have full rights over a site.
         Editor: They deal with the content section of a website.
         Author: They only deal with their posts. They can delete their post even after publishing.
-        Contributor: A contributor doesn't have the right to publish their post or page. They need to send it to the administrator for review.
+        Contributor: A contributor doesn't have the right to publish their post or page. They need to send it to the 
+        administrator for review.
         Subscriber: Users who are subscribed to your site can log in and update their profile.
         Follower: They don't have any right. They can only read and comment on your post.
         Viewer: They can only read and comment on a post.
@@ -664,9 +762,9 @@ What are the plugins you can use to create a contact form in WordPress?
      Gravity forms or a free plugin contact form 7
 
 Explain the difference between WordPress Themes and Plugins.
-    A theme is an external effect of a website's presentation and designing. Whereas, a plugin is an interior effect which adds or remove 
-    some functions to a site.
-    You can customize some functionality in themes instead of installing the plugin, but plugins can't replace themes.    
+    A theme is an external effect of a website's presentation and designing. Whereas, a plugin is an interior effect
+    which adds or remove some functions to a site.You can customize some functionality in themes instead of installing 
+    the plugin, but plugins can't replace themes.    
 
 Which licensing authority is responsible for WordPress?
     WordPress is licensed under GPLv2 (GNU General Public License) which makes it free and open-source software. Each copy 
@@ -680,17 +778,19 @@ Where is WordPress content stored?
 
 ------------- meta tags -----------
 Viewport <meta name="viewport" content="width=device-width, initial-scale=1">
-Viewport meta tag is necessary because it instructs web browsers (mainly mobile web browsers) on how to render a webpage on all devices.
+Viewport meta tag is necessary because it instructs web browsers (mainly mobile web browsers) on how to render a webpage
+ on all devices.
 
 Author and Copyright 
     <meta name="author" content="Name of the author" />
     <meta name="copyright" content="Copyright information" />
-    Author and copyright met tags are used to record information such as the creator of the website and the copyright ownership information.
+    Author and copyright met tags are used to record information such as the creator of the website and the copyright
+     ownership information.
 
 Robots
-    Robots meta tag is used to provide index information to search engine crawlers. The following meta tags are used to determine whether a page is available for a web search 
+    Robots meta tag is used to provide index information to search engine crawlers. The following meta tags are used to 
+    determine whether a page is available for a web search 
     <meta name="robots" content="follow"/>
-
 
 Index:
     This allows the web crawlers to index your webpage.
@@ -706,16 +806,19 @@ Nofollow
     <meta name="robots" content="nofollow"/>
 
 Character encoding  <meta charset="UTF-8">
-    Web browsers understand need the character encoding information to display a webpage correctly. To define the character encoding we use charset attribute and assign it with an appropriate value. The most common character encoding used is the UTF-8. We use UTF-8 because it has more than 10,000 characters.
+    Web browsers understand need the character encoding information to display a webpage correctly. To define the character
+     encoding we use charset attribute and assign it with an appropriate value. The most common character encoding used is
+      the UTF-8. We use UTF-8 because it has more than 10,000 characters.
 
 Http equivalents
-    http-equivalents attribute is used to include information that is usually contained in HTTP header. It is used to control cache information, expiration date, refresh page redirection and much more.
+    http-equivalents attribute is used to include information that is usually contained in HTTP header. It is used to control 
+    cache information, expiration date, refresh page redirection and much more.
 
 
 Cache control
-    When we use the meta tag “cache-control” with the value “no-cache”, we prevent caching of the webpage and that means the webpage is reloaded for every page view. This may lead to longer loading times but is helpful in cases where webpage is being updated frequently.
+    When we use the meta tag “cache-control” with the value “no-cache”, we prevent caching of the webpage and that means the
+     webpage is reloaded for every page view. This may lead to longer loading times but is helpful in cases where webpage is being updated frequently.
     <meta http-equiv="cache-control" content="no-cache"/>
-
 
 Expires
     We can set expiry date for the webpage data instead of preventing caching completely.
@@ -723,36 +826,40 @@ Expires
     <meta http-equiv="expires" content="Thu, 06 Aug 2020 20:13:13 GMT"/>
 
 Refresh
-    Instead of using complicated ways of redirecting web pages using JavaScript or other programming languages. HTML provides a much more succinct and simple solution. To redirect a webpage, we need three attributes set to:
+    Instead of using complicated ways of redirecting web pages using JavaScript or other programming languages. HTML provides
+     a much more succinct and simple solution. To redirect a webpage, we need three attributes set to:
     <meta http-equiv="refresh" content="time(seconds); url=http://www.your-website.com/"/>
 
 Keywords
-    We can search using keywords in a search engine. Searching using keywords will show the internet user web webpages with keywords corresponding to their search.
+    We can search using keywords in a search engine. Searching using keywords will show the internet user web webpages with 
+    keywords corresponding to their search.
     <meta name="keywords" content="keyword #1, keyword #2, keyword #3"/>
 
 
 
 ------------- Others -----------
 
-URI   ----Uniform Resource Identifier (URI)
+URI => Uniform Resource Identifier (URI)
+URL => Uniform Resource Locator
 
+what is layout
+the layout is the page's skeleton in which you inject components.
 
+what is components
+component = element block on UI
 
 How Many Types Of Graphics?
 Answer : There are two types of graphics
             Raster Graphics –pixels (photoshop).
-            Vector Graphics – Lines & Curves( Illustrator).
+            Vector Graphics – Lines & Curves(corel Draw, Illustrator).
 
 Why should a graphic containing several words should be saved in GIF instead of JPG?
-Answer :    It is preferable to store the image in GIF format if image consists of certain words because JPG has file compression 
-    features which may render the fonts unreadable.
-
+Answer :    It is preferable to store the image in GIF format if image consists of certain words because JPG has file 
+compression features which may render the fonts unreadable.
 
 What is favicon?
     Favicons were introduced in 1999 by Internet Explorer 5 (ref) and standardized by the W3C a few months later. 
     They are a small graphic that represents the website.
-
-
 
 How are frames loaded into the browser window?
 Answer: Top-to-bottom, left-to-right
@@ -761,9 +868,9 @@ What Is Initial Value?
 Answer :Initial value is a default value of the property, that is the value given to the root element of the document tree. All properties have an initial value.
 
 What is GET Method? 
-Answer : GET is used to request data from a specified resource. It appends form-data to the URL in name/ value pairs. The length of
- the URL is limited by 2048 characters. This method must not be used if you have a password or some sensitive information to be 
- sent to the server. It is used for submitting the form where the user can bookmark the result.
+Answer : GET is used to request data from a specified resource. It appends form-data to the URL in name/ value pairs. The 
+length of the URL is limited by 2048 characters. This method must not be used if you have a password or some sensitive 
+information to be sent to the server. It is used for submitting the form where the user can bookmark the result.
     GET requests can be cached
     GET requests remain in the browser history
     GET requests can be bookmarked
@@ -783,26 +890,25 @@ Answer : <META HTTP-EQUIV="Refresh" CONTENT="2"; URL="http://www.yourname.com">
 
 
 What's the difference between WWW and HTTP?
-    Simply put, HTTP is the protocol that enables communication online, transferring data from one machine to another. WWW is the set of linked 
-    hypertext documents that can be viewed on web browsers (such as Firefox, Google Chrome, and more). A major similarity, though, is that 
-    both HTTP and WWW are used in website URLs.
+    Simply put, HTTP is the protocol that enables communication online, transferring data from one machine to another. WWW is
+     the set of linked hypertext documents that can be viewed on web browsers (such as Firefox, Google Chrome, and more). A 
+     major similarity, though, is that both HTTP and WWW are used in website URLs.
 
 Why do we use .com?
-    com in .com stands for commercial and the domains ending with .com represents a site which is related to something commercial but this is 
-    not true for all the websites nowadays. The .com at the end of many web addresses is called a top-level domain (TLD). 
+    com in .com stands for commercial and the domains ending with .com represents a site which is related to something 
+    commercial but this is not true for all the websites nowadays. The .com at the end of many web addresses is called a 
+    top-level domain (TLD). 
 
 What is a URL made up of?
-    A URL (Uniform Resource Locator) is a unique identifier used to locate a resource on the internet. It is also referred to as a web address.
-    URLs consist of multiple parts -- including a protocol and domain name -- that tell a web browser how and where to retrieve a resource.
+    A URL (Uniform Resource Locator) is a unique identifier used to locate a resource on the internet. It is also referred to 
+    as a web address. URLs consist of multiple parts -- including a protocol and domain name -- that tell a web browser how and
+     where to retrieve a resource.
     
 What does .com .org .gov mean?
-    Com, . Org. ... org and . net, are abbreviations for "commercial," "organization" and "network" respectively, but common use has moved away 
-    from these definitions, with .com becoming the most popular TLD even for sites with no commercial activity.
+    Com, . Org. ... org and . net, are abbreviations for "commercial," "organization" and "network" respectively, but common use has moved away from these definitions, with .com becoming the most popular TLD even for sites with no commercial activity.
 
 Can .org be trusted?
-    Be careful with the domain . org, because . org is usually used by non-profit organizations which may have an agenda of persuasion rather 
-    than education
-    in general org is better for organisations helping the "public" 
+    Be careful with the domain . org, because . org is usually used by non-profit organizations which may have an agenda of persuasion rather  than education in general org is better for organisations helping the "public" 
 
 .net ?
 net is better for other websites both commercial and personal
@@ -821,3 +927,21 @@ Is a .biz domain good?
     The longer the selector, the slower it will be.
     querySelectorAll will be the slowest since it has to search for all kinds of CSS selectors.
     Other methods like getElementById and getElementsByTagName only search for specific kinds of selectors.
+
+
+
+
+
+
+
+
+
+
+
+mail span (codeinwp.com/blog/why-are-my-emails-going-to-spam/).
+What is the internet?
+how does the Internet work?
+What is HTTP and how it evolved?
+How do browsers work?
+What are domain names and hosting?
+How DNS works?

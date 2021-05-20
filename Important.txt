@@ -1,41 +1,31 @@
-
---- in button
-we have to use (padding)em instead of px and for margin rem consistence spacing.
-in rem, M stand for root.
-pixels are solid unit they are not changed.
-
-
 -) chrome shortcut
 1. ctr + shift + c (Toggle Inspect Element Mode)
 2. ctr + shift + m (Toggle Device user)
 3. ctr + shift + j (open console)
 
 
--) VS code shortcut 
+-) VS code shortcut on html page
     (figure.gallery__item.gallery__item--$>img.gallery__img[src='images/img-$'][alt="gallery img $"])*13
 
+=> shortcut for css vs emmet
+  m0+p2e+w100p => margin: 0; padding: 2em; width: 100%;
+  fz:.5r+c+bgc+df+fxd => font-size: .5rem; color: ; background: ;display: flex; flex-direction: ;
+  c:red+bgc:black+df+fxd:c => color: red; background: black;display: flex; flex-direction: column;
+  m0 => margin:0;
+  m0-auto => margin: 0 auto;
+  w100p => width: 100%;
+  p2r => padding: 2rem;
+  ma10r => max-width: 10rem;
+  fz1r => font-size: 1rem;
+  fz1rem => font-size: 1rem;
 
+--------------------
+big image size => 2560 X 1418, 2560 X 2318, 2560 X , 2560 X 
 
   
----------- css ------------------------------------------
-:root {#23272a, #4f5660, #f6f6f6,
-  #518236, #1875bb, #f0a430, #eb5f2f, #1a8b4d, #76398d, #7c2e3e, #308470, #882b61, #8f2429, #2b2954, #32306f
-    --syntax-background-color: #08090a;
-    --syntax-text-color: #f8f8f2;
-    --syntax-comment-color: #808080;
-    --syntax-declaration-color: #f39c12;
-    --syntax-literal-color: #dda0dd;
-    --syntax-error-color: #f9690e;
-    --syntax-name-color: #7ed07e;
-    --syntax-string-color: #f2ca27;
-        --primary-color: hsla(211,28%,24%,1);
-    --primary-hover-color: hsla(211,39%,19%);
-        --color-tertiary: #1cc4ca;
-    --color-tertiary-hover-color: #24d0d6;
-    --color-quaternary: #1ab7bc;
-    --color-quaternary-hover-color: #1ab7bc;
-        --deep-blue: hsla(205,42%,17%,1);
-}
+---------- font ------------------------------------------
+'IBM Plex Sans','Roboto',sans-serif
+
 
 ------------------------------
 .card :is(.title, p) {
@@ -54,5 +44,81 @@ pixels are solid unit they are not changed.
   color: yellow;
 }
 ----------------------------
+
+USING JAVASCRIPT TO FIND ELEMENTS WIDER THAN THE BODY
+
+var docWidth = document.documentElement.offsetWidth;
+
+[].forEach.call(
+  document.querySelectorAll('*'),
+  function(el) {
+    if (el.offsetWidth > docWidth) {
+      console.log(el);
+    }
+  }
+);
+
+----------------------------
+
+we can use JavaScript to measure the viewport’s width excluding the scrollbar.
+
+function handleFullWidthSizing() {
+  const scrollbarWidth = window.innerWidth - document.body.clientWidth
+
+  document.querySelector('myElement').style.width = 'calc(100vw - ${scrollbarWidth}px)'
+}
+
+----------------------------
+
+
+Meeting ID:  
+Passcode: 
+
+----------------------------
+
+
+----------------------------
+
+
+
+----------------------------
+
+
+
+
+----------------------------
+
+
+
+----------------------------
+
+
+
+
+----------------------------
+
+
+
+----------------------------
+
+
+
+
+----------------------------
+
+
+
+----------------------------
+
+
+
+
+
+
+
+
+
+
+
 
 

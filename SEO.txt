@@ -13,3 +13,5 @@ About Meta tags (use for search engine optimization (SEO) and read by web crawle
 
     <meta name="robots" content="follow"/> -- Robots meta tag is used to provide index information to search engine crawlers.The following meta tags are used to determine whether a page is available for a web search and if it is added to a search engine index. This tag is one of the most relevant meta tags for SEO.
        
+   <meta name="robots" content="noindex" />    
+   <meta name="googlebot" content="noindex" />       

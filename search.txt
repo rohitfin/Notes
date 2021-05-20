@@ -1,26 +1,65 @@
-﻿GitHub
-git
-ajax
-api integration.
-JSON
-InDesign, Sketch, Figma,  InVision, Vision
-Wireframe.cc and In Vision
-Integration with third party API’s such as FB, Twitter, Sound cloud
+﻿
 
-express js, Jinja2, Razor View Engine, Blade (Laravel)
+<link as="script" rel="prefetch" href="/_next/static/chunks/75fc9c18.3c891da9933aaa5a8989.js">
 
-google map key for map
+
+Syntax and Basic Construct.
+Learn DOM manipulation.
+Learn Fetch API/ Ajax.
+.
+Understand the concepts: 
+
 
 -----------------------css  😈
+=> drop shadow, box-shadow
+=> aspect-ratio: 1/1;  VIDEO (16:9) aspect-ratio: 16 / 9
+=> @supports
+=> 3D animation
+=> motion-path [for animation]
+=> p {
+  -webkit-line-clamp: 5; [Set a limited content in a paragraph]
+}
 
-*  aspect-ratio: 1/1;  VIDEO (16:9) aspect-ratio: 16 / 9
-* clip, clip-path 
-* mix-blend-mode
-* background-blend-mode and mix-blend-mode 
-* style="--i:1;"   [variable]
-* font-size: calc(12px + (20–8) * ((100vw — 320px) / (1600–320)));
 
+------------- work 
+=> table 
+=> hover effects
+=> animation, 3D animation, motion-path animation
 
+--------- jquery & javaScript
+=> jquery methods, effects 
+=> DOM, anchor, form, select option, checkbox, radio button
+=> on courser pointer show position and add image on courser symbol
+=> AJAX 
+=> json data
+=> Api integration third party API’s such as FB, Twitter, Sound cloud
+=> fetch data and how many ways
+=> rest api
+=> pokemon API
+=> Form Integration
+=> ES6+, Modular javascript, Closures, Scope, Async Await, Prototype, Event Bubbling, Shadow DOM, Hoisting, Strict
+
+---------- Extra
+=> stylus css
+=> jquery animation
+=> jquery ui
+=> canvas js 
+=> swipe slider (for slider)
+=> slick js (for slider)
+=> animation js (for animation)
+=> chart.js 
+=> google map key
+=> express js
+=> particle js
+=> backbone
+=> grunt 
+=> gulp 
+=> Laravel framework
+=> data table js
+=> Razor View Engine
+=> Jinja2
+=> Redux 
+ 
 
 
 ----------- angular
