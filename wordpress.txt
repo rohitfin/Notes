@@ -11,7 +11,6 @@ create database :- xampp- mySql - admin or localhost/phpmyadmin
 .) Change password from database, phpmyadmin useroption md5
 
 
-
 .) Login 
 .) Change Password
 .) Change Permalinks 
@@ -30,8 +29,6 @@ create database :- xampp- mySql - admin or localhost/phpmyadmin
 .) Google Analytics
 
 
-
-
 .) Theme Builder
     Elementor  Builder
     WPBakery Page Builder
@@ -43,7 +40,6 @@ create database :- xampp- mySql - admin or localhost/phpmyadmin
     KingComposer
     Brizy
     WP Page Builder
- 
 
 .) Slider 
     Slider Revolution
@@ -52,7 +48,7 @@ create database :- xampp- mySql - admin or localhost/phpmyadmin
     Responsive Slider by MetaSlider – Slider and Carousel Plugin for WordPress
 
 .) Child Theme
-    Child Theme Configurator
+    Child Theme Configuration
 
 .) E-Commerce
     WooCommerce
@@ -62,12 +58,14 @@ create database :- xampp- mySql - admin or localhost/phpmyadmin
 .) Payment
     WooCommerce Stripe Payment Gateway    
     WooCommerce PayPal Checkout Payment Gateway
+    razorpay wordpress plugin
 
 .) Image Optimizer
     Smush – Lazy Load Images, Optimize & Compress Images
     EWWW Image Optimizer
 
 .) SEO
+    All In One SEO Pack
     Yoast SEO    
     All in One SEO Pack
     Rank Math – SEO Plugin for WordPress
@@ -84,6 +82,7 @@ create database :- xampp- mySql - admin or localhost/phpmyadmin
 
 .) Error
     Redirection
+    All 404 Redirect to Homepage
     404page – your smart custom 404 error page
 
 .) Security
@@ -106,6 +105,11 @@ create database :- xampp- mySql - admin or localhost/phpmyadmin
 .) All-in-One WP Migration Unlimited Extension
     for Backup, import and export  
       
+.) clone page 
+    Yoast Duplicate Post   
+    Duplicate Page    
+
+.) Duplicate Page
 .) Zip Code      
 .) Pop Builder
 .) Pop Maker      
@@ -116,17 +120,8 @@ create database :- xampp- mySql - admin or localhost/phpmyadmin
 .) Join.chat
 .) QSM for Quiz
 .) Wp File Manager
-.) header footer script
-.) header footer code Manager
-
-.) Meta box
-.) MB Custom Post Type
-.) itheme Security
-.) CF Page or Post Duplicator
-.) Flatsome
-.) UX Blocks
-.) Beaver Builder
-
+.) WP Events Manager
+.) Social Login, Social Sharing by miniOrange
 .) bbPress
 .) Black Studio TinyMCE Widget
 .) Coaching Demo Data
@@ -135,5 +130,12 @@ create database :- xampp- mySql - admin or localhost/phpmyadmin
 .) Page Builder by SiteOrigin
 .) Pricing Table Plus
 .) Recent Post Slider with Widget
-.) Social Login, Social Sharing by miniOrange
-.) WP Events Manager
+.) WP htaccess Control
+.) Meta box
+.) MB Custom Post Type
+.) itheme Security
+.) CF Page or Post Duplicator
+.) Flatsome
+.) UX Blocks
+.) Beaver Builder
+

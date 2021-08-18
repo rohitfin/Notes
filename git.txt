@@ -6,15 +6,21 @@
 0/ stash
 1/ pull
 1.1/ stash out (pop stash)
-2/ select file and click stage
+2/ stage file
 3/ type message 
 4/ click on commit
 5/ click on push
 
+-------------------------
+ Git Commands 
 
-
-
-
+- git status - to show the current status
+- git add .
+- git commit -m "commit the comment"
+- git pull origin dev / master
+- git push origin dev / master
+- git checkout dev / master
+- git brach =>  check the branch
 
 --------------------------
 

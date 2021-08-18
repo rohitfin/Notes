@@ -5,7 +5,9 @@
 
 
 -) VS code shortcut on html page
-    (figure.gallery__item.gallery__item--$>img.gallery__img[src='images/img-$'][alt="gallery img $"])*13
+  (figure.abc.img--$>img.abc[src='img-$'][alt="img $"])*2
+  <figure class="abc img--1"><img src="img-1" alt="img 1" class="abc"></figure>
+   
 
 => shortcut for css vs emmet
   m0+p2e+w100p => margin: 0; padding: 2em; width: 100%;
@@ -69,10 +71,8 @@ function handleFullWidthSizing() {
 }
 
 ----------------------------
-
-
-Meeting ID:  
-Passcode: 
+we can add google review widget with this site
+https://elfsight.com/
 
 ----------------------------
 
@@ -80,10 +80,7 @@ Passcode:
 ----------------------------
 
 
-
 ----------------------------
-
-
 
 
 ----------------------------

@@ -1,30 +1,31 @@
-1 npm install -g @angular/cli@latest 
-2 ng new myWebPage -- create new project
-3 ng serve -- start
-4 ng generate component xyz -- generate component
-5 component -- basic block of code which contains view 
-6 routing and navigation -- on changing of URL load the component - <router-outlet></router-outlet>
-7 service -- to access the common method
-8 http -- ajax
+=> npm install -g @angular/cli@latest 
+=> ng new myProjectName -- create new project
+=> ng serve -- start (npm start)
+=> CTR + C -- stop
+=> ng generate component xyz -- generate component
+=> component -- basic block of code which contains view 
+=> routing and navigation -- on changing of URL load the component - <router-outlet></router-outlet>
+=> service -- to access the common method
+=> http -- ajax
+=> npm ng build => build
 
 ---code---
-0. ctr + c -- stop server
 1. npm i jquery or npm install jquery :- 
     npm i bootstrap@3
 2. npm i -- package.json dependencies get downloaded in node_modules folder
 3. component -- ng generate component firstComponent || ng g c firstComponent   (ng g c NewCompo --spec=false)
   import { Component } from '@angular/core';
 
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
-})
-export class AppComponent {
-  title = 'firstProject';
-}
+  @Component({
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
+  })
+  export class AppComponent {
+    title = 'firstProject';
+  }
 
-4. SPEC.TS test file 
+4. SPEC.TS => test file 
 
 5. routing 
   collection of array with path to view components.Routing basically means navigating between pages.
@@ -56,7 +57,7 @@ export class AppComponent {
 
 12 this.router.navigateByUrl('/dashboard'); // navigate to component to component on click.
 
-13 npm ng build => build
+13 
 
 
 
@@ -64,7 +65,7 @@ export class AppComponent {
 
 * generate new component 
   ng g c NewComponentName
-  creating 4 file : html, css, ts. spec.ts
+  creating 4 file : html, css, ts, spec.ts
   adding path in app.module.ts file
   for view component use sector from .html file.
 
@@ -72,3 +73,11 @@ export class AppComponent {
   use for navigation
   for navigation first put <rout-outlet> and give condition on app.routing.module.ts file.
   if not match (for 404 page), if blank, if match
+
+
+
+
+
+
+
+

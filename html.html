@@ -6,17 +6,30 @@
         <!-- Page Information -->
         <meta name="viewport" content="width=device-width initial-scale=1 shrink-to-fit=no" />
         <!-- <meta name="viewport" content="width=device-width initial-scale=1 shrink-to-fit=no user-scalable=no" /> -->
-        <meta name="application-name" content="OpenStreetMap">
-        <meta name="author" content="Your Name">
+        <meta name="application-name" content="application-name">
         <!-- Google usually uses only the first 20-25 words of your description -->
         <meta name="description" content="I can tell you everything about this webpage under 160 characters">
         <meta name="keywords" content="Keyword1, Keyword2">
         <meta name="copyright" content="Copyright information" />
         <meta name="robots" content="index,follow"/> 
-
+        <meat name="author" content="" />
+        <META NAME="audience" CONTENT="all">
+        <meta name=contact content="" />
+        <meta name=designer content="" />
+        <meta name=publisher content="" />
+        <meta name=distribution content="Global" />
+        <meta name=coverage content="worldwide">
+        <META NAME="content-Language" content="English">
+        <meta name=language content="en" />
+        <meta name=rating content="general">
+        <meta name="yandex-verification" content="" />
+        <meta name=google-site-verification content="" />
+        <meta name=p:domain_verify content="" />
 
         <title>All tags for head part</title>
         
+        <!-- canonical link -->
+        <link class="mymeta" rel="canonical" href="">  <!-- Website url  -->
 
         <!-- Automatic Refresh -->
         <meta http-equiv="refresh" content="5">
@@ -70,11 +83,6 @@
         <meta name="msapplication-square70x70logo" content=”logo-wp-70.png”>
         <meta name="msapplication-square150x150logo" content=”logo-wp-150.png”>
         <meta name="msapplication-square310x310logo" content=”logo-p-310.png”>
-
-        <!-- canonical link -->
-        <link class="mymeta" rel="canonical" href="">  <!-- Web link -->
-    
-        
         
         <!--  Open Graph -->
         <meta property="og:url" content="https://example.com/page.html">
@@ -139,6 +147,11 @@
     </head>
     <body>
 
+        <!-- Making content editable -->
+        <div contenteditable="true">
+          This text can be edited by the user.
+        </div>
+
         <!-- Mail -->
         <a href="mailto:example@example.com">Send email</a>
         <!-- Cc and Bcc -->
@@ -200,23 +213,61 @@
         </picture>
             
         <!-- for big image  -->
-        <link rel="preload" href="image.png"> [Request Your Image Early]
+        <link rel="preload" href="image.png"> <!-- [Request Your Image Early]-->
         
         <!-- form -->
         <form action="" method="post" enctype="multipart/form-data"> </form>
         <input type="file" accept="image/x-png,image/gif,image/jpeg" />
+        <input type="file" accept=".jpg, .png" >
+        <input type="file" id="img" name="img" accept="image/*">
 
         <form action="/login" method="POST">
             <label for="Username">Username:</label>
             <input id="Username" type="text" name="username" />
+
             <label for="Pass">Password:</label>
             <input id="Pass" type="password" name="pass" />
-            <label><input name="Easy" type="checkbox" value="Easy">
-                Easy 
-              </label>
+
+            <label><input name="Easy" type="checkbox" value="Easy"> Easy </label>
+
+            <label for="male"> Male</label>
+            <input name="gender" type="radio" id="male"  value="Male" />
+      
+            <label for="female">Female</label>
+            <input name="gender" type="radio" id="female"  value="Female"  />
+
+            <label for="graduate">Graduate</label>
+            <input name="edu" type="checkbox" id="graduate"  value="Graduate" />
+          
+            <label for="pgraduate">Post Graduate</label>
+            <input name="edu" type="checkbox" id="pgraduate"  value="Post Graduate" />
+
             <input type="submit" name="submit" />
         </form>
 
+        <!-- Input suggestions -->
+        <label for="country">Choose your country from the list:</label>
+        <input list="countries" name="country" id="country">
+        <datalist id="countries">
+          <option value="UK">
+          <option value="Germany">
+          <option value="USA">
+          <option value="Japan">
+          <option value="India">
+        </datalist>
+ 
+        <!-- Multiple -->
+        <input type="file" multiple>
+
+        <label for="tech">Choose a technology:</label>
+        <select name="tech" id="tech" multiple>
+          <option value="angular">Angular</option>
+          <option value="react">React</option>
+          <option value="vue">vue</option>
+        </select>
+   
+        <!-- Character Entities -->
+        <input type="text" placeholder=" &#128269; Search"/>
 
         <!-- video -->
         <video width="480" controls poster="https://archive.org/download/WebmVp8Vorbis/webmvp8.gif" >
@@ -224,7 +275,12 @@
             <source src="video-file.mp4" type="video/mp4">
             <source src="video-file.ogv" type="video/ogg">
         </video>
-           
+
+        <!-- Poster -->
+        <video  poster="/gif/poster.gif">
+          <source src="trailer.mp4" type="video/mp4">
+        </video>
+
         <embed type="video/mp4" src="video.mp4" width="640" height="480">
 
 
@@ -247,9 +303,6 @@
         <div tabindex="2">Second</div>
         <div tabindex="1">First</div>
 
-        <!-- Character Entities -->
-        <input type="text" placeholder=" &#128269; Search"/>
-
         <!-- ARIA  role-->
         <div role="main" role="form" role="link" role="grid" role="gridcell" role="group" role="document" role="alert"  role="banner"  role="button" role="heading"> </div>
         <input type="checkbox" role="checkbox" aria-checked="false">
@@ -260,30 +313,31 @@
             <figcaption>This is my cat, Albert.</figcaption>
         <figure>
 
+        <!-- Base URL -->
+        <head>
+          <base href="https://www.twitter.com/" target="_blank">
+        </head>
+        <body>
+          <img src="elonmusk" alt="Elon Musk">
+          <a href="BillGates">Bill Gate</a>
+        </body> 
+
+       
+        <!-- download -->
+        <a href="/images/program.jpg" download>
+
+        <!-- Hidden -->
+        <p hidden>You won't see me on the browser, only developers can!</p>
+
+      
+        <!-- ContentEditable -->
+        <div contenteditable="true">
+            This text can be edited by the user.
+        </div>
+
+       
 
 
-            <!-- Base URL -->
-            <!-- <head>
-            <base href="https://www.twitter.com/" target="_blank">
-            </head>
-
-            <body>
-            <img src="elonmusk" alt="Elon Musk">
-            <a href="BillGates">Bill Gate</a>
-            </body> -->
-
-
-            <!-- Input suggestions -->
-            <label for="country">Choose your country from the list:</label>
-            <input list="countries" name="country" id="country">
-
-            <datalist id="countries">
-            <option value="UK">
-            <option value="Germany">
-            <option value="USA">
-            <option value="Japan">
-            <option value="India">
-            </datalist>
 
 
 

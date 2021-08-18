@@ -13,7 +13,6 @@
     Once a user agent has recognized a correct DOCTYPE, it will trigger the no-quirks mode matching this DOCTYPE for reading the document.
      If a user agent doesn't recognize a correct DOCTYPE, it will trigger the quirks mode.
 
-
  What happens when DOCTYPE is not given?
     The web page is rendered in quirks mode. The web browsers engines use quirks mode to support older browsers which does not follow
      the W3C spec.In quirks mode CSS class and id names are case insensitive. In standards mode they are case sensitive.
@@ -26,10 +25,9 @@ type of video formats, audio tag (mp3)
 Answer :	mp4, WebM, Ogg --- mp3, wav, Ogg
 
 What Are The Different Types Of Storage In Html 5?
-        cookie: A text file saved on the users computer to store and retrieve data
+    cookie: A text file saved on the users computer to store and retrieve data
     •localStorage object stores data for a longer period of time even if the browser is closed.
     •sessionStorage object stores data for a specific session. 
-
 
 List of block level elements
     p, h1, h2, h3, h4, h5, h6, ol, ul, pre, address, blockquote, dl, div, section, fieldset, form, hr, table
@@ -40,12 +38,11 @@ List of inline elements
     a, bdo, br, img, map, object, q, script, span, sub, sup
     button, input, label, select, textarea
 
-
 What The Use Of Canvas Element In Html5?
     The canvas element is used to draw graphics images on a web page by using javascript
 
 How many tags were removed in HTML5?
-    <frame>, <basefront>, <applet>, <frameset>, <big>, <center>, <bigcenter>, <noframes>, <dir>, <tt>, <acronym>, <basefont>
+    <frame>, <basefront>, <applet>, <frameset>, <big>, <center>, <bigcenter>, <noframes>, <dir>, <tt>, <acronym>
 
 What are Semantic Elements?
     A semantic element clearly describes its meaning to both the browser and the developer.
@@ -56,6 +53,15 @@ What are Semantic Elements?
 
     section => "A section is a thematic grouping of content, typically with a heading." defines section in a document.
     <article>, aside => element specifies independent, self-contained content.
+
+what is meta tag 
+    Meta tags are snippets of text that describe a page's content; the meta tags don't appear on the page itself, but only in the page's source code.
+    Meta tags are  essentially little content descriptors that help tell search engines what a web page is about.
+
+
+
+
+
 
 
 
@@ -129,6 +135,14 @@ h2:after {content: ' \0021';} ..[print ! (exclamation mark)](symbol code exclama
  placeholder-shown, :active, :checked, :disabled, :last-child, :nth-child(n), :not(selector), :valid, :target, :required, 
  :read-only, :only-of-type, :nth-of-type(n), :nth-last-of-type(n), :nth-last-child(n), :link
 
+What Are Pseudo-elements?
+Answer : Pseudo-elements are fictional elements that do not exist in HTML.
+
+What is pseudo element? what is pseudo class?
+    pseudo elements helps you to add cosmetics contents. pseudo elements generates content where as pseudo class deals with 
+    state of the element
+
+
 
 ::before / ::after
   The ::before and ::after pseudo-elements in CSS allows you to insert content onto a page without it needing to be in the HTML.
@@ -151,7 +165,7 @@ h2:after {content: ' \0021';} ..[print ! (exclamation mark)](symbol code exclama
   :-moz-only-whitespace
 
 :empty
-  The :empty pseudo selector will select elements that contain either nothing
+   select elements that contain either nothing
 
 :dir() -(only firefox support)
   :dir(rtl) {}
@@ -180,16 +194,21 @@ h2:after {content: ' \0021';} ..[print ! (exclamation mark)](symbol code exclama
   selector in CSS named for a state that is neither checked nor unchecked. It’s that in-between state that we might consider 
   the “Maybe” between “Yes” and “No” options. The state is not fully determined, hence the name: indeterminate.
 
-
 :is / :where
+    both pseudo-class functions that can help shorten and stop repetition in creating your selectors.
   The pseudo-select :is() in CSS allows you to write compound selectors more tersely.
   ul li, ol li {}
     :is(ul, ol) li {}
   ul li a:hover, ol li a:hover {}
     :is(ul li, ol li) a:hover{}
 
+What is the difference between :is & :where?
+    they have different specificities. :where() is simple and always has a specificity of 0 while :is() 
+    has the specificity of the strongest/most specific selector.
+
+
 ::marker
-  The ::marker pseudo-element is for styling the stylistic marker of a list element. For example, the bullet point of a 
+  for styling the stylistic marker of a list element. For example, the bullet point of a 
   default <ul> (e.g. •) or the numeral of a default <ol> (e.g. 1.). 
 
 ::placeholder
@@ -205,7 +224,6 @@ h2:after {content: ' \0021';} ..[print ! (exclamation mark)](symbol code exclama
 :root
   The :root selector allows you to target the highest-level “parent” element in the DOM, or document tree.
 
-
 css specificity
     style attribute [inline]
     IDs => (div[id=a])
@@ -216,13 +234,17 @@ css specificity
 
 target="_blank|_self|_parent|_top|
 
+What is CSS and why it is used?
+    CSS is the language for describing the presentation of Web pages, including colors, layout, and fonts. It allows one to
+    adapt the presentation to different types of devices, such as large screens, small screens, or printers.
+    CSS saves a lot of work. It can control the layout of multiple web pages all at once.
 
 What is z-index?
     The z-index property specifies the stack order of an element. An element with greater stack order is always in front of
     an element with a lower stack order.
 
 What is the origin of CSS?
-	SGML (Standard Generalized Markup Language) is the origin of CSS
+	SGML (Standard Generalized Markup Language) 
 
 CSS frameworks
 	Bootstrap, Foundation, Semantic UI, Gumby, Ulkit
@@ -240,12 +262,9 @@ How Do I Remove The Border Around Frames?
 Answer :  <FRAMESET ... BORDER=0 FRAMEBORDER=0 FRAMESPACING=0>. 
 
 How Do I Combine Multiple Sheets Into One?
-Answer :    TITLE attribute
+Answer : with TITLE attribute
             <LINK REL=Stylesheet HREF="default.css" TITLE="combined">
         <LINK REL=Stylesheet HREF="fonts.css" TITLE="combined">
-
-What Are Pseudo-elements?
-Answer : Pseudo-elements are fictional elements that do not exist in HTML.
 
 Which Property Is Used To Create A Small-caps Effect?
 Answer : font-variant: normal|small-caps|initial|inherit;
@@ -253,18 +272,12 @@ Answer : font-variant: normal|small-caps|initial|inherit;
 How to target the first 4 elements of a list?
 Answer: .selector:nth-child(-n+4){}
 
-What is pseudo element? what is pseudo class?
-    pseudo elements helps you to add cosmetics contents. pseudo elements generates content where as pseudo class deals with 
-    state of the element
-
-
 Define CSS image sprites.
     Answer: CSS image sprites are a group of images that are placed into one image.It is commonly used technique for icons.
      It reduces the load time and request number to the server  while projecting multiple images into a single web page.
 
 Inline Elements
-    Will ignore top and bottom margin settings, but will apply left and right margins, and any padding
-    Will ignore the width and height properties
+     ignore top and bottom margin, but apply left and right margins, and any padding Will ignore the width and height properties
 
 Does setting margin-top and margin-bottom have an affect on an inline element?
     No, Top and bottom margins do not affect inline elements because inline elements flow with content on the page.
@@ -281,9 +294,6 @@ Explicit and Implicit Grid
 What are the new color properties in CSS3?
     HSLA (Hue-saturation-lightness-alpha), HSL, and RGBA (red green blue alpha.).
 
-What is a Clearfix?
-    A clearfix is a way for an element to automatically clear or fix its elements, so that do not need to add additional markup.
-    It is generally used in float layout where elements are floated to be stacked horizontally.
     
 What are the media types?
 It has a total of 10 media types supported it. Here are those:
@@ -313,7 +323,6 @@ Explain CSS3 Selectors.
 What is the recommended order for styling an <a> tag?
     a:link { } , a:visited { } , a:hover { } , a:active { }
 
-
 @charset — Defines the character set used by the style sheet.
    
 @import — Tells the CSS engine to include an external style sheet.
@@ -336,13 +345,11 @@ What is the recommended order for styling an <a> tag?
 
 
  How do I ignore a class in CSS?, How to exclude particular class name from CSS selector ? 
-    In CSS, to exclude a particular class, we can use the pseudo-class :not selector also known as negation pseudo-class or not selector. 
-    This selector is used to set the style to every element that is not the specified by given selector.
+    :not selector 
    
 How do I force CSS override?
     Overriding the ! important modifier
-    Simply add another CSS rule with ! important , and give the selector a higher specificity (adding an additional tag,
-     id or class to the selector) add a CSS rule with the same selector at a later point than the existing one (in a tie, the last one defined wins).
+    Simply add another CSS rule with ! important , and give the selector a higher specificity
     
 How is the concept of inheritance applied in CSS?
     In CSS, inheritance controls what happens when no value is specified for a property on an element.
@@ -351,21 +358,18 @@ How do you avoid important in CSS?
     all you need to do is increase specificity. In your case, both of your selectors have identical specificity. 
    
 What does important do in CSS?
-    This rule overrides all previous styling rules ​-- the ! It overrides the cascade and gives the style rule the highest 
-    precedences following property adjusts 
+    This rule overrides all previous styling rules ​-- the ! It overrides the cascade and  give the selector a higher specificity
 
 what font is used?
     font-size-adjust
 
 in button 
-    we have to use (padding)em instead of px and for margin rem consistence spacing.
-    in rem, M stand for root.
+    we have to use (padding)em instead of px and for margin rem consistence spacing. in rem, R stand for root.
     pixels are solid unit they are not changed.
 
 What is the difference between em and rem units?
     While em is relative to the font-size of its direct or nearest parent, rem is only relative to the html (root) font-size. 
-    em gives the ability to control an area of a design. As in, scale the type in that specific area relatively. rem gives
-     the ability to scale type across the entire page easily.
+    em gives the ability to control an area of a design. rem gives the ability to scale type across the entire page easily.
 
 Should I use em or REM?
     Use em units for sizing that should scale depending on the font size of an element other than the root. Use rem units 
@@ -403,6 +407,19 @@ What is the CSS Box model and what are its elements?
 CSS Flexbox or Grid ?
      Flexbox is mainly meant for 1-dimensional layouts while Grid is meant for 2-dimensional layouts.
 
+Flexbox
+     Flexbox is a CSS3 layout model that solves usually tricky problems including how to position, center or dynamically resize 
+     elements on a page. it a great tool to use for responsive design systems.
+
+What is grid area CSS?
+    The grid-area CSS shorthand property specifies a grid item's size and location within
+     a grid by contributing a line, a span
+
+Does CSS grid replace Flexbox?
+    Grid is better than flexbox for a number of valid points. Furthermore, Grid uses the auto layout, minmax(), repeat(), 
+    and auto-fill which can provide responsive media query alternative. ... Flexbox is essentially for laying out items in a 
+    singledimension – in a row OR a column
+
 What's the difference between a relative, fixed, absolute and statically positioned element?
     static - The default position; the element will flow into the page as it normally would. 
     relative - The element's position is adjusted relative to itself, without changing layout 
@@ -434,7 +451,6 @@ What does inline-block or block do in CSS?
 display block
     take up as much width as they are allowed and typically start on a new line.
 
-
 what is hyphens?
     is allowed to create more soft wrap opportunities within a line of text.
     hyphens: none|manual|auto|initial|inherit;
@@ -446,7 +462,6 @@ what is word-wrap?
 what is word-break?
     how words should break when reaching the end of a line.
     word-break: normal|break-all|keep-all|break-word|initial|inherit;
-
 
 what is outline?
     Outline differs from borders! Unlike border, the outline is drawn outside the element's border, and may overlap other 
@@ -478,6 +493,17 @@ what is clear?
     The clear property applies to floating and non-floating elements.
     clear: none|left|right|both|initial|inherit;
 
+
+What is a Clearfix?
+    A clearfix is a way for an element to automatically clear or fix its elements, so that do not need to add additional markup.
+    It is generally used in float layout where elements are floated to be stacked horizontally.
+
+    .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
 What is aspect ratio CSS?
     The aspect ratio of an element describes the proportional relationship between its width and its height.
     ratio value representing the width-to-height aspect ratio of the viewport. It is a range feature, meaning you can 
@@ -486,18 +512,68 @@ What is aspect ratio CSS?
 width: max-content;
     not wrap
 
+visibility hidden vs display none
+    is not visible, but space is allocated for it on the page.
+    is not visible,also not allocated space on the page.
+
+What are the new features in CSS3?
+    grid, Flexbox gaps,The :is() and :where() pseudo-classes, Advanced Animations, Multiple Backgrounds & Gradient, HSL RGBA, 
+    HSLA and the gradient colors, text-shadows, Multiple Column layouts, Opacity, Rounded Corner:
+
+
+
+
+
+
+
+Is CSS faster than sass?
+    CSS sends an HTTP request to server each time to import a file. Sass does it without 
+    an HTTP request, which is a faster approach.
+
+What Is A CSS Reset? (make consistency on all browser so reset default values)
+    resets the styling of all HTML elements to a consistent baseline
+
+    In case you didn’t know, every browser has its own default ‘user agent’ stylesheet, that it uses to make unstyled 
+    websites appear more legible. For example, most browsers by default make links blue and visited links purple, give
+    tables a certain amount of border and padding, apply variable font-sizes to H1, H2, H3 etc. and a certain amount of
+    padding to almost everything. Ever wondered why Submit buttons look different in every browser?
+
+
+
 
 ------------- sass ---------------
 
 Sass (First appeared November 28, 2006)
-   Sass (which stands for Syntactically Awesome Style Sheets) is an extension to CSS. ... Saas includes various features 
-   such as variables, nested rules, mixins, inline imports, built-in functions to manipulate color and other values, all 
-   with a fully CSS-compatible syntax. Sass designed by Hampton Catlin and developed by Natalie Weizenbaum.
+    Sass is a CSS pre-processor. Sass reduces repetition of CSS and therefore saves time. Sass is an extension of CSS3.
+   Sass ( Syntactically Awesome Style Sheets) is an extension to CSS. ... 
+   Saas includes various features such as variables, nested rules, mixins, imports, , Partials and @import directive, Interpolation., 
+    @content directive., %placeholders., Functions, built-in functions to manipulate color and other values. 
+    Sass designed by Hampton Catlin and developed by Natalie Weizenbaum.
 
-What is SASS programming?
-    Sass (stylesheet language) ... Sass is a preprocessor scripting language that is interpreted or compiled into Cascading 
-    Style Sheets (CSS). SassScript is the scripting language itself. Sass consists of two syntaxes. The original syntax,
-     called "the indented syntax,"
+    Sass (stylesheet language) ... Sass is a preprocessor scripting language that is compiled into Cascading 
+    Style Sheets (CSS). SassScript is the scripting language itself. 
+
+    browser can not read sass so we have to compiled into css with the help of koala software its free or command line.
+
+what is pre-preprocessor?   
+    CSS preprocessors are scripting languages that extend the default capabilities of CSS. 
+    They enable us to use logic in our CSS code, such as variables, nesting, inheritance, 
+    mixins, functions, and mathematical operations
+
+What is the advantage of sass?
+    Sass reduces repetition of CSS and therefore saves time.
+    Sass facilitates you to write clean, easy and less CSS in a programming construct. It contains fewer codes so you 
+    can write CSS quicker. It is more stable, powerful, and elegant because it is an extension of CSS.
+
+The disadvantages of CSS preprocessors
+    # 1. Debugging is harder. ...
+    # 2. Compilation slows down development. ...
+    # 3. They can produce very large CSS files. ...
+    # 4. Maintainence and overengineering. ...
+    # 5. Tooling and developer convenience. ...
+    # 6. Saving generated files (or not) ...
+    # 7. Capability and understanding. ...
+    # What about variables, mixins, and nesting?
 
 What is the benefit of using sass?
     Advantages. Sass facilitates you to write clean, easy and less CSS in a programming construct. It contains fewer 
@@ -511,11 +587,11 @@ What is a Sass mixin?
 
 What is the difference between SCSS and sass?
     The basic difference is the syntax. While SASS has a loose syntax with white space and no semicolons, 
-    the SCSS resembles more to CSS. 
-    SASS stands for Syntactically Awesome StyleSheets. SCSS --Sassy CSS
+    the SCSS resembles more to CSS.  SASS stands for Syntactically Awesome StyleSheets. SCSS --Sassy CSS
 
 What are the key features of Sass include?
-    Reference symbol ( & )  which allows you to reference a parent element, Partials and @import directive, Interpolation., @content directive., %placeholders., Functions., Lists and @each directive.
+    Reference symbol ( & )  which allows you to reference a parent element, Partials and @import directive, Interpolation., 
+    @content directive., %placeholders., Functions., Lists and @each directive.
    
 What is the use of Sass @import function?
     SASS @import directive is used to include one stylesheet inside another stylesheet
@@ -529,11 +605,11 @@ Explain the Data Types of Sass supports?
 What is the use of @extend function in Sass?
     same style can be copied to the other classes
    
-Explain how to define a variable in Sass?
-    Variables in Sass begin with a ($) sign and variable assignment is done with a colon(:).
-
 Explain when can you use the %placeholders in Sass?
     you don’t want the base styles to be seen in output CSS styles
+
+Explain how to define a variable in Sass?
+    Variables in Sass begin with a ($) sign and variable assignment is done with a colon(:).
 
 Explain what is the use of &combinator ?
     &combinator concatenates nested selector with the parent selector
@@ -551,6 +627,23 @@ Explain what is the use of &combinator ?
 
 What is SVG?
 Answer : Scalable Vector Graphics,  HTML SVG is used to describe the two-dimensional vector and vector/raster graphics.
+
+
+------------------- bootstrap -------------
+
+what is bootstrap
+    Bootstrap is the most popular CSS Framework for developing responsive and
+     mobile-first websites. It contains CSS- and JavaScript-based design templates
+      for typography, forms, buttons, navigation, and other interface components.
+
+What exactly is Bootstrap?
+    Bootstrap is an open-source Javascript framework developed by the team at Twitter.
+     It is a combination of HTML, CSS, and Javascript code designed to help build user 
+     interface components.
+
+Who uses bootstrap?
+    42825 companies reportedly use Bootstrap in their tech stacks, including Spotify, 
+    Twitter, and Udemy.
 
 
 
@@ -588,39 +681,59 @@ all your images are loaded fully, hence it slows down the execution. On the othe
 $document.ready() does not wait for elements to get loaded.
 
 
-what is document.ready() ?
-$( document ).ready() will only run once the page Document Object Model (DOM) is ready for JavaScript code to execute.
+Is Ajax a framework?
+    AJAX. OOP, an open source framework, it provides an OOP-style programming engine 
+    and Ajax requests-handling functionality
 
-what is window.onload() ?
+    $.ajax({
+        url: '',
+        type: 'get',
+        error: function(e){ console.lo(e);},
+        success: function(res){
+            console.log(res);
+        }
+    });
 
 
-.load()
-The load event is sent to an element when it and all sub-elements have been completely loaded. 
-
-
-
-
+ What’s the fastest way to query DOM?
+    The fastest way to select an element is by ID if the ID exists.
+    The second quickest is getElementByClassName .
+    The longer the selector, the slower it will be.
+    querySelectorAll will be the slowest since it has to search for all kinds of CSS selectors.
+    Other methods like getElementById and getElementsByTagName only search for specific kinds of selectors.
 
 
 
 
 
 ------------- Javascript -----------
+What is JavaScript and why it is used?
+    JavaScript is a text-based programming language used both on the client-side and server-side that allows you to
+    make web pages interactive.Where HTML and CSS are languages that give structure and style to web pages, JavaScript gives
+    web pages interactive elements that engage a user.
+
 var
-    var is function scoped, can be re-declared.
+    var is function scoped, can be re-declared and re-assign.
     access 'var' before initialization gives 'undefined' (means hoisting)
 
+    console.log(a); // hoisting 
     var a = 10;
     var a = 20; // re-declared
     a = 30; // re-assigning
 
 let 
-    block level scope, can not re-declared.let variables can be updated but not re-declared.
+    block level scope, can not re-declared but re-assign. let variables can be updated but not re-declared.
     Cannot access 'let' before initialization gives 'error' (means hoisting)
 
 const 
-    block level scope, can not re-assignment to constant variable. const variables can neither be updated nor re-declared. 
+    block level scope, const variables can neither be re-assign nor re-declared. 
     Cannot access 'const' before initialization gives 'error' (means hoisting)
+
+
+function 
+    function is just a basically collection of code that perform a specific task.They are reusable blocks of code 
+    that we can leverage throughout our applications as many times as we need to create our desired functionality. 
+
 
 Is Const faster than let?
     It appears that using const would inherently make code a little faster, because it seems to reduce the amount 
@@ -634,26 +747,150 @@ What does != Mean in programming?
     not-equal-to operator
     The not-equal-to operator ( != ) returns true if the operands don't have the same value; otherwise, it returns false
 
-What is ++ i in JavaScript?
-    The value of ++i is the value of i after the increment. 
-    var i = 42;
-    alert(i++); // shows 42
-    alert(i); // shows 43
-    i = 42;
-    alert(++i); // shows 43
-    alert(i); // shows 43
-      
+What is ++i in JavaScript? (bad ki Value)
+    ++i is the value of i after the increment. 
+        i = 42;
+        alert(++i); // shows 43
+        alert(i); // shows 43
 
+What is i++ in JavaScript? (Pahle ki value)
+    The value i++ is the value of i before the increment.
+        var i = 42;
+        alert(i++); // shows 42
+        alert(i); // shows 43
 
 The difference between i++ and ++i is the value of the expression.
     The value i++ is the value of i before the increment. The value of ++i is the value of i after the increment.
     var i = 42;
     alert(i++); // shows 42
     alert(i); // shows 43
+
     i = 42;
     alert(++i); // shows 43
     alert(i); // shows 43
 
+diff between =, ==, ===
+    = => assigning value
+    == => comparing values
+    === => comparing values and types
+
+what is array in javascript?
+    array is collection of data. access from index value. store multiple values in a single variable.
+    in single variable store multiple value is called array. array is collection of data.
+	array can hold function. array is numeric index number. in javascript array start with 0 (zero) index number.
+
+    var myArr = [1, 2, 'a', 'c'];
+
+How do you clear an array?
+    Substituting with a new array − arr = []; This is the fastest way. ...
+    Setting length prop to 0 − arr.length = 0. This will clear the existing array by setting its length to 0. ...
+    Splice the whole array. arr.splice(0, arr.length) This will remove all elements from the array and will actually clean the original array.
+
+what is object in javascript
+    is key value pair. access from .(dot) notation. object is a collection of properties , and a property is an association 
+    between a name (or key) and a value.
+
+    var myOb = {
+        name: "cyclopes",
+        rank: '2',
+        power: ['one', 'two', 'three']
+    }
+
+
+what is class inheritance in javascript
+    Inheritance enables you to define a class that takes all the functionality from a parent class and allows you to add more.
+    Using class inheritance, a class can inherit all the methods and properties of another class. Inheritance is a useful 
+    feature that allows code reusability.
+
+
+what is properties?
+ properties are like variable attached to classes / object.
+
+what is method?
+    methods are like function attached to classes / objects
+
+what destructuring?
+    easily extract array element or object properties and store them in variables.
+    Its allows to put out single elements or object properties.
+
+difference between array and object
+
+
+
+what is filter?
+
+
+what is map?
+
+
+
+what is reduce ?
+
+
+
+what is promises?
+
+
+
+async/await vs promises ?
+
+
+
+what is await and async in javascript ?
+
+
+
+difference between typescript and javascript ?
+
+
+
+what is bubbling in javascript ?
+
+
+------------- angular -----------
+
+What is angular?
+    A component-based framework for building scalable web applications· A collection of well-integrated libraries that 
+    cover a wide variety of components. Angular is a platform and framework for building single-page client applications using
+    HTML and TypeScript. Angular is written in TypeScript. 
+    Angular helps build interactive and dynamic single page applications (SPAs) with its compelling features including templating, 
+    two-way binding, modularization, RESTful API handling, dependency injection, and AJAX handling.
+
+What are advantages of angular?
+    Functionality, Consistency, Productivity, Maintainability, Modular development structure, Angular Material.
+
+Who is using angular?
+    Microsoft Office, Deutsche Bank, Mixer, Santander, Gmail, Forbes, Upwork, PayPal.
+
+
+Why you should not use angular?
+    The biggest drawback of Angular was poor accessibility for page scrapers and search crawlers
+
+What are the advantages of Angular?
+    Two-way data binding.
+    DOM manipulation, 
+    Improved server performance, 
+    Faster application prototyping, 
+    Responsive web, 
+    Highly testable products, 
+    The MVVM architecture, 
+    Use of directives.
+
+What are the advantages of Angular?
+    SEO problems,
+    Concept of Dependency Injection and Inversion Of Control,
+
+why not jquery use in angular?
+
+
+what is directives?
+    ngIf and ngFor
+
+
+what is service in angular?
+
+
+what is observable in angular
 
 
 
@@ -665,11 +902,11 @@ steps:   stash, pull, pop stash, stage changes, commit, push
 
 what is repository?    
     repository is like place we store our code, multiple person work on single project.
-    eg: github, bidbucket
+    eg: github, bitbucket 
 
 what is conflict?
     what i have changed if someone also change that, text, line or file then we will get conflict.
-how to solve?
+how to solve conflict?
     we have to select required changes and push.
 
     
@@ -680,7 +917,9 @@ how to solve?
 what is seo?
 
 
+
 important of seo?
+
 
 
 how to seo?
@@ -702,6 +941,20 @@ It is free of cost, and you can use it for any personal and commercial website.
 When was the Wordpress released initially? When is it announced as open source software?
 Answer: WordPress was initially released on 27th May 2003 by Matt Mullenweg and Mike Little. 
     WordPress was announced as open source in October 2009.
+
+What is child theme in wordpress?
+A child theme in WordPress is a sub theme that inherits all the functionality, features, and style of its parent theme. 
+Child themes are a safe way to modify a WordPress theme without actually making any changes to the parent theme's files.
+Child themes are often used when you want to customize or tweak an existing WordPress theme without losing the ability 
+to upgrade that theme.
+
+Is Child Theme necessary?
+Those updates are the reason to use a child theme. But if you have nothing specific to change for the theme you are using,
+ then no child theme is needed.
+
+What is a parent theme?
+A parent theme in WordPress is a theme that is declared parent by a another theme, child theme. ... The parent/child theme 
+functionality allows users to easily upgrade their themes without worrying about losing any custom styling that they have added to their site.
 
 What are the system requirements for installing WordPress?
 Answer: Database - MySQL 5.0 +
@@ -777,6 +1030,7 @@ Where is WordPress content stored?
 
 
 ------------- meta tags -----------
+
 Viewport <meta name="viewport" content="width=device-width, initial-scale=1">
 Viewport meta tag is necessary because it instructs web browsers (mainly mobile web browsers) on how to render a webpage
  on all devices.
@@ -920,13 +1174,6 @@ Is a .biz domain good?
     window.onload is fired when the DOM is ready and all the content including images, CSS, scripts, subframes, etc. finish loaded.
     It means that everything is loaded.
     document.onload is fired when the DOM is ready, which can be before images and other external content is loaded.
-
- What’s the fastest way to query DOM?
-    The fastest way to select an element is by ID if the ID exists.
-    The second quickest is getElementByClassName .
-    The longer the selector, the slower it will be.
-    querySelectorAll will be the slowest since it has to search for all kinds of CSS selectors.
-    Other methods like getElementById and getElementsByTagName only search for specific kinds of selectors.
 
 
 

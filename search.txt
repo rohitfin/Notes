@@ -1,5 +1,4 @@
 ﻿
-
 <link as="script" rel="prefetch" href="/_next/static/chunks/75fc9c18.3c891da9933aaa5a8989.js">
 
 
@@ -9,35 +8,30 @@ Learn Fetch API/ Ajax.
 .
 Understand the concepts: 
 
+=> vs code sass compiler how to use 
 
 -----------------------css  😈
-=> drop shadow, box-shadow
-=> aspect-ratio: 1/1;  VIDEO (16:9) aspect-ratio: 16 / 9
-=> @supports
 => 3D animation
 => motion-path [for animation]
-=> p {
-  -webkit-line-clamp: 5; [Set a limited content in a paragraph]
-}
-
 
 ------------- work 
 => table 
-=> hover effects
 => animation, 3D animation, motion-path animation
 
+=> Todo list
+=> Calculator
+=> Form validation
+
 --------- jquery & javaScript
-=> jquery methods, effects 
-=> DOM, anchor, form, select option, checkbox, radio button
-=> on courser pointer show position and add image on courser symbol
-=> AJAX 
+
 => json data
-=> Api integration third party API’s such as FB, Twitter, Sound cloud
-=> fetch data and how many ways
 => rest api
 => pokemon API
+=> fetch data and how many ways
 => Form Integration
+=> Api integration third party API’s such as FB, Twitter, Sound cloud
 => ES6+, Modular javascript, Closures, Scope, Async Await, Prototype, Event Bubbling, Shadow DOM, Hoisting, Strict
+
 
 ---------- Extra
 => stylus css
@@ -52,6 +46,7 @@ Understand the concepts:
 => express js
 => particle js
 => backbone
+=> Svelte
 => grunt 
 => gulp 
 => Laravel framework
@@ -64,6 +59,7 @@ Understand the concepts:
 
 ----------- angular
 * Components
+* Routing
 * Directives
 * Structural directive
 * Local reference
@@ -71,7 +67,6 @@ Understand the concepts:
 * metadata
 * decorators
 * initialization
-
 
 
 

@@ -18,6 +18,10 @@ script.bat --> with bat call more function at a time.
 
 
 
+node js version => node -v
+npm version => npm -v
+
+
 
 
 

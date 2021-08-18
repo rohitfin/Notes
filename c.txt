@@ -1,0 +1,182 @@
+=> #include <stdio.h>
+    #include <stdlib.h>
+
+    int main()
+    {
+        printf("Hello world!\n");
+    return 0;
+    }
+
+=> \n 
+    for line break
+
+=> \
+    scape
+
+=> Characters  
+    char Name[] = "Granger";
+    printf("I'm %s", Name);
+
+    char grade = 'A';
+    printf("%c \n", grade);   // single character
+
+=> Integer         
+    int age = 20;
+    printf("I/'m %d years old", age);
+
+    printf("%d", age);
+    printf("%i", age);
+
+=> Decimal
+    double gpa = 4.3;    
+    printf("%f \n", gpa);
+
+=> Characters and Integer    
+   printf("My Favorite %s is %d \n", "number", 8);
+
+=> mathematic calculation
+    float num1 = 10;
+    double num2 = 20;
+    printf("%f", num1 + num2); 
+
+=> pow, sqrt
+    printf("%f", pow(2,3)); 
+    printf("%f", sqrt(16)); 
+
+=> const
+    const int age = 20;
+    int const age = 20;
+
+=> get value from promt
+    int age;
+    printf("What is your age?");
+    scanf("%f", &age);
+    printf("Your age is %f", age);   
+
+    double gpa;
+    printf("What is your gpa?");
+    scanf("%lf", &gpa);
+    printf("Your gpa is %f", gpa);    
+
+    char firstName[20];
+    char lastName[20];
+    printf("What is your name?");
+    scanf("%s%s", firstName, lastName);
+    printf("Your name is %s %s", firstName, lastName);
+
+    char name[10];
+    printf("What is your name?");
+    fgets(name, 10, stdin);
+    printf("Your name is %s", name);
+    printf("Your name is %s adfadsf", name);
+
+=> Array
+    int NumberList[] = {2, 5, 10, 8, 3, 88};
+    NumberList[1] = 55; // replacing 5 with 55;
+    printf("%d", NumberList[1]);
+
+=> function
+    name("Mike");
+
+    void name(char user[]){
+        printf("Your are %s.", user);
+    }
+
+
+=> Return statement
+    double cube(double num);
+    
+    int main()
+    {
+       printf("Answer: %f", cube(3.0));
+        return 0;
+    }
+
+    double cube(double num){
+        return num * num * num;
+        printf("%d", num);
+    }
+
+
+=> switch statement
+    char grade = 'B';
+    switch(grade){
+        case 'A':
+            printf("you did great!");
+            break;
+        case 'B':
+            printf("you did alright!");
+            break;
+        case 'C':
+            printf("you did cool!");
+            break;
+        
+        default: 
+        printf("Invalid Grade");
+
+    }
+
+=> struct (object)
+    struct  Student {
+        char name[40];
+        char major[40];
+        int age;
+        double gpa;
+    }   
+
+int main(){
+    struct Student student1;
+    student1.age = 20;
+    student1.gpa = 3.3;
+    strcopy(student1.name, "John");
+    strcopy(studnet1.major, "Commerce");
+
+    prinf("%s", student1.name);
+
+    struct Student student2;
+    student2.age = 50;
+    student2.gpa = 6.3;
+    strcopy(student2.name, "Grander");
+    strcopy(studnet2.major, "Art");
+
+    prinf("%s", student2.name);
+
+
+
+    return 0;
+}
+
+
+=> while loop
+    int i = 1;
+    while(i <= 5){
+        printf("%d \n", i);
+        i++;
+    }
+
+=> for loop
+    for(int i = 1; i <= 5; i++){
+        printf("%d \n", i);
+    }    
+
+
+=> 2 dimensional array and loop
+
+    int nums[3][2] = {
+                    {1, 8},
+                    {3, 9},
+                    {5, 10}
+                    };
+    //printf("%d", nums[0][1]);
+    int i, j;
+    for( i = 0; i < 3; i++){
+        for( j = 0; j < 2; j++){
+            printf("%d \n", nums[i][j]);
+        }
+    }
+
+
+
+
+
+

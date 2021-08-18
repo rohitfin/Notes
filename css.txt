@@ -1,4 +1,4 @@
-*-------- flexbox
+*-------- flex box
 display : { flex, flex-inline }
 flex-direction : { row, row-reverse, column, column-reverse }
 flex-wrap : { wrap, no-wrap, wrap-reverse }
@@ -21,10 +21,10 @@ grid-template-areas : { 'header		header		header'
 					    'content	content		content'	
 					    'footer		footer		footer'}    [ height required ]  						
 .item { grid-area: header;}		
-grid-template-rows : { 30px auto, repeat(3, minmax(100px, auto)) , 3ch auto minmax(10px, 60px) }  [ minmax automatic area ka width le leta hai.]
-grid-template-columns : { 1fr 2fr, 20px repeat(3, 1fr) 20px, repeat(auto-fill, 100px), repeat(auto-fit, 100px), repeat(auto-fit, minmax(100px, 1fr)) } 
+grid-template-rows : { 30px auto, repeat(3, minmax(100px, auto)) }  [ minmax automatic area ka width le leta hai.]
+grid-template-columns : { repeat(auto-fill, 100px), repeat(auto-fit, 100px), repeat(auto-fit, minmax(100px, 1fr)) } 
 grid-template : {  100px 1fr / 100px 1fr } [grid-template-rows / grid-template-columns values] [shortcut]
-grid-auto-rows : { auto, max-content, min-content, length, auto-fill, auto-fit }	    [implicit grid]
+grid-auto-rows : { auto, max-content, min-content, length, auto-fill, auto-fit } [implicit grid]
 grid-auto-columns : { repeat(auto-fit, minmax(25rem, 1fr)), auto, max-content, min-content, length }  [implicit grid]
 grid-auto-flow : { row [default], column, dense, row dense, column dense } [auto-placed grid items]
 grid-gap-rows : { length } [top, bottom]
@@ -112,7 +112,6 @@ backdrop-filter : blur(1px) | brightness(1.5) | contrast(0.5) | drop-shadow() | 
   | invert(0.5) | opacity(0.5) | saturate(0.5) | sepia(0.5) [use filter properties]
 
 backface-visibility: visible|hidden|initial|inherit; [property relates to 3D transforms.]
- 
 
 background-blend-mode: normal|multiply|screen|overlay|darken|lighten|color-dodge|color-burn|hard-light|soft-light|
     difference|exclusion|hue|saturation|color|luminosity [mix background colors or background images ]
@@ -134,8 +133,10 @@ clip-path: clip-source|basic-shape|margin-box|border-box|padding-box|content-box
 
 display: flow-root; [fixe margin collapsing issue or use padding-top: 0.1px]
 
-filter: none | blur() | brightness() | contrast() | drop-shadow() | grayscale() | hue-rotate() | invert() | opacity() 
-        | saturate() | sepia() | url();
+filter: none | blur() | brightness() | contrast() |  grayscale() | hue-rotate() | invert() | opacity() 
+        | saturate() | sepia() | url() |drop-shadow();
+     [drop-shadow() => use for png images shadow ] 
+     [applies graphical changes to the appearance of an input image and elements.]
 
 font-kerning: auto|normal|none; [ letters  spacing. ]
 
@@ -144,7 +145,6 @@ mask-image : - sets the image that is used as mask layer for an element.
 
 mix-blend-mode: normal|multiply|screen|overlay|darken|lighten|color-dodge|color-burn|
         difference|exclusion|hue|saturation|color|luminosity; [mix background colors or 2 background images ]
-
 
 object-fit: fill|contain|cover|scale-down|none|initial|inherit;
 object-position: position|initial|inherit;
@@ -176,6 +176,7 @@ word-break: normal|break-all|keep-all|break-word|initial|inherit;
 word-wrap: normal|break-word|initial|inherit;
 word-spacing: normal|length|initial|inherit;
 writing-mode: horizontal-tb|vertical-rl|vertical-lr;
+width: fit-content, max-content
 inline-size: value; (depending on its writing mode)
 
 
@@ -196,7 +197,7 @@ inline-size: value; (depending on its writing mode)
 [data-value$="foo"] { /* Attribute value ends with this */}
 
 
-=> calc, => clamp, => :is, => :where, => :any, => :any-link, => :not, => :focus-within, => :focus-visible
+=> calc, => clamp, => :is, => :where, => :any, => :any-link, => :not, => :focus-within, => :focus-visible, => :placeholder-shown
 
 
 -------------------------------------------------------
@@ -208,8 +209,6 @@ inline-size: value; (depending on its writing mode)
     Elements and pseudo-elements
 
     Equal specificity: the latest rule counts
-
-
 
 #main-navigation          /* ID (Fastest) */ 
 li a.nav-link             /* Class * 
@@ -225,18 +224,35 @@ nav ul li a               /* Tag (Slower)*/
   }
  body {
     font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width]))); [flexible typography]
+    
   font-size: calc(16px + (26–16) * ((100vw — 320px) / (1600–320)));
+  font-size: clamp(1.1rem, 0.7153rem + 1.6368vw, 1.5rem);
 
+  --ideal-viewport-width: 1600;
+  --current-viewport-width: 100vw;
+  --ideal-font-size: 16;
+  font-size: calc(
+      var(--ideal-font-size) * (var(--current-viewport-width) / var(--ideal-viewport-width)
+    );
+  font-size: calc(16 * 1600px / 1600);  
 
     padding: 100vw — min(max-width, (100vw — (left-gap + right-gap))) / 2;
     padding: 15px calc((100vw - min(900px, calc(100vw - 50px))) / 2);
 
   // position 20px from the right and 10px from the bottom
-  background-position: calc(100% - 20px) calc(100% - 10px);
+    background-position: calc(100% - 20px) calc(100% - 10px);
 
 
  } 
  
+ html {
+  font: 110%/1.4 system-ui;
+}
+ html {
+  font-family: system-ui;
+  font-size: 110%;
+  line-height: 1.4;
+}
 
 *--------------------------- 
 :root {
@@ -259,6 +275,7 @@ nav ul li a               /* Tag (Slower)*/
 }
 *::selection {
     background-color: hsl(0deg 0% 0% / 20%);
+    color: yellow;
 }
 html {
     -webkit-box-sizing: border-box;
@@ -267,7 +284,10 @@ html {
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
 
-    font-size: 62.5%;
+    font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+}
+@some_media_query (mobile) {
+   font-size: 50%; //1 rem = 8px, 8/16 = 50%
 }
 body {
   -ms-word-wrap: break-word;
@@ -275,7 +295,7 @@ body {
 
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
-  hyphens: manual;
+  hyphens: auto;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;  /* for mac */ 
@@ -293,14 +313,15 @@ body {
   font-size: calc(16px + (26–16) * ((100vw — 320px) / (1600–320)));
 
 }
+
+:-webkit-any-link {
+  color: black;
+}
 img {
   width: clamp(90%, 90% - 2%, 100%); // min, actual, max
   max-height: max(10rem, 30vh);
 }
-p {
-  -webkit-line-clamp: 5; [Set a limited content in a paragraph]
-}
-.heading__section :is(h1, h2, h3) {
+.title :is(h1, h2, h3) {
     font-weight: 600;
 }
 
@@ -325,6 +346,14 @@ p {
   border-color: currentColor;
 }
 
+ 
+ => :is & :where
+ul li, ol li {} => :is(ul, ol) li {}
+ul li a:hover, ol li a:hover {} => :is(ul li, ol li) a:hover{}
+
+.btn span > a:hover, #header span > a:hover, #footer span > a:hover { ...}
+:where(.btn, #header, #footer) span > a:hover { }
+
 ---------------------------------------
 
 => .abc > * + * {} => [select all inside abc expect fist element]
@@ -347,11 +376,18 @@ p {
 
 => @supports (display: grid) { div {display: grid;} }
 => @supports not (display: grid) {div {float: right;} }
--------------------------------
 
-content-visibility: auto; 
-[This can help optimize page load performance if a large quantity of your page’s content is offscreen, 
-including content which uses <img> elements. ]
+=> content-visibility: auto; 
+  [This can help optimize page load performance if a large quantity of your page’s content is offscreen, 
+  including content which uses <img> elements. (Using auto to reduce rendering cost of long pages)
+  (Because rendering is skipped, if a large portion of your content is off-screen) ]
+
+=> text-shadow: [x-offset] [y-offset] [blur-radius] [color];
+
+
+=> box-reflect{ below, above, left ,  right.}
+
+=>  aspect-ratio, inset
 
 -------------------------------
 
@@ -363,50 +399,57 @@ including content which uses <img> elements. ]
     black 60px
   );
 
-
 -------------------------------
-
-text-shadow: [x-offset] [y-offset] [blur-radius] [color];
-.neonText {
-  color: #fff;
-  text-shadow:
-      0 0 7px #fff,
-      0 0 10px #fff,
-      0 0 21px #fff,
-      0 0 42px #0fa,
-      0 0 82px #0fa,
-      0 0 92px #0fa,
-      0 0 102px #0fa,
-      0 0 151px #0fa;
-}
-@keyframes flicker {
-  0%, 18%, 22%, 25%, 53%, 57%, 100% {
-    text-shadow:
-      0 0 4px #fff,
-      0 0 11px #fff,
-      0 0 19px #fff,
-      0 0 40px #0fa,
-      0 0 80px #0fa,
-      0 0 90px #0fa,
-      0 0 100px #0fa,
-      0 0 150px #0fa;
+=> Set a limited content on a paragraph
+  p {
+    display: -webkit-box;
+    -webkit-line-clamp: 4; 
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
   }
-  20%, 24%, 55% {       
-    text-shadow: none;
-  }
-}
+-------------------------------
+=> function attr()
+/* <div data-example="Medium"></div> */
+ div:after {   
+   content: attr(data-example);
+ }
+
+-------------------------------
+// center 
+.parent { display: table;}
+.child { display: table-cell; vertical-align: middle; text-align: center;}
+
+ or 
+.parent { position: relative;}
+.child { position: absolute; inset: 0; margin: auto; }
+
 
 -------------------------------
 
--------------------------------
-
-
--------------------------------
 
 -------------------------------
 
 
 -------------------------------
+
+
+-------------------------------
+
+
+-------------------------------
+
+
+-------------------------------
+
+
+-------------------------------
+
+
+-------------------------------
+
+
+-------------------------------
+
 
 -------------------------------
 

@@ -37,4 +37,26 @@
     Let you know
 
 
-    
+
+
+
+---------------------- Meaning
+=> arbitrary => based on random choice
+=> omit => leave out or exclude
+=> concise => giving a lot of information clearly and in a few words
+=> sober => not affected by alcohol; not drunk.
+=> explicitly  => a clear and detailed manner, leaving no room for confusion or doubt
+=> implicitly => in a way that is not directly expressed
+=> tacitly => in a way that is understood
+=>  => 
+=>  => 
+=>  => 
+
+=> inheritance => विरासत
+=> Render => le ke ana 
+=> immutable => unable to be changed.
+=> encapsulate  => समझाया,  express the essential features of something
+=> Composing => write or create
+=> Asynchronous => multiple thing can happen at a time
+=> Synchronous => only one thing can happen at a time
+

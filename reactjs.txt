@@ -1,0 +1,70 @@
+1 => class Welcome extends React.Component {
+  constructor(props){
+    super(props);
+  }
+  render() {
+    return ( <div>
+      <h1>Hello, {this.props.name},</h1>
+        <h1>Hi, {this.props.anotherName},</h1>
+    </div>);
+  }
+}
+
+const element = <Welcome name="Sara1" anotherName="Rohit" />;
+ReactDOM.render(element, document.getElementById('root'));
+
+
+2 => const element = <div>
+        <Header anotherName="Rohit" />
+        <Section />
+        <Footer />
+    </div>;
+
+
+=> Inline style
+    <h1 style={{color: "red", fontSize:"20px"}} >Hi</h1>
+
+=> Adding style class
+    const title = {
+        color: "red",
+        fontSize: "20px"
+    }        
+
+    <h1 style={title}>He</h1>    
+
+
+
+
+
+===================================================
+1) component create
+12) props and this 
+3) render component
+18) how to show multiple components example - header, footer, section
+9) inline styling, internal styling
+8) if and else condition
+
+
+
+===================================================
+2) routing 
+5) events 
+
+===================================================
+4) render component to another component
+6) show and hide data on events basis
+7) for loop
+10) difference between function and class and how to call
+11) states, set states and how to change states 
+13) how pass data between component
+14) open in new tab on click 
+15) how type anchor tag and how to add link
+16) form validation
+17) data store on the variable
+
+
+
+===================================================
+
+
+

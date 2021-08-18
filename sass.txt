@@ -88,7 +88,8 @@ Varialble, Nesting, Partials & Imports, Mixins, Extends, Operators, Functions, C
         i.) Number Function [ abs(), ceil(), floor(), max(), min(), comparable(), percentage(), random(), unit(), unitless()  ]
             .test{width: -100px; height: 100.50px; padding-top: 10.5px, } [abs, ceil, floor]
 
-        ii.) Strings Function [ quote(), unquote(), to-upper-case(), to-lowe-case(), str-index(), str-insert(), str-length(), str-slice(), str-unique-id()  ]    
+        ii.) Strings Function [ quote(), unquote(), to-upper-case(), to-lowe-case(), str-index(), str-insert(), str-length(), 
+              str-slice(), str-unique-id()  ]    
 
         iii.) Color Function [ lighten(), darken(), adjust-hue(), saturate(), desaturate(), mix(), transparentize()  ]
 
@@ -98,7 +99,8 @@ Varialble, Nesting, Partials & Imports, Mixins, Extends, Operators, Functions, C
             .test { padding: set-nth($list, 10rem, 2); }, 
             .test{padding: join($list, $list2); }
 
-        v.) Selectors Functions [ selector-nest(), selector-append(), selector-replace(), is-superselector(), simple-selector(), selector-unify(), selector-extend()  ]
+        v.) Selectors Functions [ selector-nest(), selector-append(), selector-replace(), is-superselector(), 
+            simple-selector(), selector-unify(), selector-extend()  ]
 
         vi.) Maps Function [ map-get(), map-merge(), map-remove(), map-keys(), map-values()(), map-has-key()  ]
           $font-weight : ( "regular":400, "medium":500, "bold":900 );
@@ -313,6 +315,7 @@ $breakpoints: (
 }
 
 -------------------------------------
+
 $columns: 12;
 @for $i from 1 through $columns {
   .col-#{$i} {
@@ -322,7 +325,6 @@ $columns: 12;
     margin-left: 100% / (($columns / $i));
   }
 }
-
 
 -------------------------------------
 
