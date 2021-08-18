@@ -2,6 +2,8 @@
 <link as="script" rel="prefetch" href="/_next/static/chunks/75fc9c18.3c891da9933aaa5a8989.js">
 
 
+
+
 Syntax and Basic Construct.
 Learn DOM manipulation.
 Learn Fetch API/ Ajax.
