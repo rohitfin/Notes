@@ -24,5 +24,5 @@
 
 --------------------------
 
-remove another user  from computer
+remove another user  from your computer
     - Credential Manager
