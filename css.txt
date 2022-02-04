@@ -242,9 +242,12 @@ nav ul li a               /* Tag (Slower)*/
   // position 20px from the right and 10px from the bottom
     background-position: calc(100% - 20px) calc(100% - 10px);
 
+*--
+ :checked, :disabled, :nth-child(-n+2), :not(selector), :valid, :target, :required, :read-only, :only-of-type, :nth-of-type(n), 
+ :nth-last-of-type(n), :nth-last-child(n), :link, :selection, :first-letter, :first-line
 
- } 
- 
+*--------------------------- 
+
  html {
   font: 110%/1.4 system-ui;
 }
@@ -425,7 +428,38 @@ ul li a:hover, ol li a:hover {} => :is(ul li, ol li) a:hover{}
 
 
 -------------------------------
+:is() and where();
+<div class="para-where">
+  <p>  Paragraph </p>
+  <p> Paragraph2 </p>
+</div>
+<div class="para-is">
+  <p>  Paragraph </p>
+  <p> Paragraph2 </p>
+</div>
 
+// result where will work
+  div p {
+    color: red;
+  }
+  div:is(.para-is) p {
+    color: yellow;
+  }
+  div:where(.para-where) p {
+    color: green;
+  }
+
+// result where will not work
+ 
+  div:is(.para-is) p {
+    color: yellow;
+  }
+  div:where(.para-where) p {
+    color: green;
+  }
+  div p {
+      color: red;
+    }
 
 -------------------------------
 
@@ -455,3 +489,17 @@ ul li a:hover, ol li a:hover {} => :is(ul li, ol li) a:hover{}
 
 
 -------------------------------
+* img[loading=lazy] {
+    outline: 10px solid var(--warning-color) !important;
+}
+script[src] {
+    display: block;
+    border: 10px solid var(--violation-color);;
+}
+script[src]::before {
+        content: attr(src);
+        font-size: 1rem;
+    }
+    script[src][async], script[src][defer], script[src][type=module] {
+        display: none;
+    }
