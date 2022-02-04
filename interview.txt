@@ -1,8 +1,6 @@
 HTML	Tim Berners-Lee 1990
 css     Håkon Wium Lie  10 oct 1994
 
-* December 17, 1996 by Håkon Wium Lie
-* 2 August 2002 First draft of revised CSS level 2.
 
 
 *------ Specificity 
