@@ -3,7 +3,7 @@
 */ add user name :=  git config -global user.name "userName" or git config user.name    // user name changing or checking
 */ add email id := git config -global user.email "emailAddress"  or git config user.email // user email change or check
 
-0/ stash
+0/ stash changes
 1/ pull
 1.1/ stash out (pop stash)
 2/ stage file
@@ -13,16 +13,20 @@
 
 -------------------------
  Git Commands 
-
-- git status - to show the current status
-- git add .
-- git commit -m "commit the comment"
-- git pull origin dev / master
-- git push origin dev / master
-- git checkout dev / master
-- git brach =>  check the branch
+git init 
+git status
+git add .
+git commit -m "Our comment"
+git remote add origin PASTE SSL REPOSITORY LINK  
+git pull origin dev / master
+git push origin dev / master
+git push origin master --force (if not push then use --force)
+git checkout dev / master
+git brach =>  check the branch
 
 --------------------------
 
 remove another user  from your computer
     - Credential Manager
+
+--------------------------
