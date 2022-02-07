@@ -88,10 +88,40 @@ Varialble, Nesting, Partials & Imports, Mixins, Extends, Operators, Functions, C
         i.) Number Function [ abs(), ceil(), floor(), max(), min(), comparable(), percentage(), random(), unit(), unitless()  ]
             .test{width: -100px; height: 100.50px; padding-top: 10.5px, } [abs, ceil, floor]
 
+              abs() => .m { margin: abs(-10px) => 10px }
+              ceil() => .m {margin: ceil(2.4) => 3} // upper value
+              floor() => .m {margin: floor(2.4) => 2} // lower value
+              round() => .m {margin: round(2.4) => 2} .m {margin: round(2.6) => 3}.m {margin: random(4.5) => 5}
+              max() => .m {margin: max(2px, 5px, 10px) => 10px} // max-value
+              min() => .m {margin: max(2px, 5px, 10px) => 2px} // min value
+              comparable() => .m{margin: comparable(1px, 2px) => true}, .m{margin: comparable(1cm, 2mm) => true}  // use for unit comparing.
+              percentage() => .m {margin: percentage(0.1) => 10%},.m {margin: percentage(10px / 5px) => } 
+              unit() => .m{margin: unit(1px) => px} // return only units
+              unitless() => .m{margin: unitless(1px) => true} // return only true based on unit given or not
+              random() => .m{margin: random() => } // default return random number between 0-10, .m{margin: random(20) => }  // return random number between 0-20  
+
         ii.) Strings Function [ quote(), unquote(), to-upper-case(), to-lowe-case(), str-index(), str-insert(), str-length(), 
               str-slice(), str-unique-id()  ]    
 
+              quote() => .ff{font-family: quote(arial); => 'arial'}
+              unquote() => .ff{font-family: unquote("arial"); => arial}
+              to-upper-case() => .ff{font-family: to-upper-case(arial); => ARIAL}
+              to-lower-case() => .ff{font-family: to-lower-case(arial); => arial}
+              str-length() => .ff{font-family: str-length(arial); => 5}
+              str-index() => .ff{font-family: str-index("arial","i"); => 3} 
+              str-insert() => .ff{font-family: str-insert("a rial", "mono", 2); => a mono rial}
+              str-slice() => 
+              str-unique-id()  => 
+
         iii.) Color Function [ lighten(), darken(), adjust-hue(), saturate(), desaturate(), mix(), transparentize()  ]
+
+            lighten() => .bg {background:lighten($cl-primary, 80)} => 80%
+            darken() => .bg {background:darken($cl-primary, 80)} => 80%
+            adjust-hue() => .bg {background:adjust-hue($cl-primary, 80)} => 80degree
+            saturate() => .bg {background:saturate($cl-primary, 80)} => 80% // making brighter
+            desaturate() => .bg {background:desaturate($cl-primary, 80)} => 80% // making dark
+            mix() => .bg {background:mix($cl-primary,red, 80)} => 80% // clr-primary mixing on red at 80%
+            transparentize() => .bg {background:transparentize($cl-primary, 0.5)} => between 0-1 // making transparent color
 
         iv.) Lists Function [ length(), nth(), set-nth(), join(), append(), zip(), index(), list-separator(), is-bracketd()  ]
             $list : 10px 20px 30px   or $list2 : 40xp, 50px, 60px   or $list3 : [70px, 80px, 90px ]
@@ -99,12 +129,66 @@ Varialble, Nesting, Partials & Imports, Mixins, Extends, Operators, Functions, C
             .test { padding: set-nth($list, 10rem, 2); }, 
             .test{padding: join($list, $list2); }
 
-        v.) Selectors Functions [ selector-nest(), selector-append(), selector-replace(), is-superselector(), 
-            simple-selector(), selector-unify(), selector-extend()  ]
+            $list1: 1px 2px 3px; $list2: 3px, 5px, 7px; $list3: [8px, 4px, 8px]
+          length() => .a {padding: length($list1)} // give length of the list
+          nth() => .a {padding: length($list1)}
+          set-nth() => .a { padding: set-nth($list, 10rem, 2); }
+          join() => .a {padding: join($list, $list2); }, .a {padding: join($list, $list2, space); }
+          append() => .a {padding: append($list, 50px); } // append value at the end.
+          zip() => .a {padding: zip($list, $list2); } // same as join
+          index() => .a {padding: index($list1, 2px)} => 2 // show position of the value 
+          list-separator() => .a {padding: list-separator($list1)} => space // two type of separator 1.space, 2. comma
+          is-bracketed() => .a {padding: is-bracketed($list3)} => true // give boolean value, list on the bracket or not
+
+
+            selector-nest() => // making space between
+            $sel: selection-nest("ul","li");
+            $sel2: selection-nest(".abc .xyz","h2");
+
+            #{sel} { padding: 20px; }
+            #{sel2} { color: red; }
+
+          selector-append() => // combine
+              $sel: selection-append("a",".active");
+              $sel2: selection-append(".abc .xyz","h2");
+
+              #{sel} { padding: 20px; }
+              #{sel2} { color: red; }
+
+
+          selector-replace() => from first parameter replace second parameter with third parameter.
+              $sel2: selection-replace("a.active",".active",".link");
+
+              #{sel} { padding: 20px; }
+
+          is-superselector() => // use for testing return boolean value. on second parameter check first parameter exist or not.
+              $sel2: is-superselector("a","a.active"");
+
+              #{sel} { padding: 20px; }
+
+          simple-selectors() => making separate selector
+              $sel2: simple-selectors("a.active"");
+
+              #{sel} { padding: 20px; }
+
+          selector-unify() => making selector randomly need two parameter
+          selector-extend() => making selector randomly need three parameter
+
 
         vi.) Maps Function [ map-get(), map-merge(), map-remove(), map-keys(), map-values()(), map-has-key()  ]
-          $font-weight : ( "regular":400, "medium":500, "bold":900 );
-          .test{font-weight: map-get($font-weight,"medium");  }
+            $font-weight : ( "regular":400, "medium":500, "bold":900 );
+            .test{font-weight: map-get($font-weight,"medium");  }
+
+            $font-weight : ( "regular":400, "medium":500, "bold":900 );
+            $light-weight : ( "lighter":200, "light":300 );
+
+            map-get() => .test{font-weight: map-get($font-weight,"medium");  } => 500
+            map-values() => .test{font-weight: map-values($font-weight);  } => 400 500 600
+            map-keys() => .test{font-weight: map-keys($font-weight);  } => regular, medium, bold
+            map-merge() =>  $marge: map-merge($font-weight, $light-weight); .test {font-weight: map-keys($marge)}
+            map-remove() => $rem: map-remove($font-weight, "medium"); .test{font-weight: map-values($rem);  } // removing medium
+            map-has-key() => .test{font-weight: map-has-key($rem);  } // checking value exist return boolean value.
+
 
         vii.) Introspection function [ variable-exists(), global-variable-exists(), mixin-exists(), function-exists(), type-of(), inspect() ]  
 
@@ -326,13 +410,248 @@ $columns: 12;
   }
 }
 
+
+
+--------------------------------
+
+$cols: 10;
+@for $i from 1 through $cols {
+    .p-#{$i} {
+        padding: 10 / ($cols / ( $i / 2));
+    }
+    .ptb-#{$i} {
+        padding: 10 / ($cols / ( $i / 2));
+    }
+
+}
+
+
+--------------------------------
+
+// @use  (name spacing)
+@use 'abstract/font';
+@use 'abstract/color' as c;
+@use 'abstract/variables' as *;
+
+body {
+    font-size: font.$fs-primary;
+    color: c.$clr-primary;
+    padding: $p1;
+}
+
+--------------------------------
+// @forward (create _index.scss file, put all other files(@forward) and then use (@use))
+=> _index.scss (new file)
+    @forward 'abstract/font';
+    @forward 'abstract/color' as c;
+    @forward 'abstract/variables' as *;
+
+=> where we want to use abstract folder data
+    @use 'abstract';
+
+body {
+    font-size: abstract.$fs-primary;
+    color: abstract.$clr-primary;
+    padding: abstract.$p1;
+}
+
+
+-------------------------------------
+
+// function 
+@function fn-w($w-item){
+    @return map-get($font-weights, $w-item);
+}
+.fw-1 {
+    font-weight: fn-w(bolder);
+
 -------------------------------------
 
 
+// -------------------------------------
 
--------------------------------------
+@mixin theme($theme: DarkGray) {
+    background: $theme;
+    box-shadow: 0 0 1px rgba($theme, .25);
+    color: #fff;
+}
+
+.info {
+    @include theme;
+}
+
+.alert {
+    @include theme($theme: DarkRed);
+}
+
+.success {
+    @include theme($theme: DarkGreen);
+}
 
 
+// -------------------------------------
+
+@mixin prefix($property, $value, $prefixes) {
+    @each $prefix in $prefixes {
+        -#{$prefix}-#{$property}: $value;
+    }
+
+    #{$property}: $value;
+}
+
+.gray {
+    @include prefix(filter, grayscale(50%), moz webkit);
+}
+
+// result 
+.gray {
+    -moz-filter: grayscale(50%);
+    -webkit-filter: grayscale(50%);
+    filter: grayscale(50%);
+}
+
+// -------------------------------------
+// Nesting
+.info-page {
+    margin: auto {
+        bottom: 10px;
+        top: 2px;
+    }
+}
+
+// result 
+.info-page {
+    margin: auto;
+    margin-bottom: 10px;
+    margin-top: 2px;
+}
+
+
+// -------------------------------------
+// Custom Properties
+$primary: #81899b;
+$accent: #302e24;
+$warn: #dfa612;
+
+:root {
+    --primary: #{$primary};
+    --accent: #{$accent};
+    --warn: #{$warn};
+
+    // Even though this looks like a Sass variable, it's valid CSS so it's not
+    // evaluated.
+    --consumed-by-js: $primary;
+}
+
+// result 
+:root {
+    --primary: #81899b;
+    --accent: #302e24;
+    --warn: #dfa612;
+    --consumed-by-js: $primary;
+}
+
+// -------------------------------------
+@mixin app-background($color) {
+    #{if(&, '&.app-background', '.app-background')} {
+        background-color: $color;
+        color: rgba(#fff, 0.75);
+    }
+}
+
+@include app-background(#036);
+
+.sidebar {
+    @include app-background(#c6538c);
+}
+
+// result
+.app-background {
+    background-color: #036;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.sidebar.app-background {
+    background-color: #c6538c;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+// -------------------------------------
+// advance selector
+@use "sass:selector";
+
+@mixin unify-parent($child) {
+    @at-root #{selector.unify(&, $child)} {
+        @content;
+    }
+}
+
+.wrapper .field {
+    @include unify-parent("input") {
+        /* ... */
+    }
+
+    @include unify-parent("select") {
+        /* ... */
+    }
+}
+
+// result
+.wrapper input.field {
+    /* ... */
+}
+
+.wrapper select.field {
+    /* ... */
+}
+
+
+// -------------------------------------
+// Flow Control Scope 
+$dark-theme: true !default;
+$primary-color: #f8bbd0 !default;
+$accent-color: #6a1b9a !default;
+
+@if $dark-theme {
+    $primary-color: darken($primary-color, 60%);
+    $accent-color: lighten($accent-color, 60%);
+}
+
+.button {
+    background-color: $primary-color;
+    border: 1px solid $accent-color;
+    border-radius: 3px;
+}
+
+// result
+.button {
+    background-color: #750c30;
+    border: 1px solid #f5ebfc;
+    border-radius: 3px;
+}
+
+
+
+// -------------------------------------
+
+@use "sass:map";
+
+$theme-colors: (
+  "success": #28a745,
+  "info": #17a2b8,
+  "warning": #ffc107,
+);
+
+.alert {
+  // Instead of $theme-color-#{warning}
+  background-color: map.get($theme-colors, "warning");
+}
+
+// result
+.alert {
+    background-color: #ffc107;
+  }
+  
 
 -------------------------------------
 
