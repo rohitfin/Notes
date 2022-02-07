@@ -1,10 +1,18 @@
--) chrome shortcut
+=> chrome shortcut
 1. ctr + shift + c (Toggle Inspect Element Mode)
 2. ctr + shift + m (Toggle Device user)
 3. ctr + shift + j (open console)
 
+==> Computer Keyboard short cut keys.
+  Minimize => Win + M or Win + D 
+  Whiteboard for drawing => Win + W
+  Screen tab => Win + T  or Win + 1 (for 1 app)
+  Screen recording => Win + G 
+  Emojis =>  Win + ; 
+  Clipboard for coping selected content only => Win + V
+  Zoom cursor point => Win + + 
 
--) VS code shortcut on html page
+==> VS code shortcut on html page
   (figure.abc.img--$>img.abc[src='img-$'][alt="img $"])*2
   <figure class="abc img--1"><img src="img-1" alt="img 1" class="abc"></figure>
    
@@ -75,8 +83,22 @@ we can add google review widget with this site
 https://elfsight.com/
 
 ----------------------------
+form for mailing
+Create your own free form with HubSpot
+https://app.hubspot.com/signup-hubspot/marketing?hubs_medium=virality&hubs_campaign=hubspot-forms-virality&hubs_id=forms-branding-control&hubs_source=www.yellowslice.in&intent=marketingFreeForms&opt_sidebar=forms&viralSourcePortalId=7281145
 
+----------------------------
 
+// form 
+<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/shell.js"></script>
+              <script>
+                hbspt.forms.create({
+                  region: "na1",
+                  portalId: "21308872",
+                  formId: "5a979a4a-aa9b-45cc-b0fa-4620ad91e684"
+                });
+              </script>
+              
 ----------------------------
 
 
@@ -85,27 +107,6 @@ https://elfsight.com/
 
 ----------------------------
 
-
-
-----------------------------
-
-
-
-
-----------------------------
-
-
-
-----------------------------
-
-
-
-
-----------------------------
-
-
-
-----------------------------
 
 
 

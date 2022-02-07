@@ -8,6 +8,14 @@ Understand the concepts:
 
 => vs code sass compiler how to use 
 
+------------------------
+2 years, 1 month, 15
+25 month, 15 days
+
+1 year, 3 months, 4 days
+15 months, 4 days
+
+3.4years
 -----------------------css  😈
 => 3D animation
 => motion-path [for animation]

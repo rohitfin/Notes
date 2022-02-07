@@ -141,7 +141,26 @@
 			console.log(sel.title);
 		]
 	
-
+	
+	** form get value
+		var name = document.querySelector('.input');
+		var sel = document.querySelector('select');
+		var selected = document.querySelector('select option:checked');
+		var gender = document.querySelector('input[type="radio"]:checked');
+		var checkboxList = document.querySelectorAll('input[type="checkbox"]:checked');
+		var checkboxValue = [];
+		checkboxList.forEach(function(checked){
+			checkboxValue.push(checked.value)
+		})
+		OR
+		var sel = $('select option').filter(':selected').val();
+		var sel = $('select option:selected').val();
+		var checkbox = [];
+			$('input[type="checkbox"]:checked').each(function(){
+			var val = $(this).val();
+			checkbox.push(val);
+			});
+			
 	** select option
 		var sel = document.getElementById('selector').selectedIndex;
 		var res = document.getElementsByTagName('option')[sel].value;
