@@ -199,9 +199,7 @@ inline-size: value; (depending on its writing mode)
 
 => calc, => clamp, => :is, => :where, => :any, => :any-link, => :not, => :focus-within, => :focus-visible, => :placeholder-shown
 
-
 -------------------------------------------------------
-
 => css specificity
     style attribute [inline]
     IDs => (div[id=a])
@@ -242,22 +240,10 @@ nav ul li a               /* Tag (Slower)*/
   // position 20px from the right and 10px from the bottom
     background-position: calc(100% - 20px) calc(100% - 10px);
 
-*--
- :checked, :disabled, :nth-child(-n+2), :not(selector), :valid, :target, :required, :read-only, :only-of-type, :nth-of-type(n), 
- :nth-last-of-type(n), :nth-last-child(n), :link, :selection, :first-letter, :first-line
-
+}
 *--------------------------- 
 
- html {
-  font: 110%/1.4 system-ui;
-}
- html {
-  font-family: system-ui;
-  font-size: 110%;
-  line-height: 1.4;
-}
-
-*--------------------------- 
+=> Default css  Begin
 :root {
   --checkbox: "\f14a";
   --star: "\f005";
@@ -279,6 +265,14 @@ nav ul li a               /* Tag (Slower)*/
 *::selection {
     background-color: hsl(0deg 0% 0% / 20%);
     color: yellow;
+}
+html {
+  font: 110%/1.4 system-ui;
+}
+ html {
+  font-family: system-ui;
+  font-size: 110%;
+  line-height: 1.4;
 }
 html {
     -webkit-box-sizing: border-box;
@@ -328,9 +322,6 @@ img {
     font-weight: 600;
 }
 
-
-
-
 .border-left:not(:first-child):before {
     content: '|';
     margin-left: 5px;
@@ -349,6 +340,7 @@ img {
   border-color: currentColor;
 }
 
+---------------------------------------
  
  => :is & :where
 ul li, ol li {} => :is(ul, ol) li {}
@@ -387,12 +379,11 @@ ul li a:hover, ol li a:hover {} => :is(ul li, ol li) a:hover{}
 
 => text-shadow: [x-offset] [y-offset] [blur-radius] [color];
 
-
 => box-reflect{ below, above, left ,  right.}
 
 =>  aspect-ratio, inset
 
--------------------------------
+=> radial-gradient
 
  background-image: repeating-radial-gradient(
     circle,
@@ -402,7 +393,6 @@ ul li a:hover, ol li a:hover {} => :is(ul li, ol li) a:hover{}
     black 60px
   );
 
--------------------------------
 => Set a limited content on a paragraph
   p {
     display: -webkit-box;
@@ -410,15 +400,14 @@ ul li a:hover, ol li a:hover {} => :is(ul li, ol li) a:hover{}
     -webkit-box-orient: vertical;  
     overflow: hidden;
   }
--------------------------------
+
 => function attr()
 /* <div data-example="Medium"></div> */
  div:after {   
    content: attr(data-example);
  }
 
--------------------------------
-// center 
+=>  center 
 .parent { display: table;}
 .child { display: table-cell; vertical-align: middle; text-align: center;}
 
@@ -426,9 +415,7 @@ ul li a:hover, ol li a:hover {} => :is(ul li, ol li) a:hover{}
 .parent { position: relative;}
 .child { position: absolute; inset: 0; margin: auto; }
 
-
--------------------------------
-:is() and where();
+=> :is() and where();
 <div class="para-where">
   <p>  Paragraph </p>
   <p> Paragraph2 </p>
@@ -438,7 +425,7 @@ ul li a:hover, ol li a:hover {} => :is(ul li, ol li) a:hover{}
   <p> Paragraph2 </p>
 </div>
 
-// result where will work
+=>  result where will work
   div p {
     color: red;
   }
@@ -449,7 +436,7 @@ ul li a:hover, ol li a:hover {} => :is(ul li, ol li) a:hover{}
     color: green;
   }
 
-// result where will not work
+=>  result where will not work
  
   div:is(.para-is) p {
     color: yellow;
@@ -461,45 +448,8 @@ ul li a:hover, ol li a:hover {} => :is(ul li, ol li) a:hover{}
       color: red;
     }
 
--------------------------------
+=> 
 
+=> 
 
--------------------------------
-
-
--------------------------------
-
-
--------------------------------
-
-
--------------------------------
-
-
--------------------------------
-
-
--------------------------------
-
-
--------------------------------
-
-
--------------------------------
-
-
--------------------------------
-* img[loading=lazy] {
-    outline: 10px solid var(--warning-color) !important;
-}
-script[src] {
-    display: block;
-    border: 10px solid var(--violation-color);;
-}
-script[src]::before {
-        content: attr(src);
-        font-size: 1rem;
-    }
-    script[src][async], script[src][defer], script[src][type=module] {
-        display: none;
-    }
+=> 

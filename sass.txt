@@ -115,30 +115,30 @@ Varialble, Nesting, Partials & Imports, Mixins, Extends, Operators, Functions, C
 
         iii.) Color Function [ lighten(), darken(), adjust-hue(), saturate(), desaturate(), mix(), transparentize()  ]
 
-            lighten() => .bg {background:lighten($cl-primary, 80)} => 80%
-            darken() => .bg {background:darken($cl-primary, 80)} => 80%
-            adjust-hue() => .bg {background:adjust-hue($cl-primary, 80)} => 80degree
-            saturate() => .bg {background:saturate($cl-primary, 80)} => 80% // making brighter
-            desaturate() => .bg {background:desaturate($cl-primary, 80)} => 80% // making dark
-            mix() => .bg {background:mix($cl-primary,red, 80)} => 80% // clr-primary mixing on red at 80%
-            transparentize() => .bg {background:transparentize($cl-primary, 0.5)} => between 0-1 // making transparent color
+              lighten() => .bg {background:lighten($cl-primary, 80)} => 80%
+              darken() => .bg {background:darken($cl-primary, 80)} => 80%
+              adjust-hue() => .bg {background:adjust-hue($cl-primary, 80)} => 80degree
+              saturate() => .bg {background:saturate($cl-primary, 80)} => 80% // making brighter
+              desaturate() => .bg {background:desaturate($cl-primary, 80)} => 80% // making dark
+              mix() => .bg {background:mix($cl-primary,red, 80)} => 80% // clr-primary mixing on red at 80%
+              transparentize() => .bg {background:transparentize($cl-primary, 0.5)} => between 0-1 // making transparent color
 
         iv.) Lists Function [ length(), nth(), set-nth(), join(), append(), zip(), index(), list-separator(), is-bracketd()  ]
-            $list : 10px 20px 30px   or $list2 : 40xp, 50px, 60px   or $list3 : [70px, 80px, 90px ]
-            .test{ padding: nth($list, 3); }, 
-            .test { padding: set-nth($list, 10rem, 2); }, 
-            .test{padding: join($list, $list2); }
+              $list : 10px 20px 30px   or $list2 : 40xp, 50px, 60px   or $list3 : [70px, 80px, 90px ]
+              .test{ padding: nth($list, 3); }, 
+              .test { padding: set-nth($list, 10rem, 2); }, 
+              .test{padding: join($list, $list2); }
 
-            $list1: 1px 2px 3px; $list2: 3px, 5px, 7px; $list3: [8px, 4px, 8px]
-          length() => .a {padding: length($list1)} // give length of the list
-          nth() => .a {padding: length($list1)}
-          set-nth() => .a { padding: set-nth($list, 10rem, 2); }
-          join() => .a {padding: join($list, $list2); }, .a {padding: join($list, $list2, space); }
-          append() => .a {padding: append($list, 50px); } // append value at the end.
-          zip() => .a {padding: zip($list, $list2); } // same as join
-          index() => .a {padding: index($list1, 2px)} => 2 // show position of the value 
-          list-separator() => .a {padding: list-separator($list1)} => space // two type of separator 1.space, 2. comma
-          is-bracketed() => .a {padding: is-bracketed($list3)} => true // give boolean value, list on the bracket or not
+              $list1: 1px 2px 3px; $list2: 3px, 5px, 7px; $list3: [8px, 4px, 8px]
+              length() => .a {padding: length($list1)} // give length of the list
+              nth() => .a {padding: length($list1)}
+              set-nth() => .a { padding: set-nth($list, 10rem, 2); }
+              join() => .a {padding: join($list, $list2); }, .a {padding: join($list, $list2, space); }
+              append() => .a {padding: append($list, 50px); } // append value at the end.
+              zip() => .a {padding: zip($list, $list2); } // same as join
+              index() => .a {padding: index($list1, 2px)} => 2 // show position of the value 
+              list-separator() => .a {padding: list-separator($list1)} => space // two type of separator 1.space, 2. comma
+              is-bracketed() => .a {padding: is-bracketed($list3)} => true // give boolean value, list on the bracket or not
 
 
             selector-nest() => // making space between
@@ -148,32 +148,30 @@ Varialble, Nesting, Partials & Imports, Mixins, Extends, Operators, Functions, C
             #{sel} { padding: 20px; }
             #{sel2} { color: red; }
 
-          selector-append() => // combine
-              $sel: selection-append("a",".active");
-              $sel2: selection-append(".abc .xyz","h2");
+            selector-append() => // combine
+                $sel: selection-append("a",".active");
+                $sel2: selection-append(".abc .xyz","h2");
 
-              #{sel} { padding: 20px; }
-              #{sel2} { color: red; }
+                #{sel} { padding: 20px; }
+                #{sel2} { color: red; }
 
+            selector-replace() => from first parameter replace second parameter with third parameter.
+                $sel2: selection-replace("a.active",".active",".link");
 
-          selector-replace() => from first parameter replace second parameter with third parameter.
-              $sel2: selection-replace("a.active",".active",".link");
+                #{sel} { padding: 20px; }
 
-              #{sel} { padding: 20px; }
+            is-superselector() => // use for testing return boolean value. on second parameter check first parameter exist or not.
+                $sel2: is-superselector("a","a.active"");
 
-          is-superselector() => // use for testing return boolean value. on second parameter check first parameter exist or not.
-              $sel2: is-superselector("a","a.active"");
+                #{sel} { padding: 20px; }
 
-              #{sel} { padding: 20px; }
+            simple-selectors() => making separate selector
+                $sel2: simple-selectors("a.active"");
 
-          simple-selectors() => making separate selector
-              $sel2: simple-selectors("a.active"");
+                #{sel} { padding: 20px; }
 
-              #{sel} { padding: 20px; }
-
-          selector-unify() => making selector randomly need two parameter
-          selector-extend() => making selector randomly need three parameter
-
+            selector-unify() => making selector randomly need two parameter
+            selector-extend() => making selector randomly need three parameter
 
         vi.) Maps Function [ map-get(), map-merge(), map-remove(), map-keys(), map-values()(), map-has-key()  ]
             $font-weight : ( "regular":400, "medium":500, "bold":900 );
@@ -189,8 +187,8 @@ Varialble, Nesting, Partials & Imports, Mixins, Extends, Operators, Functions, C
             map-remove() => $rem: map-remove($font-weight, "medium"); .test{font-weight: map-values($rem);  } // removing medium
             map-has-key() => .test{font-weight: map-has-key($rem);  } // checking value exist return boolean value.
 
-
-        vii.) Introspection function [ variable-exists(), global-variable-exists(), mixin-exists(), function-exists(), type-of(), inspect() ]  
+        vii.) Introspection function [ variable-exists(), global-variable-exists(), mixin-exists(), function-exists(), type-of(), 
+              inspect() ]  
 
 8.) Conditional Directives [ @content, @media, @at-root, @if & @else, @for loop, @each loop, @while loop ]
 
@@ -205,8 +203,6 @@ Varialble, Nesting, Partials & Imports, Mixins, Extends, Operators, Functions, C
             }
         }
 
-
-
         @mixin hover { 
           &:hover { 
             @content;
@@ -218,8 +214,6 @@ Varialble, Nesting, Partials & Imports, Mixins, Extends, Operators, Functions, C
             color:green;
             }  
         }
-
-
 
         @mixin media($width){ 
           @media screen and (max-width: $width) { 
@@ -352,9 +346,7 @@ $colors: (
   )
 )
 
-
-
-// creating variables
+=> creating variables
 :root {
   @each $color, $shades in $colors {
 
@@ -365,7 +357,7 @@ $colors: (
 
 }
 
-// utilities classes
+=>  utilities classes
 @each $color, $shades in $colors {
 
     @each $shade, $value in $shades {
@@ -410,8 +402,6 @@ $columns: 12;
   }
 }
 
-
-
 --------------------------------
 
 $cols: 10;
@@ -424,8 +414,6 @@ $cols: 10;
     }
 
 }
-
-
 --------------------------------
 
 // @use  (name spacing)
@@ -455,10 +443,9 @@ body {
     padding: abstract.$p1;
 }
 
-
 -------------------------------------
 
-// function 
+=> function 
 @function fn-w($w-item){
     @return map-get($font-weights, $w-item);
 }
@@ -466,9 +453,6 @@ body {
     font-weight: fn-w(bolder);
 
 -------------------------------------
-
-
-// -------------------------------------
 
 @mixin theme($theme: DarkGray) {
     background: $theme;
@@ -479,17 +463,14 @@ body {
 .info {
     @include theme;
 }
-
 .alert {
     @include theme($theme: DarkRed);
 }
-
 .success {
     @include theme($theme: DarkGreen);
 }
 
-
-// -------------------------------------
+-------------------------------------
 
 @mixin prefix($property, $value, $prefixes) {
     @each $prefix in $prefixes {
@@ -503,15 +484,15 @@ body {
     @include prefix(filter, grayscale(50%), moz webkit);
 }
 
-// result 
+=>  result 
 .gray {
     -moz-filter: grayscale(50%);
     -webkit-filter: grayscale(50%);
     filter: grayscale(50%);
 }
 
-// -------------------------------------
-// Nesting
+ -------------------------------------
+=>  Nesting
 .info-page {
     margin: auto {
         bottom: 10px;
@@ -519,16 +500,15 @@ body {
     }
 }
 
-// result 
+=> result 
 .info-page {
     margin: auto;
     margin-bottom: 10px;
     margin-top: 2px;
 }
 
-
-// -------------------------------------
-// Custom Properties
+-------------------------------------
+=>  Custom Properties
 $primary: #81899b;
 $accent: #302e24;
 $warn: #dfa612;
@@ -543,7 +523,7 @@ $warn: #dfa612;
     --consumed-by-js: $primary;
 }
 
-// result 
+=>  result 
 :root {
     --primary: #81899b;
     --accent: #302e24;
@@ -551,7 +531,7 @@ $warn: #dfa612;
     --consumed-by-js: $primary;
 }
 
-// -------------------------------------
+-------------------------------------
 @mixin app-background($color) {
     #{if(&, '&.app-background', '.app-background')} {
         background-color: $color;
@@ -565,7 +545,7 @@ $warn: #dfa612;
     @include app-background(#c6538c);
 }
 
-// result
+=>  result
 .app-background {
     background-color: #036;
     color: rgba(255, 255, 255, 0.75);
@@ -576,8 +556,8 @@ $warn: #dfa612;
     color: rgba(255, 255, 255, 0.75);
 }
 
-// -------------------------------------
-// advance selector
+-------------------------------------
+=>  advance selector
 @use "sass:selector";
 
 @mixin unify-parent($child) {
@@ -596,7 +576,7 @@ $warn: #dfa612;
     }
 }
 
-// result
+=>  result
 .wrapper input.field {
     /* ... */
 }
@@ -605,9 +585,8 @@ $warn: #dfa612;
     /* ... */
 }
 
-
-// -------------------------------------
-// Flow Control Scope 
+-------------------------------------
+=> Flow Control Scope 
 $dark-theme: true !default;
 $primary-color: #f8bbd0 !default;
 $accent-color: #6a1b9a !default;
@@ -623,16 +602,14 @@ $accent-color: #6a1b9a !default;
     border-radius: 3px;
 }
 
-// result
+=>  result
 .button {
     background-color: #750c30;
     border: 1px solid #f5ebfc;
     border-radius: 3px;
 }
 
-
-
-// -------------------------------------
+-------------------------------------
 
 @use "sass:map";
 
@@ -647,7 +624,7 @@ $theme-colors: (
   background-color: map.get($theme-colors, "warning");
 }
 
-// result
+=>  result
 .alert {
     background-color: #ffc107;
   }
