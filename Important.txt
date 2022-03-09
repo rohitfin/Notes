@@ -37,7 +37,6 @@ header.html
 
 header.php
 <?php include 'header.php' ?>
-
 ----------------------------------------------------
 
 big image size => 2560 X 1418, 2560 X 2318, 2560 X , 2560 X 
