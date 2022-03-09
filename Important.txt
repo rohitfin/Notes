@@ -29,30 +29,22 @@
   fz1r => font-size: 1rem;
   fz1rem => font-size: 1rem;
 
---------------------
+----------------------------------------------------
+header.html
+<div id="header">
+  <script> $('#header').load(header.html); </script>
+</div>
+
+header.php
+<?php include 'header.php' ?>
+
+----------------------------------------------------
+
 big image size => 2560 X 1418, 2560 X 2318, 2560 X , 2560 X 
 
-  
 ---------- font ------------------------------------------
 'IBM Plex Sans','Roboto',sans-serif
 
-
-------------------------------
-.card :is(.title, p) {
-  color: red;
-}
-
-.card p {
-  color: yellow;
-}
-
-.card :where(.title, p) {
-  color: red;
-}
-
-.card p {
-  color: yellow;
-}
 ----------------------------
 
 USING JAVASCRIPT TO FIND ELEMENTS WIDER THAN THE BODY

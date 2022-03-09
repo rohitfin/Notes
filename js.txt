@@ -800,14 +800,89 @@
        $('#JSON-child-Result-3').append(aa);
 
 
-* Inheritance
 
-
-
-
-=> hoisting
-=> Closures
 => callback
+
+	// callback function
+	function callMe() {
+		console.log('I am callback function');
+	}
+	// function
+	function greet(name, callback) {
+		console.log('Hi' + ' ' + name);
+		callback();
+	}
+	// passing function as an argument
+	greet('Peter', callMe);
+
+
+=> Constructor Function Parameters
+	// constructor function
+	function Person (person_name, person_age, person_gender) {
+
+	// assigning  parameter values to the calling object
+		this.name = person_name,
+		this.age = person_age,
+		this.gender = person_gender,
+
+		this.greet = function () {
+			return ('Hi' + ' ' + this.name);
+		}
+	}
+	// creating objects
+	const person1 = new Person('John', 23, 'male');
+	const person2 = new Person('Sam', 25, 'female');
+
+	// accessing properties
+	console.log(person1.name); // "John"
+	console.log(person2.name); // "Sam"
+
+	// adding method to person1 object
+	person1.print = function () {
+		console.log('hello');
+	}
+
+
+	// => Prototype Inheritance
+		In JavaScript, a prototype can be used to add properties and methods to a constructor function.
+
+		// adding property to constructor function
+		Person.prototype.status = 'Married';
+
+		// prototype value of Person
+		console.log(Person.prototype);
+
+		// inheriting the property from prototype
+		console.log(person1.status);
+		
+		// changing the property value of prototype
+		Person.prototype = { status:  'UnMarried'}
+
+
+
+=> setTimeout()
+	The setTimeout() method executes a block of code after the specified time. The method executes the 
+	code only once.
+	setTimeout(function, milliseconds);
+	function - a function containing a block of code
+	milliseconds - the time after which the function is executed
+	The setTimeout() method returns an intervalID, which is a positive integer.
+
+	// program to display a text using setTimeout method
+	function greet() {
+		console.log('Hello world');
+	}
+
+	let intervalId = setTimeout(greet, 3000);
+	console.log('Id: ' + intervalId);  
+
+
+
+
+
+
+=> Class Inheritance
+=> Closures
 => promises
 => async and wait
 => currying

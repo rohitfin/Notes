@@ -350,7 +350,7 @@ ul li a:hover, ol li a:hover {} => :is(ul li, ol li) a:hover{}
 :where(.btn, #header, #footer) span > a:hover { }
 
 ---------------------------------------
-
+=> making image white filter: brightness(0) invert(1);
 => .abc > * + * {} => [select all inside abc expect fist element]
 * 𝗟𝗼𝗯𝗼𝘁𝗼𝗺𝗶𝘇𝗲𝗱 𝗼𝘄𝗹 𝘀𝗲𝗹𝗲𝗰𝘁𝗼𝗿
     * + *  
