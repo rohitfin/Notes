@@ -19,32 +19,95 @@
 15. create function for addition, subtraction, multiplication, division and call them
 16. create function which take 4 parameters name, lastname, age, address and return object of it.
 
-17. make one array with 100 users like name,last name, age, add ect.
-    need only those users who has 50 plus age.
+17. make one array with 100 users like name,last name, age, add, roll no. ect.
+    need only those users who has 50 plus age and 5th roll no user.
 
 18. callback function 
     create a function adding two number and use callback function to print the result.
 
     function adding(num1, num2, fun){
-    var addition = num1 + num2; 
-    fun(addition);
-    
+        var addition = num1 + num2; 
+        fun(addition);
     }
     adding(2, 3, function(result){ 
-    console.log('Your result is ', result);
-    }
+                console.log('Your result is ', result);
+            }
         );
 
+19. Use debugger from line 0 and guess what wil happen on next line.
+
+20 setInterval(), setTimeout(), clearInterval();
+
+21. Create a function with 2 parameters and compare both, 1 parameter is greater than 2 parameter 
+    or 2 parameter is greater then 1 parameter or both are same
+
+22. find and filter
+
+    var user = users.find(function(user){
+        return user.rollNo == 4;
+    })
+
+    var user = users.filter(function(user){
+        return user.age < 10;
+    })
+
+    var user = users.sort(function(a, b){
+    return b.rollNo - a.rollNo;
+    })
+
+23. Create a function which will check the number is prime or not.
+
+24. remove duplicate values form the arrays
+    var arr = [3, 4, 2, 4, 2, 1]
+
+25. remove the duplicate values form the array of object
+    var student = [
+    {fname: 'Ajay', lname: 'Verma', age: 12, hobbies: ['dancing', 'music']},
+    {fname: 'Vijay', lname: 'Sharma', age: 14, hobbies: ['reading', 'writing']},
+    {fname: 'Advik', lname: 'Yadav', age: 15, hobbies: ['fighting', 'playing']},
+    {fname: 'Bingo', lname: 'Singo', age: 11, hobbies: ['playing', 'dancing']},
+    {fname: 'Shreya', lname: 'Kadam', age: 9, hobbies: ['cooking', 'drawing']}
+    ];
+
+        var nums = [1, 2, 3, 4, 5, 1, 2, 2];
+        var uniqueNums = [];
+        var duplicateNums = [];
+        for(var i = 0; i < nums.length; i++){
+            if(uniqueNums.indexOf(nums[i]) == -1){
+                uniqueNums.push(nums[i]);
+            }else {
+                if(duplicateNums.indexOf(nums[i]) == -1){
+                duplicateNums.push(nums[i]);
+                }
+            }
+        }
+        console.log(uniqueNums);
+        console.log(duplicateNums)
+
+26. Factorial Number
+
+27.  print 1, 2, 3, 5, 8, 13, 21
+
+28.print 100 to 1
 
 
+=> ANGULAR 
+1. How to create angular application
+    It required 3 things node, npm, angular cli.
+    ng new applicationName
 
+2. how to start angular application
+    ng serve or npm start    
 
+3. what is component
+     html, css, ts, spce.ts
 
+     ts => decorator- @component
+        selector: 'my-page', '.my-page', '[my-page]'
+                    <my-page>, <div class="my-page">, <div my-page>
 
-
-
-
-
-
+4. how to create component
+    ng g c componentName or ng generate component componentName
+    create 4 files and reference gets added in app module file
 
 

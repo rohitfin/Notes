@@ -29,6 +29,9 @@
 
 ----Set the attribute and value:
 	$(selector).attr("attribute","value")
+	$(selector).prop("checked","checked")
+	$('.cls').prop("checked",false)
+
 
 ----Set multiple attributes and values:
 	$(selector).attr({"attribute":"value", "attribute":"value",...});
@@ -141,7 +144,7 @@
 			console.log(sel.title);
 		]
 	
-	
+
 	** form get value
 		var name = document.querySelector('.input');
 		var sel = document.querySelector('select');
@@ -160,6 +163,8 @@
 			var val = $(this).val();
 			checkbox.push(val);
 			});
+
+	* selector.setAttribute('checked', 'true'); 
 			
 	** select option
 		var sel = document.getElementById('selector').selectedIndex;
@@ -218,6 +223,9 @@
 * Event 
 	mouseover, mouseout, change, click, dblclick, keydown, load, submit, select,
 	keypress, mousemove, mouseleave, mouseenter, mousedown, mouseup
+
+
+* slice(), splice(), split(), indexOf(), includes(), prop(), setAttribute(), getAttribute(),
 
 
 * .contextmenu ---> for right click
@@ -309,7 +317,14 @@
 	console.log(filter(2,45, 1));
 
 
-* setTimeout(function(){ alert("Hello"); }, 3000);	
+* setInterval();
+	repeat a specified function at every given time-interval	
+* clearInterval();	
+	clears the interval which has been set by setInterval() function before that
+* setTimeout();	
+	The setTimeout() method executes a block of code after the specified time. The method executes the code only once.
+
+	setTimeout(function(){ alert("Hello"); }, 3000);	
 
 	const time = setInterval(function(){
 		console.log(new Date().toLocaleTimeString());
@@ -455,6 +470,9 @@
 	var bike = cars.join(" ");			//	join array  with empty space
 	var bike = cars.join("*");			//	join array  with * symbol
 	var bike = cars.join("+");			//	join array 	with + symbol
+
+* includes();
+
 
 * sort
 	the sort method converts the elements into strings then compares their sequences of UTF-16 code units values.
@@ -817,14 +835,11 @@
 
 
 => Constructor Function Parameters
-	// constructor function
-	function Person (person_name, person_age, person_gender) {
 
-	// assigning  parameter values to the calling object
+	function Person (person_name, person_age, person_gender) {
 		this.name = person_name,
 		this.age = person_age,
 		this.gender = person_gender,
-
 		this.greet = function () {
 			return ('Hi' + ' ' + this.name);
 		}
@@ -868,13 +883,19 @@
 	milliseconds - the time after which the function is executed
 	The setTimeout() method returns an intervalID, which is a positive integer.
 
-	// program to display a text using setTimeout method
-	function greet() {
-		console.log('Hello world');
-	}
 
-	let intervalId = setTimeout(greet, 3000);
-	console.log('Id: ' + intervalId);  
+    var n = 0;
+    function print(){
+    n = n + 1;
+    console.log(n);
+    }
+    var a =  setInterval(print, 1000);
+
+    function b(){
+    clearInterval(a);
+    }
+
+    setTimeout(b, 10000);
 
 
 

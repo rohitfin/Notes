@@ -1,4 +1,4 @@
-1. do you want me to
+=>. do you want me to
                      :- change that 
                      :- the home page banner
                      :- take a rest, take a break
@@ -10,32 +10,55 @@
                :- do it fast
                :- do as ASAP
 
-2. currently i am working on :-
+=>. currently i am working on :-
 
-3. Because, i was working on  
+=>. Because, i was working on  
                             :- abhishek's issue.
                             :- rasannand's issue.
 
-4. I will try to complete it in 2 days.
+=>. I will try to complete it in 2 days.
     It will take minimum 2 hours, but i will try to complete ASAP.
 
-5. I am almost done with
+=>. I am almost done with
                         : home page.
                         : athena e-learn landing page.
 
-6. Yes i will let you know, once i am done with
+=>. Yes i will let you know, once i am done with
                                                :- current task.                            
                                                :- athena contact page.                 
 
-7. I have completed
+=>. I have completed
                     : home page changes.
 
     I have to do 200 pushups.
 
-8. Let me know 
+=>. Let me know 
 
-    Let you know
+=>. Following task has been completed:
+                                    :- point 2, 4.
+    Pending task: 
+                :- point 1, 3(need help).
 
+    Current working on                                                 
+                       : point 5. 
+
+    kindly check.
+                : If any changes required let me know.
+                : If any more changes required please let me know.
+                                                    : let us know.
+
+=>. I need 
+        :- banner images for home page.
+
+    kindly request you to provide me
+                                    : banner images of home page.
+
+
+=> It was nice to e-meet.
+    I have made the changes on local, attached the screenshot. Can you please check and let us know the 
+    feedback/approval to go live.
+
+=>. Please check revised
 
 
 

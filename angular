@@ -31,37 +31,171 @@
   collection of array with path to view components.Routing basically means navigating between pages.
   A Router is a process of selecting path along which the data can be transferred from source to the destination.
 
+  ng new routing-app --routing --defaults
+  
+  route module 
+    ng generate module module_One --route moduleOne --module app.module
+
+
 6. data binding 
   {{data}}  --> using interpolation to value binding
   [property]="data" --> attribute Binding to DOM  
   (click)="save()" --> Event Binding 
   [(ngModel)]="data" --> two way data biding [FormsModule] 
   
-  <button [disabled]="!isVisible" [style.color]="textColor" [class.active]="isActive" (click)="save()">Save</button>
+  <button [disabled]="!isVisible" [style.color]="textColor" 
+  [class.active]="isActive" (click)="save()">
+  Save
+  </button>
+
+
+  ==> one Way Binding with event or with template.
+    => with event binding
+    <input type="text" [ngClass]="className" (keyup)="onKeyUp($event)" />
+      value1: any;
+      onKeyUp(x:any){
+          this.value1 = x.target.value;
+        }
+
+    => with template binding
+    <input type="text" #valueOne /> // #valueOne is variable
+    <button [ngClass]="classBtn" (click)="callClick(valueOne.value)">Add</button>
+
+
 
 7. for loop
   *ngFor="let value of arrayName;let i=index"  
 
 8. pipe [|] ---> [ CommonModule ]   --> uppercase, lowercase  
-  {{ object | json }}
+  {{ arrayObject | json }}
 
   {{ varName | uppercase}}
 
-  pipe is function, use for data manipulation.
+  pipe is in-build function, use for data manipulation.
 
-9 service := access from any where.  
+  custom pipe -> ng g pipe pipeName
+
+9. service := access from any where.  
+    to share a data between component to component.
 
 10. 'padding-top': true ? '0' : '30px' // if and else condition 
 
-11.  #ngForm --> is variable
+11.  ngIf
+    ----------------------------------
+      <div *ngIf="isLoggedIn; else loggedOut">
+        Welcome back, friend.
+      </div>
 
-12 this.router.navigateByUrl('/dashboard'); // navigate to component to component on click.
+      <ng-template #loggedOut>
+        Please friend, login.
+      </ng-template>
+    ----------------------------------
+      <ng-template [ngIf]="isLoggedIn" [ngIfElse]="loggedOut">
+        <div>
+          Welcome back, friend.
+        </div>
+      </ng-template>
 
-13 
+      <ng-template #loggedOut>
+        <div>
+          Please friend, login.
+        </div>
+      </ng-template>
+    ----------------------------------
+      <ng-container
+        *ngIf="isLoggedIn; then loggedIn; else loggedOut">
+      </ng-container>
+      
+      <ng-template #loggedIn>
+        <div>
+          Welcome back, friend.
+        </div>
+      </ng-template>
+      <ng-template #loggedOut>
+        <div>
+          Please friend, login.
+        </div>
+      </ng-template>
+    ----------------------------------
 
+12. @Input
+    pass property from  parent to child
+        <app-child-one [property]="expression" [title]="title.value" (onDelete)="onDeleteUser($event)"></app-child-one>
+        child.ts
+        @input() property;
+
+        child.html
+        {{ property }}
+
+13.  @Output, EventEmitter
+    pass function form parent to child
+    pass data from child to parent
+
+    parent.ts 
+    (onClick)="func($event)"
+
+    func(){
+      condition;
+    }
+
+    child.ts
+    @Output onClick = new EventEmitter();
+
+    clickEvent(){
+      this.onClick.emit();
+    }
+
+14. Sending sibling child
+  service.ts
+    private transferBetweenSibling = new Subject<string>();
+  
+    getSibling(){
+      return this.transferBetweenSibling.asObservable();
+    }
+    onChangeSibling(val:any){
+      this.transferBetweenSibling.next(val);
+    }
+
+  childOne.html
+  <input type="text" name="name" id="name" [(ngModel)]="name" (keyup)="onKeyupSending()" />
+
+  childOne.ts
+  onKeyupSending(){
+    this.studentService.onChangeSibling(this.name);
+  }
+  
+  childTwo.html
+  {{ getName }}
+
+  childTwo.ts
+  getName: string = '';
+  ngOnInit(): void {
+    this.studentService.getSibling().subscribe(x=>{
+      this.getName = x;
+      console.log(x);
+    })
+  }
 
 
 -------------------------------------
+
+* How to create angular application
+    It required 3 things node, npm, angular cli.
+    ng new applicationName
+
+* how to start angular application
+    ng serve or npm start    
+
+* what is component
+     html, css, ts, spce.ts
+
+     ts => decorator- @component
+        selector: 'my-page', '.my-page', '[my-page]'
+                    <my-page>, <div class="my-page">, <div my-page>
+
+* Which File Executes First in Angular?
+  First it goes to the angular.json file, It loads up main.ts (first file that executes) and read its content.
+  index.html, main.ts, app-module(Know all about component in this file)
 
 * generate new component 
   ng g c NewComponentName
@@ -74,10 +208,13 @@
   for navigation first put <rout-outlet> and give condition on app.routing.module.ts file.
   if not match (for 404 page), if blank, if match
 
+* One Way binding => use for Data exchange
+  One way binding data flow one directional. Means ts file to html.
+  When we change on html file it will not change on ts.
+  We can get the data with template binding or event binding
 
-
-
-
-
-
+* Two way binding => use for Data exchange
+  Two way binding data flow two directional. Means when we change on ts file, it will change on html
+  file and change on html file, it change on ts file.
+  We can get the data with [(ngModel)].
 
