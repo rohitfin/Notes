@@ -31,11 +31,28 @@
   collection of array with path to view components.Routing basically means navigating between pages.
   A Router is a process of selecting path along which the data can be transferred from source to the destination.
 
-  ng new routing-app --routing --defaults
   
-  route module 
-    ng generate module module_One --route moduleOne --module app.module
+  route module / lazy loading
+    ng generate module ModuleName --route ModuleName --module app.module
 
+    app-routing.ts
+  { path: 'moduleOne', loadChildren: () => import('./module-one/module-one.module').then(m => m.ModuleOneModule) }
+
+  module-one-routin.module.ts
+  { path: '', component: ModuleOneComponent }
+
+ -----------------------------------
+  child 
+  app-routing.ts
+  { path: 'blog', component: BlogComponent,
+  children :[
+    { path: 'blogOne', component: BlogOneComponent },
+    { path: 'blogTwo', component: BlogTwoComponent }
+  ]},
+
+  <a routerLink="blog"> Blog </a> 
+  <a routerLink="blog/blogOne"> Blog One </a> 
+  <router-outlet></router-outlet>
 
 6. data binding 
   {{data}}  --> using interpolation to value binding
@@ -74,6 +91,16 @@
   pipe is in-build function, use for data manipulation.
 
   custom pipe -> ng g pipe pipeName
+
+  transform(value: unknown, index: any): unknown {
+    if(index % 2 !== 0){
+      return value + " => ";
+    } else {
+      return value;
+    }
+  }
+
+  <td> {{ user.name | my: i }} </td>
 
 9. service := access from any where.  
     to share a data between component to component.
@@ -146,7 +173,20 @@
     }
 
 14. Sending sibling child
+  obs = new Subject<string>();
+
+  // send data
+  this.serviceName.obs.next(x);
+  // get data
+  this.serviceName.obs.asObservable().subscribe(x => {
+    this.data = x;
+  })
+
+
+    or
   service.ts
+  import { BehaviorSubject, Subject } from 'rxjs';
+    
     private transferBetweenSibling = new Subject<string>();
   
     getSibling(){
@@ -175,6 +215,67 @@
       console.log(x);
     })
   }
+
+15. observable => Sending data between children and children should load on same parent.
+
+  service.ts
+  import { Subject } from 'rxjs';
+      var obs = new Subject<any>();
+
+    receiver component
+    this.serviceName.obs.asObservable().subscribe(x=>{
+      console.log(x)
+    })  
+
+    sender compponent
+    this.serviceName.obs.next('Rohit');
+
+
+16. get request - import http 
+    this.http.get(urlName);
+    this.http.post(urlName);
+    this.http.put(urlName);
+    this.http.delete(urlName);
+
+
+17. local storage  and session storage
+
+    localStorage.setItem('name', 'mike')
+    localStorage.getItem('name');
+
+    sessionStorage.setItem('name', 'mike')
+    sessionStorage.getItem('name');
+
+18. template driven form
+    <form #formData="ngForm" (ngSubmit)="onSubmit(formData.value)">
+      <input type="text" name='text' ngModel />
+    </form>
+
+    onsubmit(values){
+      console.log(values);
+    }
+
+
+
+
+
+-------------------------------------
+
+Injector, provider => Component me service inject hota hai.
+
+Interceptors => before calling the api add some logic
+
+custom directives => 
+
+Change detection => any time any event occur its run like scroll, click, press any key.
+
+View encapsulation =>  use for styling
+  encapsulation: ViewEncapsulation.ShadowDom => dont effect others
+  encapsulation: ViewEncapsulation.none => global style
+  encapsulation: ViewEncapsulation.Emulated => children will not get any style form its parent
+
+pass data on navigation =>
+
 
 
 -------------------------------------
