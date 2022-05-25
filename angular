@@ -233,9 +233,23 @@
 
 16. get request - import http 
     this.http.get(urlName);
-    this.http.post(urlName);
+    this.http.post(urlName,{postData});
+
     this.http.put(urlName);
-    this.http.delete(urlName);
+    this.http.delete(urlName);0
+
+
+    // create custom server
+    npm install -g json-server
+    create - db.json // data must be an object
+    add package.json => "mock:server": "json-server --watch db.json"
+    run server => npm run mock:server
+
+    myService => import { HttpClient } from '@angular/common/http';
+          constructor(private http: HttpClient) { }
+    
+    app-module =>  import { HttpClientModule  } from '@angular/common/http';
+
 
 
 17. local storage  and session storage
@@ -278,7 +292,31 @@ pass data on navigation =>
 
 
 
--------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------------
+
+Go on the folder
+Shift + right click
+
+Ng serve --open ( project open in browser)
+
+On CMD
+code .  =>Open this folder on vs vode
+
+Adding Bootstrap styles links on the angular.json file
+On Architect / build section
+
 
 * How to create angular application
     It required 3 things node, npm, angular cli.
@@ -319,3 +357,350 @@ pass data on navigation =>
   file and change on html file, it change on ts file.
   We can get the data with [(ngModel)].
 
+  
+e2e => end to end test, automate test 
+node modules => all third party libraries, not deployed our server
+environment => store configuration setting
+main.ts => starting point our application
+polyfills.ts => feel the gap between browser the  javascript version to run the code in angular
+test.ts => setting our environment
+.editorconfig => all developer team have same setting
+.gitignore => managing our code 
+karma.config => test runner of javascript code 
+protractor.conf.js => running tool for e2e.
+tsconfig.json => typescript complier 
+tslint.json => static annalistic typescript code
+vendor.bundle.js => third party libraries
+package.json => records important metadata about a project and contain the information about npm packages installed for the 
+    project that npm uses to install dependencies, run scripts, and identify the entry point to our package.
+
+stylesheet compile => all stylesheet compile into javascript.
+
+
+
+
+=> Angular 
+ Angular is a framework for building single-page applications. Angular is written in TypeScript.
+
+=> Directive
+Directive use for manipulation for DOM.
+Directives are classes that add additional behavior to elements
+  Components =>	Used with a template. This type of directive is the most common directive type.
+
+  Attribute directives =>	Change the appearance or behavior of an element, component, or another directive. with NgClass, NgStyle and NgModel
+
+  Structural directives =>	Change the DOM layout by adding and removing DOM elements. with the help of
+    NgFor, NgIf and NgSwitch
+
+
+  ng g directive CustomDirective
+  2 files created and update app.module file
+  CustomDirective.ts file => import { ElementRef } from '@angular/core';
+    class CustomDirectiveWork {
+      constructor(private el: ElementRef) {
+      }
+    }
+
+    <div CustomDirectiveWork> check directive work </div>
+
+=> Component 
+component is basic ui block of code.
+
+  => Component lifecycle hooks
+    - there are total 8 types of hooks but most used hooks are 4, 
+      1. ngOnChanges() 
+      2. ngOnInit()
+      3. ngAfterOnInit()
+      4. ngOnDestroy()
+    
+    - Whichever lifecycle hooks we want to use    
+      1. import it in the class
+      2. extend the implements interface 
+      3. Implement the method  
+
+=> Module 
+  Module is collection to components, directives, pipes and services.
+  When we group multiple components it becomes a module.
+
+  export that file on module -> import on app.module.ts file -> then use those components
+
+=> constructor
+The constructor() should only be used to initialize class members but shouldn't do actual “work”. 
+So we should use constructor() to set up Dependency Injection.
+dependency injection is a method in which dependencies are requested by class from the external resources.
+In the Angular constructor, a constructor argument with dependency type injects the dependencies.
+
+=> ngOnInit
+It is called when the component is initialized means on load time.
+used to perform actually business logic.
+It is a lifecycle hook method in Angular
+
+=> Lifecycle Hooks
+ Lifecycle hooks are referred to as methods on an object or component.
+
+
+=> Service 
+  services is a common reusable piece of functionality shared between different components  
+  Service use for sharing data between components.
+  add private  access modifier on constructor.
+
+
+  service.ts
+  deleteSingleUser(id:number){
+    const url = `${this.customUrl}/${id}`;
+    return this.http.delete(url);
+  }
+  .html
+    onDelete(id:any ){
+    this.myService.deleteSingleUser(id).subscribe( () => {
+        this.users = this.users.filter(function(user:any){
+          return user.id !== id;
+        });
+      })
+  };
+
+
+=> Model 
+model defined for data structure and validation. Its is part of typescript. ex on object
+for validation we have to make interface.
+  obj = {
+    name: string = 'mike',
+    num: number = 1,
+    Indian: boolean = true,
+    add: any = '12, abad '
+  }
+
+=> route module / lazy loading
+   when we defined routing on a specific module then we call routing module.
+   with route module load only necessary route or components.
+
+  => Multiple Router Outlets
+    We can have multiple router Outlets 
+    by default there is always/"atleast" 1 router outlet in app.component.html file 
+    When we don't provide any name for router-outlet it becomes primary 
+    There should be only 1 primary 
+    We can define multiple router outlets by giving name to them 
+    That's why we call them "named" router outlets 
+    we can give any name we want - give meaningful names 
+    In routing module - if you don't define outlet - it means its primary 
+    It will NOT show if you directly access it in the URL 
+    Synatx should be like this  - http://localhost:4200/<primary-route>( <routerOutletName> : <secondaryPath> )
+
+
+  => HashLocationStrategy 
+   Hands-on examples for PathLocationStrategy 
+    - Default behaviour of Angular apps 
+
+   Hands-on examples for HashLocationStrategy
+    - We need to import HashLocationStrategy from @angular/core 
+    - Add it to Providers array 
+    - Angular will start loading our URLs using # 
+      index.html/#/loans/add 
+
+
+  => Parametrized Routes - Dynamic Routes 
+    - We can send dynamic data or parameters to our routes. Those are visible in the url.
+    - URLs will look something like this - http://localhost.com/user/10
+    - While writing dynamic URLs/Params - make sure you write :(colon) for dynamic data means it can be string, integer. 
+        { path: 'product/:id', component: ProductComponent }
+    - Import the ActivatedRoute class 
+    - We can read the value in the component class 
+        - Create an object in constructor 
+            constructor(private activatedRoute: ActivatedRoute){
+              this.activatedRoute.parmas.subscribe( res => {
+                console.log(res) // its print id means dynamic url 
+              })
+            }
+
+=> Router link 
+    when ever we want to create a link we use routerLink.
+    router link can be static or dynamic in nature.
+    We DO NOT have to put "/" in variables in routerLink
+
+    ex: <a routerLink="user">User Page</a>
+    ex: <a [routerLink]=" 'user' ">User Page</a>
+    ex: <a [routerLink]=" ['user'] ">User Page</a>
+    ex:  adding dynamic url 
+        <div *ngFor="let user of users">
+            <a [routerLink]=" ['/page', user.id ] ">User Page</a> // url should be /user/id
+          </div>
+
+
+=> Query Params -  url?key=value&key=value
+   We can send data from form.
+   Query params visible in the url.
+   most used for querying, searching and filtering data etc.
+
+=> Wild card route 
+    wild card route nothing but user whenever enter the route which is invalid or something does not exist
+    then wild card route intercept
+    { path: '**', component: HomeComponent }
+
+    
+
+=> If and else 
+  show = true;
+  <div *ngIf="show else elseBlock"> </div>
+  <ng-template #elseBlock>  <h1> Else block</h1> </ng-template>
+  or
+    show = 'yes';
+  <div *ngIf="show== 'yes'; then ifBlock else elseBlock"> </div>
+  <ng-template #ifBlock>  <h1> if block</h1> </ng-template>
+  <ng-template #elseBlock>  <h1> Else block</h1> </ng-template>
+  or
+  <ng-template [ngIf="condition"]></ng-template>
+
+=> Switch case
+  On one action have more condition.
+  .ts -> color = 'red'
+  <div [ngSwitch]="color">
+    <div *ngSwitchCase="red">...</div>
+    <div *ngSwitchCase="green">...</div>
+    <div *ngSwitchDefault>...</div>
+  </div>
+
+
+=> template driven form 
+  It is a simple form. Validation on html file.
+ <form #form="ngForm" (ngSubmit)="onSubmit(form.value)" >
+    <input ngModel name="name" type="text" placeholder="name" /> <br />
+    <input ngModel name="email" type="email" placeholder="email"  /> <br />
+    <input type="submit" value="Submit" />
+  </form>
+
+
+=> reactive form 
+  when we need complex form and validation code should be written in ts file.
+  import ReactiveFormsModule on app.module file.
+
+  <form [formGroup]="reactFormData" (ngSubmit)="onSubmitReactFrom()" >
+    <input fromControlName="name" name="name" type="text" placeholder="name" /> <br />
+    <input fromControlName="email" name="email" type="email" placeholder="email"  /> <br />
+    <input type="submit" value="Submit" />
+  </form>
+
+  import { FormControl, FormGroup } from '@angular/forms';
+
+   reactFormData = new FormGroup({
+    name: new FormControl('Mike'),
+    email: new FormControl('tyson@gmail.com')
+  })
+
+  onSubmitReactFrom(){
+    console.log(this.reactFormData.value)
+  }
+
+
+=> Custom pipes => transform data one formate to another formate.  Ex text uppercase, Percentage, dollar symbol
+  ng g p pipeName
+  html => {{ 10 | pipeName: arg1}}
+  pipe file => const [arg1] = args;
+
+
+=> custom directives => 
+  use it with html. custom directive user for modified the html or dom. ex hide and show the element or style the element.
+  they are modifying or updating our html.
+  ng g directive directiveName
+
+  import ElementRef on directive .ts
+  constructor(private el: ElementRef){
+    el.nativeElement.style.color = "red"
+  }
+  .html 
+  <h1 directiveSelectorName> Hello World! </h1>
+
+
+
+
+=> json server 
+npm install -g json-server // install json server
+create db.json file  // json data must be object
+json-server --watch db.json // start server and  add on package.json file 
+add url on service.ts file
+import httpClientModule on app.module file
+
+
+=> ngClass 
+<div [ngClass]="'first second'">
+<div [ngClass]="['first', 'second']">
+<div [ngClass]="{first: true, second: true, third: true}">
+<div [ngClass]="{'first second': true}">
+
+=> ngStyle
+<div [ngStyle.color]="'red'"></<div>
+<div [ngStyle.color]="clrName"></<div> // .ts file clrName = 'red';
+<div [ngStyle]="{'background-color':'green'}"></<div>
+<div [ngStyle]="{'background-color':person.country === 'UK' ? 'green' : 'red' }"></<div>
+
+
+=>Observable 
+  Observable are sequence of data that gets emitted asynchronously time to time.
+  Observable handle variety of asynchronous operations.
+  An Observable can deliver multiple values of any type - literal, message or event 
+
+  Subscribe => subscribe is listen to our data and our logic what we want to do with the data.
+
+  -) how to create Observable
+      1. import "Observable" and "of"
+      1.1 RxJs operator 'of' 
+         -> convert any array into Observable
+      1.2 new Observable
+      1.3 user '$' symbol - so we know to that variable is Observable.   
+      1.4 Observable are useless unless we subscribe to it
+        -> Subscribe
+        -> toPromise
+        -> pipe 
+      1.5 automatically the values are reflecting -> Subscribe to the Observable  
+    
+
+  => transfer data between siblings
+  import { Subject } from 'rxjs';
+  obs = new Subject<any>();
+  //get 
+  this.ServiceName.obs.asObservable().subscribe(x => {
+      return this.getObs = x;
+    });
+  // set 
+    this.ServiceName.obs.next(data);
+
+
+
+
+
+
+Injector, provider => Component me service inject hota hai.
+
+=> Injector 
+Injectors are data structures that store instructions detailing where and how services form. 
+
+@Injectable is a decorator in Angular framework, it allows the service to be injected in Components or other service.
+
+=> provider 
+  A provider is an object declared to Angular so that it can be injected in the constructor of your components, directives and other classes
+   instantiated by Angular.
+
+What is the use of providers in Angular?
+  Providers are classes that create and manage service objects the first time that Angular needs to resolve a dependency. Providers is used
+  to register the classes to an angular module as a service
+
+
+Interceptors => before calling the api add some logic
+
+
+Change detection => any time any event occur its run like scroll, click, press any key.
+
+View encapsulation =>  use for styling
+  encapsulation: ViewEncapsulation.ShadowDom => dont effect others
+  encapsulation: ViewEncapsulation.none => global style
+  encapsulation: ViewEncapsulation.Emulated => children will not get any style form its parent
+
+pass data on navigation =>
+
+
+post man 
+
+find -> url?=finderText
+
+
+
+----------------------------------------------------

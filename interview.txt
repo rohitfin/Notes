@@ -759,8 +759,13 @@ The disadvantages of CSS preprocessors
 ==> JQUERY -----------------------------
 
 What is jQuery and why it is used?
-Introduced in 2006 jQuery is a lightweight, "write less, do more", JavaScript library.  jQuery is a JavaScript library designed to
- simplify HTML DOM tree traversal and manipulation,  as well as event handling, CSS animation, and Ajax. It is free, open-source
+Introduced in 2006, jQuery is a lightweight, "write less, do more", JavaScript library.  It is free, open-source.
+The purpose of jQuery is to make it much easier to use JavaScript on your website.
+ jQuery makes event handling, DOM manipulation, Ajax calls much easier than JavaScript.
+ jQuery also allows us to add animated effects on our web page which takes a lot of pain and lines of code with JavaScript.
+
+jQuery is a small yet feature-rich powerful javascript library that helps to manipulate the HTML DOM with less javascript code.
+
 
 Is Jquery Code Executed On The Client side, Or Server side?
 Answer : Client side
@@ -829,9 +834,11 @@ POST is used to send data to a server to create/update a resource.
 ==> JAVASCRIPT -----------------------------
 
 What is JavaScript and why it is used?
-JavaScript is a text-based programming language used both on the client-side and server-side that allows you to make web pages 
-interactive. Where HTML and CSS are languages that give structure and style to web pages, JavaScript gives web pages interactive
-elements that engage a user.
+JavaScript is a very powerful client-side and server-side scripting language.This allows us to create dynamic content for the web. JavaScript is a 
+lightweight language that is open-source and allows cross-platform.it works with various other programming languages And this is 
+the reason for its vast use all around the world.
+
+the code is always visible to everyone anyone can view JavaScript code
 
 var
 var is function scoped, can be re-declared and re-assign. access 'var' before initialization gives 'undefined' (means hoisting)
@@ -850,8 +857,13 @@ block level scope, const variables can neither be re-assign nor re-declared. Can
 'error' (means hoisting)
 
 function 
-function is just a basically collection of code that perform a specific task.They are reusable blocks of code that we can leverage 
-throughout our applications as many times as we need to create our desired functionality. 
+function is just a basically collection of code that perform a specific task.It is a group of reusable code that you can use
+ anywhere in the code. It helps you to divide a large program into small and manageable functions.
+
+    Function Expressions
+        variable = function (parameters){ //expression };
+
+
 
 Is Const faster than let?
 It appears that using const would inherently make code a little faster, because it seems to reduce the amount of hoisting necessary. 
@@ -897,42 +909,24 @@ What is i++ in JavaScript? (Pehle ki value)
         alert(i++); // shows 42
         alert(i); // shows 43
 
-The difference between i++ and ++i is the value of the expression.
-    The value i++ is the value of i before the increment. The value of ++i is the value of i after the increment.
-    var i = 42;
-    alert(i++); // shows 42
-    alert(i); // shows 43
-
-    i = 42;
-    alert(++i); // shows 43
-    alert(i); // shows 43
-
 diff between =, ==, ===
     = => assigning value
     == => comparing values
     === => comparing values and types
 
 what is array in javascript?
-array is collection of data. access from index value. store multiple values in a single variable. array can hold function. array 
-is numeric index number. in javascript array start with 0 (zero) index number. in single variable store multiple value is called
-array. array is 
-collection of data.
-    var myArr = [1, 2, 'a', 'c'];
+array is collection of data. access  from index value. array can hold function. array is numeric index number. 
+in javascript array start with 0 (zero) index number. in single variable store multiple value is called
+array. ex:  var myArr = [1, 2, 'a', 'c'];
 
 what is object in javascript
 object is key value pair. access from .(dot) notation. object is a collection of properties, and a property is an association 
-between a name
- (or key) and a value.
+between a key and a value.
     var myOb = {
         name: "cyclopes",
         rank: '2',
         power: ['one', 'two', 'three']
     }
-
-what is class inheritance in javascript
-Inheritance enables you to define a class that takes all the functionality from a parent class and allows you to add more.
-Using class inheritance, a class can inherit all the methods and properties of another class. Inheritance is a useful feature that
-allows code reusability.
 
 what is properties?
  properties are like variable attached to classes / object.
@@ -945,39 +939,58 @@ easily extract array element or object properties and store them in variables. I
 properties.
 
 What does callback function do?
+function call another function is called callback function. ex: setTimeout(), setInterval();
 A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to 
 complete some kind of routine or action.
-
-What is call back function in JavaScript?
-A JavaScript callback is a function which is to be executed after another function has finished execution. 
-A more formal definition would be - Any function that is passed as an argument to another function so that it can be executed in 
-that other function is called as a callback function.
 
 what is this keyword in javascript?
 The JavaScript this keyword refers to the object it belongs to. It has different values depending on where it is used: In a method, 
 this refers to the owner object. Alone, this refers to the global object. In a function, this refers to the global object.
 
 difference between typescript and javascript ?
-JavaScript is a scripting language. The code is interpreted using an Interpreter.
-typescript  is an object-oriented programming language and has a compiler. The code is compiled.
+JavaScript is a scripting language. 
+typescript  is an object-oriented programming language and has a compiler.
+TypeScript is an object-oriented programming language developed by Microsoft Corporation, whereas JavaScript is the programming language 
+for the web. TypeScript is an open-source language to build large-scale web apps, whereas JavaScript is a server-side programming language
+ that helps to develop interactive web pages.
 
 Is TypeScript frontend or backend?
-Originally Answered: Is TypeScript front end or backend? Typescript is a programming language. You can use it for front end 
-development (eg Angular) or backend development using Node js environment.
+Typescript is a programming language. You can use it for front end development (eg Angular) or backend development using Node js environment.
+
+what is class inheritance in javascript
+Inheritance enables you to define a class that takes all the functionality from a parent class and allows you to add more.
+Using class inheritance, a class can inherit all the methods and properties of another class.
+
 
 what is filter method  in javascript?
+The filter() method does not change the original array. Its return array values.
+The filter() function will return a new array containing all the array elements that pass the given condition. If no elements pass 
+the condition it returns an empty array.
+
+    Let's go through step by step on how the filter() works.
+        Create an empty array filterArr .
+        Loop through the array elements.
+        Called the filterFunc function with the current element as the argument.
+        If the result is true, push the element to the filterArr array.
+        Return filterArr array after going through all the elements.
+
 
 what is map method  in javascript?
 
 what is reduce method in javascript?
+ The reduce method is applied to arrays in Javascript. reduce() method returns a single value
 
 what is promises in javascript?
+A promise in JavaScript is asynchronous, meaning it takes time to resolve or finish.
+A Promise represents something that is eventually fulfilled. A Promise can either be rejected or resolved based on the operation outcome.
+The code does not directly or immediately return a value.
 
 what is async await in javascript?
 
 async/await vs promises javascript?
 
 what is await and async in javascript ?
+async makes a function return a Promise. await makes a function wait for a Promise.
 
 what is bubbling in javascript ?
 
@@ -985,23 +998,103 @@ Explain Closures in JavaScript?
 
 What are object prototypes?
 
-difference between typescript and javascript ?
 
+What is the difference between observable and promises?
+The biggest difference is that Promises won't change their value once they have been fulfilled. They can only emit (reject, resolve) a single
+value. On the other hand, observables can emit multiple results. The subscriber will be receiving results until the observer is completed or 
+unsubscribed from.
 
 
 
 ==> ANGULAR -----------------------------
 
-Component => component encapsulate the data logic and html markup for the review.
+What is angular?
+Angular is open source of JavaScript framework. Single page application with multiple views. Angular is written in type script. 
+It's maintained by Google.Angular helps build interactive and dynamic single page applications (SPAs) with its compelling 
+features including templating,  two-way binding, modularization, RESTful API handling, dependency injection, and AJAX handling.
 
-Directives => The Angular directive helps us to manipulate the DOM. ngFor, ngClass, ngStyle, ngIf, ngSwitch.
-    The ngFor is an Angular structural directive, which repeats a portion of the HTML template. 
-    The ngClass Directive is an Angular Attribute Directive, which allows us to add or remove CSS classes to an HTML element.
-    The ngStyle directive allows you to modify the style of an HTML element using the expression.
-    The ngIf and ngSwitch allows us to Add/Remove DOM Element.
 
-Pipes => The Angular pipes are used to Transform the Data. We can pass arguments to pipe and chain pipes. The Angular also allows 
-    us to create the Custom Pipe
+Property Binding => Property Binding one directional. Means made changes on .ts file reflect on .html file.
+    sIt share values between components.
+
+One way binding => In one way binding data flows from one direction. Either from view to component or from component to view.
+
+Two way binding =>  It's use for sharing data .html to .ts or .ta to .html file. With two way binding change values simultaneously.
+
+template Expression => The content inside the double braces is called Template Expression = {{ templateExpression }}
+
+
+Component
+Component is a basic block of content that represent  specific view.
+
+Decorator
+  With input decorator we can get data from component to component
+  Create own event like click with output() and event emitter. With output() pass custom event from child component to parent component.
+ 
+    Input decorator
+      Takes values pass from parent to child component and store that value on child component.
+
+    Output decorator
+      Pass data from child to parent component.
+      It's happening on some event so to raise an event output must have type of event emitter.  Which is a class an angular core 
+      that use to emit() custom event.
+
+Event emitter =>
+    Create custom event with event emitter and with the help of @output we transfer pur event component to component
+
+
+Directives => 
+    Directives are attribute/class that add additional behavior to the elements. With directive we manage forms, lists, styles and
+     what users see. 
+    Different type of directives
+    1. Component directives
+    2. Attributes directives - change the appriance or behaviour of the elements.
+    3. Structural directives - change the structure of DOM by adding or removing DOM element
+
+    Component directive
+    Which is template. This type of directives most common because it's HTML.
+
+    In-built attribute directives
+    Listen to modify the behaviour of the elements attributes, properties and components. Ex NgClass, NgStyle, NgModel
+
+    Structural directives
+    Structural directive responsible for html layout. Adding, removing and manipulating to the host element.
+    *NgIf - conditionally hide and show
+    *Ng for - repeat a node each item of the list
+    *NgSwitch -  switch alternative views
+
+
+Constructor
+    Constructor runs when object or component initialized 
+
+What's is interface?
+    Same as class
+
+Dependencies injection
+    Dependencies are services or object with class need to perform its function
+
+
+What's is service and how to use?
+    Service were we write our logic  interacting with our API's.
+
+    Service is just a class. It does bring the injectable and has  injectable decorator and it's provide to the application level
+
+    Import on the component. If we want to use the service then need to add services into the constructor as a provider
+
+What is obervarable?
+    Use obeservable because if we dealing with asynchronous  data like fetching data from server.
+
+    import {obervarable, of } from 'rxjs';
+    Import "obervarable and of" on the service
+    Make obeservable and subscribe() on the component.
+
+
+Pipes => 
+    Pipes are simply function we can use on our template which accept  input value ( parameters) and return a formatted value.
+    Pipe use for DATA manipulation. Angular has in-built pipes like uppercase, lowercase, percentage and currency. We can also create 
+    custom pipe. Pipe can be provided with argument by using colon ( : ) sign.
+    [ ng g pipe pipeName ]
+
 
 Component Life Cycle Hook => The life cycle hooks are the methods that angular invokes on directives and components as it creates,
      changes, and destroys them.
@@ -1020,37 +1113,49 @@ Router => The Router module handles the navigation.The Routing allows you to mov
 
 Data Binding => The Component passes the data to the view using a process called Data Binding.
 
-e2e => end to end test, automate test 
-node modules => all third party libraries, not deployed our server
-environment => store configuration setting
-main.ts => starting point our application
-polyfills.ts => feel the gap between browser the  javascript version to run the code in angular
-test.ts => setting our environment
-.editorconfig => all developer team have same setting
-.gitignore => managing our code 
-karma.config => test runner of javascript code 
-protractor.conf.js => running tool for e2e.
-tsconfig.json => typescript complier 
-tslint.json => static annalistic typescript code
-vendor.bundle.js => third party libraries
-package.json => records important metadata about a project and contain the information about npm packages installed for the 
-    project that npm uses to install dependencies, run scripts, and identify the entry point to our package.
 
-stylesheet compile => all stylesheet compile into javascript.
+ngOnInit void => 
+    It is life cycle method.It runs on load.
+    void means it does not return anything. We can write onload functions on ngOnInit.
 
-One way binding => In one way binding data flows from one direction. Either from view to component or from component to view.
-The content inside the double braces is called Template Expression = {{ templateExpression }}
+Typescript
+    Typescript is not internary language.
+    Typescript is super set of JavaScript. That means Any valid JavaScript code also valid typescript code.
+    But typescript some additional features do not existing on current JavaScript
+
+
+Life cycle hooks
+    In angular, every component has lifecycle. Angular create and renders these components and also destroy them before removing 
+    from the DOM. This is achieve with the help of lifecycle hook.
+    ngOnChanges( ) - data set or re-set data bound input properties.
+    ngOnInit( ) - initialised the component or directives, after the first angular display the data bound property and set the 
+    input properties.
+    ngDoCheck( ) etc.
 
 
 
+Ng Model
+    Ng Models are container that reserve a block of code to an workflow.
+    @NgModel takes metadata object that describes how to compile the components template and how to create an injector an runtime. 
+    Ng models identified modules, services, pipes and directives
+
+
+Ng content
+    Ng content use as a projection to take html into another component.
+    With <ng-content> user can present there own content.
+
+Template statements
+    Template statements is response on event raise by target like element, component or a directive. 
 
 
 
-What is angular?
-A component-based framework for building scalable web applications· A collection of well-integrated libraries that  cover a wide 
-variety of components. Angular is a platform and framework for building single-page client applications using HTML and TypeScript. 
-Angular is written in TypeScript.  Angular helps build interactive and dynamic single page applications (SPAs) with its compelling 
-features including templating,  two-way binding, modularization, RESTful API handling, dependency injection, and AJAX handling.
+Controller
+Angular controllers control the data of  angular application. They are regular JavaScript objects. The ng-conroller defines the 
+application controller.
+
+
+
+
 
 What are advantages of angular?
     Functionality, Consistency, Productivity, Maintainability, Modular development structure, Angular Material.
@@ -1072,43 +1177,13 @@ What are the advantages of Angular?
     The MVVM architecture, 
     Use of directives.
 
-What are the advantages of Angular?
+What are the disadvantages of Angular?
     SEO problems,
     Concept of Dependency Injection and Inversion Of Control,
 
 why not jquery use in angular?
 
-
-what is directives?
-    ngIf and ngFor
-
-
-what is service in angular?
-
-what is observable in angular
-
-
-
-
-
-
-
-// adding text 
-    <h5 [innerText]='text'></h5>
-    <p>  {{ text }}  </p>
-
-// Adding Class
-    <div [className]="'className'"></div>
-    <div [className]="getClass()">  Get Class </div>
-    <div [className]="hasError() ? 'text-success' : 'text-danger'"> conditional operator </div>
-
-    <div [ngClass]="'className'"></div>
-    <element [ngClass]="['cssClass1', 'cssClass2']">NgClass with Array</element>
-    <element [ngClass]="{'cssClass1': true, 'cssClass2': true}">NgClass with Object</element>
-
-// adding style
-    <p [style.color]="'red'">Style Binding</p>
-
+Encapsulation
 
 
 
@@ -1227,7 +1302,7 @@ Bootstrap was launched as a mobile-first framework for web development. Bootstra
  and Jacob Thornton. Prior to being an open-sourced framework, Bootstrap was known as Twitter Blueprint.
 
 What are offset columns in Bootstrap?
-Offset Columns in Bootstrap. An offset is used to push columns over for more spacing.
+ An offset is used to push columns over for more spacing.
 
 How many types of layouts are there in Bootstrap?
 Fluid Layout, Fixed Layout 
@@ -1240,32 +1315,22 @@ md (It is for small laptop screen of size equal to or greater than 992px wide).
 LG ( It is for laptop and desktop screens which are equal to greater than 1200px wide).
 
 
-BOOTSTRAP 3	 
-4 tier grid system (xs, sm, md, lg).
-Primary unit is px.
-LESS
-Glyphicons	Supported.
-Flexbox	Not supported.
+BOOTSTRAP 3	                          BOOTSTRAP 4	  
+4 tier grid system (xs, sm, md, lg). 
+Primary unit is px.                   Primary unit is rem           
+LESS                                  SASS
+Glyphicons	Supported.                Glyphicons Not 	Supported. (Glyphicons - icons)  
+Flexbox	Not supported.                Flexbox	 supported.   
 
-BOOTSTRAP 4	    
-Primary unit is rem
-SASS
-Glyphicons Not 	Supported. (Glyphicons - icons)
-Flexbox	 supported.
 
-BOOTSTRAP 4	    
-5 tier grid system(xs, sm, md, lg, xl).
-It has limited colors.
-It has jQuery along with all the related plugins.
-Bootstrap 4 doesn’t have its own SVG icons. 
-Jekyll software is used by Bootstrap 4.
+BOOTSTRAP 4	                                        BOOTSTRAP 5
+5 tier grid system(xs, sm, md, lg, xl).             6 tier grid system(xs, sm, md, lg, xl, xxl).
+It has limited colors.                              Extra colors have been added with the looks.
+It has jQuery along with all the related plugins.   Jquery is removed and it has switched to vanilla JS with some working plugins.
+Bootstrap 4 doesn’t have its own SVG icons.         Bootstrap 5 has its own SVG icons.
+Jekyll software is used by Bootstrap 4.             Hugo software is used by Bootstrap 5.
 
-BOOTSTRAP 5
-6 tier grid system(xs, sm, md, lg, xl, xxl).
-Extra colors have been added with the looks.
-Jquery is removed and it has switched to vanilla JS with some working plugins.
-Bootstrap 5 has its own SVG icons.
-Hugo software is used by Bootstrap 5.
+
 
 
 ==> SEO -----------------------------

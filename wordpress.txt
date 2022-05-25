@@ -28,6 +28,18 @@ create database :- xampp- mySql - admin or localhost/phpmyadmin
 .) Sign Up For Amazon Affiliate 
 .) Google Analytics
 
+=> cpt ui plugin
+=> custom fields
+=> Classic Editor
+=> Custom Post Type UI
+=> CF Page or Post Duplicator
+=> Rank Math SEO
+=> Safe SVG
+=> WPS Hide Login
+=> All-in-One WP Migration
+=> Bot Protection
+=> Autoptimize
+
 
 .) Theme Builder
     Elementor  Builder
