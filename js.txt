@@ -709,6 +709,12 @@
 	}
 	run();
 
+3. First class function - To ability to use function
+	var a = function ( ) {
+		return function xyz( ) { }
+	}	
+
+
 * fat arrow function
 	const name = () => {
 		console.log(max);
@@ -898,13 +904,96 @@
     setTimeout(b, 10000);
 
 
+=> Synchronous
+	Execution of code step by step.
+	Something is happen we want to wait to its completely finished or it's done until we move on next
 
+=> Asynchronous
+	Sequence has not been decided.
+	Something going on but you don't want to wait till that things is done to continue to run your program to you
+	 wants while it's happening
+
+=> Async / await
+	Use for fetch data, getting data from API's and calling data from third party's.
+	Async always  return promise
+
+=> Promises
+	Use to handle asynchronous data.
+	function check( ){ 
+		return new Promise( resolve, reject ) {
+			Var error = true;
+			if ( !error ) { resolve ( )  }
+			else { reject ( ) }
+		}
+	}
+
+	check( ).then( function ( ){ 
+		console.log(123);
+		}).catch( function ( ){ 
+		console.log (' error ');
+	} ) 
+
+
+=> Closure
+Values are retain in function means when we invoke our  function the values are not lose, we can access those values on our inside
+ functions that is called closure.
+
+	function sum(a){
+	console.log(a);
+	Var c = 10;
+	return function(b){
+	return a + b + c;
+		}
+	OR
+	return { 
+		getSumTwo: function(b) {
+			return a+ b
+			}
+		},
+		getSumThree: function(c) {
+			return a+ c
+			}
+		}
+
+	}
+	var call = sum(5);
+	console.log( call(10) );
+	console.log( call.getSumTwo(5) );
+	console.log( call.getSumThree(1) );
+
+=> Fetch API
+	Fetch is a function that happen a asynchronously.
+	Fetch return promise. With fetch we can get data or post data means call the data or send the data 
+
+	function getData( ) {
+		fetch( 'fetch url' )
+		.then( (res) => res.json( ) ) //.text() or . blob ()
+		.then ( ( data ) => { console.log ( data ) } )
+		.catch( ( error ) => { console.log ( error ) } );
+	}
+
+	Post Data adding input values
+	function getData( e ) {
+		e.preventDefault( );
+		var title= document.getElementById( 'name' );
+		var desc= document.getElementById( 'name' );
+
+		fetch( 'fetch url', {
+			method : 'POST ',
+			header : { 
+				'Accept' : ' application/json, plan/json, / ',
+				' Content-type' : ' application/json '
+			},
+			body : JSON.stringify( { title: title, body: desc })
+		} )
+
+		.then( (res) => res.json( ) )
+		.then ( ( data ) => { console.log ( data ) } )
+		.catch( ( error ) => { console.log ( error ) } );
+	}
 
 
 
 => Class Inheritance
-=> Closures
-=> promises
-=> async and wait
 => currying
 
