@@ -28,6 +28,7 @@ create database :- xampp- mySql - admin or localhost/phpmyadmin
 .) Sign Up For Amazon Affiliate 
 .) Google Analytics
 
+=> contentberg wordpress theme
 => cpt ui plugin
 => custom fields
 => Classic Editor

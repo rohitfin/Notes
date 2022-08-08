@@ -14,15 +14,17 @@
 -------------------------
  Git Commands 
 git init 
-git status
-git add .
+git status -> how many files are need to commit show in red color
+git add . -> 
+git status -> files are in green color
 git commit -m "Our comment"
+git brach =>  check the branch
+git brach -b newBranchName =>  make a new branch
+git checkout dev / master - change branch 
 git remote add origin PASTE SSL REPOSITORY LINK  
 git pull origin dev / master
 git push origin dev / master
 git push origin master --force (if not push then use --force)
-git checkout dev / master
-git brach =>  check the branch
 
 --------------------------
 
