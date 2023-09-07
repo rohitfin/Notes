@@ -448,6 +448,9 @@ ul li a:hover, ol li a:hover {} => :is(ul li, ol li) a:hover{}
       color: red;
     }
 
+=> none pointer event 
+  pointer-events: none; user-select: none;
+  
 => 
 
 => 
