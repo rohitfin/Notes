@@ -434,7 +434,6 @@
 	var res = array.splice(2); //	[3, 4, 5, 6, 7]
 	var res = array.splice(2, 5); // [3, 4, 5, 6, 7]
 
-
 * string to array
 	var a =  'hello';
 	var b = a.split();
@@ -473,6 +472,12 @@
 
 * includes();
 
+* delete values from object and array 
+	const myArray = [1, 2, 3, 4, 5];
+	delete myArray[1]; // myArray : 1,undefined,3,4,5
+	or myArray.splice(3, 1); // myArray : 1, 2, 3, 5
+
+
 
 * sort
 	the sort method converts the elements into strings then compares their sequences of UTF-16 code units values.
@@ -482,7 +487,6 @@
 
 	const fruits = ["Apple", "Mango", "Kiwi", "Orange", "Strawberry"];
 	console.log(fruits.sort());
-
 
 * filter method (<, >)
 	for comparing, greater-than, smaller-than 
@@ -540,38 +544,39 @@
 	
 	},0);
 
-
 * forEach (need atleast one paramenter)
 	var cars = [ "mahindra bolero", "tata indica", "tata safari", "fortuner" ];
 	var each = cars.forEach(function(element, index, array){
 		console.log(index + " : " + element);
 	});
+	
+*  compare objects and string
+	var x = "John";             
+	var y = new String("John");
+	(x === y) // is false because x is a string and y is an object.
 
+* cannot compare objects
+	var x = new String("John");             
+	var y = new String("John");
+	(x == y) // is false because you cannot compare objects.
 
-* object
-	A collection of name value pairs.
-	key value pairs
-	object same as array and in object, we can call function.
+** Don't Use new Object()
+	Use {} instead of new Object()
+	Use "" instead of new String()
+	Use 0 instead of new Number()
+	Use false instead of new Boolean()
+	Use [] instead of new Array()
+	Use function (){} instead of new Function()
+
+=> object
+	A collection of name value pairs. key value pairs.object same as array and in object, we can call function.
 	 
-	var player = {
-		name : "Chou",
-		role : "Fighter",
-		price : 24000,
-		rank : "A+",
-		build : ['b1', 'b2', 'b3'],
-		details : function(){
-			return this.name + ' is ' + this.role
-		}
-		
-	};
-
-* 
-	const courses = {
-		java: 10,
-		javascript: 55,
-		nodejs: 5,
-		php: 15
-	};
+		const courses = {
+			java: 10,
+			javascript: 55,
+			nodejs: 5,
+			php: 15
+		};
 
 		* Methods to loop through objects using javascript for...in Loop
 			for (const key in courses) {
@@ -592,34 +597,76 @@
 		* Object.values() Method -It returns the values of all properties in the object as an array
 			Object.values(courses).forEach(val => console.log(val));
 
+		* Object.create();
 
-*  compare objects and string
-	var x = "John";             
-	var y = new String("John");
-	(x === y) // is false because x is a string and y is an object.
-
-* cannot compare objects
-	var x = new String("John");             
-	var y = new String("John");
-	(x == y) // is false because you cannot compare objects.
-
-** Don't Use new Object()
-	Use {} instead of new Object()
-	Use "" instead of new String()
-	Use 0 instead of new Number()
-	Use false instead of new Boolean()
-	Use [] instead of new Array()
-	Use function (){} instead of new Function()
-
-* Constructor functions  
+=> Constructor functions  
 	Using Constructor functions :- Constructors are functions that contain a this keyword.
+	If we initialize the constructor its runs
 
-	function Human (firstName, lastName) {
-		this.fName = firstName
-		this.lName = lastName
+	function Person (person_name, person_age, person_gender) {
+		this.name = person_name,
+		this.age = person_age,
+		this.gender = person_gender,
+		this.greet = function () {
+			return ('Hi' + ' ' + this.name);
+		}
 	}
-	const chris = new Human('Chris', 'Coyier')
-	console.log(chris.fName); 
+	// creating objects
+	const person1 = new Person('John', 23, 'male');
+	const person2 = new Person('Sam', 25, 'female');
+
+	// accessing properties
+	console.log(person1.name); // "John"
+
+	// adding method to person1 object
+	person1.print = function () {
+		console.log('hello');
+	}
+
+=> Prototype
+		In JavaScript, a prototype can be used to add properties and methods to a constructor function.
+
+		// adding property to constructor function
+		Person.prototype.status = 'Married';
+
+		// prototype value of Person
+		console.log(Person.prototype);
+
+		// inheriting the property from prototype
+		console.log(person1.status);
+		
+		// changing the property value of prototype
+		Person.prototype = { status:  'UnMarried'}
+
+=> Inheritance 
+	function Human(person_name, person_age, person_gender, month){
+		Person.call(this, person_name, person_age, person_gender);
+		
+		this.month = month
+	}
+
+	// Inherit Prototype 
+	Human.prototype = Object.create(Person.prototype);
+
+	// Instantiate Human Object
+	const hum1 = new Human('Mike', '22', 'Male', 'March');
+
+	// use Human Constructor
+	Human.prototype.constructor = Human;
+	
+	console.log(hum1);
+
+=> Sub Class 
+	class Human extends Person {
+		constructor(person_name, person_age, person_gender, month){
+			super(person_name, person_age, person_gender); // get parent properties
+			this.month = month;
+		}
+	}
+
+	// Instantiate Human Object
+	const hum1 = new Human('Khabib', '22', 'Male', 'Jan');
+	hum1.greet();
 
 * Class 
 	Classes is blue print of object. Classes are said to be the “syntactic sugar” of Constructor functions. 
@@ -632,19 +679,20 @@
 			this.sayHello = function () {
 				console.log(`Hello, I'm ${firstName}`)
 			}
-
 			or 
-
 				sayHello () {
 					console.log(`Hello, I'm ${this.firstName}`)
 				}
 
+				static staticFunc(){
+					console.log('It can not be Instantiate, It can call by its parent');
+				}
 		}
 	}
 
-
 	const chris = new Human('Chris', 'Coyier')
 	console.log(chris.firstName);
+	Human.staticFunc();
 
 * Objects Linking to Other Objects (OLOO)
 
@@ -655,7 +703,6 @@
 			this.sayHello = function () {
 			console.log(`Hello, I'm ${firstName}`)
 			}
-
 			return this
 		}
 	}
@@ -664,10 +711,7 @@
 	//chris.init('Chris', 'Coyier');
 	// or
 	const chris = Object.create(Human).init('Chris', 'Coyier');
-
 	console.log(chris.firstName);
-
-
 
 * scope
  	two type of scope 1.global, 2. local
@@ -688,55 +732,29 @@
 	1. function declaration
 	2. function Expression
 
-1. function declaration
+	1. function declaration
 
-	function walk(){
-		console.log("Walk");
-	}
-	walk();
+		function walk(){
+			console.log("Walk");
+		}
+		walk();
+		OR
+		[ this is a hoisting ]
+		walk();
+		function walk(){
+			console.log("Walk");
+		}
 
-	OR
-	[ this is a hoisting ]
-	walk();
-	function walk(){
-		console.log("Walk");
-	}
-	
+	2. function Expression  or anonymous function
+		var run = function() {
+			console.log("run");
+		}
+		run();
 
-2. function Expression  or anonymous function
-	var run = function() {
-		console.log("run");
-	}
-	run();
-
-3. First class function - To ability to use function
-	var a = function ( ) {
-		return function xyz( ) { }
-	}	
-
-
-* fat arrow function
-	const name = () => {
-		console.log(max);
-	}
-	name();
-	or
-	const multiply = (number) => { return number *2 }
-	const multiply = (number) => number*2;
-	console.log(multiply(2));
-
-* Function() Constructor
-	var myFunction = new Function("a", "b", "return a * b");
-	var x = myFunction(4, 3);
-	console.log(x);
-
-	OR 
-
-	var myFunction = function(a,b){return a * b};
-	console.log(myFunction(1,5));
-
-
-
+	3. First class function - To ability to use function
+		var a = function ( ) {
+			return function xyz( ) { }
+		}	
 
 * api ajax
 		$.ajax({
@@ -811,7 +829,7 @@
 	<!-- second Way formate  end -->
 
 
-// third way 
+    <!--  third way  -->
        var aa =`<div class="card" >
        <img  class="pok-img card-img-top p-2" src="${imgurl}" alt="Pok Name">
        <div class="card-body">
@@ -823,10 +841,7 @@
        </div>`;
        $('#JSON-child-Result-3').append(aa);
 
-
-
 => callback
-
 	// callback function
 	function callMe() {
 		console.log('I am callback function');
@@ -839,48 +854,6 @@
 	// passing function as an argument
 	greet('Peter', callMe);
 
-
-=> Constructor Function Parameters
-
-	function Person (person_name, person_age, person_gender) {
-		this.name = person_name,
-		this.age = person_age,
-		this.gender = person_gender,
-		this.greet = function () {
-			return ('Hi' + ' ' + this.name);
-		}
-	}
-	// creating objects
-	const person1 = new Person('John', 23, 'male');
-	const person2 = new Person('Sam', 25, 'female');
-
-	// accessing properties
-	console.log(person1.name); // "John"
-	console.log(person2.name); // "Sam"
-
-	// adding method to person1 object
-	person1.print = function () {
-		console.log('hello');
-	}
-
-
-	// => Prototype Inheritance
-		In JavaScript, a prototype can be used to add properties and methods to a constructor function.
-
-		// adding property to constructor function
-		Person.prototype.status = 'Married';
-
-		// prototype value of Person
-		console.log(Person.prototype);
-
-		// inheriting the property from prototype
-		console.log(person1.status);
-		
-		// changing the property value of prototype
-		Person.prototype = { status:  'UnMarried'}
-
-
-
 => setTimeout()
 	The setTimeout() method executes a block of code after the specified time. The method executes the 
 	code only once.
@@ -888,7 +861,6 @@
 	function - a function containing a block of code
 	milliseconds - the time after which the function is executed
 	The setTimeout() method returns an intervalID, which is a positive integer.
-
 
     var n = 0;
     function print(){
@@ -900,22 +872,20 @@
     function b(){
     clearInterval(a);
     }
-
     setTimeout(b, 10000);
-
 
 => Synchronous
 	Execution of code step by step.
-	Something is happen we want to wait to its completely finished or it's done until we move on next
+	Something happens we want to wait until it is completely finished or it is done until we move on next
 
 => Asynchronous
-	Sequence has not been decided.
-	Something going on but you don't want to wait till that things is done to continue to run your program to you
+	The sequence has not been decided.
+	Something going on but you don't want to wait till that thing is done to continue to run your program to you
 	 wants while it's happening
 
 => Async / await
-	Use for fetch data, getting data from API's and calling data from third party's.
-	Async always  return promise
+	Use for fetching data, getting data from APIs, and calling data from third parties.
+	Async always  returns the promise
 
 => Promises
 	Use to handle asynchronous data.
@@ -923,20 +893,36 @@
 		return new Promise( resolve, reject ) {
 			Var error = true;
 			if ( !error ) { resolve ( )  }
-			else { reject ( ) }
+			else { reject ( ) } // or else { reject('Error: Something went wrong.')}
 		}
 	}
+	check( ).then( function ( ){ console.log(123);
+		}).catch( function ( ){  console.log (' error '); } ) // or .catch(err => console.log(err) )
 
-	check( ).then( function ( ){ 
-		console.log(123);
-		}).catch( function ( ){ 
-		console.log (' error ');
-	} ) 
 
+
+	// async / await 
+	async function init(){
+		await check()
+		callBack(); // .then wala function 
+	}
+	init();
+
+	// Promises with fetch
+	var promise1 = 10;
+	var promise2 = fetch('https://jsonplaceholder.typicode.com/posts').then(res => res.json()) // because data on string formate so we have to convert into json format
+	// Promise.all 
+	Promise.all([promise1, promise2]).then(values => console.log(values));
+
+	// Async / await with fetch
+	async function fetchData(){
+		var res = await fetch('https://jsonplaceholder.typicode.com/posts');
+		var dataConvert = await res.json();
+		console.log(dataConvert);
+	}
 
 => Closure
-Values are retain in function means when we invoke our  function the values are not lose, we can access those values on our inside
- functions that is called closure.
+	Values are retained in the function means when we invoke our  function the values are not lost, we can access those values on our inside functions which is called closure.
 
 	function sum(a){
 	console.log(a);
@@ -962,8 +948,8 @@ Values are retain in function means when we invoke our  function the values are 
 	console.log( call.getSumThree(1) );
 
 => Fetch API
-	Fetch is a function that happen a asynchronously.
-	Fetch return promise. With fetch we can get data or post data means call the data or send the data 
+	Fetch is a function that happens asynchronously.
+	Fetch return promise. With fetch we can get data or post data means calling the data or sending the data 
 
 	function getData( ) {
 		fetch( 'fetch url' )
@@ -992,8 +978,10 @@ Values are retain in function means when we invoke our  function the values are 
 		.catch( ( error ) => { console.log ( error ) } );
 	}
 
-
-
-=> Class Inheritance
 => currying
+
+
+
+
+
 
