@@ -3,1474 +3,1445 @@ URI   ----Uniform Resource Identifier (URI)
 BFC(Block Formatting Context)
 SGML (Standard Generalized Markup Language) 
 
-
 ==> GIT -------------------------------------
-what is git?
-    git is version control. git is software.
-steps:   stash, pull, pop stash, stage changes, commit, push
+    what is git?
+        git is version control. git is software.
+    steps:   stash, pull, pop stash, stage changes, commit, push
 
-what is repository?    
-    repository is like place where we store our code, multiple person work on single project.
-    eg: github, bitbucket 
+    what is repository?    
+        repository is like place where we store our code, multiple person work on single project.
+        eg: github, bitbucket 
 
-what is conflict?
-    what i have changed if someone also change that text, line or file then we will get conflict.
-how to solve conflict?
-    we have to select required changes and push.
+    what is conflict?
+        what i have changed if someone also change that text, line or file then we will get conflict.
+    how to solve conflict?
+        we have to select required changes and push.
 
-how to clone?
-copy clone link, go to our folder where we want our project, right click open git bash paste clone link
-then it will automatically clone our project.
+    how to clone?
+    copy clone link, go to our folder where we want our project, right click open git bash paste clone link
+    then it will automatically clone our project.
 
-how change directory means master to dev?
-Open project on vs code on left side bottom you can see master or dev directory.
-on click you can change directory.
-
+    how change directory means master to dev?
+    Open project on vs code on left side bottom you can see master or dev directory.
+    on click you can change directory.
     
 ==> HTML -------------------------------------
-HTML	Tim Berners-Lee 1990
+    HTML	Tim Berners-Lee 1990
 
-=> HTML
-HTML stands for Hyper Text Markup Language. HTML is coding, but it is not scripting, nor is it programming. It's a markup language. 
-It is a language of World Wide Web.
+    => HTML
+    HTML stands for Hyper Text Markup Language. HTML is coding, but it is not scripting, nor is it programming. It's a markup language. 
+    It is a language of World Wide Web.
 
-semantic HTML
-h1, h2, h3, h4, h5, h6, p, strong, b, header, footer, nav, section
+    semantic HTML
+    h1, h2, h3, h4, h5, h6, p, strong, b, header, footer, nav, section
 
-List of block level elements
-p, h1, h2, h3, h4, h5, h6, ol, ul, pre, address, blockquote, dl, div, fieldset, form, hr, noscript, table
+    List of block level elements
+    p, h1, h2, h3, h4, h5, h6, ol, ul, pre, address, blockquote, dl, div, fieldset, form, hr, noscript, table
 
-List of inline elements
-strong, b, label, img, input, button, textarea, sup, span, small, i, select
+    List of inline elements
+    strong, b, label, img, input, button, textarea, sup, span, small, i, select
 
-Does a <!DOCTYPE html> tag is a HTML tag
-No, the <!DOCTYPE html> declaration is not an HTML tag. 
-<!DOCTYPE html> is used to instruct the web browser about the HTML page.
+    Does a <!DOCTYPE html> tag is a HTML tag
+    No, the <!DOCTYPE html> declaration is not an HTML tag. 
+    <!DOCTYPE html> is used to instruct the web browser about the HTML page.
 
-What Is The < !doctype > ? Is It Necessary To Use In Html5 ?
-The <!DOCTYPE> is an instruction to the web browser about what version of HTML the page is written in and The <!DOCTYPE> tag does 
-not have an end tag and It is not case sensitive.
+    What Is The < !doctype > ? Is It Necessary To Use In Html5 ?
+    The <!DOCTYPE> is an instruction to the web browser about what version of HTML the page is written in and The <!DOCTYPE> tag does 
+    not have an end tag and It is not case sensitive.
 
-If I do not put <!DOCTYPE html> will HTML 5 work?
-No, the browser will not be able to identify that it is an HTML document and HTML 5 tags do not function properly
+    If I do not put <!DOCTYPE html> will HTML 5 work?
+    No, the browser will not be able to identify that it is an HTML document and HTML 5 tags do not function properly
 
-What happens when DOCTYPE is not given?
-The web page is rendered in quirks mode. The web browsers engines use quirks mode to support older browsers which does not follow 
-the W3C spec. In quirks mode CSS class and id names are case insensitive. In standards mode they are case sensitive.
+    What happens when DOCTYPE is not given?
+    The web page is rendered in quirks mode. The web browsers engines use quirks mode to support older browsers which does not follow 
+    the W3C spec. In quirks mode CSS class and id names are case insensitive. In standards mode they are case sensitive.
 
-What does a DOCTYPE do?
-DOCTYPE is an abbreviation for DOCument TYPE.
-A DOCTYPE is always associated to a DTD for Document Type Definition. it controls whether the browsers uses "standards" or "quirks"
-mode to render the document. Once a user agent has recognized a correct DOCTYPE, it will trigger the no-quirks mode matching this 
-DOCTYPE for reading the document. If a user agent doesn't recognize a correct DOCTYPE, it will trigger the quirks mode.
+    What does a DOCTYPE do?
+    DOCTYPE is an abbreviation for DOCument TYPE.
+    A DOCTYPE is always associated to a DTD for Document Type Definition. it controls whether the browsers uses "standards" or "quirks"
+    mode to render the document. Once a user agent has recognized a correct DOCTYPE, it will trigger the no-quirks mode matching this 
+    DOCTYPE for reading the document. If a user agent doesn't recognize a correct DOCTYPE, it will trigger the quirks mode.
 
-What's the difference between standards mode and quirks mode?
-Quirks mode was to support websites built before standards became widely implemented. quirks mode in browser allows u to render 
-page for as old browsers. This is for backward compatibility.
+    What's the difference between standards mode and quirks mode?
+    Quirks mode was to support websites built before standards became widely implemented. quirks mode in browser allows u to render 
+    page for as old browsers. This is for backward compatibility.
 
-What is the use of an iframe tag?
-An iframe is used to display a web page within a web page.
-The IFrame HTML element is often used to insert content from another source, such as an advertisement, into a Web page.
-<iframe src="https://github.com" height="300px" width="300px"></iframe>
+    What is the use of an iframe tag?
+    An iframe is used to display a web page within a web page.
+    The IFrame HTML element is often used to insert content from another source, such as an advertisement, into a Web page.
+    <iframe src="https://github.com" height="300px" width="300px"></iframe>
 
-type of video formats, audio tag (mp3)
-mp4, WebM, Ogg --- mp3, wav, Ogg
+    type of video formats, audio tag (mp3)
+    mp4, WebM, Ogg --- mp3, wav, Ogg
 
-figure tag
-The figure tag is used to add a photo in the document on the web page.
+    figure tag
+    The figure tag is used to add a photo in the document on the web page.
 
-What Is A Hypertext Link?
-A hypertext link is a special tag that links one page to another page or resource. If you click the link, the browser jumps to
-the link's destination. <a target="_blank|_self|_parent|_top">
+    What Is A Hypertext Link?
+    A hypertext link is a special tag that links one page to another page or resource. If you click the link, the browser jumps to
+    the link's destination. <a target="_blank|_self|_parent|_top">
 
-How Do I Create A Button Which Acts Like A Link?
-<INPUT TYPE=submit VALUE="Text on button">
+    How Do I Create A Button Which Acts Like A Link?
+    <INPUT TYPE=submit VALUE="Text on button">
 
-How are frames loaded into the browser window?
-Top-to-bottom, left-to-right
+    How are frames loaded into the browser window?
+    Top-to-bottom, left-to-right
 
-"&" character with "&amp;"
-"&lt;" character with "<" 
-"&gt;" character with ">"
-&nbsp :- Non-breaking space
-&#x---;  for icon shortcut  
+    "&" character with "&amp;"
+    "&lt;" character with "<" 
+    "&gt;" character with ">"
+    &nbsp :- Non-breaking space
+    &#x---;  for icon shortcut  
 
-Why should a graphic containing several words should be saved in GIF instead of JPG?
-It is preferable to store the image in GIF format if image consists of certain words because JPG has file compression features
-which may render the fonts unreadable.
+    Why should a graphic containing several words should be saved in GIF instead of JPG?
+    It is preferable to store the image in GIF format if image consists of certain words because JPG has file compression features
+    which may render the fonts unreadable.
 
-How Do I Add Scrolling Text To My Page?
-with <marquee> tag <marquee direction="down" width="250" height="200" behavior="alternate" scrollamount="1"> 
-The default speed of the marquee value is 6
+    How Do I Add Scrolling Text To My Page?
+    with <marquee> tag <marquee direction="down" width="250" height="200" behavior="alternate" scrollamount="1"> 
+    The default speed of the marquee value is 6
 
-List Out The Tags Those Are Mostly Used In Html?
-<a href=”URL”>Link</a>, <h1> – heading1 tag., <b> – Used for Bold., <img src=”imageurl”>.
+    List Out The Tags Those Are Mostly Used In Html?
+    <a href=”URL”>Link</a>, <h1> – heading1 tag., <b> – Used for Bold., <img src=”imageurl”>.
 
-Who Is Making The Web Standards?
-The World Wide Web Consortium (w3c Consortium).
+    Who Is Making The Web Standards?
+    The World Wide Web Consortium (w3c Consortium).
 
-What Is A Tag?
-In HTML, a tag tells the browser what to do
+    What Is A Tag?
+    In HTML, a tag tells the browser what to do
 
-What The Use Of Canvas Element In Html5?
-The canvas element is used to draw graphics images on a web page by using javascript
+    What The Use Of Canvas Element In Html5?
+    The canvas element is used to draw graphics images on a web page by using javascript
 
-How Do I Remove The Border Around Frames?
-<FRAMESET ... BORDER=0 FRAMEBORDER=0 FRAMESPACING=0>. 
+    How Do I Remove The Border Around Frames?
+    <FRAMESET ... BORDER=0 FRAMEBORDER=0 FRAMESPACING=0>. 
 
-How To Transferring User To New Web Page Automatically?
-<META HTTP-EQUIV="Refresh" CONTENT="2"; URL="http://www.yourname.com"> 
+    How To Transferring User To New Web Page Automatically?
+    <META HTTP-EQUIV="Refresh" CONTENT="2"; URL="http://www.yourname.com"> 
 
-Cell Spacing And Cell Padding?
-cellspacing : space between cells; cellpadding : space between the cell border and it's content.
+    Cell Spacing And Cell Padding?
+    cellspacing : space between cells; cellpadding : space between the cell border and it's content.
 
-How Do I Combine Multiple Sheets Into One?
-TITLE attribute
-    <LINK REL=Stylesheet HREF="default.css" TITLE="combined">
-    <LINK REL=Stylesheet HREF="fonts.css" TITLE="combined">
+    How Do I Combine Multiple Sheets Into One?
+    TITLE attribute
+        <LINK REL=Stylesheet HREF="default.css" TITLE="combined">
+        <LINK REL=Stylesheet HREF="fonts.css" TITLE="combined">
 
-What Are The Different Types Of Storage In Html 5?
-cookie: A text file saved on the users computer to store and retrieve data
-    •localStorage object stores data for a longer period of time even if the browser is closed.
-    •sessionStorage object stores data for a specific session. 
+    What Are The Different Types Of Storage In Html 5?
+    cookie: A text file saved on the users computer to store and retrieve data
+        •localStorage object stores data for a longer period of time even if the browser is closed.
+        •sessionStorage object stores data for a specific session. 
 
-W3C	
-W3C stands for World Wide Web Consortium. Its purpose is to deliver the information of the World Wide Web. It also develops
-rules and guidelines for the Web.
+    W3C	
+    W3C stands for World Wide Web Consortium. Its purpose is to deliver the information of the World Wide Web. It also develops
+    rules and guidelines for the Web.
 
-Why you would like to use semantic tag. Why Semantic HTML is Important?
-A semantic element clearly describes its meaning to both the browser and the developer.
-Examples of non-semantic elements: <div> and <span> - Tells nothing about its content.
+    Why you would like to use semantic tag. Why Semantic HTML is Important?
+    A semantic element clearly describes its meaning to both the browser and the developer.
+    Examples of non-semantic elements: <div> and <span> - Tells nothing about its content.
 
-Search Engine Optimization, accessibility, repurposing, light code. Many visually impaired person rely on browser speech and 
-semantic tag helps to interpret page content clearly. Search engine needs to understand page content to rank and semantic tag helps.
-Semantic HTML is the practice of using more descriptive and meaningful tags when coding in HTML. A tag is simply anything you use to
-wrap content in. Some of the most common are <h1>, <header>, <footer>, <p>, <section>, <nav>, and <div>.
+    Search Engine Optimization, accessibility, repurposing, light code. Many visually impaired person rely on browser speech and 
+    semantic tag helps to interpret page content clearly. Search engine needs to understand page content to rank and semantic tag helps.
+    Semantic HTML is the practice of using more descriptive and meaningful tags when coding in HTML. A tag is simply anything you use to
+    wrap content in. Some of the most common are <h1>, <header>, <footer>, <p>, <section>, <nav>, and <div>.
 
-what is meta tag 
-The <meta> tag defines metadata about an HTML document
-metadata describes the contents of a Web page. the meta tags don't appear on the page itself, but only in the page's 
-source code.Meta tags are  essentially little, content, descriptors that help tell search engines what a web page is about.
-Metadata is used by browsers (how to display content or reload page), search engines (keywords), and other web services
+    what is meta tag 
+    The <meta> tag defines metadata about an HTML document
+    metadata describes the contents of a Web page. the meta tags don't appear on the page itself, but only in the page's 
+    source code.Meta tags are  essentially little, content, descriptors that help tell search engines what a web page is about.
+    Metadata is used by browsers (how to display content or reload page), search engines (keywords), and other web services
 
-What is favicon?
-They are a small graphic that represents the website.
+    What is favicon?
+    They are a small graphic that represents the website.
 
-what is components
-component = element block on UI
+    what is components
+    component = element block on UI
 
-what is layout
-the layout is the page's skeleton in which you inject components.
+    what is layout
+    the layout is the page's skeleton in which you inject components.
 
-What is accessibility of a website?
-Accessibility is the practice of making your websites usable by as many people as possible. By making your website accessible, 
-you are ensuring that all of your potential users, including people with disabilities. We traditionally think of this as being
-about people with disabilities, but the practice of making sites accessible also benefits other groups such as those using mobile 
-devices, or those with slow network connections.
+    What is accessibility of a website?
+    Accessibility is the practice of making your websites usable by as many people as possible. By making your website accessible, 
+    you are ensuring that all of your potential users, including people with disabilities. We traditionally think of this as being
+    about people with disabilities, but the practice of making sites accessible also benefits other groups such as those using mobile 
+    devices, or those with slow network connections.
 
-By making your website accessible, you are ensuring that all of your potential users, including people with disabilities, have a 
-decent user experience and are able to easily access your information.
+    By making your website accessible, you are ensuring that all of your potential users, including people with disabilities, have a 
+    decent user experience and are able to easily access your information.
 
-What do you understand by accessibility?
-enabling access for people with disabilities.
-Common accessibility features include text-to-speech, closed-captioning, and keyboard shortcuts.
-Common examples of important accessibility features include: Image alt text. Keyboard accessibility
-Accessibility can be viewed as the "ability to access" and benefit from some system or entity. The concept focuses on enabling 
-access for people with disabilities, or enabling access through the use of assistive technology; however, research and development 
-in accessibility brings benefits to everyone.
+    What do you understand by accessibility?
+    enabling access for people with disabilities.
+    Common accessibility features include text-to-speech, closed-captioning, and keyboard shortcuts.
+    Common examples of important accessibility features include: Image alt text. Keyboard accessibility
+    Accessibility can be viewed as the "ability to access" and benefit from some system or entity. The concept focuses on enabling 
+    access for people with disabilities, or enabling access through the use of assistive technology; however, research and development 
+    in accessibility brings benefits to everyone.
 
-What do we mean by accessibility?
-Accessibility refers to how software or hardware combinations are designed to make a system accessible to persons with disabilities,
-such as visual impairment, hearing loss, or limited dexterity.
+    What do we mean by accessibility?
+    Accessibility refers to how software or hardware combinations are designed to make a system accessible to persons with disabilities,
+    such as visual impairment, hearing loss, or limited dexterity.
 
-Accessibility means that people can do what they need to do in a similar amount of time and effort as someone that does not have a
-disability. It means that people are empowered, can be independent, and will not be frustrated by something that is poorly designed
-or implemented
-
+    Accessibility means that people can do what they need to do in a similar amount of time and effort as someone that does not have a
+    disability. It means that people are empowered, can be independent, and will not be frustrated by something that is poorly designed
+    or implemented
 
 ==> CSS -----------------------------
 
-css     Håkon Wium Lie  10 oct 1994
+    css     Håkon Wium Lie  10 oct 1994
 
-* December 17, 1996 by Håkon Wium Lie
-* 2 August 2002 First draft of revised CSS level 2.
-
-
-*------ Specificity 
--- Inline styles 
--- IDs  
--- Classes, attributes and pseudo-classes 
--- Elements and pseudo-elements 
-
-*------------- CSS Fonts
-In CSS, there are two types of font family names:
-generic family - a group of font families with a similar look (like "Serif" or "Sans-serif" or "Monospace")
-font family - a specific font family (like "Times New Roman" or "Arial")
-
-*--------- CSS Web Fonts
-Different Font Formats
-    TrueType Fonts (TTF)
-    OpenType Fonts (OTF)
-    The Web Open Font Format (WOFF)
-    Embedded OpenType Fonts (EOT)
-
-*-- CSS Units
-cm	centimeters
-mm	millimeters
-in	inches (1in = 96px = 2.54cm)
-px *	pixels (1px = 1/96th of 1in)
-pt	points (1pt = 1/72 of 1in)
-pc	picas (1pc = 12 pt)
-em (16px)
-rem (16px)    
-
-*-- Combinator
-Adjacent sibling combinator A + B  ---> select B immediate after A 
-General sibling combinator A ~ B    --> select all B after A End (Outside)
-Child combinator A > B  ---> select B after A (inside) (direct descendent)
-Descendant combinator A B
-Column combinator A || B 
-
-*-- @font-face
-@font-face {
-  font-family: myFirstFont;
-  src: url(sansation_light.woff);
-}
-
-*------------- @import
-@import "navigation.css"; /* Using a string */
-@import url("navigation.css"); /* Using a url */
+    * December 17, 1996 by Håkon Wium Lie
+    * 2 August 2002 First draft of revised CSS level 2.
 
 
-*---------- Attribute Selectors
-[data-value] { /* Attribute exists */}
-[data-value="foo"] { /* Attribute has this exact value */}
-[data-value*="foo"] { /* Attribute value contains this value somewhere in it */}
-[data-value~="foo"] { /* Attribute has this value in a space-separated list somewhere */}
-[data-value|="foo"] { /* Attribute value starts with this in a dash-separated list */}
-[data-value^="foo"] {/* Attribute value starts with this */}
-[data-value$="foo"] { /* Attribute value ends with this */}
+    *------ Specificity 
+    -- Inline styles 
+    -- IDs  
+    -- Classes, attributes and pseudo-classes 
+    -- Elements and pseudo-elements 
 
-*----- media query breakpoints
-320, 360, 480, 768, 992, 1024, 1200, 1280, 1366, 1440, 1680, 1920, 2560
+    *------------- CSS Fonts
+    In CSS, there are two types of font family names:
+    generic family - a group of font families with a similar look (like "Serif" or "Sans-serif" or "Monospace")
+    font family - a specific font family (like "Times New Roman" or "Arial")
 
-*---------- Browser Support Reference (prefix)
-Supported by Edge/Internet Explorer with prefix -ms-
-Supported by Firefox with prefix -moz-
-Supported by Google Chrome with prefix -webkit-
-Supported by Safari with prefix -webkit-
-Supported by Opera with prefix -o-
+    *--------- CSS Web Fonts
+    Different Font Formats
+        TrueType Fonts (TTF)
+        OpenType Fonts (OTF)
+        The Web Open Font Format (WOFF)
+        Embedded OpenType Fonts (EOT)
 
-*--------- CSS Entities
-h2:after {content: ' \0021';} ..[print ! (exclamation mark)](symbol code exclamation mark)
-!	0021	EXCLAMATION MARK, ©  00A9  COPYRIGHT SIGN, &copy; or &#169;
+    *-- CSS Units
+    cm	centimeters
+    mm	millimeters
+    in	inches (1in = 96px = 2.54cm)
+    px *	pixels (1px = 1/96th of 1in)
+    pt	points (1pt = 1/72 of 1in)
+    pc	picas (1pc = 12 pt)
+    em (16px)
+    rem (16px)    
 
-* ----------- Pseudo-elements
-::after, ::before, - ::first-letter, - ::first-line, - ::selection,- :placeholder
+    *-- Combinator
+    Adjacent sibling combinator A + B  ---> select B immediate after A 
+    General sibling combinator A ~ B    --> select all B after A End (Outside)
+    Child combinator A > B  ---> select B after A (inside) (direct descendent)
+    Descendant combinator A B
+    Column combinator A || B 
 
-* ----------- Pseudo-classes
-:link, :visited, active, :hover, :focus, :nth-child(), :root, :first-child, :last-child, :valid, :target, :required, :read-only,
-placeholder-shown, :not(selector), :only-of-type, :nth-of-type(n), :nth-last-of-type(n), :nth-last-child(n)
-
-
-What Is A CSS Reset? (make consistency on all browser so reset default values)
-resets the styling of all HTML elements to a consistent baseline
-CSS resets aim to remove all built-in browser styling. For example margins, paddings, font-sizes of all elements are reset to be
- the same. 
-
-    In case you didn’t know, every browser has its own default ‘user agent’ stylesheet, that it uses to make unstyled 
-    websites appear more legible. For example, most browsers by default make links blue and visited links purple, give
-    tables a certain amount of border and padding, apply variable font-sizes to H1, H2, H3 etc. and a certain amount of
-    padding to almost everything. Ever wondered why Submit buttons look different in every browser?
-
-what is opacity in css
-The CSS opacity property is used to specify the transparency of an element.
-
-what is margin in css
-used to create space around elements, outside of any defined borders
-
-what is padding in css
-padding is the space between an element's border and the element's content.
-
-What is the difference between a class and an ID?
-Class is a way of using HTML elements for styling. They are not unique and have multiple elements.  
-ID is unique and it can be assigned to a single element. 
-
-Is CSS faster than sass?
-CSS sends an HTTP request to server each time to import a file. Sass does it without an HTTP request, which is a faster approach.
-
-in button 
-we have to use (padding)em instead of px and for margin rem consistence spacing. in rem, R stand for root. pixels are solid unit 
-they are not changed.
-
-Explicit and Implicit Grid
-When we use grid-template-columns and grid-template-rows we create an Explicit Grid. However if we try and place an item outside of 
-that grid the browser will create an Implicit Grid line or lines in order to hold that item.
-
-CSS Flexbox or Grid ?
-Flexbox is mainly meant for 1-dimensional layouts while Grid is meant for 2-dimensional layouts.
-
-Flexbox
-It comes in handy when you need to create a responsive web design.
-Flexbox is a CSS3 layout model that solves usually tricky problems including how to position, center or dynamically resize elements
-on a page. it a great tool to use for responsive design systems.
-
-What is grid area CSS?
-The grid-area CSS shorthand property specifies a grid item's size and location within a grid by contributing a line, a span
-
-Does CSS grid replace Flexbox?
-Grid is better than flexbox for a number of valid points. Furthermore, Grid uses the auto layout, minmax(), repeat(), and auto-fill
-which can provide responsive media query alternative. Flexbox is essentially for laying out items in a single dimension – in a 
-row OR a column
-
-What Are Pseudo-elements?
-Pseudo-elements are fictional elements that do not exist in HTML.
-
-What you mean by pseudo classes in CSS?
-Pseudo classes will allow you to identify the HTML elements
-Pseudo class is a style element. It works when the element goes on focus like when we mouse over a button, and it changes its color 
-and the color of visited and unvisited sites.
-
-What is pseudo element? what is pseudo class?
-pseudo elements helps you to add cosmetics contents. pseudo elements generates content where as pseudo class deals with state of 
-the element
-
-What Are The Components Of A Css Style?
-Selector, Property, Value 
-
-what is caret-color property in css
-the text input cursor.the caret is typically a thin vertical line that flashes to help make it more noticeable.
-
-Describe ‘ruleset’?
-Ruleset : Selectors can be attached to other selectors to be identified by ruleset.
-It has two parts:
-Selector, e.g. id or classname
-declaration {text-indent: 11pt}
-
-Why We Use 'clear' In Html?
-We use the clearance in HTML code for separating the content from one <div> content after floating the position of other<div> content.
-
-What is CSS float?
-It describes how the element should be placed either left or right of the container.
-The float CSS property places an element on the left or right side of its container.
-The float property is used for positioning the HTML elements horizontally either towards the left or right of the container.
-
-what is clear?
-Do not allow floating elements on the left or the right side of a specified element. The clear CSS property sets whether an element
-must be moved below (cleared) floating elements that precede it. The clear property applies to floating and non-floating elements.
-clear: none|left|right|both|initial|inherit;
-
-What is a Clearfix?
-A clearfix is a way for an element to automatically clear or fix its elements, so that do not need to add additional markup. It is
-generally used in float layout where elements are floated to be stacked horizontally.
- .clearfix::after {
-        content: "";
-        clear: both;
-        display: table;
+    *-- @font-face
+    @font-face {
+    font-family: myFirstFont;
+    src: url(sansation_light.woff);
     }
 
-How to target the first 4 elements of a list?
-.selector:nth-child(-n+4){}
+    *------------- @import
+    @import "navigation.css"; /* Using a string */
+    @import url("navigation.css"); /* Using a url */
 
-What Are The Five Possible Values For "position"?
-Values for position: static, relative, absolute, fixed, inherit.
 
-What Is Property?
-Property is a stylistic parameter (attribute) that can be influenced through CSS, e.g. FONT or WIDTH. 
+    *---------- Attribute Selectors
+    [data-value] { /* Attribute exists */}
+    [data-value="foo"] { /* Attribute has this exact value */}
+    [data-value*="foo"] { /* Attribute value contains this value somewhere in it */}
+    [data-value~="foo"] { /* Attribute has this value in a space-separated list somewhere */}
+    [data-value|="foo"] { /* Attribute value starts with this in a dash-separated list */}
+    [data-value^="foo"] {/* Attribute value starts with this */}
+    [data-value$="foo"] { /* Attribute value ends with this */}
 
-What Is Initial Value?
-Initial value is a default value of the property, that is the value given to the root element of the document tree. 
-All properties have an initial value.
+    *----- media query breakpoints
+    320, 360, 480, 768, 992, 1024, 1200, 1280, 1366, 1440, 1680, 1920, 2560
 
-How To Page Break After An Html Element In Css?
-<p style=”page-break-after: always’>Place your text</p>
+    *---------- Browser Support Reference (prefix)
+    Supported by Edge/Internet Explorer with prefix -ms-
+    Supported by Firefox with prefix -moz-
+    Supported by Google Chrome with prefix -webkit-
+    Supported by Safari with prefix -webkit-
+    Supported by Opera with prefix -o-
 
-What property is not affected by CSS3 transitions?
-font-style
+    *--------- CSS Entities
+    h2:after {content: ' \0021';} ..[print ! (exclamation mark)](symbol code exclamation mark)
+    !	0021	EXCLAMATION MARK, ©  00A9  COPYRIGHT SIGN, &copy; or &#169;
 
-Which of listed CSS properties are inherited?
-position
-font-size
-color
-background-color
+    * ----------- Pseudo-elements
+    ::after, ::before, - ::first-letter, - ::first-line, - ::selection,- :placeholder
 
-Define CSS image sprites.
-CSS image sprites are a group of images that are placed into one image. It reduces the load time and request number to the server
-while projecting multiple images into a single web page.
+    * ----------- Pseudo-classes
+    :link, :visited, active, :hover, :focus, :nth-child(), :root, :first-child, :last-child, :valid, :target, :required, :read-only,
+    placeholder-shown, :not(selector), :only-of-type, :nth-of-type(n), :nth-last-of-type(n), :nth-last-child(n)
 
-integrate CSS
-Inline method,Embedded/Internal method,Linked/Imported/External method
 
-Can you explain CSS box model?
-The CSS box model is essentially a box that wraps around every HTML element. It consists of: margins, borders, padding, and the 
-actual content.
+    What Is A CSS Reset? (make consistency on all browser so reset default values)
+    resets the styling of all HTML elements to a consistent baseline
+    CSS resets aim to remove all built-in browser styling. For example margins, paddings, font-sizes of all elements are reset to be
+    the same. 
 
-display block
-take up as much width as they are allowed and typically start on a new line.
+        In case you didn’t know, every browser has its own default ‘user agent’ stylesheet, that it uses to make unstyled 
+        websites appear more legible. For example, most browsers by default make links blue and visited links purple, give
+        tables a certain amount of border and padding, apply variable font-sizes to H1, H2, H3 etc. and a certain amount of
+        padding to almost everything. Ever wondered why Submit buttons look different in every browser?
 
-What is the display block?
-Block: Displays an element as a block element. It starts on a new line and takes up take up as much horizontal space as they can. 
+    what is opacity in css
+    The CSS opacity property is used to specify the transparency of an element.
 
-What is display inline CSS?
-only takes up as much width as necessary. does not start on a new line. top and bottom margins are restricted. 
+    what is margin in css
+    used to create space around elements, outside of any defined borders
 
-Inline Block Elements: Inline-block elements are similar to inline elements, except they can have padding and margins and set 
-height and width values.
+    what is padding in css
+    padding is the space between an element's border and the element's content.
 
-border-box
-The border-box property includes the content, padding and border in the height and width properties. 
+    What is the difference between a class and an ID?
+    Class is a way of using HTML elements for styling. They are not unique and have multiple elements.  
+    ID is unique and it can be assigned to a single element. 
 
-Different Box Sizing Property?
-The box-sizing property allows us to include the padding and border in an element's total width and height.
-The box-sizing CSS property sets how the total width and height of an element are calculated.
-Content-box: The default width and height values apply to the element's content only. The padding and border are added to the 
-outside of the box.
-Padding-box: Width and height values apply to the element's content and its padding. The border is added to the outside of the box.
- Currently, only Firefox supports the padding-box value.
-Border-box: Width and height values apply to the content, padding, and border
+    Is CSS faster than sass?
+    CSS sends an HTTP request to server each time to import a file. Sass does it without an HTTP request, which is a faster approach.
 
-What is Z index in CSS?
-z-index is used for specifying the vertical stacking of the overlapping elements.
-The z-index property specifies the stack order of an element. An element with greater stack order is always in front of an element
-with a lower stack order.
-Z index helps in specifying the overlapping element. It is a number which can be positive or negative, the default value being zero.
+    in button 
+    we have to use (padding)em instead of px and for margin rem consistence spacing. in rem, R stand for root. pixels are solid unit 
+    they are not changed.
 
-What is aspect ratio CSS?
-The aspect ratio of an element describes the proportional relationship between its width and its height. ratio value representing 
-the width-to-height aspect ratio of the viewport. It is a range feature, meaning you can also use the prefixed min-aspect-ratio and 
-max-aspect-ratio variants to query minimum and maximum  values, respectively.
+    Explicit and Implicit Grid
+    When we use grid-template-columns and grid-template-rows we create an Explicit Grid. However if we try and place an item outside of 
+    that grid the browser will create an Implicit Grid line or lines in order to hold that item.
 
-width: max-content;
-    not wrap
+    CSS Flexbox or Grid ?
+    Flexbox is mainly meant for 1-dimensional layouts while Grid is meant for 2-dimensional layouts.
 
-visibility hidden vs display none
-    is not visible, but space is allocated for it on the page.
-    is not visible,also not allocated space on the page.
+    Flexbox
+    It comes in handy when you need to create a responsive web design.
+    Flexbox is a CSS3 layout model that solves usually tricky problems including how to position, center or dynamically resize elements
+    on a page. it a great tool to use for responsive design systems.
 
-What is new in CSS?
-It brings a lot of new features and additions, like rounded corners, shadows, gradients, transitions or animations, as well as new
-layouts like multi-columns, flexible box or grid layouts. grid, Flexbox gaps,The :is() and :where() pseudo-classes, Advanced 
-Animations, Multiple Backgrounds & Gradient, HSL RGBA, HSLA and the gradient colors, text-shadows, Multiple Column layouts, Opacity, 
-Rounded Corner
+    What is grid area CSS?
+    The grid-area CSS shorthand property specifies a grid item's size and location within a grid by contributing a line, a span
 
-What are the new color properties in CSS3?
-HSLA (Hue-saturation-lightness-alpha), HSL, and RGBA (red green blue alpha.).
+    Does CSS grid replace Flexbox?
+    Grid is better than flexbox for a number of valid points. Furthermore, Grid uses the auto layout, minmax(), repeat(), and auto-fill
+    which can provide responsive media query alternative. Flexbox is essentially for laying out items in a single dimension – in a 
+    row OR a column
 
-What is the use of calc()?
-The calc() function in CSS3 is used for simple calculations to determine CSS property values present right in CSS. It allows 
-mathematical expressions with addition, subtraction, multiplication, and division to be used as component values.
+    What Are Pseudo-elements?
+    Pseudo-elements are fictional elements that do not exist in HTML.
 
-Inline Elements
-ignore top and bottom margin, but apply left and right margins, and any padding Will ignore the width and height properties
+    What you mean by pseudo classes in CSS?
+    Pseudo classes will allow you to identify the HTML elements
+    Pseudo class is a style element. It works when the element goes on focus like when we mouse over a button, and it changes its color 
+    and the color of visited and unvisited sites.
 
-Does setting margin-top and margin-bottom have an affect on an inline element?
-No, Top and bottom margins do not affect inline elements because inline elements flow with content on the page. width, height, 
-margin-bottom, margin-top not working in this property.
+    What is pseudo element? what is pseudo class?
+    pseudo elements helps you to add cosmetics contents. pseudo elements generates content where as pseudo class deals with state of 
+    the element
 
-What is the recommended order for styling an <a> tag?
-a:link { } , a:visited { } , a:hover { } , a:active { }
+    What Are The Components Of A Css Style?
+    Selector, Property, Value 
 
-How do I override a CSS class to another?
-Add another CSS rule with ! important , and either give the selector a higher specificity or add a CSS rule with the same selector
-at a later point than the existing one.
+    what is caret-color property in css
+    the text input cursor.the caret is typically a thin vertical line that flashes to help make it more noticeable.
 
-What does important do in CSS?
-This rule overrides all previous styling rules 
+    Describe ‘ruleset’?
+    Ruleset : Selectors can be attached to other selectors to be identified by ruleset.
+    It has two parts:
+    Selector, e.g. id or classname
+    declaration {text-indent: 11pt}
 
-How do I ignore a class in CSS?, How to exclude particular class name from CSS selector ?
-we can use the pseudo-class :not selector
+    Why We Use 'clear' In Html?
+    We use the clearance in HTML code for separating the content from one <div> content after floating the position of other<div> content.
 
-How is the concept of inheritance applied in CSS?
-In CSS, inheritance controls what happens when no value is specified for a property on an element.
+    What is CSS float?
+    It describes how the element should be placed either left or right of the container.
+    The float CSS property places an element on the left or right side of its container.
+    The float property is used for positioning the HTML elements horizontally either towards the left or right of the container.
 
-List out some of the properties in added in CSS3?
-Border Images, New Web fonts, Multi Column layout, Box Shadows, Text Shadows, Transform property, Word-wrap, Text-overflow, 
-Word- break
+    what is clear?
+    Do not allow floating elements on the left or the right side of a specified element. The clear CSS property sets whether an element
+    must be moved below (cleared) floating elements that precede it. The clear property applies to floating and non-floating elements.
+    clear: none|left|right|both|initial|inherit;
 
-PX: Pixels (px) are considered absolute units, although they are relative to the DPI and resolution of the viewing device. But on
-the device itself, the PX unit is fixed and does not change based on any other element. Using PX can be problematic for responsive
-sites, but they are useful for maintaining consistent sizing for some elements. If you have elements that should not be resized, 
-then using PX is a good choice.
-EM: Relative to the parent element
-REM: Relative to the root element (HTML tag) [R stands for root]
-%: Relative to the parent element
-VW: Relative to the viewport’s width
-VH: Relative to the viewport’s height
+    What is a Clearfix?
+    A clearfix is a way for an element to automatically clear or fix its elements, so that do not need to add additional markup. It is
+    generally used in float layout where elements are floated to be stacked horizontally.
+    .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
 
-What is the difference between em and rem units?
-em units inherit their value from the nearest parent element
-rem units inherit their value from the root element (html)
-In most browsers, the font-size of the root element is set to 16px by default.
+    How to target the first 4 elements of a list?
+    .selector:nth-child(-n+4){}
 
-What is the difference between REM and em and px?
-px is not scalable, it is an absolute unit. ... Element ( em ) and Root element ( rem ) are responsive units interpreted into
-equivalent px unit by the browser. em is Relative to the parent element, rem Relative to the root element
+    What Are The Five Possible Values For "position"?
+    Values for position: static, relative, absolute, fixed, inherit.
 
-What is the difference between span and div?
-div is a block element and span is inline element.
+    What Is Property?
+    Property is a stylistic parameter (attribute) that can be influenced through CSS, e.g. FONT or WIDTH. 
 
-What is the origin of CSS?
-SGML (Standard Generalized Markup Language) 
+    What Is Initial Value?
+    Initial value is a default value of the property, that is the value given to the root element of the document tree. 
+    All properties have an initial value.
 
-What's the difference between a relative, fixed, absolute and statically positioned element?
-static - The default position; the element will flow into the page as it normally would. relative - The element's position is 
-    adjusted relative to itself, without changing layout 
-absolute - The element is removed from the flow of the page and positioned at a specified position relative to its closest 
-    positioned ancestor if any.
-fixed - The element is removed from the flow of the page and positioned at a specified position relative to the viewport and 
-    doesn't move when scrolled.
-sticky - Sticky positioning is a hybrid of relative and fixed positioning. The element is treated as relative positioned until 
-    it crosses a specified threshold, at which point it is treated as fixed positioned.
+    How To Page Break After An Html Element In Css?
+    <p style=”page-break-after: always’>Place your text</p>
 
-What is transition all in CSS?
-it provide a way to control animation speed when changing CSS properties. CSS transitions allows you to change property values 
-smoothly, over a given duration.
+    What property is not affected by CSS3 transitions?
+    font-style
 
-What is the transform in CSS?
-This property allows you to rotate, scale, move, skew, etc., elements.It applies a 2D or 3D transformation to an element. 
+    Which of listed CSS properties are inherited?
+    position
+    font-size
+    color
+    background-color
 
-what is hyphens?
-is allowed to create more soft wrap opportunities within a line of text.
-    hyphens: none|manual|auto|initial|inherit;
+    Define CSS image sprites.
+    CSS image sprites are a group of images that are placed into one image. It reduces the load time and request number to the server
+    while projecting multiple images into a single web page.
 
-what is word-wrap?
-property allows long words to be able to be broken and wrap onto the next
-    word-wrap: normal|break-word|initial|inherit;
+    integrate CSS
+    Inline method,Embedded/Internal method,Linked/Imported/External method
+
+    Can you explain CSS box model?
+    The CSS box model is essentially a box that wraps around every HTML element. It consists of: margins, borders, padding, and the 
+    actual content.
+
+    display block
+    take up as much width as they are allowed and typically start on a new line.
+
+    What is the display block?
+    Block: Displays an element as a block element. It starts on a new line and takes up take up as much horizontal space as they can. 
+
+    What is display inline CSS?
+    only takes up as much width as necessary. does not start on a new line. top and bottom margins are restricted. 
+
+    Inline Block Elements: Inline-block elements are similar to inline elements, except they can have padding and margins and set 
+    height and width values.
+
+    border-box
+    The border-box property includes the content, padding and border in the height and width properties. 
+
+    Different Box Sizing Property?
+    The box-sizing property allows us to include the padding and border in an element's total width and height.
+    The box-sizing CSS property sets how the total width and height of an element are calculated.
+    Content-box: The default width and height values apply to the element's content only. The padding and border are added to the 
+    outside of the box.
+    Padding-box: Width and height values apply to the element's content and its padding. The border is added to the outside of the box.
+    Currently, only Firefox supports the padding-box value.
+    Border-box: Width and height values apply to the content, padding, and border
+
+    What is Z index in CSS?
+    z-index is used for specifying the vertical stacking of the overlapping elements.
+    The z-index property specifies the stack order of an element. An element with greater stack order is always in front of an element
+    with a lower stack order.
+    Z index helps in specifying the overlapping element. It is a number which can be positive or negative, the default value being zero.
+
+    What is aspect ratio CSS?
+    The aspect ratio of an element describes the proportional relationship between its width and its height. ratio value representing 
+    the width-to-height aspect ratio of the viewport. It is a range feature, meaning you can also use the prefixed min-aspect-ratio and 
+    max-aspect-ratio variants to query minimum and maximum  values, respectively.
+
+    width: max-content;
+        not wrap
+
+    visibility hidden vs display none
+        is not visible, but space is allocated for it on the page.
+        is not visible,also not allocated space on the page.
+
+    What is new in CSS?
+    It brings a lot of new features and additions, like rounded corners, shadows, gradients, transitions or animations, as well as new
+    layouts like multi-columns, flexible box or grid layouts. grid, Flexbox gaps,The :is() and :where() pseudo-classes, Advanced 
+    Animations, Multiple Backgrounds & Gradient, HSL RGBA, HSLA and the gradient colors, text-shadows, Multiple Column layouts, Opacity, 
+    Rounded Corner
+
+    What are the new color properties in CSS3?
+    HSLA (Hue-saturation-lightness-alpha), HSL, and RGBA (red green blue alpha.).
+
+    What is the use of calc()?
+    The calc() function in CSS3 is used for simple calculations to determine CSS property values present right in CSS. It allows 
+    mathematical expressions with addition, subtraction, multiplication, and division to be used as component values.
+
+    Inline Elements
+    ignore top and bottom margin, but apply left and right margins, and any padding Will ignore the width and height properties
+
+    Does setting margin-top and margin-bottom have an affect on an inline element?
+    No, Top and bottom margins do not affect inline elements because inline elements flow with content on the page. width, height, 
+    margin-bottom, margin-top not working in this property.
+
+    What is the recommended order for styling an <a> tag?
+    a:link { } , a:visited { } , a:hover { } , a:active { }
+
+    How do I override a CSS class to another?
+    Add another CSS rule with ! important , and either give the selector a higher specificity or add a CSS rule with the same selector
+    at a later point than the existing one.
+
+    What does important do in CSS?
+    This rule overrides all previous styling rules 
+
+    How do I ignore a class in CSS?, How to exclude particular class name from CSS selector ?
+    we can use the pseudo-class :not selector
+
+    How is the concept of inheritance applied in CSS?
+    In CSS, inheritance controls what happens when no value is specified for a property on an element.
+
+    List out some of the properties in added in CSS3?
+    Border Images, New Web fonts, Multi Column layout, Box Shadows, Text Shadows, Transform property, Word-wrap, Text-overflow, 
+    Word- break
+
+    PX: Pixels (px) are considered absolute units, although they are relative to the DPI and resolution of the viewing device. But on
+    the device itself, the PX unit is fixed and does not change based on any other element. Using PX can be problematic for responsive
+    sites, but they are useful for maintaining consistent sizing for some elements. If you have elements that should not be resized, 
+    then using PX is a good choice.
+    EM: Relative to the parent element
+    REM: Relative to the root element (HTML tag) [R stands for root]
+    %: Relative to the parent element
+    VW: Relative to the viewport’s width
+    VH: Relative to the viewport’s height
+
+    What is the difference between em and rem units?
+    em units inherit their value from the nearest parent element
+    rem units inherit their value from the root element (html)
+    In most browsers, the font-size of the root element is set to 16px by default.
+
+    What is the difference between REM and em and px?
+    px is not scalable, it is an absolute unit. ... Element ( em ) and Root element ( rem ) are responsive units interpreted into
+    equivalent px unit by the browser. em is Relative to the parent element, rem Relative to the root element
+
+    What is the difference between span and div?
+    div is a block element and span is inline element.
+
+    What is the origin of CSS?
+    SGML (Standard Generalized Markup Language) 
+
+    What's the difference between a relative, fixed, absolute and statically positioned element?
+    static - The default position; the element will flow into the page as it normally would. relative - The element's position is 
+        adjusted relative to itself, without changing layout 
+    absolute - The element is removed from the flow of the page and positioned at a specified position relative to its closest 
+        positioned ancestor if any.
+    fixed - The element is removed from the flow of the page and positioned at a specified position relative to the viewport and 
+        doesn't move when scrolled.
+    sticky - Sticky positioning is a hybrid of relative and fixed positioning. The element is treated as relative positioned until 
+        it crosses a specified threshold, at which point it is treated as fixed positioned.
+
+    What is transition all in CSS?
+    it provide a way to control animation speed when changing CSS properties. CSS transitions allows you to change property values 
+    smoothly, over a given duration.
+
+    What is the transform in CSS?
+    This property allows you to rotate, scale, move, skew, etc., elements.It applies a 2D or 3D transformation to an element. 
+
+    what is hyphens?
+    is allowed to create more soft wrap opportunities within a line of text.
+        hyphens: none|manual|auto|initial|inherit;
+
+    what is word-wrap?
+    property allows long words to be able to be broken and wrap onto the next
+        word-wrap: normal|break-word|initial|inherit;
+        
+    what is word-break?
+    how words should break when reaching the end of a line.
+        word-break: normal|break-all|keep-all|break-word|initial|inherit;
+
+    what is outline?
+    Outline differs from borders! Unlike border, the outline is drawn outside the element's border, and may overlap other content. 
+    Also, the outline is NOT a part of the element's dimensions; the element's total width and height is not affected by the width 
+    of the outline.
+
+    font-kerning
+    Kerning defines how letters are spaced.For fonts that do not include kerning data, this property will have no visible effect.
+
+    What do you understand by tweening in CSS?
+    Tweening is the process of filling the gaps between the key sequences, i.e between the keyframes that are already created. Keyframes
+    are those frames that represent start and end point of animation action. Tweening involves generating intermediate keyframes between
+    two images that give the impression that the first one has evolved smoothly to the second image. For this purpose, we use properties
+    like  transforms - matrix, translate, scale, rotate etc.
+
+    What is RWD?
+    RWD is the abbreviated form of Responsive Web Design. It is used to display the designed page suitably on any kind of screen size 
+    depending on the device under consideration.
+
+    What is difference between ID selector and class selector in CSS?
+    “id” is unique in a page and can only apply to at most one element, while “class” selector can apply to multiple elements.
+    id is used for single elements that appear on the page for only once (e.g. header, footer, menu), whereas class is used for 
+    single or multiple elements that appear on the page for once or more than once 
+
+
+
+    ::before / ::after
+    The ::before and ::after pseudo-elements in CSS allows you to insert content onto a page without it needing to be in the HTML.
+    While the end result is not actually in the DOM
+
+    :active
+    The :active pseudo selector changes the appearance of a link while it is being activated (being clicked on or otherwise activated).
+    It’s usually only seen for a split second, and provides visual feedback that the element was indeed clicked.
+
+    :any-link
+    The :any-link pseudo-class in CSS provides a method for selecting elements that are the source anchor of a hyperlink.An element 
+    that accepts and contains a href attribute is a hyperlink and will be selected with :any-link. This becomes a handy way of 
+    selecting all link.
+    :matches(:link, :visited) will select the same elements as :any-link.
+    :-webkit-any-link {
+    }
+
+    :blank (no support)
+    The :blank pseudo-class builds upon the :empty pseudo-class. Like :empty, :blank will select elements that contain nothing at all,
+    or contain only an HTML comment. But, :blank will also select elements that include whitespace, which :empty will not.
+    :-moz-only-whitespace
+
+    :empty
+    select elements that contain either nothing
+
+    :dir() -(only firefox support)
+    :dir(rtl) {}
+
+    :disabled / :enabled
+    used in input 
+    <input type="text" disabled>
+
+    ::first-letter
+    which allows you to style the first letter in an element.
+
+    ::first-line
+    which allows you to style the first line in an element.
+
+    :first-child
+    target the first element immediately inside another element.
     
-what is word-break?
-how words should break when reaching the end of a line.
-    word-break: normal|break-all|keep-all|break-word|initial|inherit;
+    :first-of-type  /  :last-of-type
+    allows you to target the first occurence of an element within its container.
 
-what is outline?
-Outline differs from borders! Unlike border, the outline is drawn outside the element's border, and may overlap other content. 
-Also, the outline is NOT a part of the element's dimensions; the element's total width and height is not affected by the width 
-of the outline.
+    :in-range /   :out-of-range
+    in CSS matches input elements when their value is within the range specified as being acceptable.
+    <input max="10" min="5" type="number">
 
-font-kerning
-Kerning defines how letters are spaced.For fonts that do not include kerning data, this property will have no visible effect.
+    :indeterminate
+    selector in CSS named for a state that is neither checked nor unchecked. It’s that in-between state that we might consider 
+    the “Maybe” between “Yes” and “No” options. The state is not fully determined, hence the name: indeterminate.
 
-What do you understand by tweening in CSS?
-Tweening is the process of filling the gaps between the key sequences, i.e between the keyframes that are already created. Keyframes
-are those frames that represent start and end point of animation action. Tweening involves generating intermediate keyframes between
-two images that give the impression that the first one has evolved smoothly to the second image. For this purpose, we use properties
-like  transforms - matrix, translate, scale, rotate etc.
+    :is / :where
+        both pseudo-class functions that can help shorten and stop repetition in creating your selectors.
+    The pseudo-select :is() in CSS allows you to write compound selectors more tersely.
+    ul li, ol li {}
+        :is(ul, ol) li {}
+    ul li a:hover, ol li a:hover {}
+        :is(ul li, ol li) a:hover{}
 
-What is RWD?
-RWD is the abbreviated form of Responsive Web Design. It is used to display the designed page suitably on any kind of screen size 
-depending on the device under consideration.
-
-What is difference between ID selector and class selector in CSS?
-“id” is unique in a page and can only apply to at most one element, while “class” selector can apply to multiple elements.
-id is used for single elements that appear on the page for only once (e.g. header, footer, menu), whereas class is used for 
-single or multiple elements that appear on the page for once or more than once 
+    What is the difference between :is & :where?
+        they have different specificities. :where() is simple and always has a specificity of 0 while :is() 
+        has the specificity of the strongest/most specific selector.
 
 
+    ::marker
+    for styling the stylistic marker of a list element. For example, the bullet point of a 
+    default <ul> (e.g. •) or the numeral of a default <ol> (e.g. 1.). 
 
-::before / ::after
-  The ::before and ::after pseudo-elements in CSS allows you to insert content onto a page without it needing to be in the HTML.
-  While the end result is not actually in the DOM
+    ::placeholder
+    allows you to style the placeholder text of a form element.
+    ::-webkit-input-placeholder { /* Chrome/Opera/Safari */}
+    ::-moz-placeholder { /* Firefox 19+ */}
+    :-ms-input-placeholder { /* IE 10+ */}
+    :-moz-placeholder { /* Firefox 18- */}
 
-:active
-  The :active pseudo selector changes the appearance of a link while it is being activated (being clicked on or otherwise activated).
-  It’s usually only seen for a split second, and provides visual feedback that the element was indeed clicked.
+    :placeholder-shown
+    selects the input element itself when placeholder text exists in a form input.
 
-:any-link
-  The :any-link pseudo-class in CSS provides a method for selecting elements that are the source anchor of a hyperlink.An element 
-  that accepts and contains a href attribute is a hyperlink and will be selected with :any-link. This becomes a handy way of 
-  selecting all link.
-  :matches(:link, :visited) will select the same elements as :any-link.
-  :-webkit-any-link {
-  }
-
-:blank (no support)
-  The :blank pseudo-class builds upon the :empty pseudo-class. Like :empty, :blank will select elements that contain nothing at all,
-  or contain only an HTML comment. But, :blank will also select elements that include whitespace, which :empty will not.
-  :-moz-only-whitespace
-
-:empty
-   select elements that contain either nothing
-
-:dir() -(only firefox support)
-  :dir(rtl) {}
-
-:disabled / :enabled
-  used in input 
-  <input type="text" disabled>
-
-::first-letter
-  which allows you to style the first letter in an element.
-
-::first-line
-  which allows you to style the first line in an element.
-
-:first-child
-  target the first element immediately inside another element.
- 
-:first-of-type  /  :last-of-type
-  allows you to target the first occurence of an element within its container.
-
-:in-range /   :out-of-range
-  in CSS matches input elements when their value is within the range specified as being acceptable.
-  <input max="10" min="5" type="number">
-
-:indeterminate
-  selector in CSS named for a state that is neither checked nor unchecked. It’s that in-between state that we might consider 
-  the “Maybe” between “Yes” and “No” options. The state is not fully determined, hence the name: indeterminate.
-
-:is / :where
-    both pseudo-class functions that can help shorten and stop repetition in creating your selectors.
-  The pseudo-select :is() in CSS allows you to write compound selectors more tersely.
-  ul li, ol li {}
-    :is(ul, ol) li {}
-  ul li a:hover, ol li a:hover {}
-    :is(ul li, ol li) a:hover{}
-
-What is the difference between :is & :where?
-    they have different specificities. :where() is simple and always has a specificity of 0 while :is() 
-    has the specificity of the strongest/most specific selector.
+    :root
+    The :root selector allows you to target the highest-level “parent” element in the DOM, or document tree.
 
 
-::marker
-  for styling the stylistic marker of a list element. For example, the bullet point of a 
-  default <ul> (e.g. •) or the numeral of a default <ol> (e.g. 1.). 
+    Explain CSS3 Selectors.
+        Universal Selector, 
+        ID Selector, 
+        Element Type Selector, 
+        Class Selector, 
+        Child selector  (>), 
+        Descendant selector  (space), 
+        General Sibling selector  (~), 
+        Adjacent Sibling selector  (+), 
+        Attribute Selector, 
+        Pseudo-element
 
-::placeholder
-  allows you to style the placeholder text of a form element.
-  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */}
-  ::-moz-placeholder { /* Firefox 19+ */}
-  :-ms-input-placeholder { /* IE 10+ */}
-  :-moz-placeholder { /* Firefox 18- */}
+    Which CSS property is used for controlling the layout?
+    display property, The display property is the most important CSS property for controlling layout.
 
-:placeholder-shown
-   selects the input element itself when placeholder text exists in a form input.
+    What Is A Css File? It Is Used For What Purpose?
+    CSS stands for "Cascading Style Sheets", and are used to control and manage font styles, font sizes, and web site color combinations
+    that are used in a web page. In order to retain continuity of "look and feel" throughout a website, all pages within a website will
+    often refer to a single CSS file.
 
-:root
-  The :root selector allows you to target the highest-level “parent” element in the DOM, or document tree.
+    What are the media types?
+    It has a total of 10 media types supported it. Here are those:
+        All - Intended for all devices
+        Braille - Braille tactile feedback devices
+        Aural – Used for speech synthesizers
+        Embossed – Used for paged Braille printers
+        Print – Applies for printed documents
+        Handheld – Applies for handheld devices
+        TTY – Used for media including a fixed-pitch character grid
+        TV – Used for television-type devices
+        Screen – Required for computer screens
+        Projection – Used for projected presentations
 
-
-Explain CSS3 Selectors.
-    Universal Selector, 
-    ID Selector, 
-    Element Type Selector, 
-    Class Selector, 
-    Child selector  (>), 
-    Descendant selector  (space), 
-    General Sibling selector  (~), 
-    Adjacent Sibling selector  (+), 
-    Attribute Selector, 
-    Pseudo-element
-
-Which CSS property is used for controlling the layout?
-display property, The display property is the most important CSS property for controlling layout.
-
-What Is A Css File? It Is Used For What Purpose?
-CSS stands for "Cascading Style Sheets", and are used to control and manage font styles, font sizes, and web site color combinations
-that are used in a web page. In order to retain continuity of "look and feel" throughout a website, all pages within a website will
-often refer to a single CSS file.
-
-What are the media types?
-It has a total of 10 media types supported it. Here are those:
-    All - Intended for all devices
-    Braille - Braille tactile feedback devices
-    Aural – Used for speech synthesizers
-    Embossed – Used for paged Braille printers
-    Print – Applies for printed documents
-    Handheld – Applies for handheld devices
-    TTY – Used for media including a fixed-pitch character grid
-    TV – Used for television-type devices
-    Screen – Required for computer screens
-    Projection – Used for projected presentations
-
-@charset — Defines the character set used by the style sheet.
-   
-@import — Tells the CSS engine to include an external style sheet.
-@media — A conditional group rule that will apply its content if the device meets the criteria of the condition defined using a media query.
-@supports — A conditional group rule that will apply its content if the browser meets the criteria of the given condition.
-@document  — A conditional group rule that will apply its content if the document in which the style sheet is applied meets 
-    the criteria of the given condition. (deferred to Level 4 of CSS Spec)
-@page — Describes the aspect of layout changes that will be applied when printing the document.
-@font-face — Describes the aspect of an external font to be downloaded.
-@keyframes — Describes the aspect of intermediate steps in a CSS animation sequence.
-@viewport  — Describes the aspects of the viewport for small screen devices.
-
+    @charset — Defines the character set used by the style sheet.
+    
+    @import — Tells the CSS engine to include an external style sheet.
+    @media — A conditional group rule that will apply its content if the device meets the criteria of the condition defined using a media query.
+    @supports — A conditional group rule that will apply its content if the browser meets the criteria of the given condition.
+    @document  — A conditional group rule that will apply its content if the document in which the style sheet is applied meets 
+        the criteria of the given condition. (deferred to Level 4 of CSS Spec)
+    @page — Describes the aspect of layout changes that will be applied when printing the document.
+    @font-face — Describes the aspect of an external font to be downloaded.
+    @keyframes — Describes the aspect of intermediate steps in a CSS animation sequence.
+    @viewport  — Describes the aspects of the viewport for small screen devices.
 
 ==> SASS -----------------------------
-What is SASS programming?
-Sass (First appeared	November 28, 2006, latest version 3.5. 7 - July 18, 2018 (313 KB))
-Sass (which stands for Syntactically Awesome Style Sheets) is an extension to CSS. ... Saas includes various features such as 
-variables, nested rules, mixins, inline imports, built-in functions to manipulate color and other values, all with a fully 
-CSS-compatible syntax. Sass is a style sheet language initially designed by Hampton Catlin and developed by Natalie Weizenbaum. 
-Sass is a preprocessor scripting language that is interpreted or compiled into Cascading Style Sheets (CSS). SassScript is the 
-scripting language itself. Sass consists of two syntaxes. The original syntax, called "the indented syntax," uses a syntax similar
- to Haml.
+    What is SASS programming?
+    Sass (First appeared	November 28, 2006, latest version 3.5. 7 - July 18, 2018 (313 KB))
+    Sass (which stands for Syntactically Awesome Style Sheets) is an extension to CSS. ... Saas includes various features such as 
+    variables, nested rules, mixins, inline imports, built-in functions to manipulate color and other values, all with a fully 
+    CSS-compatible syntax. Sass is a style sheet language initially designed by Hampton Catlin and developed by Natalie Weizenbaum. 
+    Sass is a preprocessor scripting language that is interpreted or compiled into Cascading Style Sheets (CSS). SassScript is the 
+    scripting language itself. Sass consists of two syntaxes. The original syntax, called "the indented syntax," uses a syntax similar
+    to Haml.
 
-What is the benefit of using sass?
-Advantages. Sass facilitates you to write clean, easy and less CSS in a programming construct. It contains fewer codes so you can 
-write CSS quicker.It is more stable, powerful, and elegant because it is an extension of CSS.
+    What is the benefit of using sass?
+    Advantages. Sass facilitates you to write clean, easy and less CSS in a programming construct. It contains fewer codes so you can 
+    write CSS quicker.It is more stable, powerful, and elegant because it is an extension of CSS.
 
-What is a Sass mixin?
-Mixins allow you to define styles that can be re-used throughout your stylesheet.
-Mixins allow you to group multiple lines of code together that you can reuse throughout your code.
-   @mixin horizontal-list { }
-    nav ul { @include horizontal-list; }
+    What is a Sass mixin?
+    Mixins allow you to define styles that can be re-used throughout your stylesheet.
+    Mixins allow you to group multiple lines of code together that you can reuse throughout your code.
+    @mixin horizontal-list { }
+        nav ul { @include horizontal-list; }
 
-What is the difference between SCSS and sass?
-The basic difference is the syntax. While SASS has a loose syntax with white space and no semicolons, the SCSS resembles more to 
-CSS. SASS stands for Syntactically Awesome StyleSheets. SCSS --Sassy CSS
+    What is the difference between SCSS and sass?
+    The basic difference is the syntax. While SASS has a loose syntax with white space and no semicolons, the SCSS resembles more to 
+    CSS. SASS stands for Syntactically Awesome StyleSheets. SCSS --Sassy CSS
 
-What is the use of Sass @import function?
-SASS @import directive is used to include one stylesheet inside another stylesheet
+    What is the use of Sass @import function?
+    SASS @import directive is used to include one stylesheet inside another stylesheet
 
-What is the use of @extend function in Sass?
-By using @extend function same style can be copied to the other classes also and there is no need to rewrite the code again.
-   
-Explain how to define a variable in Sass?
-Variables in Sass begin with a ($) sign and variable assignment is done with a colon(:).
+    What is the use of @extend function in Sass?
+    By using @extend function same style can be copied to the other classes also and there is no need to rewrite the code again.
+    
+    Explain how to define a variable in Sass?
+    Variables in Sass begin with a ($) sign and variable assignment is done with a colon(:).
 
-Explain when can you use the %placeholders in Sass?
-%placeholders in Sass is useful when you want to write styles that were meant to be extended, but you don’t want the base styles 
-to be seen in output CSS styles
+    Explain when can you use the %placeholders in Sass?
+    %placeholders in Sass is useful when you want to write styles that were meant to be extended, but you don’t want the base styles 
+    to be seen in output CSS styles
 
-Explain what is the use of &combinator ?
-&combinator concatenates nested selector with the parent selector.
+    Explain what is the use of &combinator ?
+    &combinator concatenates nested selector with the parent selector.
 
-Partials and Importing
-SASS partials allow us to break up our files into smaller files. We can essentially modularize CSS to make more maintainable code. 
-You can create a partial file that only contains relevant code per section. This is useful if your SASS file is getting too large.
-
-
-What is the advantage of sass?
-Sass reduces repetition of CSS and therefore saves time. Sass facilitates you to write clean, easy and less CSS in a programming 
-construct. It contains fewer codes so you can write CSS quicker. It is more stable, powerful, and elegant because it is an extension
- of CSS.
-
-The disadvantages of CSS preprocessors
-    # 1. Debugging is harder. ...
-    # 2. Compilation slows down development. ...
-    # 3. They can produce very large CSS files. ...
-    # 4. Maintainence and overengineering. ...
-    # 5. Tooling and developer convenience. ...
-    # 6. Saving generated files (or not) ...
-    # 7. Capability and understanding. ...
+    Partials and Importing
+    SASS partials allow us to break up our files into smaller files. We can essentially modularize CSS to make more maintainable code. 
+    You can create a partial file that only contains relevant code per section. This is useful if your SASS file is getting too large.
 
 
+    What is the advantage of sass?
+    Sass reduces repetition of CSS and therefore saves time. Sass facilitates you to write clean, easy and less CSS in a programming 
+    construct. It contains fewer codes so you can write CSS quicker. It is more stable, powerful, and elegant because it is an extension
+    of CSS.
 
+    The disadvantages of CSS preprocessors
+        # 1. Debugging is harder. ...
+        # 2. Compilation slows down development. ...
+        # 3. They can produce very large CSS files. ...
+        # 4. Maintainence and overengineering. ...
+        # 5. Tooling and developer convenience. ...
+        # 6. Saving generated files (or not) ...
+        # 7. Capability and understanding. ...
 
 ==> JQUERY -----------------------------
 
-What is jQuery and why it is used?
-Introduced in 2006, jQuery is a lightweight, "write less, do more", JavaScript library.  It is free, open-source.
-The purpose of jQuery is to make it much easier to use JavaScript on your website.
- jQuery makes event handling, DOM manipulation, Ajax calls much easier than JavaScript.
- jQuery also allows us to add animated effects on our web page which takes a lot of pain and lines of code with JavaScript.
+    What is jQuery and why it is used?
+    Introduced in 2006, jQuery is a lightweight, "write less, do more", JavaScript library.  It is free, open-source.
+    The purpose of jQuery is to make it much easier to use JavaScript on your website.
+    jQuery makes event handling, DOM manipulation, Ajax calls much easier than JavaScript.
+    jQuery also allows us to add animated effects on our web page which takes a lot of pain and lines of code with JavaScript.
 
-jQuery is a small yet feature-rich powerful javascript library that helps to manipulate the HTML DOM with less javascript code.
-
-
-Is Jquery Code Executed On The Client side, Or Server side?
-Answer : Client side
-
-window.onload() - https://www.dotnetbull.com/2013/08/document-ready-vs-window-onload.html
-The load event fires when all the content on your page fully loaded including the DOM 
-(document object model) content, asynchronous javascript, frames and images
-
-$(window).load(function () { alert("window load complete"); });
-window.onload = function () {alert("window load complete"); }
-
-$document.ready() -
-Jquery $document.ready function event executes a bit earlier than window.onload and called once the  DOM(Document object model) is
- loaded on your page. DOM means all the html tags/script  I.e.(anchor tag, table, div tag, paragraph tag etc..). It will not wait 
- for the images, frames to get fully load. It means that it is the earliest stage in page load process.
-
-The main difference is that $document.ready() event gets called as soon as your DOM is loaded.  It does not wait for the contents 
-to get loaded fully. For example, there are very heavy images  on any web page and takes time to load. If you have used window.onload
-then it will wait until  all your images are loaded fully, hence it slows down the execution. On the other side,  $document.ready()
-does not wait for elements to get loaded.
-
-What’s the difference between window.onload vs document.onload?
-window.onload is fired when the DOM is ready and all the content including images, CSS, scripts, subframes, etc. finish loaded.
-It means that everything is loaded.
-document.onload is fired when the DOM is ready, which can be before images and other external content is loaded.
-
-Is Ajax a framework?
-    AJAX. OOP, an open source framework, it provides an OOP-style programming engine and Ajax requests-handling functionality
-
-    $.ajax({
-        url: '',
-        type: 'get',
-        error: function(e){ console.log(e);},
-        success: function(res){
-            console.log(res);
-        }
-    });
-
- What’s the fastest way to query DOM?
-    The fastest way to select an element is by ID if the ID exists.
-    The second quickest is getElementByClassName .
-    The longer the selector, the slower it will be.
-    querySelectorAll will be the slowest since it has to search for all kinds of CSS selectors.
-    Other methods like getElementById and getElementsByTagName only search for specific kinds of selectors.
-
-What is GET Method? 
-GET is used to request data from a specified resource. It appends form-data to the URL in name/ value pairs. The length of the URL
-is limited by 2048 characters. This method must not be used if you have a password or some sensitive information to be sent to the
-server. It is used for submitting the form where the user can bookmark the result.
-    GET requests can be cached
-    GET requests remain in the browser history
-    GET requests can be bookmarked
-    GET requests should never be used when dealing with sensitive data
-    GET requests have length restrictions
-    GET requests are only used to request data (not modify)
-
-What is POST Method? 
-POST is used to send data to a server to create/update a resource.
-    POST requests are never cached
-    POST requests do not remain in the browser history
-    POST requests cannot be bookmarked
-    POST requests have no restrictions on data length
+    jQuery is a small yet feature-rich powerful javascript library that helps to manipulate the HTML DOM with less javascript code.
 
 
+    Is Jquery Code Executed On The Client side, Or Server side?
+    Answer : Client side
+
+    window.onload() - https://www.dotnetbull.com/2013/08/document-ready-vs-window-onload.html
+    The load event fires when all the content on your page fully loaded including the DOM 
+    (document object model) content, asynchronous javascript, frames and images
+
+    $(window).load(function () { alert("window load complete"); });
+    window.onload = function () {alert("window load complete"); }
+
+    $document.ready() -
+    Jquery $document.ready function event executes a bit earlier than window.onload and called once the  DOM(Document object model) is
+    loaded on your page. DOM means all the html tags/script  I.e.(anchor tag, table, div tag, paragraph tag etc..). It will not wait 
+    for the images, frames to get fully load. It means that it is the earliest stage in page load process.
+
+    The main difference is that $document.ready() event gets called as soon as your DOM is loaded.  It does not wait for the contents 
+    to get loaded fully. For example, there are very heavy images  on any web page and takes time to load. If you have used window.onload
+    then it will wait until  all your images are loaded fully, hence it slows down the execution. On the other side,  $document.ready()
+    does not wait for elements to get loaded.
+
+    What’s the difference between window.onload vs document.onload?
+    window.onload is fired when the DOM is ready and all the content including images, CSS, scripts, subframes, etc. finish loaded.
+    It means that everything is loaded.
+    document.onload is fired when the DOM is ready, which can be before images and other external content is loaded.
+
+    Is Ajax a framework?
+        AJAX. OOP, an open source framework, it provides an OOP-style programming engine and Ajax requests-handling functionality
+
+        $.ajax({
+            url: '',
+            type: 'get',
+            error: function(e){ console.log(e);},
+            success: function(res){
+                console.log(res);
+            }
+        });
+
+    What’s the fastest way to query DOM?
+        The fastest way to select an element is by ID if the ID exists.
+        The second quickest is getElementByClassName .
+        The longer the selector, the slower it will be.
+        querySelectorAll will be the slowest since it has to search for all kinds of CSS selectors.
+        Other methods like getElementById and getElementsByTagName only search for specific kinds of selectors.
+
+    What is GET Method? 
+    GET is used to request data from a specified resource. It appends form-data to the URL in name/ value pairs. The length of the URL
+    is limited by 2048 characters. This method must not be used if you have a password or some sensitive information to be sent to the
+    server. It is used for submitting the form where the user can bookmark the result.
+        GET requests can be cached
+        GET requests remain in the browser history
+        GET requests can be bookmarked
+        GET requests should never be used when dealing with sensitive data
+        GET requests have length restrictions
+        GET requests are only used to request data (not modify)
+
+    What is POST Method? 
+    POST is used to send data to a server to create/update a resource.
+        POST requests are never cached
+        POST requests do not remain in the browser history
+        POST requests cannot be bookmarked
+        POST requests have no restrictions on data length
 
 ==> JAVASCRIPT -----------------------------
 
-What is JavaScript and why it is used?
-JavaScript is a very powerful client-side and server-side scripting language.This allows us to create dynamic content for the web. JavaScript is a 
-lightweight language that is open-source and allows cross-platform.it works with various other programming languages And this is 
-the reason for its vast use all around the world.
+    What is JavaScript and why it is used?
+    JavaScript is a very powerful client-side and server-side scripting language.This allows us to create dynamic content for the web. JavaScript is a 
+    lightweight language that is open-source and allows cross-platform.it works with various other programming languages And this is 
+    the reason for its vast use all around the world.
 
-the code is always visible to everyone anyone can view JavaScript code
+    the code is always visible to everyone anyone can view JavaScript code
 
-var
-var is function scoped, can be re-declared and re-assign. access 'var' before initialization gives 'undefined' (means hoisting)
+    var
+    var is function scoped, can be re-declared and re-assign. access 'var' before initialization gives 'undefined' (means hoisting)
 
-    console.log(a); // hoisting 
-    var a = 10;
-    var a = 20; // re-declared
-    a = 30; // re-assigning
+        console.log(a); // hoisting 
+        var a = 10;
+        var a = 20; // re-declared
+        a = 30; // re-assigning
 
-let 
-block level scope, can not re-declared but re-assign. let variables can be updated but not re-declared.Cannot access 'let' before 
-initialization gives 'error' (means hoisting)
+    let 
+    block level scope, can not re-declared but re-assign. let variables can be updated but not re-declared.Cannot access 'let' before 
+    initialization gives 'error' (means hoisting)
 
-const 
-block level scope, const variables can neither be re-assign nor re-declared. Cannot access 'const' before initialization gives 
-'error' (means hoisting)
+    const 
+    block level scope, const variables can neither be re-assign nor re-declared. Cannot access 'const' before initialization gives 
+    'error' (means hoisting)
 
-function 
-function is just a basically collection of code that perform a specific task.It is a group of reusable code that you can use
- anywhere in the code. It helps you to divide a large program into small and manageable functions.
+    function 
+    function is just a basically collection of code that perform a specific task.It is a group of reusable code that you can use
+    anywhere in the code. It helps you to divide a large program into small and manageable functions.
 
-    Function Expressions
-        variable = function (parameters){ //expression };
-
-
-
-Is Const faster than let?
-It appears that using const would inherently make code a little faster, because it seems to reduce the amount of hoisting necessary. 
-
-What Are Javascript Types?
-Number, String, Boolean, Function, Object, Null, Undefined.
-
-What Is A Prompt Box?
-A prompt box allows the user to enter input by providing a text box.
-
-What Is The Difference Between An Alert Box And A Confirmation Box?
-An alert box displays only one button which is the OK button whereas the Confirm box displays two buttons namely OK and cancel.
-
-What Does "1"+2+4 Evaluate To?
-Since 1 is a string, everything is a string, so the result is 124.
-
-How Do You Convert Numbers to String In Javascript?
-Use the  toString()  function
-
-When is the mouseout event fired?
-When mouse is no longer over an element
-
-When is the mouseover event fired?
-When mouse is moved over a new element
-
-what is hoisting
-code execution before declarations. access them before they are declared. One of the benefits of hoisting is that it enables us 
-to call functions before they appear in the code. 
-
-What does != Mean in programming?
-not-equal-to operator. The not-equal-to operator ( != ) returns true if the operands don't have the same value; otherwise, it 
-returns false
-
-What is ++i in JavaScript? (bad ki Value)
-    ++i is the value of i after the increment. 
-        i = 42;
-        alert(++i); // shows 43
-        alert(i); // shows 43
-
-What is i++ in JavaScript? (Pehle ki value)
-    The value i++ is the value of i before the increment.
-        var i = 42;
-        alert(i++); // shows 42
-        alert(i); // shows 43
-
-diff between =, ==, ===
-    = => assigning value
-    == => comparing values
-    === => comparing values and types
-
-what is array in javascript?
-array is collection of data. access  from index value. array can hold function. array is numeric index number. 
-in javascript array start with 0 (zero) index number. in single variable store multiple value is called
-array. ex:  var myArr = [1, 2, 'a', 'c'];
-
-what is object in javascript
-object is key value pair. access from .(dot) notation. object is a collection of properties, and a property is an association 
-between a key and a value.
-    var myOb = {
-        name: "cyclopes",
-        rank: '2',
-        power: ['one', 'two', 'three']
-    }
-
-what is properties?
- properties are like variable attached to classes / object.
-
-what is method?
-    methods are like function attached to classes / objects
-
-what destructuring?
-easily extract array element or object properties and store them in variables. Its allows to put out single elements or object 
-properties.
-
-What does callback function do?
-function call another function is called callback function. ex: setTimeout(), setInterval();
-A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to 
-complete some kind of routine or action.
-
-what is this keyword in javascript?
-The JavaScript this keyword refers to the object it belongs to. It has different values depending on where it is used: In a method, 
-this refers to the owner object. Alone, this refers to the global object. In a function, this refers to the global object.
-
-difference between typescript and javascript ?
-JavaScript is a scripting language. 
-typescript  is an object-oriented programming language and has a compiler.
-TypeScript is an object-oriented programming language developed by Microsoft Corporation, whereas JavaScript is the programming language 
-for the web. TypeScript is an open-source language to build large-scale web apps, whereas JavaScript is a server-side programming language
- that helps to develop interactive web pages.
-
-Is TypeScript frontend or backend?
-Typescript is a programming language. You can use it for front end development (eg Angular) or backend development using Node js environment.
-
-what is class inheritance in javascript
-Inheritance enables you to define a class that takes all the functionality from a parent class and allows you to add more.
-Using class inheritance, a class can inherit all the methods and properties of another class.
+        Function Expressions
+            variable = function (parameters){ //expression };
 
 
-what is filter method  in javascript?
-The filter() method does not change the original array. Its return array values.
-The filter() function will return a new array containing all the array elements that pass the given condition. If no elements pass 
-the condition it returns an empty array.
 
-    Let's go through step by step on how the filter() works.
-        Create an empty array filterArr .
-        Loop through the array elements.
-        Called the filterFunc function with the current element as the argument.
-        If the result is true, push the element to the filterArr array.
-        Return filterArr array after going through all the elements.
+    Is Const faster than let?
+    It appears that using const would inherently make code a little faster, because it seems to reduce the amount of hoisting necessary. 
+
+    What Are Javascript Types?
+    Number, String, Boolean, Function, Object, Null, Undefined.
+
+    What Is A Prompt Box?
+    A prompt box allows the user to enter input by providing a text box.
+
+    What Is The Difference Between An Alert Box And A Confirmation Box?
+    An alert box displays only one button which is the OK button whereas the Confirm box displays two buttons namely OK and cancel.
+
+    What Does "1"+2+4 Evaluate To?
+    Since 1 is a string, everything is a string, so the result is 124.
+
+    How Do You Convert Numbers to String In Javascript?
+    Use the  toString()  function
+
+    When is the mouseout event fired?
+    When mouse is no longer over an element
+
+    When is the mouseover event fired?
+    When mouse is moved over a new element
+
+    what is hoisting
+    code execution before declarations. access them before they are declared. One of the benefits of hoisting is that it enables us 
+    to call functions before they appear in the code. 
+
+    What does != Mean in programming?
+    not-equal-to operator. The not-equal-to operator ( != ) returns true if the operands don't have the same value; otherwise, it 
+    returns false
+
+    What is ++i in JavaScript? (bad ki Value)
+        ++i is the value of i after the increment. 
+            i = 42;
+            alert(++i); // shows 43
+            alert(i); // shows 43
+
+    What is i++ in JavaScript? (Pehle ki value)
+        The value i++ is the value of i before the increment.
+            var i = 42;
+            alert(i++); // shows 42
+            alert(i); // shows 43
+
+    diff between =, ==, ===
+        = => assigning value
+        == => comparing values
+        === => comparing values and types
+
+    what is array in javascript?
+    array is collection of data. access  from index value. array can hold function. array is numeric index number. 
+    in javascript array start with 0 (zero) index number. in single variable store multiple value is called
+    array. ex:  var myArr = [1, 2, 'a', 'c'];
+
+    what is object in javascript
+    object is key value pair. access from .(dot) notation. object is a collection of properties, and a property is an association 
+    between a key and a value.
+        var myOb = {
+            name: "cyclopes",
+            rank: '2',
+            power: ['one', 'two', 'three']
+        }
+
+    what is properties?
+    properties are like variable attached to classes / object.
+
+    what is method?
+        methods are like function attached to classes / objects
+
+    what destructuring?
+    easily extract array element or object properties and store them in variables. Its allows to put out single elements or object 
+    properties.
+
+    What does callback function do?
+    function call another function is called callback function. ex: setTimeout(), setInterval();
+    A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to 
+    complete some kind of routine or action.
+
+    what is this keyword in javascript?
+    The JavaScript this keyword refers to the object it belongs to. It has different values depending on where it is used: In a method, 
+    this refers to the owner object. Alone, this refers to the global object. In a function, this refers to the global object.
+
+    difference between typescript and javascript ?
+    JavaScript is a scripting language. 
+    typescript  is an object-oriented programming language and has a compiler.
+    TypeScript is an object-oriented programming language developed by Microsoft Corporation, whereas JavaScript is the programming language 
+    for the web. TypeScript is an open-source language to build large-scale web apps, whereas JavaScript is a server-side programming language
+    that helps to develop interactive web pages.
+
+    Is TypeScript frontend or backend?
+    Typescript is a programming language. You can use it for front end development (eg Angular) or backend development using Node js environment.
+
+    what is class inheritance in javascript
+    Inheritance enables you to define a class that takes all the functionality from a parent class and allows you to add more.
+    Using class inheritance, a class can inherit all the methods and properties of another class.
 
 
-what is map method  in javascript?
+    what is filter method  in javascript?
+    The filter() method does not change the original array. Its return array values.
+    The filter() function will return a new array containing all the array elements that pass the given condition. If no elements pass 
+    the condition it returns an empty array.
 
-what is reduce method in javascript?
- The reduce method is applied to arrays in Javascript. reduce() method returns a single value
-
-what is promises in javascript?
-A promise in JavaScript is asynchronous, meaning it takes time to resolve or finish.
-A Promise represents something that is eventually fulfilled. A Promise can either be rejected or resolved based on the operation outcome.
-The code does not directly or immediately return a value.
-
-what is async await in javascript?
-
-async/await vs promises javascript?
-
-what is await and async in javascript ?
-async makes a function return a Promise. await makes a function wait for a Promise.
-
-what is bubbling in javascript ?
-
-Explain Closures in JavaScript?
-
-What are object prototypes?
+        Let's go through step by step on how the filter() works.
+            Create an empty array filterArr .
+            Loop through the array elements.
+            Called the filterFunc function with the current element as the argument.
+            If the result is true, push the element to the filterArr array.
+            Return filterArr array after going through all the elements.
 
 
-What is the difference between observable and promises?
-The biggest difference is that Promises won't change their value once they have been fulfilled. They can only emit (reject, resolve) a single
-value. On the other hand, observables can emit multiple results. The subscriber will be receiving results until the observer is completed or 
-unsubscribed from.
+    what is map method  in javascript?
 
+    what is reduce method in javascript?
+    The reduce method is applied to arrays in Javascript. reduce() method returns a single value
 
+    what is promises in javascript?
+    A promise in JavaScript is asynchronous, meaning it takes time to resolve or finish.
+    A Promise represents something that is eventually fulfilled. A Promise can either be rejected or resolved based on the operation outcome.
+    The code does not directly or immediately return a value.
+    
+    What is the difference between observable and promises?
+    The biggest difference is that Promises won't change their value once they have been fulfilled. They can only emit (reject, resolve) a single
+    value. On the other hand, observables can emit multiple results. The subscriber will be receiving results until the observer is completed or 
+    unsubscribed from.
+
+    what is async await in javascript?
+
+    async/await vs promises javascript?
+
+    what is await and async in javascript ?
+    async makes a function return a Promise. await makes a function wait for a Promise.
+
+    what is bubbling in javascript ?
+
+    Explain Closures in JavaScript?
+
+    What are object prototypes?
+
+    
 
 ==> ANGULAR -----------------------------
 
-What is angular?
-Angular is open source of JavaScript framework. Single page application with multiple views. Angular is written in type script. 
-It's maintained by Google.Angular helps build interactive and dynamic single page applications (SPAs) with its compelling 
-features including templating,  two-way binding, modularization, RESTful API handling, dependency injection, and AJAX handling.
+    What is angular?
+    Angular is open source of JavaScript framework. Single page application with multiple views. Angular is written in type script. 
+    It's maintained by Google.Angular helps build interactive and dynamic single page applications (SPAs) with its compelling 
+    features including templating,  two-way binding, modularization, RESTful API handling, dependency injection, and AJAX handling.
 
 
-Property Binding => Property Binding one directional. Means made changes on .ts file reflect on .html file.
-    sIt share values between components.
+    Property Binding => Property Binding one directional. Means made changes on .ts file reflect on .html file.
+        sIt share values between components.
 
-One way binding => In one way binding data flows from one direction. Either from view to component or from component to view.
+    One way binding => In one way binding data flows from one direction. Either from view to component or from component to view.
 
-Two way binding =>  It's use for sharing data .html to .ts or .ta to .html file. With two way binding change values simultaneously.
+    Two way binding =>  It's use for sharing data .html to .ts or .ta to .html file. With two way binding change values simultaneously.
 
-template Expression => The content inside the double braces is called Template Expression = {{ templateExpression }}
-
-
-Component
-Component is a basic block of content that represent  specific view.
-
-Decorator
-  With input decorator we can get data from component to component
-  Create own event like click with output() and event emitter. With output() pass custom event from child component to parent component.
- 
-    Input decorator
-      Takes values pass from parent to child component and store that value on child component.
-
-    Output decorator
-      Pass data from child to parent component.
-      It's happening on some event so to raise an event output must have type of event emitter.  Which is a class an angular core 
-      that use to emit() custom event.
-
-Event emitter =>
-    Create custom event with event emitter and with the help of @output we transfer pur event component to component
+    template Expression => The content inside the double braces is called Template Expression = {{ templateExpression }}
 
 
-Directives => 
-    Directives are attribute/class that add additional behavior to the elements. With directive we manage forms, lists, styles and
-     what users see. 
-    Different type of directives
-    1. Component directives
-    2. Attributes directives - change the appriance or behaviour of the elements.
-    3. Structural directives - change the structure of DOM by adding or removing DOM element
+    Component
+    Component is a basic block of content that represent  specific view.
 
-    Component directive
-    Which is template. This type of directives most common because it's HTML.
+    Decorator
+    With input decorator we can get data from component to component
+    Create own event like click with output() and event emitter. With output() pass custom event from child component to parent component.
+    
+        Input decorator
+        Takes values pass from parent to child component and store that value on child component.
 
-    In-built attribute directives
-    Listen to modify the behaviour of the elements attributes, properties and components. Ex NgClass, NgStyle, NgModel
+        Output decorator
+        Pass data from child to parent component.
+        It's happening on some event so to raise an event output must have type of event emitter.  Which is a class an angular core 
+        that use to emit() custom event.
 
-    Structural directives
-    Structural directive responsible for html layout. Adding, removing and manipulating to the host element.
-    *NgIf - conditionally hide and show
-    *Ng for - repeat a node each item of the list
-    *NgSwitch -  switch alternative views
+    Event emitter =>
+        Create custom event with event emitter and with the help of @output we transfer pur event component to component
 
 
-Constructor
-    Constructor runs when object or component initialized 
+    Directives => 
+        Directives are attribute/class that add additional behavior to the elements. With directive we manage forms, lists, styles and
+        what users see. 
+        Different type of directives
+        1. Component directives
+        2. Attributes directives - change the appriance or behaviour of the elements.
+        3. Structural directives - change the structure of DOM by adding or removing DOM element
 
-What's is interface?
-    Same as class
+        Component directive
+        Which is template. This type of directives most common because it's HTML.
 
-Dependencies injection
-    Dependencies are services or object with class need to perform its function
+        In-built attribute directives
+        Listen to modify the behaviour of the elements attributes, properties and components. Ex NgClass, NgStyle, NgModel
 
-
-What's is service and how to use?
-    Service were we write our logic  interacting with our API's.
-
-    Service is just a class. It does bring the injectable and has  injectable decorator and it's provide to the application level
-
-    Import on the component. If we want to use the service then need to add services into the constructor as a provider
-
-What is obervarable?
-    Use obeservable because if we dealing with asynchronous  data like fetching data from server.
-
-    import {obervarable, of } from 'rxjs';
-    Import "obervarable and of" on the service
-    Make obeservable and subscribe() on the component.
+        Structural directives
+        Structural directive responsible for html layout. Adding, removing and manipulating to the host element.
+        *NgIf - conditionally hide and show
+        *Ng for - repeat a node each item of the list
+        *NgSwitch -  switch alternative views
 
 
-Pipes => 
-    Pipes are simply function we can use on our template which accept  input value ( parameters) and return a formatted value.
-    Pipe use for DATA manipulation. Angular has in-built pipes like uppercase, lowercase, percentage and currency. We can also create 
-    custom pipe. Pipe can be provided with argument by using colon ( : ) sign.
-    [ ng g pipe pipeName ]
+    Constructor
+        Constructor runs when object or component initialized 
+
+    What's is interface?
+        Same as class
+
+    Dependencies injection
+        Dependencies are services or object with class need to perform its function
 
 
-Component Life Cycle Hook => The life cycle hooks are the methods that angular invokes on directives and components as it creates,
-     changes, and destroys them.
+    What's is service and how to use?
+        Service were we write our logic  interacting with our API's.
 
-Module => module is a container for a group of related component every angular app at least one module which we call app module. 
-    each module responsible for specific area of our application in that module.  The Components, Templates, Directives, Pipes, 
-    and Services, which implements that feature become part of the module. 
+        Service is just a class. It does bring the injectable and has  injectable decorator and it's provide to the application level
 
-Services => Services allow us to create reusable code and use it every component that needs it.
+        Import on the component. If we want to use the service then need to add services into the constructor as a provider
 
-Dependency injection => Dependency injection means injecting or providing the dependencies to a class into it's constructor.
-angular has a dependency injection  framework build into it when going to create an instance of a component it can inject the 
-dependencies but in order for that to work we need to register these dependencies somewhere in our module.  
+    What is obervarable?
+        Use obeservable because if we dealing with asynchronous  data like fetching data from server.
 
-Router => The Router module handles the navigation.The Routing allows you to move from one View to another View.  
-
-Data Binding => The Component passes the data to the view using a process called Data Binding.
+        import {obervarable, of } from 'rxjs';
+        Import "obervarable and of" on the service
+        Make obeservable and subscribe() on the component.
 
 
-ngOnInit void => 
-    It is life cycle method.It runs on load.
-    void means it does not return anything. We can write onload functions on ngOnInit.
-
-Typescript
-    Typescript is not internary language.
-    Typescript is super set of JavaScript. That means Any valid JavaScript code also valid typescript code.
-    But typescript some additional features do not existing on current JavaScript
+    Pipes => 
+        Pipes are simply function we can use on our template which accept  input value ( parameters) and return a formatted value.
+        Pipe use for DATA manipulation. Angular has in-built pipes like uppercase, lowercase, percentage and currency. We can also create 
+        custom pipe. Pipe can be provided with argument by using colon ( : ) sign.
+        [ ng g pipe pipeName ]
 
 
-Life cycle hooks
-    In angular, every component has lifecycle. Angular create and renders these components and also destroy them before removing 
-    from the DOM. This is achieve with the help of lifecycle hook.
-    ngOnChanges( ) - data set or re-set data bound input properties.
-    ngOnInit( ) - initialised the component or directives, after the first angular display the data bound property and set the 
-    input properties.
-    ngDoCheck( ) etc.
+    Component Life Cycle Hook => The life cycle hooks are the methods that angular invokes on directives and components as it creates,
+        changes, and destroys them.
+
+    Module => module is a container for a group of related component every angular app at least one module which we call app module. 
+        each module responsible for specific area of our application in that module.  The Components, Templates, Directives, Pipes, 
+        and Services, which implements that feature become part of the module. 
+
+    Services => Services allow us to create reusable code and use it every component that needs it.
+
+    Dependency injection => Dependency injection means injecting or providing the dependencies to a class into it's constructor.
+    angular has a dependency injection  framework build into it when going to create an instance of a component it can inject the 
+    dependencies but in order for that to work we need to register these dependencies somewhere in our module.  
+
+    Router => The Router module handles the navigation.The Routing allows you to move from one View to another View.  
+
+    Data Binding => The Component passes the data to the view using a process called Data Binding.
 
 
+    ngOnInit void => 
+        It is life cycle method.It runs on load.
+        void means it does not return anything. We can write onload functions on ngOnInit.
 
-Ng Model
-    Ng Models are container that reserve a block of code to an workflow.
-    @NgModel takes metadata object that describes how to compile the components template and how to create an injector an runtime. 
-    Ng models identified modules, services, pipes and directives
+    Typescript
+        Typescript is not internary language.
+        Typescript is super set of JavaScript. That means Any valid JavaScript code also valid typescript code.
+        But typescript some additional features do not existing on current JavaScript
 
 
-Ng content
-    Ng content use as a projection to take html into another component.
-    With <ng-content> user can present there own content.
-
-Template statements
-    Template statements is response on event raise by target like element, component or a directive. 
+    Life cycle hooks
+        In angular, every component has lifecycle. Angular create and renders these components and also destroy them before removing 
+        from the DOM. This is achieve with the help of lifecycle hook.
+        ngOnChanges( ) - data set or re-set data bound input properties.
+        ngOnInit( ) - initialised the component or directives, after the first angular display the data bound property and set the 
+        input properties.
+        ngDoCheck( ) etc.
 
 
 
-Controller
-Angular controllers control the data of  angular application. They are regular JavaScript objects. The ng-conroller defines the 
-application controller.
+    Ng Model
+        Ng Models are container that reserve a block of code to an workflow.
+        @NgModel takes metadata object that describes how to compile the components template and how to create an injector an runtime. 
+        Ng models identified modules, services, pipes and directives
+
+
+    Ng content
+        Ng content use as a projection to take html into another component.
+        With <ng-content> user can present there own content.
+
+    Template statements
+        Template statements is response on event raise by target like element, component or a directive. 
+
+
+
+    Controller
+    Angular controllers control the data of  angular application. They are regular JavaScript objects. The ng-conroller defines the 
+    application controller.
 
 
 
 
 
-What are advantages of angular?
-    Functionality, Consistency, Productivity, Maintainability, Modular development structure, Angular Material.
+    What are advantages of angular?
+        Functionality, Consistency, Productivity, Maintainability, Modular development structure, Angular Material.
 
-Who is using angular?
-    Microsoft Office, Deutsche Bank, Mixer, Santander, Gmail, Forbes, Upwork, PayPal.
-
-
-Why you should not use angular?
-    The biggest drawback of Angular was poor accessibility for page scrapers and search crawlers
-
-What are the advantages of Angular?
-    Two-way data binding.
-    DOM manipulation, 
-    Improved server performance, 
-    Faster application prototyping, 
-    Responsive web, 
-    Highly testable products, 
-    The MVVM architecture, 
-    Use of directives.
-
-What are the disadvantages of Angular?
-    SEO problems,
-    Concept of Dependency Injection and Inversion Of Control,
-
-why not jquery use in angular?
-
-Encapsulation
+    Who is using angular?
+        Microsoft Office, Deutsche Bank, Mixer, Santander, Gmail, Forbes, Upwork, PayPal.
 
 
+    Why you should not use angular?
+        The biggest drawback of Angular was poor accessibility for page scrapers and search crawlers
 
+    What are the advantages of Angular?
+        Two-way data binding.
+        DOM manipulation, 
+        Improved server performance, 
+        Faster application prototyping, 
+        Responsive web, 
+        Highly testable products, 
+        The MVVM architecture, 
+        Use of directives.
+
+    What are the disadvantages of Angular?
+        SEO problems,
+        Concept of Dependency Injection and Inversion Of Control,
+
+    why not jquery use in angular?
+
+    Encapsulation
 
 ==> TYPE SCRIPT -----------------------------
-what is type script?
-typescript is not entirely new language, typescript super set of javascript that means any valid javascript code is also valid
-typescript code but typescript have additional features that do not exist in current version of javascript supported.
-typescript strong or static typing like #c and java language.
+    what is type script?
+    typescript is not entirely new language, typescript super set of javascript that means any valid javascript code is also valid
+    typescript code but typescript have additional features that do not exist in current version of javascript supported.
+    typescript strong or static typing like #c and java language.
 
-Access modifiers
-    1. Public
-    2. Private
-    3. Protected
+    Access modifiers
+        1. Public
+        2. Private
+        3. Protected
 
-constructor
-        class Human {
-           public FName: string;
-           private LName: string;
-            constructor(FName?: string, LName?: string) {
-                this.FirstName = FName,
-                    this.LastName = LName,
-                    this.sayHello = function () {
-                        console.log(`Hello, I'm ${this.FirstName} ${LName}`);
-                    }
+    constructor
+            class Human {
+            public FName: string;
+            private LName: string;
+                constructor(FName?: string, LName?: string) {
+                    this.FirstName = FName,
+                        this.LastName = LName,
+                        this.sayHello = function () {
+                            console.log(`Hello, I'm ${this.FirstName} ${LName}`);
+                        }
+                }
+                fullName(){
+                    console.log(this.FName + " " + this.LName);
+                }
             }
-            fullName(){
-                console.log(this.FName + " " + this.LName);
-            }
-        }
-        //const person = new Human('Kakashi', 'Hatake');
-        const person = new Human();
-        person.FName = 'Mike';
-        console.log(person.sayHello());
-
-
+            //const person = new Human('Kakashi', 'Hatake');
+            const person = new Human();
+            person.FName = 'Mike';
+            console.log(person.sayHello());
 
 ==> META TAGS -----------------------------
 
-Viewport <meta name="viewport" content="width=device-width, initial-scale=1">
-Viewport meta tag is necessary because it instructs web browsers (mainly mobile web browsers) on how to render a webpage on all 
-devices.
+    Viewport <meta name="viewport" content="width=device-width, initial-scale=1">
+    Viewport meta tag is necessary because it instructs web browsers (mainly mobile web browsers) on how to render a webpage on all 
+    devices.
 
-Author and Copyright 
-<meta name="author" content="Name of the author" />
-<meta name="copyright" content="Copyright information" />
-Author and copyright met tags are used to record information such as the creator of the website and the copyright ownership 
-information.
+    Author and Copyright 
+    <meta name="author" content="Name of the author" />
+    <meta name="copyright" content="Copyright information" />
+    Author and copyright met tags are used to record information such as the creator of the website and the copyright ownership 
+    information.
 
-Robots
-Robots meta tag is used to provide index information to search engine crawlers. The following meta tags are used to determine 
-whether a page is available for a web search 
-<meta name="robots" content="follow"/>
+    Robots
+    Robots meta tag is used to provide index information to search engine crawlers. The following meta tags are used to determine 
+    whether a page is available for a web search 
+    <meta name="robots" content="follow"/>
 
-Index:
-This allows the web crawlers to index your webpage. The value follow also makes sure that any outgoing hyperlinks are also crawled.
-<meta name="robots" content="follow"/>
+    Index:
+    This allows the web crawlers to index your webpage. The value follow also makes sure that any outgoing hyperlinks are also crawled.
+    <meta name="robots" content="follow"/>
 
-Noindex
-It is the opposite of Index. It tells web crawlers not to index your webpage.
-<meta name="robots" content="noindex"/>
+    Noindex
+    It is the opposite of Index. It tells web crawlers not to index your webpage.
+    <meta name="robots" content="noindex"/>
 
-Nofollow
-It prevents web crawlers from indexing outgoing hyperlinks on your web page.
-<meta name="robots" content="nofollow"/>
+    Nofollow
+    It prevents web crawlers from indexing outgoing hyperlinks on your web page.
+    <meta name="robots" content="nofollow"/>
 
-Character encoding  <meta charset="UTF-8">
-Web browsers understand need the character encoding information to display a webpage correctly. To define the character encoding 
-we use charset attribute and assign it with an appropriate value. The most common character encoding used is the UTF-8. We use
-UTF-8 because it has more than 10,000 characters.
+    Character encoding  <meta charset="UTF-8">
+    Web browsers understand need the character encoding information to display a webpage correctly. To define the character encoding 
+    we use charset attribute and assign it with an appropriate value. The most common character encoding used is the UTF-8. We use
+    UTF-8 because it has more than 10,000 characters.
 
-Http equivalents
-http-equivalents attribute is used to include information that is usually contained in HTTP header. It is used to control cache 
-information,
- expiration date, refresh page redirection and much more.
-
-
-Cache control
-When we use the meta tag “cache-control” with the value “no-cache”, we prevent caching of the webpage and that means the webpage 
-is reloaded for every page view. This may lead to longer loading times but is helpful in cases where webpage is being updated 
-frequently. 
-<meta http-equiv="cache-control" content="no-cache"/>
-
-Expires
-We can set expiry date for the webpage data instead of preventing caching completely.
-<meta http-equiv="expires" content="4500"/>
-<meta http-equiv="expires" content="Thu, 06 Aug 2020 20:13:13 GMT"/>
-
-Refresh
-Instead of using complicated ways of redirecting web pages using JavaScript or other programming languages. HTML provides a much
- more succinct and simple solution. To redirect a webpage, we need three attributes set to:
-<meta http-equiv="refresh" content="time(seconds); url=http://www.your-website.com/"/>
-
-Keywords
-We can search using keywords in a search engine. Searching using keywords will show the internet user web webpages with keywords
- corresponding to their search.
-<meta name="keywords" content="keyword #1, keyword #2, keyword #3"/>
+    Http equivalents
+    http-equivalents attribute is used to include information that is usually contained in HTTP header. It is used to control cache 
+    information,
+    expiration date, refresh page redirection and much more.
 
 
+    Cache control
+    When we use the meta tag “cache-control” with the value “no-cache”, we prevent caching of the webpage and that means the webpage 
+    is reloaded for every page view. This may lead to longer loading times but is helpful in cases where webpage is being updated 
+    frequently. 
+    <meta http-equiv="cache-control" content="no-cache"/>
 
-==> bootstrap -----------------------------
+    Expires
+    We can set expiry date for the webpage data instead of preventing caching completely.
+    <meta http-equiv="expires" content="4500"/>
+    <meta http-equiv="expires" content="Thu, 06 Aug 2020 20:13:13 GMT"/>
 
-what is bootstrap
-Bootstrap is the most popular CSS Framework for developing responsive and mobile-first websites. It contains CSS- and 
-JavaScript-based design templates for typography, forms, buttons, navigation, and other interface components.
+    Refresh
+    Instead of using complicated ways of redirecting web pages using JavaScript or other programming languages. HTML provides a much
+    more succinct and simple solution. To redirect a webpage, we need three attributes set to:
+    <meta http-equiv="refresh" content="time(seconds); url=http://www.your-website.com/"/>
 
-What exactly is Bootstrap?
-Bootstrap is an open-source Javascript framework developed by the team at Twitter. It is a combination of HTML, CSS, and 
-Javascript code designed to help build user  interface components.
-
-Who uses bootstrap?
-42825 companies reportedly use Bootstrap in their tech stacks, including Spotify, Twitter, and Udemy.
-
-Why is bootstrap popular?
-Bootstrap was launched as a mobile-first framework for web development. Bootstrap was created at Twitter in mid-2010 by Mark Otto
- and Jacob Thornton. Prior to being an open-sourced framework, Bootstrap was known as Twitter Blueprint.
-
-What are offset columns in Bootstrap?
- An offset is used to push columns over for more spacing.
-
-How many types of layouts are there in Bootstrap?
-Fluid Layout, Fixed Layout 
-
-What are Grid classes in the Bootstrap?
-Answer: There are four grid classes in Bootstrap.
-xs (It is used for phone screens less than 786px wide).
-sm (It is used for the tablet screens which are greater than 786px wide).
-md (It is for small laptop screen of size equal to or greater than 992px wide).
-LG ( It is for laptop and desktop screens which are equal to greater than 1200px wide).
-
-
-BOOTSTRAP 3	                          BOOTSTRAP 4	  
-4 tier grid system (xs, sm, md, lg). 
-Primary unit is px.                   Primary unit is rem           
-LESS                                  SASS
-Glyphicons	Supported.                Glyphicons Not 	Supported. (Glyphicons - icons)  
-Flexbox	Not supported.                Flexbox	 supported.   
-
-
-BOOTSTRAP 4	                                        BOOTSTRAP 5
-5 tier grid system(xs, sm, md, lg, xl).             6 tier grid system(xs, sm, md, lg, xl, xxl).
-It has limited colors.                              Extra colors have been added with the looks.
-It has jQuery along with all the related plugins.   Jquery is removed and it has switched to vanilla JS with some working plugins.
-Bootstrap 4 doesn’t have its own SVG icons.         Bootstrap 5 has its own SVG icons.
-Jekyll software is used by Bootstrap 4.             Hugo software is used by Bootstrap 5.
+    Keywords
+    We can search using keywords in a search engine. Searching using keywords will show the internet user web webpages with keywords
+    corresponding to their search.
+    <meta name="keywords" content="keyword #1, keyword #2, keyword #3"/>
 
 
 
+    ==> bootstrap -----------------------------
+
+    what is bootstrap
+    Bootstrap is the most popular CSS Framework for developing responsive and mobile-first websites. It contains CSS- and 
+    JavaScript-based design templates for typography, forms, buttons, navigation, and other interface components.
+
+    What exactly is Bootstrap?
+    Bootstrap is an open-source Javascript framework developed by the team at Twitter. It is a combination of HTML, CSS, and 
+    Javascript code designed to help build user  interface components.
+
+    Who uses bootstrap?
+    42825 companies reportedly use Bootstrap in their tech stacks, including Spotify, Twitter, and Udemy.
+
+    Why is bootstrap popular?
+    Bootstrap was launched as a mobile-first framework for web development. Bootstrap was created at Twitter in mid-2010 by Mark Otto
+    and Jacob Thornton. Prior to being an open-sourced framework, Bootstrap was known as Twitter Blueprint.
+
+    What are offset columns in Bootstrap?
+    An offset is used to push columns over for more spacing.
+
+    How many types of layouts are there in Bootstrap?
+    Fluid Layout, Fixed Layout 
+
+    What are Grid classes in the Bootstrap?
+    Answer: There are four grid classes in Bootstrap.
+    xs (It is used for phone screens less than 786px wide).
+    sm (It is used for the tablet screens which are greater than 786px wide).
+    md (It is for small laptop screen of size equal to or greater than 992px wide).
+    LG ( It is for laptop and desktop screens which are equal to greater than 1200px wide).
+
+
+    BOOTSTRAP 3	                          BOOTSTRAP 4	  
+    4 tier grid system (xs, sm, md, lg). 
+    Primary unit is px.                   Primary unit is rem           
+    LESS                                  SASS
+    Glyphicons	Supported.                Glyphicons Not 	Supported. (Glyphicons - icons)  
+    Flexbox	Not supported.                Flexbox	 supported.   
+
+
+    BOOTSTRAP 4	                                        BOOTSTRAP 5
+    5 tier grid system(xs, sm, md, lg, xl).             6 tier grid system(xs, sm, md, lg, xl, xxl).
+    It has limited colors.                              Extra colors have been added with the looks.
+    It has jQuery along with all the related plugins.   Jquery is removed and it has switched to vanilla JS with some working plugins.
+    Bootstrap 4 doesn’t have its own SVG icons.         Bootstrap 5 has its own SVG icons.
+    Jekyll software is used by Bootstrap 4.             Hugo software is used by Bootstrap 5.
 
 ==> SEO -----------------------------
 
-what is seo?
+    what is seo?
 
-important of seo?
+    important of seo?
 
-how to seo?
-
-
-
+    how to seo?
 
 ==> GRAPHIC -----------------------------
-How Many Types Of Graphics?
-There are two types of graphics
-    Raster Graphics –pixels (photoshop).
-    Vector Graphics – Lines & Curves( Illustrator).
-
-
+    How Many Types Of Graphics?
+    There are two types of graphics
+        Raster Graphics –pixels (photoshop).
+        Vector Graphics – Lines & Curves( Illustrator).
 
 ==> SVG -----------------------------
-What is SVG?
-Scalable Vector Graphics,  HTML SVG is used to describe the two-dimensional vector and vector/raster graphics.
-
-
+    What is SVG?
+    Scalable Vector Graphics,  HTML SVG is used to describe the two-dimensional vector and vector/raster graphics.
 
 ==> WORDPRESS -----------------------------
 
-What is WordPress?
-WordPress is an Open Source Content Management System (CMS) and a blogging tool, based on PHP and MySQL. It is free of cost, and
-you can use it for any personal and commercial website. WordPress was initially released on 27th May 2003 by Matt Mullenweg and 
-Mike Little. WordPress was announced as open source in October 2009.
+    What is WordPress?
+    WordPress is an Open Source Content Management System (CMS) and a blogging tool, based on PHP and MySQL. It is free of cost, and
+    you can use it for any personal and commercial website. WordPress was initially released on 27th May 2003 by Matt Mullenweg and 
+    Mike Little. WordPress was announced as open source in October 2009.
 
 
-What is child theme in wordpress?
-A child theme in WordPress is a sub theme that inherits all the functionality, features, and style of its parent theme.  Child themes
-are a safe way to modify a WordPress theme without actually making any changes to the parent theme's files. Child themes are often
-used when you want to customize or tweak an existing WordPress theme without losing the ability  to upgrade that theme.
+    What is child theme in wordpress?
+    A child theme in WordPress is a sub theme that inherits all the functionality, features, and style of its parent theme.  Child themes
+    are a safe way to modify a WordPress theme without actually making any changes to the parent theme's files. Child themes are often
+    used when you want to customize or tweak an existing WordPress theme without losing the ability  to upgrade that theme.
 
-Is Child Theme necessary?
-Those updates are the reason to use a child theme. But if you have nothing specific to change for the theme you are using, then no
-child theme is needed.
+    Is Child Theme necessary?
+    Those updates are the reason to use a child theme. But if you have nothing specific to change for the theme you are using, then no
+    child theme is needed.
 
-What is a parent theme?
-A parent theme in WordPress is a theme that is declared parent by a another theme, child theme. ... The parent/child theme 
-functionality allows users to easily upgrade their themes without worrying about losing any custom styling that they have added
- to their site.
+    What is a parent theme?
+    A parent theme in WordPress is a theme that is declared parent by a another theme, child theme. ... The parent/child theme 
+    functionality allows users to easily upgrade their themes without worrying about losing any custom styling that they have added
+    to their site.
 
-Where is WordPress content stored?
-WordPress contents are stored in MySQL database on Server.
+    Where is WordPress content stored?
+    WordPress contents are stored in MySQL database on Server.
 
-What are the system requirements for installing WordPress?
-Database - MySQL 5.0 + , Web Server - , WAMP (Windows) , LAMP (Linux) , XAMP (Multi-platform) , MAMP (Macintosh) , 
-Operating System - Cross-platform , Browser Support - IE (Internet Explorer 8+), Firefox, Google Chrome, Safari, Opera , 
-PHP Compatibility - PHP 5.2+
+    What are the system requirements for installing WordPress?
+    Database - MySQL 5.0 + , Web Server - , WAMP (Windows) , LAMP (Linux) , XAMP (Multi-platform) , MAMP (Macintosh) , 
+    Operating System - Cross-platform , Browser Support - IE (Internet Explorer 8+), Firefox, Google Chrome, Safari, Opera , 
+    PHP Compatibility - PHP 5.2+
 
-What are the hooks? Define different types of hooks in WordPress.
-Hooks enable users to create WordPress themes or plug-ins with shortcode without changing the original files.
-    There are two types of hooks:
-    Action hooks: Action hooks facilitate you to insert an additional code from an outside resource.
-    Filter hooks: Filter hooks facilitate you to add content or text at the end of the post.
+    What are the hooks? Define different types of hooks in WordPress.
+    Hooks enable users to create WordPress themes or plug-ins with shortcode without changing the original files.
+        There are two types of hooks:
+        Action hooks: Action hooks facilitate you to insert an additional code from an outside resource.
+        Filter hooks: Filter hooks facilitate you to add content or text at the end of the post.
 
-How many tables are there in WordPress by default?
-    At present version, there are about 11 tables in WordPress by default. You can check the number of tables in WordPress by 
-    phpMyAdmin.
-    wp_commentmeta, wp_comments, wp_links, wp_options, wp_postmeta, wp_posts, wp_terms, wp_term_relationships, wp_term_taxonomy, 
-    wp_usermeta, wp_users    
+    How many tables are there in WordPress by default?
+        At present version, there are about 11 tables in WordPress by default. You can check the number of tables in WordPress by 
+        phpMyAdmin.
+        wp_commentmeta, wp_comments, wp_links, wp_options, wp_postmeta, wp_posts, wp_terms, wp_term_relationships, wp_term_taxonomy, 
+        wp_usermeta, wp_users    
 
-Explain moderate comment in WordPress.
-Comments by visitors on a post are not published directly unless the admin provides it. It is called moderation. To change 
-comment moderation setting, select Settings option from the dashboard and check the option "Comment must be manually approved."
+    Explain moderate comment in WordPress.
+    Comments by visitors on a post are not published directly unless the admin provides it. It is called moderation. To change 
+    comment moderation setting, select Settings option from the dashboard and check the option "Comment must be manually approved."
 
-Explain Avatar and Gravatar in WordPress.
-Word Avatar is used for a user's profile image in online communications. Gravatar is a web-based service which allows its users
- to use
- the Avatar image. 
+    Explain Avatar and Gravatar in WordPress.
+    Word Avatar is used for a user's profile image in online communications. Gravatar is a web-based service which allows its users
+    to use
+    the Avatar image. 
 
-How many types of users WordPress have?
-    WordPress user role determines access permission to the users of a WordPress site.
-        Administrator: They have full rights over a site.
-        Editor: They deal with the content section of a website.
-        Author: They only deal with their posts. They can delete their post even after publishing.
-        Contributor: A contributor doesn't have the right to publish their post or page. They need to send it to the administrator
-         for review.
-        Subscriber: Users who are subscribed to your site can log in and update their profile.
-        Follower: They don't have any right. They can only read and comment on your post.
-        Viewer: They can only read and comment on a post.
+    How many types of users WordPress have?
+        WordPress user role determines access permission to the users of a WordPress site.
+            Administrator: They have full rights over a site.
+            Editor: They deal with the content section of a website.
+            Author: They only deal with their posts. They can delete their post even after publishing.
+            Contributor: A contributor doesn't have the right to publish their post or page. They need to send it to the administrator
+            for review.
+            Subscriber: Users who are subscribed to your site can log in and update their profile.
+            Follower: They don't have any right. They can only read and comment on your post.
+            Viewer: They can only read and comment on a post.
 
-Explain the difference between WordPress Themes and Plugins.
-A theme is an external effect of a website's presentation and designing. Whereas, a plugin is an interior effect which adds or 
-remove some functions to a site. You can customize some functionality in themes instead of installing the plugin, but plugins
- can't replace themes. 
-
-
-
-
+    Explain the difference between WordPress Themes and Plugins.
+    A theme is an external effect of a website's presentation and designing. Whereas, a plugin is an interior effect which adds or 
+    remove some functions to a site. You can customize some functionality in themes instead of installing the plugin, but plugins
+    can't replace themes. 
 
 ==> OTHER -----------------------------
 
-Which of the following is the first web browser?
-Nexus, The first web browser was invented in 1990 called World Wide Web which was later renamed to Nexus.
+    Which of the following is the first web browser?
+    Nexus, The first web browser was invented in 1990 called World Wide Web which was later renamed to Nexus.
 
-What's the difference between WWW and HTTP?
-Simply put, HTTP is the protocol that enables communication online, transferring data from one machine to another. WWW is the set
-of linked hypertext documents that can be viewed on web browsers (such as Firefox, Google Chrome, and more). A major similarity,
-though, is that both HTTP and WWW are used in website URLs.
+    What's the difference between WWW and HTTP?
+    Simply put, HTTP is the protocol that enables communication online, transferring data from one machine to another. WWW is the set
+    of linked hypertext documents that can be viewed on web browsers (such as Firefox, Google Chrome, and more). A major similarity,
+    though, is that both HTTP and WWW are used in website URLs.
 
-Why do we use .com?
-com in .com stands for commercial and the domains ending with .com represents a site which is related to something commercial but 
-this is not true for all the websites nowadays. The .com at the end of many web addresses is called a top-level domain (TLD). 
+    Why do we use .com?
+    com in .com stands for commercial and the domains ending with .com represents a site which is related to something commercial but 
+    this is not true for all the websites nowadays. The .com at the end of many web addresses is called a top-level domain (TLD). 
 
-What is a URL made up of?
-A URL (Uniform Resource Locator) is a unique identifier used to locate a resource on the internet. It is also referred to as a web 
-address.URLs consist of multiple parts -- including a protocol and domain name -- that tell a web browser how and where to retrieve
- a resource.
- 
-What does .com .org .gov mean?
-Com, . Org. ... org and . net, are abbreviations for "commercial," "organization" and "network" respectively, but common use has 
-moved away from these definitions, with .com becoming the most popular TLD even for sites with no commercial activity.
+    What is a URL made up of?
+    A URL (Uniform Resource Locator) is a unique identifier used to locate a resource on the internet. It is also referred to as a web 
+    address.URLs consist of multiple parts -- including a protocol and domain name -- that tell a web browser how and where to retrieve
+    a resource.
+    
+    What does .com .org .gov mean?
+    Com, . Org. ... org and . net, are abbreviations for "commercial," "organization" and "network" respectively, but common use has 
+    moved away from these definitions, with .com becoming the most popular TLD even for sites with no commercial activity.
 
-Can .org be trusted?
-Be careful with the domain . org, because . org is usually used by non-profit organizations which may have an agenda of persuasion
-rather than education in general org is better for organisations helping the "public" 
+    Can .org be trusted?
+    Be careful with the domain . org, because . org is usually used by non-profit organizations which may have an agenda of persuasion
+    rather than education in general org is better for organisations helping the "public" 
 
-.net ?
-net is better for other websites both commercial and personal
+    .net ?
+    net is better for other websites both commercial and personal
 
-Is a .biz domain good?
-biz sounds like it should be perfect for a business, it's not the first choice for many reasons
-
-
+    Is a .biz domain good?
+    biz sounds like it should be perfect for a business, it's not the first choice for many reasons
 
 
 
-mail span (codeinwp.com/blog/why-are-my-emails-going-to-spam/).
-What is the internet?
-how does the Internet work?
-What is HTTP and how it evolved?
-How do browsers work?
-What are domain names and hosting?
-How DNS works?
+
+
+    mail span (codeinwp.com/blog/why-are-my-emails-going-to-spam/).
+    What is the internet?
+    how does the Internet work?
+    What is HTTP and how it evolved?
+    How do browsers work?
+    What are domain names and hosting?
+    How DNS works?
 
