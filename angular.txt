@@ -35,14 +35,10 @@ https://v2.angular.io/docs/ts/latest/guide/template-syntax.html#!#template-input
 
   module-one-routing.module.ts
   { path: '', component: ModuleOneComponent }
-
- -----------------------------------
-  child routing
-  app-routing.ts
-  { path: 'blog', component: BlogComponent,
-  children :[
-    { path: 'blogOne', component: BlogOneComponent }
-  ]},
+    { path: 'blog', component: BlogComponent,
+    children :[
+      { path: 'blogOne', component: BlogOneComponent }
+    ]},
 
   <a routerLink="blog"> Blog </a> 
   <a routerLink="blog/blogOne"> Blog One </a> 
@@ -68,32 +64,27 @@ https://v2.angular.io/docs/ts/latest/guide/template-syntax.html#!#template-input
 6. decorator
   @Input decorator
     pass property from  parent to child
-        parent.html
+        parent
         <app-child [property]="expression"></app-child>
-        parent.ts
         expression = 'Enter your message';
 
-        child.ts
+        child
         import Input decorator.
         @Input() property:any;
-
-        child.html
         {{ property }}
 
   @Output decorator, EventEmitter
     pass function form parent to child
     pass data from child to parent
 
-    parent.html
-    (onParentClickEvent)="func($event)"
-    parent.ts 
-    func(eventValue){ condition; }
+    parent
+    <app-child (fnChildtoParent)="fnGetChildtoParent($event)"></app-child>
+    fnGetChildtoParent(eventValue){ condition; }
 
-    child.ts
-    @Output() onParentClickEvent : EventEmitter = new EventEmitter();
-
+    child
+    @Output() fnChildtoParent : EventEmitter = new EventEmitter();
     clickEvent(value){
-      this.onParentClickEvent.emit(value);
+      this.fnChildtoParent.emit(value);
     }
 
 7. observable
@@ -106,7 +97,6 @@ https://v2.angular.io/docs/ts/latest/guide/template-syntax.html#!#template-input
           constructor(private http: HttpClient) { }
     
     app-module =>  import { HttpClientModule  } from '@angular/common/http';
-
 
 
 
@@ -202,29 +192,33 @@ https://v2.angular.io/docs/ts/latest/guide/template-syntax.html#!#template-input
 
     Attribute directives =>	Change the appearance or behavior of an element, component, or another directive. with NgClass, NgStyle and NgModel
 
-    Structural directives =>	Change the structure on the DOM by adding or removing DOM elements. with the help of NgFor, NgIf and NgSwitch
+    Structural directives =>	Change the structure on the DOM by adding or removing DOM elements. with the help of NgFor, NgIf and NgSwitch (common module)
 
     => Custom Directives
-    ng g directive CustomDirective
-    2 files created and update in app.module file
-    CustomDirective.ts file => import { ElementRef } from '@angular/core';
-      class CustomDirectiveWork {
-        constructor(private el: ElementRef) {
-          el.nativeElement.style.color = "red"    (with nativeElement we can access JavaScript DOM elements)
-        }
-      }
-      <div CustomDirectiveWork> check directive work </div>
-
-    => input properties in Directives
-        <div CustomDirectiveWork [error]='Hello'> check directive work </div>
-
+      ng g directive CustomDirective
+      2 files created and update in app.module file
+      CustomDirective.ts file => import { ElementRef } from '@angular/core';
         class CustomDirectiveWork {
-          @Input("error")error: string;
-          constructor(private el: ElementRef) {  }
-          ngOnInit(){
-              this.el.nativeElement.innerHTML = "<div><span>${this.error}</span></div>"  
+          constructor(private el: ElementRef) {
+            el.nativeElement.style.color = "red"    (with nativeElement we can access JavaScript DOM elements)
           }
         }
+        <div CustomDirectiveWork> check directive work </div>
+
+    => input properties in Directives
+          <div CustomDirectiveWork [error]='Hello'> check directive work </div>
+
+          class CustomDirectiveWork {
+            @Input("error")error: string;
+            constructor(private el: ElementRef) {  }
+            ngOnInit(){
+                this.el.nativeElement.innerHTML = "<div><span>${this.error}</span></div>"  
+            }
+          }
+
+  => Host binding , Host listner 
+    When we create custom directive and binding element in our directive with the use of host binding and 
+    to continuously listening event so we use host listener
 
   => One Way binding => use for Data exchange
     One way binding data flow one directional. Means ts file to html. When we change on html file it will not change on ts. We can get the data with template binding or event binding
@@ -282,16 +276,13 @@ https://v2.angular.io/docs/ts/latest/guide/template-syntax.html#!#template-input
 
   => Input decorator 
       pass property from  parent to child
-          parent.html
+          parent
           <app-child [property]="expression"></app-child>
-          parent.ts
           expression = 'Enter your message';
 
-          child.ts
+          child
           import Input decorator.
           @Input() property:any;
-
-          child.html
           {{ property }}
 
           OR 
@@ -324,8 +315,18 @@ https://v2.angular.io/docs/ts/latest/guide/template-syntax.html#!#template-input
 
     @Output("someOutputName") eventName: EventEmitter = new EventEmitter(); 
 
+  => Template refrence (#)
+      A template refrence variable is a variable to store a reference to a DOM elements, component or directive on which is used.
+      
+      <input type="text" #inputText />
+      <button (click)='onClickGet(inputText);'>Click</button>
+
+      onClickGet(inputEl: HTMLInputElement){
+        console.log(inputEl);
+      }
 
   => @viewChild
+
     Parent component access all the methods and properties form child components. Single instance
     parent.ts 
       import viewChild
@@ -336,9 +337,28 @@ https://v2.angular.io/docs/ts/latest/guide/template-syntax.html#!#template-input
     parent.html 
       <app-child #referenceVariableName ></app-child>  
 
+      or
+      the viewChild decorator is used to query and get a reference of the DOM element in the component. It returns the first matching element based on the selector. 
+      it take 2 argument. second argument is Optional.
+        1. read: Use it to read the different token form the query elements.
+        2. static: Determines when the  query is resolved.
+          - True is when query is initialized (before the first change detection) for the first time.
+          - False if you want it to resolved after every change detection. (it will only get initialzed when the change detection cycle runs )
+            ex. @viewChild('inputText', {static: true});
+      
+      Child component 
+      <input type="text" #inputText />
+      <button (click)='onClickGet();'>Click</button>
+
+      @viewChild('inputText') inputEl: ElementRef; // take two argument, first selector Element and second optional object.
+      onClickGet(){
+        console.log(this.inputEl.navtiveElement.value);
+      }
+
   => @viewChildren 
-    Parent component access all the methods and properties form child components. 
-    multiple instance. Import "QueryList" and convert "QueryList to Array".
+      The viewChildren decorator is used to get a reference to the list of DOM element form the view template in the component class. It returns all the matching elements.
+
+      Import "QueryList" and convert "QueryList to Array".
 
     parent.ts 
       import viewChild and QueryList 
@@ -349,35 +369,108 @@ https://v2.angular.io/docs/ts/latest/guide/template-syntax.html#!#template-input
     parent.html 
       <app-child #referenceVariableName ></app-child> 
 
+    OR
+      Child component 
+      <input type="text" #inputText />
+      <input type="email" #inputText />
+      <input type="number" #inputText />
+      <button (click)='onClickGet();'>Click</button>
+
+      @viewChildren('inputText') inputEls: QueryList<ElementRef>; // take two argument, first selector Element and second optional object.
+      onClickGet(){
+        this.inputEls.forEach((el)=>{
+        console.log(el.navtiveElement.value);
+        })
+      }
 
   => Component 
     component is basic ui block of code that represent the specific view.
+    Components are building block of our application that are use to develop specific part of project. for exmaple header, footer,  body part. When we create component we have to register it inside our module file. Its creates 4 file html, css, ts and spec.ts file.
+
+      ts => decorator- @component
+      selector => 'my-page', '.my-page', '[my-page]'
+      use by => <my-page>, <div class="my-page">, <div my-page>
 
     => Standalone component
+      Standalone component is not depend to anyone it will work independently. While creating standalone component its adds one flag that is 'standalone true'. If dependencies is requied to import like commonModule on the component level but not on the module level. Most important point is standalone component no need to import on app.module file.
+
         ng g c componentName --standalone 
         standalone component work same as module component (lazy loading).
+
+    => Dump component
+        - Dump components are primarily concerned with the presentation and display data. They are also known as 'presentational components' or 'view component'.
+        Dump component recieved data from their parent component. They dont have dependencies on service to perform complex business logic.
+
+    => Smart Component 
+        - Smart components are responsible for managing the application's state and business logic. They often interact with services to fetch or manipulate data.
+
 
     => Component lifecycle hooks
     Lifecycle hooks are referred to as methods on an object or component.
       In angular, every component has lifecycle. Angular create and render there components and also 
       destroy them before removing from the DOM. This is achieve with the help of lifecycle hook.
       - there are total 8 types of hooks but most used hooks are 4, 
-        1. ngOnChanges() - data set or re-set data bound input properties.
-        2. ngOnInit() - It is called when the component is initialized means on load time.
+        *1. ngOnChanges() - get execute every time input bound properties of the component changes.
+        *2. ngOnInit() - It is called when the component is initialized means on load time. this called after ngOnChanges.
                 used to perform actually business logic. We can write onload function on ngOnInit().
-        3. ngAfterOnInit()
-        4. ngOnDestroy()
+        *3. ngAfterOnInit()
+        *4. ngOnDestroy()
+
       
       - Whichever lifecycle hooks we want to use    
         1. import it in the class
         2. extend the implements interface 
         3. Implement the method  
 
+  => life cycle hook 
+      Angular automatically executes some method in our component class at each milestone to the life cycle.
+      these are called lifecycle hooks.
+
+      1.  ngOnChanges 
+        get execute every time input bound properties of the component changes.
+        Execute automatically when we have received one or more values into input properties. that are decorated by @Input decorator. 
+        It will not execute when there are no input properties. Use for examine incoming values and want some changes in incoming values.
+
+      2. OnInit 
+        Execute automatically after loading values into data-bound properties of the components. 
+        Use to call service to get initial data form the database.
+
+      3. ngDoCheck 
+        Execute every time when change detection process start in the component.
+        Execute when an event occur, before change "detection process". Use to identify whether change detection process occur or not.
+        Use for third party control.
+      
+      4. ngAfterContentInit
+        Execute only once in a lifetime of the components after initializing the content that is supply by the parent component and rendered
+        using "ng-content" tag. 
+
+      5. ngAfterContentChecked 
+        Execute every time after completion of change detection process to the content.
+
+      6. ngAfterViewInit 
+        Execute only once after initializing all the elements in the template of the component.
+
+      7. ngAfterViewChecked 
+        Execute every time after completion fo change detection process of the template. 
+
+      8. ngOnDestroy 
+        Execute before destroying (deleting) the component object deleted from memory. [ when the route has changed. ]
+
+      Injector, provider, how to get service? => services get injected inside our component
+
+
   => constructor
+     The constructor is a standard Typescript class constructor. Its called when an instance of the component is created.
     The constructor() should only be used to initialize class members but shouldn't do actual “work”. 
     So we should use constructor() to set up Dependency Injection.
     dependency injection is a method in which dependencies are requested by class from the external resources.
     In the Angular constructor, a constructor argument with dependency type injects the dependencies.
+
+  => ngOnInit() 
+    - Once the constructor phase is done now the lifecycle method get started.
+    - ngOnInit is an angular life cycle hook. Its called by angular after the constructor and after angular has finished initializing the component's properties.
+    we can make api calls in ngOnInit.
+
 
   => Module 
     Module is collection of components, directives, pipes and services.
@@ -406,15 +499,11 @@ https://v2.angular.io/docs/ts/latest/guide/template-syntax.html#!#template-input
       routing module component ko import krna pdta hai app.module me. (import krne pr lazy loading nhi rah jata hai.)
 
       => Multiple Router Outlets
-        We can have multiple router Outlets 
-        by default there is always/"at least" 1 router outlet in app.component.html file 
+        We can have multiple router Outlets by default there is always/"at least" 1 router outlet in app.component.html file 
         When we don't provide any name for router-outlet it becomes primary 
-        There should be only 1 primary 
-        We can define multiple router outlets by giving name to them 
-        That's why we call them "named" router outlets 
-        we can give any name we want - give meaningful names 
-        In routing module - if you don't define outlet - it means its primary 
-        It will NOT show if you directly access it in the URL 
+        There should be only 1 primary. We can define multiple router outlets by giving name to them 
+        That's why we call them "named" router outlets. we can give any name we want - give meaningful names 
+        In routing module - if you don't define outlet - it means its primary. It will NOT show if you directly access it in the URL 
         Syntax should be like this  - http://localhost:4200/<primary-route>( <routerOutletName> : <secondaryPath> )
 
       => HashLocationStrategy 
@@ -441,8 +530,13 @@ https://v2.angular.io/docs/ts/latest/guide/template-syntax.html#!#template-input
                   })
                 }
         or 
-          { path: 'NameComponent/:topicId', component: NameComponent },
-          var urlLastVal = this.route.snapshot.params["topicId"]
+          { path: 'NameComponent/:itemId', component: NameComponent },
+          var urlLastVal = this.route.snapshot.params["itemId"];
+          var urlLastVal = this.route.snapshot.paramMap.get('itemId'); // this aproach is not good when redirecting on same change only changing paramertID.
+          
+          this.route.paramMap.subscribe((params: ParamMap)=>{
+             var urlLastVal = params.get('itemId');
+          })
 
       => Router link 
           when ever we want to create a link we use routerLink.
@@ -491,6 +585,17 @@ https://v2.angular.io/docs/ts/latest/guide/template-syntax.html#!#template-input
                 });
 
             }
+
+        => Optional routing
+          exmaple => url;key=value
+
+        => Relative Navigation 
+          Only need to change routing name on routing file no need to change all the places routingName(pathName). but when navigation we need to use raltive navigation. 
+          ex. this.router.navigate('[userListId]', { realtiveTo: this.router}); //
+          ex. this.router.navigate('[../]', { realtiveTo: this.router}); //
+
+    => Activated route 
+      ActivatedRoute is a service, that provides route-specific information associated with a component that is loaded in an outlet.  We use it to find Route Parameters, Query Parameters, URL Fragments, Static Data attached to the Route, Route Configuration that is matched this route, and ActivatedRoute instance of the root, parent, firstChild, and all children components, etc
 
 
   => Pipe 
@@ -544,15 +649,10 @@ https://v2.angular.io/docs/ts/latest/guide/template-syntax.html#!#template-input
     => Master service code
       ... ghi.component.ts
             getUser(){
-              this.isLoading = true;
-              var data = {};
+              this.isLoading = true; var data = {};
               this.def.getUser(data).subscribe({
-                next:(v) =>{
-                  
-                },
-                error:(e) => {
-                  console.log('HTTP Error', e);
-                }
+                next:(v) =>{   },
+                error:(e) => { console.log('HTTP Error', e); }
               })
             }
 
@@ -565,6 +665,10 @@ https://v2.angular.io/docs/ts/latest/guide/template-syntax.html#!#template-input
           var url = this.api + '/College/AddUser';
           var updateUrl = this.api + '/College/UpdateUser';
           return this.abc.fnAddUpdateFormData(body, "updateKrneWalaIdName", url, updateUrl);
+        }
+        deleteUser(userId: number){
+          var url = this.api + '/DeleteUserByUserId?userId=' + userId;
+          return this.masterService.fnDeleteMethod(url);
         }
       .... abc.service.ts
         fnAddUpdateData(body:any, dataId:any,  url:string, updateUrl:string ){    
@@ -590,6 +694,10 @@ https://v2.angular.io/docs/ts/latest/guide/template-syntax.html#!#template-input
           return this.http.post<any>(url, JSON.stringify(body), this.headerOption)
           .pipe(retry(1), catchError(this.handleError));
         } 
+        fnDeleteMethod(url: string): Observable<any> {
+          const headers = { 'Authorization': 'Bearer my-token', 'My-Custom-Header': 'foobar' };
+          return this.http.delete<any>(url, {headers});
+        }
 
     => search filter
         updateFilter(event:any) {
@@ -610,55 +718,6 @@ https://v2.angular.io/docs/ts/latest/guide/template-syntax.html#!#template-input
             return false;
           })
         }
-
-  => AJAX 
-    AJAX ( asynchronous JavaScript and XMl ) is not a language, but it is a concept, Which is used to "send background request to server" 
-    and also "get background response from server", without refreshing (reloading) the web page in the browser.
-    status code 200 - success and status code 404/500 - error
-    
-    Get - Used to retrieve / search data from server.
-    Post - Used to insert data to server.
-    Put - Used to update data on server.
-    Delete - Used to delete data from server.
-
-    $(function() {
-        var product = $("#product_list");
-        product.length && initProduct();
-    });
-
-    var _m = _m || {}, _apiName = "APIName"
-
-    _m.Ajax = function(methodName, apiUrl, dataType, requestData, contentType, asyncBoolean) {
-        return void 0 === o && (o = !0),
-        $.ajax({
-            type: methodName,
-            url: apiUrl,
-            dataType: dataType,
-            async: asyncBoolean,
-            data: requestData,
-            contentType: contentType,
-            success: function(e) {},
-            error: function(e, t) {
-                console.log("error->" + apiUrl + " | Error->", e, t)
-            }
-        })
-    }
-
-    function initProduct() {
-        var postData = { isActive = true; }
-        _m.Ajax("POST", "api_path_url", "json", JSON.stringify({ postData }), "application/json; charset=utf-8", false).then(response=>{
-            console.log(response);
-        })
-    }
-
-    function getCurrentDateTime(e) {
-      var a;
-      return (a = void 0 == e ? new Date : new Date(e)).getFullYear() + "-" + ("0" + (a.getMonth() + 1)).slice(-2) + "-" + ("0" + a.getDate()).slice(-2) + "T" + ("0" + a.getHours()).slice(-2) + ":" + ("0" + a.getMinutes()).slice(-2) + ":" + ("0" + a.getSeconds()).slice(-2) + "." + a.getMilliseconds() + "+05:30"
-    }
-    function getCurrentDateTime() {
-        var e = new Date;
-        return e.getFullYear() + "-" + ("0" + (e.getMonth() + 1)).slice(-2) + "-" + ("0" + e.getDate()).slice(-2) + "T" + ("0" + e.getHours()).slice(-2) + ":" + ("0" + e.getMinutes()).slice(-2) + ":" + ("0" + e.getSeconds()).slice(-2) + "." + e.getMilliseconds() + "+05:30"
-    }
 
   => Cross origin error 
     Domain and server url both are different.  
@@ -720,59 +779,23 @@ https://v2.angular.io/docs/ts/latest/guide/template-syntax.html#!#template-input
           // do something with data
         })
 
-
-  => one Way Binding with event or with template.
-      => with event binding
-      <input type="text" [ngClass]="className" (keyup)="onKeyUp($event)" />
-        value1: any;
-        onKeyUp(x:any){
-            this.value1 = x.target.value;
-          }
-
-  => with template binding
-      <input type="text" #valueOne /> // #valueOne is variable
-      <button [ngClass]="classBtn" (click)="callClick(valueOne.value)">Add</button>
-    
   => template driven form 
-    the form which are handled in template file, html file we call them template file. because here we write
-    our template code. Getting and setting the values and apply the validations, show the errors message every thing we handle in our html file. For binding we must have "name" attribute.
-    It is a simple form. Validation on html file.
+    It is a simple form. Validation on html file. It uses two-way data-binding directive (ngModel) to create
 
-  <form #form="ngForm" (ngSubmit)="onSubmit(form.value)" > or <form #form="ngForm" (ngSubmit)="onSubmit(form)" > 
-      <input ngModel name="name" type="text" placeholder="name" /> <br />
-      <input ngModel name="email" type="email" placeholder="email"  /> <br />
-      <input type="submit" value="Submit" />
-    </form>
+      <form #form="ngForm" (ngSubmit)="onSubmit(form.value)" > or <form #form="ngForm" (ngSubmit)="onSubmit(form)" > 
+        <input ngModel name="name" type="text" placeholder="name" /> <br />
+        <input ngModel name="email" type="email" placeholder="email"  /> <br />
+        <input type="submit" value="Submit" />
+      </form>
 
     ts - onSubmit(data){ console.log(data )} or onSubmit(data){ console.log(data.value )}
-
-    => validation in template driven form 
-      - error 
-        . required -> specific that the field is mandatory (cant be blank)
-        . pattern -> specific regular expression 
-        . minlength -> minimum no. of characters to accept 
-        . maxlength  -> maximum no. of characters to accept 
-    - untouched                                          - touched 
-      . true - the field is not focused at least once.      . true - the field is focused at least once.   
-      . false - the field is focused at least once.         . false - the field is not focused at least once.
     
-    - prestine                                           - dirty 
-      . true - the field is not modified at least once.       . true - the field is modified at least once. 
-      . false - the field is modified at least once.          . false - the field is not modified at least once.   
-    
-    - valid                                           - invalid 
-      . true - the field is valid (has no errors).        . true - the field is invalid (has errors).
-      . false - the field is invalid (has errors).        . false - the field is valid (has no errors).
-    
-
   => reactive form 
-    When we have complex form means more fields with the form then use reactive form.
-    when we need complex form and validation code should be written in ts file.
+    When we have complex form means more fields with the form then use reactive form. We create the form model wit form group, form controls and form arrays in component class and also we defined validation rules in the component class itself.
+    - Create dynamic controls easir, -structure of the form is defined in the typescript class.
 
     FormGroup => will control hole form and it will handle are what we are getting in side the complete form and valid or not. 
-
     FormControl => Specifically handle a input fields
-
     import ReactiveFormsModule on app.module file.
 
 
@@ -842,12 +865,12 @@ https://v2.angular.io/docs/ts/latest/guide/template-syntax.html#!#template-input
           if (fileType == 'resumeFile' && files.size <= 1000000) {  this.docResumeFile = files; }
           else { this.docResumeFile = null; this.dataForm.controls['file'].reset(); }
         }
+      
       => patchValue 
-      The PatchValue is used to update only a subset of the elements of the FormGroup or FormArray . 
-      It will only update the matching objects and ignores the rest.
-      var firstName = 'Mike Tyso';
-      this.dataForm.get("firstName")?.patchValue(firstName);
-
+        The PatchValue is used to update only a subset of the elements of the FormGroup or FormArray . 
+        It will only update the matching objects and ignores the rest.
+        var firstName = 'Mike Tyso';
+        this.dataForm.get("firstName")?.patchValue(firstName);
 
     => valueChanges Observable 
       Pass notification with value, every time, when any form element's value is changed.
@@ -871,51 +894,6 @@ https://v2.angular.io/docs/ts/latest/guide/template-syntax.html#!#template-input
       And also updates the specific form elements.
       this.myForm.reset({ property: value })
 
-  => Passing content form parent to child 
-      parent component
-      <app-child>
-        <element1></element1>
-        <element2></element2>
-      </app-child>
-
-      child component 
-      <ng-content></ng-content>
-
-  => life cycle hook 
-    Angular automatically executes some method in our component class at each milestone to the life cycle.
-    these are called lifecycle hooks.
-
-    1.  ngOnChanges 
-      Execute automatically when we have received one or more values into input properties. that are decorated by @Input decorator. 
-      It will not execute when there are no input properties. Use for examine incoming values and want some changes in incoming values.
-
-    2. OnInit 
-      Execute automatically after loading values into data-bound properties of the components. 
-      Use to call service to get initial data form the database.
-
-    3. ngDoCheck 
-      Execute every time when change detection process start in the component.
-      Execute when an event occur, before change "detection process". Use to identify whether change detection process occur or not.
-      Use for third party control.
-    
-    4. ngAfterContentInit
-      Execute only once in a lifetime of the components after initializing the content that is supply by the parent component and rendered
-      using "ng-content" tag. 
-
-    5. ngAfterContentChecked 
-      Execute every time after completion of change detection process to the content.
-
-    6. ngAfterViewInit 
-      Execute only once after initializing all the elements in the template of the component.
-
-    7. ngAfterViewChecked 
-      Execute every time after completion fo change detection process of the template. 
-
-    8. ngOnDestroy 
-      Execute before destroying (deleting) the component object deleted from memory. [ when the route has changed. ]
-
-  Injector, provider, how to get service? => services get injected inside our component
-
   => Injector 
     Injectors are data structures that store instructions detailing where and how services form. 
     @Injectable is a decorator in Angular framework, it allows the service to be injected in Components or other service.
@@ -926,17 +904,32 @@ https://v2.angular.io/docs/ts/latest/guide/template-syntax.html#!#template-input
     => What is the use of providers in Angular?
       Providers are classes that create and manage service objects the first time that Angular needs to resolve a dependency. Providers is used to register the classes to an angular module as a service
 
-  Interceptors => before calling the api add some logic
+    => Interceptors  before calling the api add some logic. HTTP Interceptors in Angular are classes that implement the HttpInterceptor interface. They can be used to perform various tasks related to HTTP requests and responses, such as adding headers, handling errors, modifying the request or response data, logging, authentication, etc
 
   Change detection => any time any event occur its run like scroll, click, press any key.
 
-  => View encapsulation =>  use for styling
-      ViewEncapsulation.ShadowDom => don't effect others
-      ViewEncapsulation.none => global style
+  =>  View encapsulation =
+        use for styling, Where component css styles are encapsulated into the components view and do not effect the rest of the application.
+        view encapsulation angular adds some unique HTML attributes to the component CSS style and also the view. So Each component
+        there will be a unique attribute which will be added to earch HTML element in that component.
+
+      ViewEncapsulation.ShadowDOM => Stay Private, don't get any style form others, It create own shadow DOM seperate from the main DOM.
+      ViewEncapsulation.None => global style means style will affect to child component.
       ViewEncapsulation.Emulated => children will not get any style form its parent
+
+      @Component({
+        encapsulation: ViewEncapsulation.None;
+      })
 
   => ng-template 
     It is pre-defined special element. which may contain one more html element.
+    <ng-template #myTemplate>
+      <h1>hellow</h1>
+      <p>asdasd</p>
+    </ng-template>
+
+    <div #ngTemplateOutlet="myTemplate"></div>
+
   => ngModule 
   => ng Content
     Ng content use as a projection to take Html into another component with <ng-content></ng-content> user can present there own content.
@@ -992,27 +985,61 @@ https://v2.angular.io/docs/ts/latest/guide/template-syntax.html#!#template-input
       An active route is a route that is selected as the best path. Inactive routes are not displayed
 
   => What is Auth guard in Angular?
-    AuthGuard is used to protect the routes from unauthorized access in angular.
+    In angular, guard used to control access to routes based on certain conditions.
+    AuthGuard is used to protect the routes from unauthorized access in angular. They help ensure that users navigate our application sercurely and efficiently.
+    - CanActive (route activation)
+    - CanActiveChild (child route activation)
+    - CanDeactivate (route deactivation)
+    - CanLoad (module loading)
+    - Resolve (data prefetching)
 
   => safe navigation 
     The Safe Navigation Operator is also known as the "Elvis Operator". This operator is very useful to protect against null and undefined values in property paths.
 
+=> virtual scrolling
+   Virtual scrolling is an alternative to paging. 
+
+=> Infinite SCroll
+    When we scroll down it get automatically loaded the DOM. It there are lot of data taking to much time load then we use infinite scroll.
+
+=> Optimized performance 
+  - lazyloading - Split our app into smaller modules loaded on-demand. 
+  - Ahead of time compilation (AOT) - Compiler templates ahead of time for faster startup.
+  - Tree shaking - Remove unsed code and dependencies
+  - Optimized image 
+  - Bundle optimized - Use webpack to create smaller bundles.
+  - service workers - Implement caching for offline access.
+  - change detection - use OnPush and async pipe for efficient updates.
+  - component optimized - minimize by trackby, pure pipes, and detach change detectors.
+  - HTTP Request - use interceptor for bundle request 
+
+=> Check component how much time take and size of the component. 
+  - Source map explorer or webpack bundle analyzer
+
+=> Check code quality 
+  - SonarQube                                                     
+
+=> AOT and JIT 
+  AOT - Ahead of time compilation
+    AOT giving runtime errors. It will create javascript bundle files before its loading to the DOM.
+    Compiles code before the Angular application is loaded in the browser.
+    AOT produces smaller bundle sizes, which means faster downloads for users.
+    Recommended to use of production build.
+
+  JIT - Just in time compilation
+    Compiles Code during runtime when the Angular app is launched in the client’s browser.
+    Produces larger bundle sizes due to in-browser compilation, potentially impacting loading speed.
+    Recommended to use for local developement
+
+=> Renderer2 
+  DOM manipulating without accessing the DOM directly and that is by using renderer2 class.
+  Renderer2 allow us to manipulate the DOM without accessing the DOM elements directly, by proving a layer of abstraction
+  between the DOM element and the component code.
 
 
-=> join compiler or avoid compiler  
-=> Activated route 
-=> Router state 
-=> Synchronous and asynchronous
-=> Block element modifier 
-=> Closure 
-=> lexical scope 
-=> Pure function 
-=> Temporal dead zone 
-=> IIFE function 
-=> Promises 
-=> Status of the Promises 
-=> call back function 
-=> generator function 
-=> Template literal 
-=> Arrow distrusting
-  
+
+
+
+
+=> HostListner, HostBinding
+=> 
