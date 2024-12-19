@@ -1,0 +1,336 @@
+==> JQUERY -----------------------------
+
+    What is jQuery and why it is used?
+    Introduced in 2006, jQuery is a lightweight, "write less, do more", JavaScript library.  It is free, open-source.
+    The purpose of jQuery is to make it much easier to use JavaScript on your website.
+    jQuery makes event handling, DOM manipulation, Ajax calls much easier than JavaScript.
+    jQuery also allows us to add animated effects on our web page which takes a lot of pain and lines of code with JavaScript.
+
+    jQuery is a small yet feature-rich powerful javascript library that helps to manipulate the HTML DOM with less javascript code.
+
+
+    Is Jquery Code Executed On The Client side, Or Server side?
+    Answer : Client side
+
+    window.onload() - https://www.dotnetbull.com/2013/08/document-ready-vs-window-onload.html
+    The load event fires when all the content on your page fully loaded including the DOM 
+    (document object model) content, asynchronous javascript, frames and images
+
+    $(window).load(function () { alert("window load complete"); });
+    window.onload = function () {alert("window load complete"); }
+
+    $document.ready() -
+    Jquery $document.ready function event executes a bit earlier than window.onload and called once the  DOM(Document object model) is
+    loaded on your page. DOM means all the html tags/script  I.e.(anchor tag, table, div tag, paragraph tag etc..). It will not wait 
+    for the images, frames to get fully load. It means that it is the earliest stage in page load process.
+
+    The main difference is that $document.ready() event gets called as soon as your DOM is loaded.  It does not wait for the contents 
+    to get loaded fully. For example, there are very heavy images  on any web page and takes time to load. If you have used window.onload
+    then it will wait until  all your images are loaded fully, hence it slows down the execution. On the other side,  $document.ready()
+    does not wait for elements to get loaded.
+
+    What’s the difference between window.onload vs document.onload?
+    window.onload is fired when the DOM is ready and all the content including images, CSS, scripts, subframes, etc. finish loaded.
+    It means that everything is loaded.
+    document.onload is fired when the DOM is ready, which can be before images and other external content is loaded.
+
+    Is Ajax a framework?
+        AJAX. OOP, an open source framework, it provides an OOP-style programming engine and Ajax requests-handling functionality
+
+        $.ajax({
+            url: '',
+            type: 'get',
+            error: function(e){ console.log(e);},
+            success: function(res){
+                console.log(res);
+            }
+        });
+
+    What’s the fastest way to query DOM?
+        The fastest way to select an element is by ID if the ID exists.
+        The second quickest is getElementByClassName .
+        The longer the selector, the slower it will be.
+        querySelectorAll will be the slowest since it has to search for all kinds of CSS selectors.
+        Other methods like getElementById and getElementsByTagName only search for specific kinds of selectors.
+
+    What is GET Method? 
+    GET is used to request data from a specified resource. It appends form-data to the URL in name/ value pairs. The length of the URL
+    is limited by 2048 characters. This method must not be used if you have a password or some sensitive information to be sent to the
+    server. It is used for submitting the form where the user can bookmark the result.
+        GET requests can be cached
+        GET requests remain in the browser history
+        GET requests can be bookmarked
+        GET requests should never be used when dealing with sensitive data
+        GET requests have length restrictions
+        GET requests are only used to request data (not modify)
+
+    What is POST Method? 
+    POST is used to send data to a server to create/update a resource.
+        POST requests are never cached
+        POST requests do not remain in the browser history
+        POST requests cannot be bookmarked
+        POST requests have no restrictions on data length
+
+==> JAVASCRIPT -----------------------------
+
+    What is JavaScript and why it is used?
+    JavaScript is a very powerful client-side and server-side scripting language.This allows us to create dynamic content for the web. JavaScript is a 
+    lightweight language that is open-source and allows cross-platform.it works with various other programming languages And this is 
+    the reason for its vast use all around the world.
+
+    the code is always visible to everyone anyone can view JavaScript code
+
+    var
+    var is function scoped, can be re-declared and re-assign. access 'var' before initialization gives 'undefined' (means hoisting)
+
+        console.log(a); // hoisting 
+        var a = 10;
+        var a = 20; // re-declared
+        a = 30; // re-assigning
+
+    let 
+    block level scope, can not re-declared but re-assign. let variables can be updated but not re-declared.Cannot access 'let' before 
+    initialization gives 'error' (means hoisting)
+
+    const 
+    block level scope, const variables can neither be re-assign nor re-declared. Cannot access 'const' before initialization gives 
+    'error' (means hoisting)
+
+    function 
+    A function is a block of code that performs a specific task. It is a group of reusable code that you can use
+    anywhere in the code. It helps you to divide a large program into small and manageable functions.
+
+        Function Expressions
+            variable = function (parameters){ //expression };
+
+    Variable Scope
+        Scope refers to the availability of variables and functions in certain parts of the code.
+        Global Scope => A variable declared at the top of a program or outside of a function is considered a global scope variable.
+        Local Scope => A variable can also have a local scope, i.e it can only be accessed within a function.
+
+    Is Const faster than let?
+    It appears that using const would inherently make code a little faster, because it seems to reduce the amount of hoisting necessary. 
+
+    What Are Javascript Types?
+    Number, String, Boolean, Function, Object, Null, Undefined.
+
+    What Is A Prompt Box?
+    A prompt box allows the user to enter input by providing a text box.
+
+    What Is The Difference Between An Alert Box And A Confirmation Box?
+    An alert box displays only one button which is the OK button whereas the Confirm box displays two buttons namely OK and cancel.
+
+    What Does "1"+2+4 Evaluate To?
+    Since 1 is a string, everything is a string, so the result is 124.
+
+    How Do You Convert Numbers to String In Javascript?
+    Use the  toString()  function
+
+    When is the mouseout event fired?
+    When mouse is no longer over an element
+
+    When is the mouseover event fired?
+    When mouse is moved over a new element
+
+    what is hoisting
+    code execution before declarations. access them before they are declared. One of the benefits of hoisting is that it enables us 
+    to call functions before they appear in the code. 
+
+    What does != Mean in programming?
+    not-equal-to operator. The not-equal-to operator ( != ) returns true if the operands don't have the same value; otherwise, it 
+    returns false
+
+    What is ++i in JavaScript? (bad ki Value)
+        ++i is the value of i after the increment. 
+            i = 42;
+            alert(++i); // shows 43
+            alert(i); // shows 43
+
+    What is i++ in JavaScript? (Pehle ki value)
+        The value i++ is the value of i before the increment.
+            var i = 42;
+            alert(i++); // shows 42
+            alert(i); // shows 43
+
+    diff between =, ==, ===
+        = => assigning value
+        == => comparing values
+        === => comparing values and types
+
+    what is array in javascript?
+    array is collection of data. access  from index value. array can hold function. array is numeric index number. 
+    in javascript array start with 0 (zero) index number. in single variable store multiple value is called
+    array. ex:  var myArr = [1, 2, 'a', 'c'];
+
+    split() => convert string to array, return new array. Not change original string.
+
+    let text = "How are you doing today?";
+    const arr = text.split(" ", 4); // ["How", "are", "you", "doing"]
+
+    at();
+    arr.at(2); // "you"; -> 2nd position value
+    arr.at(); // "How"; -> First Value
+    arr.at(-1); // "doing"; -> Last value
+
+    contact(); => create new array, not change the existing arrays.
+
+    fill() =>  fills specified elements in an array with a value, overwrite the original array.Start and end position can be specified. If not, all elements will be filled.
+    arr.fill("Mike", 2, 4);
+
+    flat() => concatenates sub-array elements
+    const myArr = [1, 2, [3, [4, 5, 6], 7], 8];
+    const newArr = myArr.flat(2); // 1,2,3,4,5,6,7,8
+
+    includes() => returns true if an array contains a specified value, returns false if the value is not found. is case sensitive
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        fruits.includes("Mango"); // true
+
+        fruits.includes("Banana", 3); // false
+
+
+    what is object in javascript
+    object is key value pair. access from .(dot) notation. object is a collection of properties, and a property is an association 
+    between a key and a value.
+        var myOb = {
+            name: "cyclopes",
+            rank: '2',
+            power: ['one', 'two', 'three']
+        }
+
+    what is properties?
+    properties are like variable attached to classes / object.
+
+    what is method?
+        methods are like function attached to classes / objects
+
+    what destructuring?
+    easily extract array element or object properties and store them in variables. Its allows to put out single elements or object 
+    properties.
+
+    What does callback function do?
+    function call another function is called callback function. ex: setTimeout(), setInterval();
+    A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to 
+    complete some kind of routine or action.
+
+    what is this keyword in javascript?
+    The JavaScript this keyword refers to the object it belongs to. It has different values depending on where it is used: In a method, 
+    this refers to the owner object. Alone, this refers to the global object. In a function, this refers to the global object.
+
+    difference between typescript and javascript ?
+    JavaScript is a scripting language. 
+    typescript  is an object-oriented programming language and has a compiler.
+    TypeScript is an object-oriented programming language developed by Microsoft Corporation, whereas JavaScript is the programming language 
+    for the web. TypeScript is an open-source language to build large-scale web apps, whereas JavaScript is a server-side programming language
+    that helps to develop interactive web pages.
+
+    Is TypeScript frontend or backend?
+    Typescript is a programming language. You can use it for front end development (eg Angular) or backend development using Node js environment.
+
+    what is class inheritance in javascript
+    Inheritance enables you to define a class that takes all the functionality from a parent class and allows you to add more.
+    Using class inheritance, a class can inherit all the methods and properties of another class.
+
+
+    what is filter method  in javascript?
+    The filter() method does not change the original array. Its return array values.
+    The filter() function will return a new array containing all the array elements that pass the given condition. If no elements pass 
+    the condition it returns an empty array.
+
+        Let's go through step by step on how the filter() works.
+            Create an empty array filterArr .
+            Loop through the array elements.
+            Called the filterFunc function with the current element as the argument.
+            If the result is true, push the element to the filterArr array.
+            Return filterArr array after going through all the elements.
+
+    Spread Operator
+    The spread operator ... is used to expand or spread an iterable or an array. ou can also use the spread syntax ... to copy the items into a single array.
+
+    what is map method  in javascript?
+
+    what is reduce method in javascript?
+    The reduce method is applied to arrays in Javascript. reduce() method returns a single value
+
+    what is promises in javascript?
+    A promise in JavaScript is asynchronous, meaning it takes time to resolve or finish.
+    A Promise represents something that is eventually fulfilled. A Promise can either be rejected or resolved based on the operation outcome.
+    The code does not directly or immediately return a value.
+    
+    What is the difference between observable and promises?
+    The biggest difference is that Promises won't change their value once they have been fulfilled. They can only emit (reject, resolve) a single
+    value. On the other hand, observables can emit multiple results. The subscriber will be receiving results until the observer is completed or 
+    unsubscribed from.
+
+    what is async await in javascript?
+
+    async/await vs promises javascript?
+
+    Promise Type 
+
+    what is await and async in javascript ?
+    async makes a function return a Promise. await makes a function wait for a Promise.
+
+    what is event bubbling in javascript ?
+
+    Explain Closures in JavaScript?
+
+    What are object prototypes?
+
+
+* About controller or bot controller
+* Set, get, map operator
+* Javascript Module.
+* Deep copy, shallow copy.
+* Structure clone
+* Array, object refrence
+* Micro, macro task
+* What is this.
+* Seal method, freage method
+* How to use immediately invoke function 
+* Optional chaining
+* call, apply and binding
+* Arrow function vs normal function
+* Event loop
+* Debouncing and throtling
+* IIFE
+* Real time data base
+* Live tracking
+* Cancel or delay api call
+* How to implements search functionality like amazon, flipkart.
+
+
+
+
+
+
+  
+==> TYPE SCRIPT -----------------------------
+    what is type script?
+    typescript is not entirely new language, typescript super set of javascript that means any valid javascript code is also valid
+    typescript code but typescript have additional features that do not exist in current version of javascript supported.
+    typescript strong or static typing like #c and java language.
+
+    Access modifiers
+        1. Public
+        2. Private
+        3. Protected
+
+    constructor
+            class Human {
+            public FName: string;
+            private LName: string;
+                constructor(FName?: string, LName?: string) {
+                    this.FirstName = FName,
+                        this.LastName = LName,
+                        this.sayHello = function () {
+                            console.log(`Hello, I'm ${this.FirstName} ${LName}`);
+                        }
+                }
+                fullName(){
+                    console.log(this.FName + " " + this.LName);
+                }
+            }
+            //const person = new Human('Kakashi', 'Hatake');
+            const person = new Human();
+            person.FName = 'Mike';
+            console.log(person.sayHello());

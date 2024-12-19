@@ -105,8 +105,26 @@
 
 * Traversing - Filtering :- first(), last(), eq(), filter() and not(), slice()
 		$(selector).filter(".intro");  [other than .intro]
+  
+-------------------------- ajax post ------------------------------------------
 
+$.ajax({
+        url: "http://localhost:4500/api/getTopWatchList",
+        type:"post",
+        data: {limit:10},
+         success: function(result){
+             console.log(result);
+    }
+    });
 ----------------------------------------------------------------------- 
+
+
+event.preventDefault()
+
+The event.preventDefault() method stops the default action of an element from happening.
+Prevent a submit button from submitting a form
+Prevent a link from following the URL
+
 
 * Selectors
 	document.getElementById('selectorName')
@@ -222,11 +240,9 @@
 
 * Event 
 	mouseover, mouseout, change, click, dblclick, keydown, load, submit, select,
-	keypress, mousemove, mouseleave, mouseenter, mousedown, mouseup
-
+	keypress, mousemove, mouseleave, mouseenter, mousedown, mouseup, focusin, focusout
 
 * slice(), splice(), split(), indexOf(), includes(), prop(), setAttribute(), getAttribute(),
-
 
 * .contextmenu ---> for right click
 
@@ -234,83 +250,25 @@
 
 * <button type="button" onclick="document.getElementById('IDNAME').style.color = 'red'">Click Me!</button>
 
-* two different kinds of data, primitive and objects.
-	primitive -- string, number, boolean, null, undefined
-
-* javascript types dynamics
-
-* fill data on alert with the help of prompt. prompt by default give string value.
-
-	prompt("Enter Your Name?");  
-
-*  type of 	--> for checking  type of variables   --> console.log(typeof varName);
-
-* check length of the var or text  -->  console.log(varName.length);
-
-* convert string to number with the help of -->  parseInt(); or 1*varName  -->  var x = parseInt(a);
-
-* convert number into  string with -->     toString();   -->  var x = a.toString();
-
-* NaN means not a number
-
-* Math.ceil();      increasing number select
-
-* Math.floor();   decreasing number select    [ex (3.4)=3, (-2.1)= -3]
-
-* Math.max();     big number select
-
-* Math.min();   small number select
-
-* Math.random();	random no.
-
-* Comparison  Operators 
- 	
-	1. == 		 [ 1 == 1 (true), 1 == "1" (true) ]	 ( only compar value )
-
-	2. ===		 [ 1 === 1 (true), 1 === "1" (false) ]	( compar value and type both )
-	
-	3. !=, >, >= [ 1 != 1 (false), 1 != "1" (false) ]	( not equal to value ) ( ! means not equal )
-	
-	4. !== 		 [ 1 !== 1 (true), 1 !== "1" (true) ]	( not equal operator, not equal to value and type) ( ! = NOT ,  ' ! '  MEAN NOT )	
-
-	5. &&  [ 1 !== 1 && 1 !== "1" ] ( and operator, check both condition same time)  (if both condition is true then true other-wise condition is false )
-
-	6. ||		 [ 1 !== 1 || 1 !== "1" ] ( or operator, check one condition)  (if one condition is true then true , when both condition false then false )
-
-	7. ! 		 [ !1 > 1 ] 	( not operator )	
-	
-* falsy value --- [ null,'' '', undefine, false, 0 ]
-
 * \n 	
 	( just like a break </br> ) for line  break, giving break in prompt text list.
 
 	prompt("1- what is your name?\n 2- how many year's old?\n 3- enter your pet name?\n");
-
-* variable can only store one value. variable like empty container. we put any think in variable.
-  Variables are containers that you can store values in. You start by declaring a variable with the var, let or const keyword.
-
-* console.log(); is same as console.warn(); 
-
-* f8 = go to next debugger if there is no debugger finish the debugging.
-
-* f10 = go to next statement 
-
-* f11 = to debug inside
-
-* Conditional (ternary) operator
-	function getFee(isMember) {
-		return (isMember ? '$2.00' : '$10.00');
-	}
-	console.log(getFee(true)); // expected output: "$2.00"
-	console.log(getFee(false)); // expected output: "$10.00"
-	console.log(getFee(null)); // expected output: "$10.0 
 
 * spread operator
 	const numbers = [1, 4, 3, 5];
 	const newNumbers = [...numbers, 10, 20];
 	console.log(newNumbers);
 
+	let arr1 = [ 1, 2, 3];
+	let arr2 = [...arr1]; // changes not effect to it's parent.
+	arr1.push(4);
+	console.log(arr1); // [1, 2, 3, 4]
+	console.log(arr2); // [1, 2, 3]
+
 * rest operator
+	When the spread operator is used as a parameter, it is known as the rest parameter.
+	You can also accept multiple arguments in a function call using the rest parameter. 
 	const filter = (...args)=>{
 		return args.filter( el => el ===1 );
 	}
@@ -335,55 +293,22 @@
 		console.log('stop');
 	}, 5000);
 
-
-* break keyword 
-	if condition is true break keyword will stop the condition, and stop before true condition.
-
-	var i = 0;
-	while( i < 10 ) {
-		i++;
-		if( i === 5 ) {
-			break;
-		}
-		console.log(i);
-	}
-
-* continue keyword
-	if condition is true, leave the true condition and run as on. jump out the true condition.
-
-	var i = 0;
-	while( i < 10 ) {
-		i++;
-		if( i === 5 ) {
-			continue;
-		}
-		console.log(i);
-	}
-
 * initialization or starter or starting point
 * condition for when our loop should end
 * increment or decrement || continues up or down
 
-* for(var i = 5; i < 10; i++ ) {		}
-
-* i++ means i = i + 1; or i += 1;
-
 * loop work on the only true condition, when loop condition is false loop will stop working.
 
-* for loop 
-
-	-----forward count
-	for(var i = 5; i < 10; i++ ) { console.log(i); }
-
-	for(const item of items) {}
-
-	-----backward count
+* for loop  backward count
 	for(var i = 5; i > 0; i-- ) { console.log(i); }
 
 * while loop
 	var i = 0;
 	while(i <= 10 ){
 		console.log(i);
+		if( i === 5 ) {
+			break;
+		}
 		i++;
 	}	
 
@@ -393,16 +318,6 @@
 		console.log(i);
 		i++;
 	}while( i <= 10 );
-
- * nesting loop
-	loop inside loop called nesting loop.OR loop within a loop. nesting loop parent loop run one time then child loop run all condition, 
-	then parent loop run second time then child loop run all condition as on.
-
-	for(var i = 0; i < 10; i++) {
-		for(var j = 0; j <= 10, j++){
-			consol.log(i + j);
-		}
-	}
 
 * in single variable store multiple value is called array. array is collection of data.
 	array can hold function. array is numeric index number. in javascript array start with 0 (zero) index number.
@@ -424,20 +339,21 @@
 	cars.toString();  // converting array to string
 	cars.reverse(); // reverse array
 
-* slice 
+* slice - Not effect on parent array, copy elements of an array
 	var array = [1, 2, 3, 4, 5, 6, 7];
 	var res = array.slice(2); //	[3, 4, 5, 6, 7]
 	var res = array.slice(2, 5); //	[3, 4, 5]
 
-* splice 
+* splice  - change the parent array,  manipulate elements in an array such as deleting, inserting, and replacing elements - splice(start, deleteCount, item1) - it strart from 0 zero.
 	var array = [1, 2, 3, 4, 5, 6, 7];
 	var res = array.splice(2); //	[3, 4, 5, 6, 7]
-	var res = array.splice(2, 5); // [3, 4, 5, 6, 7]
-
+	var res = array.splice(2, 2); // [3, 4]
+	var res = array.splice(2, 0, 10); // [1, 2, 10, 3, 4, 5, 6, 7]; // Inserts at index 2
+	var res = array.splice(2, 1, 20); // [1, 20, 3, 4, 5, 6, 7]; // Replaces 1 element at index 2
 
 * string to array
-	var a =  'hello';
-	var b = a.split();
+	let text = "How are you doing today?";
+    const arr = text.split(" ", 4); // ["How", "are", "you", "doing"]
 
 * array to string
 	var a = ["a", "b", "c", "d"];
@@ -445,14 +361,16 @@
 
 * subtract string value
 	var a = 'hello!';
-	var b = a.substr(-2);
+	var b = a.substr(-2); //"o!"
 
-* indexOf  in array 
+* indexOf in array 
 	var JSArr = ["A", "B", "C", "D"];
-	console.log(JSArr.indexOf("A")) // 0  found at postion 0 
 	console.log(JSArr.indexOf("B")) // 1  found at postion 1 
 	console.log(JSArr.indexOf("F")) // -1  not found
 
+* lastIndexOf() => It count the value position form the end ie. backward. If not found return -1.	
+	console.log(JSArr.lastIndexOf("c"));
+	
 * includes in array
 	var list = ["A", "B", "C", "D", "E"];
 	console.log(list.includes("A")); // true
@@ -465,16 +383,106 @@
 	var two = ["C", "D", "E"];
 	var res = one.concat(two);
 
-* join Array
+* join() => returns an array as a string. Not change the original array.
  	var cars = [["mahindra bolero","tata indica"],["potato"],["football","cricket"]];
 	var bike = cars.join(" ");			//	join array  with empty space
 	var bike = cars.join("*");			//	join array  with * symbol
 	var bike = cars.join("+");			//	join array 	with + symbol
 
-* includes();
+	const fruits = ["Banana", "Orange", "Apple", "Mango"];
+	let text = fruits.join(" and "); // Banana and Orange and Apple and Mango
 
+* includes(); => The includes() method checks if an array contains a specified element or not.
+	let languages = ["JavaScript", "Java", "C"];
+	let check = languages.includes("Java");
+	console.log(check); // Output: true
 
-* sort
+* at();
+    arr.at(2); // "you"; -> 2nd position value
+    arr.at(); // "How"; -> First Value
+    arr.at(-1); // "doing"; -> Last value
+
+* charAt() => user for string.
+
+* fill() =>  fills specified elements in an array with a value, overwrite the original array.Start and end position can be specified. If not, all elements will be filled.
+    arr.fill("Mike", 2, 4);
+
+* flat() => concatenates sub-array elements
+    const myArr = [1, 2, [3, [4, 5, 6], 7], 8];
+    const newArr = myArr.flat(2); // 1,2,3,4,5,6,7,8
+
+* some() => method executes the callback function once for each array element. it does not execute the function for empty array elements. it does not change the original array. It returns true or false.
+	const ages = [3, 10, 18, 20];
+	ages.some(checkAdult);
+	function checkAdult(age) {
+		return age > 18;
+	}
+
+* toReversed() => method does not overwrites the original array. It returns a new array.
+* toSorted() => method does not overwrites the original array. It returns a new array.
+* toSpliced() => method does not overwrites the original array. It returns a new array.
+
+* with() => Replace the value with position. method returns a new array. method does not change the original array.
+	const months = ["Januar", "Februar", "Mar", "April"];
+	const myMonths = months.with(2, "March"); // Januar,Februar,March,April
+
+* delete values from object and array 
+	const myArray = [1, 2, 3, 4, 5];
+	delete myArray[1]; // myArray : 1,undefined,3,4,5
+	or myArray.splice(3, 1); // myArray : 1, 2, 3, 5
+
+* Destructuring
+	const person = {
+		name: 'Sara',
+		age: 25,
+		gender: 'female'    
+	}
+	let { name, age, gender } = person;
+	console.log(name); // Sara
+	console.log(age); // 25
+	console.log(gender); // female
+
+* Array Destructuring
+	const arrValue = ['one', 'two', 'three'];
+	const [x, y, z] = arrValue;
+	console.log(x); // one
+	console.log(y); // two
+	console.log(z); // three
+
+* Assign Default Values
+	let arrValue = [10];
+	let [x = 5,  y = 7] = arrValue;
+	console.log(x); // 10
+	console.log(y); // 7
+
+* Swapping Variables =  two variables are swapped using the destructuring assignment syntax.
+	let x = 4;
+	let y = 7;
+	[x, y] = [y, x];
+	console.log(x); // 7
+	console.log(y); // 4
+
+* Skip Items = You can skip unwanted items in an array without assigning them to local variables.
+	const arrValue = ['one', 'two', 'three'];
+	const [x, , z] = arrValue;
+	console.log(x); // one
+	console.log(z); // three
+
+* Assign Remaining Elements to a Single Variable
+	const arrValue = ['one', 'two', 'three', 'four'];
+	// assigning remaining elements to y
+	const [x, ...y] = arrValue;
+	console.log(x); // one
+	console.log(y); // ["two", "three", "four"]
+
+* Nested Destructuring Assignment
+	const arrValue = ['one', ['two', 'three']];
+	const [x, [y, z]] = arrValue;
+	console.log(x); // one
+	console.log(y); // two
+	console.log(z); // three
+
+* sort => overwrites the original array.
 	the sort method converts the elements into strings then compares their sequences of UTF-16 code units values.
 
 	const num = [80,1,30,10,50,70,20,40,100,5,60,90];
@@ -483,9 +491,8 @@
 	const fruits = ["Apple", "Mango", "Kiwi", "Orange", "Strawberry"];
 	console.log(fruits.sort());
 
-
 * filter method (<, >)
-	for comparing, greater-than, smaller-than 
+	for comparing, greater-than, smaller-than its returns array
 	
 	var numberList = [["2"],["10","12","6"],"5",["15","7","20"]];	
 	var res = numberList.filter(function(element, index, array){
@@ -511,9 +518,9 @@
 	}, 0);
 
 	//or
-	const resultSum = numbers.reduce((value1, value2, index, array) => {
-		return value1 + value2;
-	}); // where to start not given so start with value1 and value2
+	const resultSum = numbers.reduce((accumulator, value2, index, array) => {
+		return accumulator + value2;
+	}); // where to start not given so start with accumulator and value2
 
 
 	var numberList = [10,2,5,67,3,45,];
@@ -525,7 +532,7 @@
 	        return accumulator;
 	    }
 
-	},[]);               // where to start value
+	},[]); // in array [] formate it will return;
 	console.log(res);
 
 
@@ -536,42 +543,41 @@
 		}else {
 			return accumulator;
 		}
-		
-	
-	},0);
-
+	},0); // where to start.
 
 * forEach (need atleast one paramenter)
 	var cars = [ "mahindra bolero", "tata indica", "tata safari", "fortuner" ];
 	var each = cars.forEach(function(element, index, array){
 		console.log(index + " : " + element);
 	});
+	
+*  compare objects and string
+	var x = "John";             
+	var y = new String("John");
+	(x === y) // is false because x is a string and y is an object.
 
+* cannot compare objects
+	var x = new String("John");             
+	var y = new String("John");
+	(x == y) // is false because you cannot compare objects.
 
-* object
-	A collection of name value pairs.
-	key value pairs
-	object same as array and in object, we can call function.
+** Don't Use new Object()
+	Use {} instead of new Object()
+	Use "" instead of new String()
+	Use 0 instead of new Number()
+	Use false instead of new Boolean()
+	Use [] instead of new Array()
+	Use function (){} instead of new Function()
+
+=> object
+	A collection of name value pairs. key value pairs.object same as array and in object, we can call function.
 	 
-	var player = {
-		name : "Chou",
-		role : "Fighter",
-		price : 24000,
-		rank : "A+",
-		build : ['b1', 'b2', 'b3'],
-		details : function(){
-			return this.name + ' is ' + this.role
-		}
-		
-	};
-
-* 
-	const courses = {
-		java: 10,
-		javascript: 55,
-		nodejs: 5,
-		php: 15
-	};
+		const courses = {
+			java: 10,
+			javascript: 55,
+			nodejs: 5,
+			php: 15
+		};
 
 		* Methods to loop through objects using javascript for...in Loop
 			for (const key in courses) {
@@ -592,34 +598,83 @@
 		* Object.values() Method -It returns the values of all properties in the object as an array
 			Object.values(courses).forEach(val => console.log(val));
 
+		* Object.create();
+		* Object.assign();
 
-*  compare objects and string
-	var x = "John";             
-	var y = new String("John");
-	(x === y) // is false because x is a string and y is an object.
-
-* cannot compare objects
-	var x = new String("John");             
-	var y = new String("John");
-	(x == y) // is false because you cannot compare objects.
-
-** Don't Use new Object()
-	Use {} instead of new Object()
-	Use "" instead of new String()
-	Use 0 instead of new Number()
-	Use false instead of new Boolean()
-	Use [] instead of new Array()
-	Use function (){} instead of new Function()
-
-* Constructor functions  
+=> Constructor functions  
 	Using Constructor functions :- Constructors are functions that contain a this keyword.
+	If we initialize the constructor its runs. Create Multiple Objects with Constructor Function.
 
-	function Human (firstName, lastName) {
-		this.fName = firstName
-		this.lName = lastName
+	function Person (person_name, person_age, person_gender) {
+		this.name = person_name,
+		this.age = person_age,
+		this.gender = person_gender,
+		this.greet = function () {
+			return ('Hi' + ' ' + this.name);
+		}
 	}
-	const chris = new Human('Chris', 'Coyier')
-	console.log(chris.fName); 
+	// creating objects
+	const person1 = new Person('John', 23, 'male');
+	const person2 = new Person('Sam', 25, 'female');
+
+	// accessing properties
+	console.log(person1.name); // "John"
+
+	// adding method to person1 object
+	person1.print = function () {
+		console.log('hello');
+	}
+
+	=> Object Literal
+		Object Literal is generally used to create a single object. The constructor function is useful if you want to create multiple objects. 
+		let person = {
+			name: 'Sam'
+		}
+
+=> Prototype
+		In JavaScript, a prototype can be used to add properties and methods to a constructor function.
+
+		// adding property to constructor function
+		Person.prototype.status = 'Married';
+
+		// prototype value of Person
+		console.log(Person.prototype);
+
+		// inheriting the property from prototype
+		console.log(person1.status);
+		
+		// changing the property value of prototype
+		Person.prototype = { status:  'UnMarried'}
+
+=> Inheritance 
+	function Human(person_name, person_age, person_gender, month){
+		Person.call(this, person_name, person_age, person_gender);
+		
+		this.month = month
+	}
+
+	// Inherit Prototype 
+	Human.prototype = Object.create(Person.prototype);
+
+	// Instantiate Human Object
+	const hum1 = new Human('Mike', '22', 'Male', 'March');
+
+	// use Human Constructor
+	Human.prototype.constructor = Human;
+	
+	console.log(hum1);
+
+=> Sub Class 
+	class Human extends Person {
+		constructor(person_name, person_age, person_gender, month){
+			super(person_name, person_age, person_gender); // get parent properties
+			this.month = month;
+		}
+	}
+
+	// Instantiate Human Object
+	const hum1 = new Human('Khabib', '22', 'Male', 'Jan');
+	hum1.greet();
 
 * Class 
 	Classes is blue print of object. Classes are said to be the “syntactic sugar” of Constructor functions. 
@@ -632,19 +687,20 @@
 			this.sayHello = function () {
 				console.log(`Hello, I'm ${firstName}`)
 			}
-
 			or 
-
 				sayHello () {
 					console.log(`Hello, I'm ${this.firstName}`)
 				}
 
+				static staticFunc(){
+					console.log('It can not be Instantiate, It can call by its parent');
+				}
 		}
 	}
 
-
 	const chris = new Human('Chris', 'Coyier')
 	console.log(chris.firstName);
+	Human.staticFunc();
 
 * Objects Linking to Other Objects (OLOO)
 
@@ -655,7 +711,6 @@
 			this.sayHello = function () {
 			console.log(`Hello, I'm ${firstName}`)
 			}
-
 			return this
 		}
 	}
@@ -664,10 +719,7 @@
 	//chris.init('Chris', 'Coyier');
 	// or
 	const chris = Object.create(Human).init('Chris', 'Coyier');
-
 	console.log(chris.firstName);
-
-
 
 * scope
  	two type of scope 1.global, 2. local
@@ -679,6 +731,17 @@
 	}
 	func(argument-1, argument-2);
 
+	Regular functions have arguments binding. That's why when you pass arguments to a regular function, you can access them using the arguments keyword. 
+	Arrow functions do not have arguments binding. When you try to access an argument using the arrow function, it will give an error.
+	To solve this issue, you can use the spread syntax.
+
+	let x = () => { console.log(arguments); }
+		x(4,6,7);
+
+	let x = (...n) => { console.log(n); } //spread syntax.
+		x(4,6,7);
+
+
 * hoisting 
 	function declaration on top is hoisting.
 	Hoisting is process of moving function declaration to the top of the file and this is done  
@@ -688,55 +751,29 @@
 	1. function declaration
 	2. function Expression
 
-1. function declaration
+	1. function declaration
 
-	function walk(){
-		console.log("Walk");
-	}
-	walk();
+		function walk(){
+			console.log("Walk");
+		}
+		walk();
+		OR
+		[ this is a hoisting ]
+		walk();
+		function walk(){
+			console.log("Walk");
+		}
 
-	OR
-	[ this is a hoisting ]
-	walk();
-	function walk(){
-		console.log("Walk");
-	}
-	
+	2. function Expression  or anonymous function
+		var run = function() {
+			console.log("run");
+		}
+		run();
 
-2. function Expression  or anonymous function
-	var run = function() {
-		console.log("run");
-	}
-	run();
-
-3. First class function - To ability to use function
-	var a = function ( ) {
-		return function xyz( ) { }
-	}	
-
-
-* fat arrow function
-	const name = () => {
-		console.log(max);
-	}
-	name();
-	or
-	const multiply = (number) => { return number *2 }
-	const multiply = (number) => number*2;
-	console.log(multiply(2));
-
-* Function() Constructor
-	var myFunction = new Function("a", "b", "return a * b");
-	var x = myFunction(4, 3);
-	console.log(x);
-
-	OR 
-
-	var myFunction = function(a,b){return a * b};
-	console.log(myFunction(1,5));
-
-
-
+	3. First class function - To ability to use function
+		var a = function ( ) {
+			return function xyz( ) { }
+		}	
 
 * api ajax
 		$.ajax({
@@ -811,7 +848,7 @@
 	<!-- second Way formate  end -->
 
 
-// third way 
+    <!--  third way  -->
        var aa =`<div class="card" >
        <img  class="pok-img card-img-top p-2" src="${imgurl}" alt="Pok Name">
        <div class="card-body">
@@ -824,9 +861,56 @@
        $('#JSON-child-Result-3').append(aa);
 
 
+  => AJAX 
+    AJAX ( asynchronous JavaScript and XMl ) is not a language, but it is a concept, Which is used to "send background request to server" 
+    and also "get background response from server", without refreshing (reloading) the web page in the browser.
+    status code 200 - success and status code 404/500 - error
+    
+    Get - Used to retrieve / search data from server.
+    Post - Used to insert data to server.
+    Put - Used to update data on server.
+    Delete - Used to delete data from server.
+
+    $(function() {
+        var product = $("#product_list");
+        product.length && initProduct();
+    });
+
+    var _m = _m || {}, _apiName = "APIName"
+
+    _m.Ajax = function(methodName, apiUrl, dataType, requestData, contentType, asyncBoolean) {
+        return void 0 === o && (o = !0),
+        $.ajax({
+            type: methodName,
+            url: apiUrl,
+            dataType: dataType,
+            async: asyncBoolean,
+            data: requestData,
+            contentType: contentType,
+            success: function(e) {},
+            error: function(e, t) {
+                console.log("error->" + apiUrl + " | Error->", e, t)
+            }
+        })
+    }
+
+    function initProduct() {
+        var postData = { isActive = true; }
+        _m.Ajax("POST", "api_path_url", "json", JSON.stringify({ postData }), "application/json; charset=utf-8", false).then(response=>{
+            console.log(response);
+        })
+    }
+
+    function getCurrentDateTime(e) {
+      var a;
+      return (a = void 0 == e ? new Date : new Date(e)).getFullYear() + "-" + ("0" + (a.getMonth() + 1)).slice(-2) + "-" + ("0" + a.getDate()).slice(-2) + "T" + ("0" + a.getHours()).slice(-2) + ":" + ("0" + a.getMinutes()).slice(-2) + ":" + ("0" + a.getSeconds()).slice(-2) + "." + a.getMilliseconds() + "+05:30"
+    }
+    function getCurrentDateTime() {
+        var e = new Date;
+        return e.getFullYear() + "-" + ("0" + (e.getMonth() + 1)).slice(-2) + "-" + ("0" + e.getDate()).slice(-2) + "T" + ("0" + e.getHours()).slice(-2) + ":" + ("0" + e.getMinutes()).slice(-2) + ":" + ("0" + e.getSeconds()).slice(-2) + "." + e.getMilliseconds() + "+05:30"
+    }
 
 => callback
-
 	// callback function
 	function callMe() {
 		console.log('I am callback function');
@@ -839,48 +923,6 @@
 	// passing function as an argument
 	greet('Peter', callMe);
 
-
-=> Constructor Function Parameters
-
-	function Person (person_name, person_age, person_gender) {
-		this.name = person_name,
-		this.age = person_age,
-		this.gender = person_gender,
-		this.greet = function () {
-			return ('Hi' + ' ' + this.name);
-		}
-	}
-	// creating objects
-	const person1 = new Person('John', 23, 'male');
-	const person2 = new Person('Sam', 25, 'female');
-
-	// accessing properties
-	console.log(person1.name); // "John"
-	console.log(person2.name); // "Sam"
-
-	// adding method to person1 object
-	person1.print = function () {
-		console.log('hello');
-	}
-
-
-	// => Prototype Inheritance
-		In JavaScript, a prototype can be used to add properties and methods to a constructor function.
-
-		// adding property to constructor function
-		Person.prototype.status = 'Married';
-
-		// prototype value of Person
-		console.log(Person.prototype);
-
-		// inheriting the property from prototype
-		console.log(person1.status);
-		
-		// changing the property value of prototype
-		Person.prototype = { status:  'UnMarried'}
-
-
-
 => setTimeout()
 	The setTimeout() method executes a block of code after the specified time. The method executes the 
 	code only once.
@@ -888,7 +930,6 @@
 	function - a function containing a block of code
 	milliseconds - the time after which the function is executed
 	The setTimeout() method returns an intervalID, which is a positive integer.
-
 
     var n = 0;
     function print(){
@@ -900,9 +941,7 @@
     function b(){
     clearInterval(a);
     }
-
     setTimeout(b, 10000);
-
 
 => Synchronous
 	Execution of code step by step.
@@ -919,47 +958,68 @@
 
 => Promises
 	Use to handle asynchronous data.
+	Promises are important building blocks for asynchronous operations in JavaScript.
+	A Promise is a special JavaScript object. It produces a value after an asynchronous (aka, async) operation completes successfully, or an error if it does not complete successfully due to time out, network error, and so on. Successful call completions are indicated by the resolve function call, and errors are indicated by the reject function call.
+	A Promise is in one of these states:
+		pending: initial state, neither fulfilled nor rejected.
+		fulfilled: meaning that the operation was completed successfully.
+		rejected: meaning that the operation failed.
+	
 	function check( ){ 
 		return new Promise( resolve, reject ) {
 			Var error = true;
 			if ( !error ) { resolve ( )  }
-			else { reject ( ) }
+			else { reject ( ) } // or else { reject('Error: Something went wrong.')}
 		}
 	}
+	check( ).then( function ( ){ console.log(123);
+		}).catch( function ( ){  console.log (' error '); } ) // or .catch(err => console.log(err) )
 
-	check( ).then( function ( ){ 
-		console.log(123);
-		}).catch( function ( ){ 
-		console.log (' error ');
-	} ) 
+	// async / await 
+	async function init(){
+		await check()
+		callBack(); // .then wala function 
+	}
+	init();
 
+	// Promises with fetch
+	var promise1 = 10;
+	var promise2 = fetch('https://jsonplaceholder.typicode.com/posts').then(res => res.json()) // because data on string formate so we have to convert into json format
+	// Promise.all 
+	Promise.all([promise1, promise2]).then(values => console.log(values));
+
+	// Async / await with fetch
+	async function fetchData(){
+		var res = await fetch('https://jsonplaceholder.typicode.com/posts');
+		var dataConvert = await res.json();
+		console.log(dataConvert);
+	}
 
 => Closure
-Values are retain in function means when we invoke our  function the values are not lose, we can access those values on our inside
- functions that is called closure.
+	Values are retain in function means when we invoke our  function the values are not lose, we can access those values on our inside functions that is called closure.
 
 	function sum(a){
-	console.log(a);
-	Var c = 10;
-	return function(b){
-	return a + b + c;
-		}
-	OR
-	return { 
-		getSumTwo: function(b) {
-			return a+ b
+		console.log(a);
+		Var c = 10;
+		return function(b){
+		return a + b + c;
 			}
-		},
-		getSumThree: function(c) {
-			return a+ c
+		OR
+		return { 
+			getSumTwo: function(b) {
+				return a+ b
+				}
+			},
+			getSumThree: function(c) {
+				return a+ c
+				}
 			}
-		}
 
-	}
-	var call = sum(5);
-	console.log( call(10) );
-	console.log( call.getSumTwo(5) );
-	console.log( call.getSumThree(1) );
+		}
+		var call = sum(5);
+		console.log( call(10) );
+		console.log( call.getSumTwo(5) );
+		console.log( call.getSumThree(1) );
 
 => Fetch API
 	Fetch is a function that happen a asynchronously.
@@ -992,8 +1052,240 @@ Values are retain in function means when we invoke our  function the values are 
 		.catch( ( error ) => { console.log ( error ) } );
 	}
 
+=> Shallow Copy -> Copies only the top-level properties or elements.
+	array shallow copy => [...originalArray], originalArray.slice();
+	object shallow copy => {...originialObject}, Object.assign({}, originalObject);
 
+	var original = [0, 1, 2, 3, [4, 5, 6]];
+	console.log(original); //[0, 1, 2, 3, [4, 5, 6]];
+	var copy = [...original]
+	original[1] = 10;
+	copy[2] = 20;
+	copy[4][0] = 40;
+	console.log(original); // [0, 10, 2, 3, [40, 5, 6]];
+	console.log(copy); // [0, 1, 20, 3, [40, 5, 6]];
 
-=> Class Inheritance
+=> Deep Copy => Creating a deep copy in JavaScript means making a complete copy of an object or array, including all nested objects and arrays.  not affect the original object and array.
+	const original = { a: 1, b: { c: 2, d: [3, 4] } };
+	const deepCopy = JSON.parse(JSON.stringify(original));
+	deepCopy.b.d[0] = 10;
+	console.log(original); // Output: { a: 1, b: { c: 2, d: [3, 4] } }
+	console.log(deepCopy); // Output: { a: 1, b: { c: 2, d: [10, 4] } }
+
+=> Recursion
+	Recursion is a process of calling itself. A function that calls itself is called a recursive function.
+	A recursive function must have a condition to stop calling itself. Otherwise, the function is called indefinitely.
+	Once the condition is met, the function stops calling itself. This is called a base condition.
+	Here, the recurse() function is a recursive function. It is calling itself inside the function.
+
+		function countDown(num){
+			console.log(num);
+			var newNum = num - 1;
+			if(num >= 0){
+				countDown(newNum);
+			}
+		}
+		countDown(5);
+		
+
 => currying
+=> lexical scope 
+=> Pure function 
+=> Temporal dead zone 
+=> IIFE function 
+=> Status of the Promises 
+=> call back function 
+=> generator function 
+=> Template literal 
+=> Arrow distrusting
+=> different between normal function and arrow function.
+=> Primative and non primative.
+  
+
+
+/*
+=> get, set, attribute, style css, add class, remove class, hasClass, find, tree traversal functions 
+=> create element, create attribute, append, prepennd, after, before
+=> click, double click, mouseouver, mouseout, keyup, keydown, hover, focus
+=> loop => forearch, each, for loop, while loop, do while loop, for..in, for...of
+=> API => third party API Integration, ajax, fetch API
+=> String => trim(), split(), replace(), replaceAll(), substring(), search(), lastIndexOf()
+=> Array => push(), pop(), unshift(), shift(), slice(), splice(), at(), toString(), concat(), join(), indexOf(), revese(), toReversed(), toSpliced(), 
+    forEach(), filter(), sort(), map(), reduce(), includes(), find(), some(), every(), flat(), flatMap()
+=> object => Object.assign(), Object.keys(), Object.values(), Object.is(), Object.entries() - key and value segrigate.
+=> Advance => Hoisting, spread operator, rest operator, higher order function, Recursion, Promise, Promise chaining, Async/ wait, Classes and Inheritance, 
+  Closure, class, Getters, Setters, Set operator, Get operator, Event loop, event bubbling, event capturing, Array destructring, object destructring, 
+  Class Expressions, Module, Shallow copy, deep copy, Constructor Function, Prototype Inheritance, try...catch, Optional chaining
+=> Pro =>  How to stop api call.
+
+
+
+
+=> slice -> does not modify the original array or string; it returns a new one.
+  array.slice(start, end)
+  array.slice(-1) -> return last value of the array.
+  array.slice(2, -1) -> It return values form 2 to 2nd last value for array.
+  array.slice(2, 4) -> It return values form 2 postion to before 3th position values. That means end value se ek kam tak.
+
+=> splice => Modify the original array. It returns a new one.
+  array.splice(start, end);
+  arr.splice(-1) -> return last value of the array.
+  array.splice(2, 0, 22) -> (position, number of value, New value) - Add the value of 22 after 2 position value.
+  array.splice(3, 2, 13) -> (position, number of values, new value) - replace the 2 values form 3 position with 13. 
+
+=> toReversed() -> does not modify the original array or string; it returns a new one.
+  array.toReversed();
+
+=> toSpliced() -> does not modify the original array. It allows for both adding and removing elements in one call.
+  array.toSpliced(start, deleteCount, ...items) 
+    start: The index at which to start changing the array.
+    deleteCount: The number of elements to remove from the array (optional).
+    ...items: The elements to add to the array at the specified index (optional).
+  array.toSpliced(1, 1, 'newValue');
+
+=> includes() -> does not modify the original array. It return boolean value if match the value return true else false. is case-sensitive
+  array.includes(value, fromIndex);
+    value: The value to search for in the array.
+    fromIndex: The position in the array to start the search (optional). If negative, it searches from that position counting backward.
+
+  string.includes(searchString, position);
+    searchString: The substring to search for within the string.
+    position: The position in the string to start the search (optional). Default is 0.
+
+    const message = "Hello, world!";
+    console.log(message.includes("o", 5));  // true (starts searching from index 5)
+
+=> Find() -> return first element once satisfied if not match return undefined, does not effect original array. Use for search.
+    array.find(ele, ind, arr)
+
+=> some() -> return boolean value once satisfied return true else false. Does Not Modify the Original Array
+    array.some(ele, ind, arr)
+
+=> every() -> return boolean value, method stops checking as soon as it finds an element that does not meet the condition. Does Not Modify the Original Array   
+    every.some(ele, ind, arr)
+
+=> flat() -> returns a new array and does not modify original array. it makes nested arrays into a single-level array. Concating nested array.
+    array.flat([depth]) -> The depth level specifying how deep a nested array structure should be flattened. The default is 1. 
+    If we dont know the count of nested array then we can pass "Infinity".
+    const nestedArray = [1, 2, [3, 4]]; const flatArray = nestedArray.flat(); // Output: [1, 2, 3, 4]
+    const moreNestedArray = [1, [2, [3, [4]]]]; const flatDefault = moreNestedArray.flat(); // Output: [1, 2, [3, [4]]]
+    const moreNestedArray = [1, [2, [3, [4]]]]; const flatDefault = moreNestedArray.flat(2); // Output: [1, 2, 3, 4]
+    const infiniteNestedArray = [1, [2, [3, [4, [5]]]]]; const flatInfinite = infiniteNestedArray.flat(Infinity); // Output: [1, 2, 3, 4, 5]
+
+=> flatMap() -> return new array, does not modify original array. It is combination of flat() and map() method. 
+    It's great for working with nested structures, particularly when you want to extract or manipulate elements from arrays of objects.
+    get the single value from each element of the array of object into a single array. Ex - form nested arrayOfObject only need userId.
+    array.flatMap();
+
+=> Shallow Copy -> It craete the new reference of the array or object but not alter nested structures. 
+   If made changes on the top level it does not effect the orignal array or object but if change the nested structure it effect the original as well as reference. 
+    const originalArray = [1, 2, { a: 3 }];
+    const shallowCopyArray = originalArray.slice(); or [...originalArray];
+    
+    const originalObject = { a: 1, b: 2 };
+    const shallowCopyObject = Object.assign({}, originalObject);
+
+=> Deep Copy -> do not affect the original array or object.
+    const original = { a: 1, b: { c: 2 } };
+    const deepCopy = JSON.parse(JSON.stringify(original));
+
+=> Spread operator -> using for shallow copy, merging array and object.
+
+=> Rest Operator -> Gathers remaining elements into an array. Passing n number of paramter with the help of spread operator(...)
+      const nums = [5, 2, 1, 1];
+      function init(...arr){
+        console.log(arr); // [ [5, 2, 1, 1] ] -> it return in array
+      }
+      init(nums);
+
+=> Hoisting -> var throw undefined, let const throw error, function declearation throw undefined.
+
+=> lexical scoping -> Inner function have access to the scrop of the outer function ie called lexical scoping. 
+    Means inner function have full access to its parent fucntion. 
+
+=> Closure: Closures are a special case of lexical scope where inner functions remember the scope in which they were created, 
+  even after the outer function has finished executing. Inner functions retain access to variables from their outer functions, 
+  which allows them to remember and use those variables even after the outer function has finished.
+  In closure return inner function but actually it is returned all things which is inside the parent function.
+  When a function is defined inside another function, it creates a closure. The inner function retains access to the outer function's scope, including its variables.
+
+=> Object.entries() : Converting object into array with looping. It segrigate key and value of the object.
+  let obj = {name: 'mike', age: 23}
+  for(const [key, value] of Object.entries(obj) ){ }
+    
+=> || operator is the logical OR operator. It evaluates expressions from left to right and returns the first truthy value it encounters. 
+    If all values are falsy, it returns the last value.
+    let value = userInput || defaultValue; // if userInput is falsy, value gets defaultValue
+
+=> Recursion :  a function calls itself repeatedly.
+
+=> Constructor: a constructor function is used to create and initialize objects.
+
+=> Promise handling asynchronous operations and chaining allows you to create complex workflows by chaining multiple .then() or .catch() methods.
+  Pending: The promise is still in progress, the operation is not finished.
+  Fulfilled (Resolved): The asynchronous operation completed successfully.
+  Rejected: The asynchronous operation failed, and an error occurred.
+
+  [Promise chaining, Return Values or Promises, Error Handling, Concurrent Operations(promise.all) ]
+
+  fnFetchApi(){
+    return new Promise((resolve, reject)=>{
+      setTimeout(()={
+        if(true){
+          resolve("Resolved");
+        }else {
+          reject("Reject");
+        }
+      }, 3000)
+    })
+  }
+
+  fnFetchApi().then(()=>{
+  
+  }).then(()=>{
+  
+  }).catch(()=>{
+  
+  })
+
+=> Async/ wait : An asynchronous function automatically returns a promise.
+  An async function always returns a promise, and inside that function, you can use the await keyword.
+  await: This keyword is used inside an async function to pause the execution of the function until a promise is resolved. 
+  The result of the promise is returned once it's resolved. If the promise is rejected, an error is thrown.
+   errors handling using try/catch blocks,
+
+=> Classes : classes provide a blueprint for creating objects with shared properties and methods.
+
+  => Inheritance : where one class can inherit from another. This allows you to create subclasses that extend the functionality of a base class.
+
+  => Getters, Setters :  which allow you to control how properties of an object are accessed and modified.
+  
+
+=> Set operator, Get operator
+
+=> Event loop
+
+=> event bubbling
+
+=> event capturing
+
+=> Array destructring
+
+=> object destructring
+
+=> Class Expressions
+
+=> Module 
+
+=> Constructor Function 
+
+=> Optional chaining
+
+
+
+
+
+
+
+*/
 

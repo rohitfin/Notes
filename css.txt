@@ -1,12 +1,4 @@
 *-------- flex box
-display : { flex, flex-inline }
-flex-direction : { row, row-reverse, column, column-reverse }
-flex-wrap : { wrap, no-wrap, wrap-reverse }
-flex-flow : { row  wrap, column wrap }
-justify-content : { flex-start, flex-end, center, space-around, space-between } [horizontal, X-axis]
-align-content : { flex-start, flex-end, center, space-around, space-between, stretch }[vertical, Y-axis]
-align-items	: { flex-start, flex-end, center, baseline, stretch } [vertical, Y-axis]
-order : { 1, 2, 3, 4 }
 flex-grow : { 0 [default] 1, 2, 3 } [all the space they use]
 flex-shrink : { 0, 1} [ 1 is default, 0 can not be shrink ]
 flex-basis : { value[px, %] }
@@ -37,13 +29,6 @@ grid-row-start : { 1 }
 grid-row-end : { 2 }
 grid-row : { 1 / 2, 1 / span 2 } [starting / ending] [span is grid cell]
 grid-area: { 2 / 1 / span 2 / span 3 } [ start on row 2 column 1, and span 2 rows and 3 columns ]
-order : { -1, -2, 3, 4 }
-justify-content : { start, end, center, space-around, space-between, space-evenly } [horizontal, X-axis]
-align-content : { start, end, center, space-around, space-between, space-evenly } [vertical, Y-axis]
-justify-items:flex-start, flex-end, center, stretch [default]
-align-items: stretch,flex-end,flex-start,center,baseline;  [all child div ke text ke line me ]  [vertical center,  Y-axis]
-justify-self:flex-start, flex-end, center, stretch; 
-align-self: start, end, center, stretch; 
 place-items: align-items + justify-items;
 
 *--------- Gradients
@@ -448,8 +433,163 @@ ul li a:hover, ol li a:hover {} => :is(ul li, ol li) a:hover{}
       color: red;
     }
 
+=> none pointer event 
+  pointer-events: none; user-select: none;
+  
 => 
 
 => 
 
 => 
+
+--------------------------------------- Begin: Print ---------------------------------
+
+-default page size
+
+@page {
+  size: 5.5in 8.5in;
+}
+
+-paper size keywords
+
+@page {
+  size: A4;
+}
+
+
+-keyword to specify the page�s orientation � �portrait� or �landscape.�
+
+@page {
+  size: A4 landscape;
+}
+
+
+-LEFT AND RIGHT PAGE SPREADS
+
+@page :left {
+  margin-left: 3cm;
+}
+
+@page :right {
+  margin-left: 4cm;
+}
+
+
+-The :first selector targets the first page of a document
+
+@page :first {
+
+}
+
+
+-The :blank pseudo-class selector targets any page that is �intentionally left blank.�
+ To add this text, we can use generated content that targets the top-center margin box.
+
+@page :blank {
+  @top-center { content: "This page is intentionally left blank." }
+}
+
+
+
+
+-To force this heading to always be the beginning of a page, set page-break-before to always.
+
+h1 {
+  page-break-before: always;
+}
+
+
+
+-To avoid breaks directly after a heading, use page-break-after.
+
+
+h1, h2, h3, h4, h5 {
+  page-break-after: avoid;
+}
+
+
+
+-To avoid breaking figures and tables, use the page-break-inside property.
+
+table, figure {
+  page-break-inside: avoid;
+}
+
+
+======	page counter
+
+-page numbers to the bottom-right of right-hand pages
+
+@page:right{
+  @bottom-right {
+    content: counter(page);
+  }
+}
+
+
+-page numbers to the bottom-left of left-hand  pages
+
+@page:left{
+  @bottom-left {
+    content: counter(page);
+  }
+}
+
+
+-created a counter named pages==�Page 3 of 120,�
+
+@page:left{
+  @bottom-left {
+    content: "Page " counter(page) " of " counter(pages);
+  }
+}
+
+
+
+
+-create your own named counters and increment and reset them as you require.
+
+body {
+  counter-reset: chapternum;
+}
+
+h1.chapter:before {
+  counter-increment: chapternum;
+  content: counter(chapternum) ". ";
+}
+
+
+
+-A common way to number figures is to use chapternum.figurenum.===�Figure 3-2�
+
+body {
+  counter-reset: chapternum figurenum;
+}
+
+h1 {
+  counter-reset: figurenum;
+}
+
+h1.title:before {
+  counter-increment: chapternum;
+  content: counter(chapternum) ". ";
+}
+
+figcaption:before {
+  counter-increment: figurenum;
+  content: counter(chapternum) "-" counter(figurenum) ". ";
+}
+
+
+
+======CROSS-REFERENCES
+-target-counter
+
+<a class="xref" href="#ch1" title="Chapter 1">Chapter 1</a>
+
+
+a.xref:after {
+  content: " (page " target-counter(attr(href, url), page) ")";
+}
+
+--------------------------------------- End: Print -----------------------------------

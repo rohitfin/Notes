@@ -1,0 +1,1328 @@
+
+https://v2.angular.io/docs/ts/latest/guide/template-syntax.html#!#template-input-variables
+
+=> npm install -g @angular/cli@latest 
+=> ng new myProjectName -- create new project
+=> ng serve -- start (npm start)
+=> CTR + C -- stop
+=> ng generate component xyz -- generate component
+=> ng generate module ModuleName --route ModuleName --module app.module
+=> ng g pipe pipeName
+=> npm ng build => build
+=> routing and navigation -- on change of URL load the component - <router-outlet></router-outlet>
+=> service -- access from any where. to share a data between component to component.
+=> http -- ajax
+=> Change port => ng serve --open --port=3200 -> between 1024 to 65535
+
+---code---
+1.  npm i jQuery / npm i bootstrap@3
+    install bootstrap, ngBootstrap and jquery 
+
+2. component => ng generate component firstComponent || ng g c firstComponent   (ng g c NewCompo --spec=false)
+     ts => decorator- @component
+      selector => 'my-page', '.my-page', '[my-page]'
+      use by => <my-page>, <div class="my-page">, <div my-page>
+
+  => Standalone component - ng g c componentName --Standalone 
+      { path: 'standalone', loadComponent: () => import('./standalone/standalone.component').then(m => m.StandaloneComponent) },
+
+  => component with routing and module.
+    ng g m [myModule_name] --route [myRoute_path_name] --module [routing_module_name]
+
+  => Module with routing
+    ng g m ModuleName --routing=true  
+
+3. routing 
+  route module / lazy loading
+  ng generate module ModuleName --route ModuleName --module app.module
+
+  ng generate module app-routing --flat --module=app (creating app.routing file)
+
+  app-routing.ts
+  { path: 'moduleOne', loadChildren: () => import('./module-one/module-one.module').then(m => m.ModuleOneModule) }
+
+  module-one-routing.module.ts
+  { path: '', component: ModuleOneComponent }
+    { path: 'blog', component: BlogComponent,
+    children :[
+      { path: 'blogOne', component: BlogOneComponent }
+    ]},
+
+  <a routerLink="blog"> Blog </a> 
+  <a routerLink="blog/blogOne"> Blog One </a> 
+  <router-outlet></router-outlet>
+  
+ -----------------------------------
+ 
+  { path: '**', component: HomeComponent },
+  { path: '',   redirectTo: '', pathMatch: 'full', component: HomeComponent }
+  { path: '',   redirectTo: 'HomeComponent', pathMatch: 'full' }
+
+4. data binding 
+  {{data}}  --> using interpolation to value binding
+  [property]="data" --> attribute Binding to DOM  
+  (click)="save()" --> Event Binding 
+  [(ngModel)]="data" --> two way data biding [FormsModule] 
+  
+  <button [disabled]="!isVisible" [style.color]="textColor" [class.active]="isActive" (click)="save()"> Save </button>
+
+5. for loop
+  *ngFor="let value of arrayName;let i=index"  
+  
+6. decorator
+  @Input decorator
+    pass property from  parent to child
+        parent
+        <app-child [property]="expression"></app-child>
+        expression = 'Enter your message';
+
+        child
+        import Input decorator.
+        @Input() property:any;
+        {{ property }}
+
+  @Output decorator, EventEmitter
+    pass function form parent to child
+    pass data from child to parent
+
+    parent
+    <app-child (fnChildtoParent)="fnGetChildtoParent($event)"></app-child>
+    fnGetChildtoParent(eventValue){ condition; }
+
+    child
+    @Output() fnChildtoParent : EventEmitter = new EventEmitter();
+    clickEvent(value){
+      this.fnChildtoParent.emit(value);
+    }
+
+7. observable
+   Sending data between children to children but both the children should load on same component(parent).
+   observable subscribe inside the ngOnInit() lifecycle then it will work.
+
+8. get request - import http 
+
+    myService => import { HttpClient } from '@angular/common/http';
+          constructor(private http: HttpClient) { }
+    
+    app-module =>  import { HttpClientModule  } from '@angular/common/http';
+
+
+-----------------------------------------------
+=> Important Points 
+  => domSanitizer html =>  ensure that any content inserted into the DOM does not contain harmful code.
+        this.title = this.domSanitizer.bypassSecurityTrustHtml('heading');
+      <div [innerHTML] = "title"></div>
+
+      <div [style]="safeStyle">Styled Text</div>
+      unsafeStyle: string = 'background-color: red; color: green;';
+      safeStyle: SafeStyle;
+      this.safeStyle = this.domSanitizer.bypassSecurityTrustStyle(this.unsafeStyle);
+
+  => css pointer event 
+    pointer-events: none; user-select: none;
+
+  => loop 
+    *ngFor="let dummy of ' '.repeat(4).split(''), let x = index
+    or 
+    counter(i: number) {return new Array(i); }
+    *ngFor='let in of counter(4)'
+
+  => Meta tags  (https://sreyaj.dev/dynamically-update-title-and-meta-tags-angular)
+    import { Meta, Title } from '@angular/platform-browser'
+    constructor(
+      private meta: Meta,
+      private title: Title) { }
+    ngOnInit(): void {
+      this.title.setTitle("xxxxxxx")
+      this.meta.addTags([
+        { name: 'keywords', content: 'xxxxxx' },
+        { name: 'description', content: 'xxxxx' },
+      ])
+    }
+
+  => Scroll 
+  infinite-scroll [infiniteScrollDistance]= "5" [infiniteScrollThrottle]="150" (scrolled)="onScrollDown()"
+  onScrollDown(ev?:any) { console.log("scrolled down!!", ev);  }
+
+  => Update 
+    update angular globaly, update typescript, legacy peer make true, npm i, ng g environmets
+
+-----------------------------------------------
+
+=> Theory with example
+
+  Ng serve --open ( project open in browser)
+
+  On CMD
+  code .  => Open this folder on vs code
+
+  * Adding Bootstrap styles links on the angular.json file On Architect / build section
+  * For ngBootstrap -> import styles on style.css file
+  * for icon -> import icon file on style.css file.
+  * How to create angular application
+      It required 3 things node, npm, angular cli.
+      ng new applicationName
+
+  * what is component
+      html, css, ts, spce.ts
+
+      ts => decorator- @component
+          selector: 'my-page', '.my-page', '[my-page]'
+                      <my-page>, <div class="my-page">, <div my-page>
+
+  * Which File Executes First in Angular?
+    First it goes to the angular.json file, It loads up main.ts (first file that executes) and read its content.
+    index.html, main.ts, app-module(Know all about component in this file)
+
+    e2e => end to end test, automate test 
+    node modules => all third party libraries, not deployed our server
+    environment => store configuration setting
+    main.ts => starting point our application
+    polyfills.ts => feel the gap between browser and the javascript version to run the code in angular
+    test.ts => setting our environment
+    .editorconfig => all developer team have same setting
+    .gitignore => managing our code 
+    karma.config => test runner of javascript code 
+    protractor.conf.js => running tool for e2e.
+    tsconfig.json => typescript complier 
+    tslint.json => static annalistic typescript code
+    vendor.bundle.js => third party libraries
+    package.json => records important metadata about a project and contain the information about npm packages installed for the 
+        project that npm uses to install dependencies, run scripts, and identify the entry point to our package.
+    angular.json => The angular.json file is a key configuration file in an Angular project that defines how the project is built,
+        served, and tested. It allows you to configure project-specific settings like assets, styles, and scripts, as well as the build process for different environments.    
+
+  stylesheets compile => all stylesheets compile into javascript.
+
+  => Angular 
+    Angular is javascript framework. Angular is a component based single page application that is written in typescript. It is maintained by google.
+
+  => Directive
+    Directive use for DOM manipulation.Directives are classes that add additional behavior to elements. 
+    With directive we can manage forms, lists, styles and what user see. With Directive we should tell DOM element how 
+    should behave or look like.
+
+    Components =>	Used with a template. This type of directive is the most common directive type.
+
+    Attribute directives =>	Change the appearance or behavior of an element, component, or another directive. with NgClass, NgStyle and NgModel
+
+    Structural directives =>	Change the structure on the DOM by adding or removing DOM elements. with the help of NgFor, NgIf and NgSwitch (common module)
+
+    => Custom Directives
+      ng g directive CustomDirective
+      2 files created and update in app.module file
+      CustomDirective.ts file => import { ElementRef } from '@angular/core';
+        class CustomDirectiveWork {
+          constructor(private el: ElementRef) {
+            el.nativeElement.style.color = "red"    (with nativeElement we can access JavaScript DOM elements)
+          }
+        }
+        <div CustomDirectiveWork> check directive work </div>
+        
+    => Renderer2 
+      DOM manipulating without accessing the DOM directly and that is by using renderer2 class.
+      Renderer2 allow us to manipulate the DOM without accessing the DOM elements directly, by proving a layer of abstraction
+      between the DOM element and the component code.
+
+        constructor( private element: ElementRef, private renderer: Renderer2 ){ }
+        ngOnInit(){ this.renderer.setStyle(this.element.nativeElement, 'backgroundColor', 'black'); }
+
+
+
+    => input properties in Directives
+          <div CustomDirectiveWork [error]='Hello'> check directive work </div>
+
+          class CustomDirectiveWork {
+            @Input("error")error: string;
+            constructor(private el: ElementRef) {  }
+            ngOnInit(){
+                this.el.nativeElement.innerHTML = "<div><span>${this.error}</span></div>"  
+            }
+          }
+
+          or 
+          other component 
+          <div class="card" [appDisabledProduct]="product.is_in_inventory"></div>
+
+          direcitve.ts file
+          @Input() set appDisabledProduct(disabled: boolean){ (when we use set keyword then we use property as a method)
+            if(disabled == false){
+              this.renderer.addClass(this.element.nativeElement, 'disabled');
+            }
+          }
+
+  => Host binding , Host listner 
+    When we create custom directive and binding element in our directive with the use of host binding and 
+    to continuously listening event so we use host listener.
+
+    with the help of @HostListner we addClass and removeClass, with mouseenter, mouseout event.
+
+    @HostListener('mouseenter') OnMoseEnter(){
+      this.renderer.addClass(this.element.nativeElement, 'product-highlight');
+    }
+    
+    @HostBinding('style.background') backgroudClr: string = 'black';
+    @HostBinding('style.color') textColor: string = 'red';
+
+
+  => One Way binding => use for Data exchange
+    One way binding data flow one directional. Means ts file to html. When we change on html file it will not change on ts. We can get the data with template binding or event binding
+
+  => Two way binding => use for Data exchange --> [(ngModel)]
+    Two way binding data flow two directional. Means when we change on ts file, it will change on html file and when change on html file, it also change on ts file. We can get the data with [(ngModel)].
+
+  => Attribute binding
+    <div [attr.title]=" 'heading' "></div>
+    <img [attr.alt]=" 'srcTitle' "></img>
+
+    => ngClass 
+    <div [class]=" 'first second' ">
+    <div [class]=" ['first', 'second'] ">
+    <div [class]=" {first: true, second: true, third: true} ">
+    <div [class]="{'first second': true}">
+    <div [class]=" (condition)? trueValue : falseValue ">
+
+    => style
+    <div [style.color]=" 'red' "></<div>
+    <div [style.color]=" clrName "></<div> // .ts file clrName = 'red';
+    <div [style]="{ 'background-color':'green', 'padding': '10px' }"></<div>
+    <div [style]="{'background-color':person.country === 'UK' ? 'green' : 'red' }"></<div>
+
+  => If and else 
+    Ternary Operator => 'padding-top': true ? '0' : '30px';
+    <div *ngIf=" condition "></div>
+    or
+    <ng-template [ngIf="condition"]></ng-template>
+    or
+    show = true;
+    <div *ngIf="show else falseTemplate"> This condition is true! </div>
+    <ng-template #falseTemplate>  <h1> Else block</h1> </ng-template>
+    or
+    <div *ngIf="isLoggedIn; else loggedOut"> Welcome back, friend. </div>
+    <ng-template #loggedOut> Please friend, login.  </ng-template>
+    or
+      show = 'yes';
+    <div *ngIf=" show== 'yes'; then trueTemplate; else falseTemplate"> </div>
+    <ng-template #trueTemplate>  <h1> if block</h1> </ng-template>
+    <ng-template #falseTemplate>  <h1> Else block</h1> </ng-template>
+      or 
+    <ng-template [ngIf]="isLoggedIn" [ngIfElse]="loggedOut"> <div> Welcome back, friend.</div> </ng-template>
+    <ng-template #loggedOut> <div> Please friend, login. </div> </ng-template>
+
+
+  => Switch case
+    On one action have more condition.
+    .ts -> color = 'red'
+    <div [ngSwitch]="color">
+      <div *ngSwitchCase="red">...</div>
+      <div *ngSwitchCase="green">...</div>
+      <div *ngSwitchDefault>...</div>
+    </div>
+
+  => Input decorator 
+      pass property from  parent to child
+          parent
+          <app-child [property]="expression"></app-child>
+          expression = 'Enter your message';
+
+          child
+          import Input decorator.
+          @Input() property:any;
+          {{ property }}
+
+          OR 
+
+      <app-child [property]="expression"></app-child> 
+      expression = 'some text';
+
+      @Input("property") weCanWriteAnyName: any;
+      {{ weCanWriteAnyName }} 
+
+  => Output decorator, EventEmitter
+      Some time we pass data or action child component to parent component. we can create event by using "EventEmitter" and we can raise that event by  using predefined the method "emit()".
+
+      parent.html
+      (onParentClickEvent)="func($event)"
+      parent.ts 
+      func(eventValue){ condition; }
+
+      child.ts
+      import output decorator
+      @Output() onParentClickEvent : EventEmitter = new EventEmitter();
+
+      clickEvent(value){
+        this.onParentClickEvent.emit(value);
+      }
+
+    or 
+    <app-child (someOutputName)="methodName()" ></app-child> 
+    methodName(){ }
+
+    @Output("someOutputName") eventName: EventEmitter = new EventEmitter(); 
+
+  => Template refrence (#)
+      A template refrence variable is a variable to store a reference to a DOM elements, component or directive on which is used.
+      
+      <input type="text" #inputText />
+      <button (click)='onClickGet(inputText);'>Click</button>
+
+      onClickGet(inputEl: HTMLInputElement){
+        console.log(inputEl);
+      }
+
+  => @viewChild
+
+    Parent component access all the methods and properties form child components. Single instance
+    parent.ts 
+      import viewChild
+      @viewChild("referenceVariableName") variableName: ChildComponentName;
+      func(){
+        this.variableName ----> access all the method and properties
+      }
+    parent.html 
+      <app-child #referenceVariableName ></app-child>  
+
+      or
+      the viewChild decorator is used to query and get a reference of the DOM element in the component. It returns the first matching element based on the selector. 
+      it take 2 argument. second argument is Optional.
+        1. read: Use it to read the different token form the query elements.
+        2. static: Determines when the  query is resolved.
+          - True is when query is initialized (before the first change detection) for the first time.
+          - False if you want it to resolved after every change detection. (it will only get initialzed when the change detection cycle runs )
+            ex. @viewChild('inputText', {static: true});
+      
+      Child component 
+      <input type="text" #inputText />
+      <button (click)='onClickGet();'>Click</button>
+
+      @viewChild('inputText') inputEl: ElementRef; // take two argument, first selector Element or selector component we can pass and second optional object.
+      onClickGet(){
+        console.log(this.inputEl.navtiveElement.value);
+      }
+
+  => @viewChildren 
+      The viewChildren decorator is used to get a reference to the list of DOM element form the view template in the component class. It returns all the matching elements.
+
+      Import "QueryList" and convert "QueryList to Array".
+
+    parent.ts 
+      import viewChild and QueryList 
+      @viewChild("referenceVariableName") variableName: QueryList<ChildComponentName>;
+      func(){
+        var getAll = this.variableName.toArray();
+      }
+    parent.html 
+      <app-child #referenceVariableName ></app-child> 
+
+    OR
+      Child component 
+      <input type="text" #inputText />
+      <input type="email" #inputText />
+      <input type="number" #inputText />
+      <button (click)='onClickGet();'>Click</button>
+
+      @viewChildren('inputText') inputEls: QueryList<ElementRef>; // take two argument, first selector Element and second optional object.
+      onClickGet(){
+        this.inputEls.forEach((el)=>{
+        console.log(el.navtiveElement.value);
+        })
+      }
+
+  => ng-container    
+    Then ng-container is a special angular element that can hold stuctural directives without adding new element to the DOM.
+
+  => ng-content and contentChild
+    parent.html 
+      <app-child>
+        <h1>Hello</h1>
+        <p #para>How are you?</p>
+      </app-child>
+
+    child.html
+      <section>
+        <h2>heading</h2>
+        <ng-content></ng-content>
+        <p>Data is coming form parent component</p>
+      </section>  
+
+    child.ts
+    @contentChild('para') paraEl: ElementRef;
+    click(){
+      console.log(this.paraEl.nativeElement);  
+    }
+
+  => Component 
+    component is basic ui block of code that represent the specific view.
+    Components are building block of our application that are use to develop specific part of project. for exmaple header, footer,  body part. When we create component we have to register it inside our module file. Its creates 4 file html, css, ts and spec.ts file.
+
+      ts => decorator- @component
+      selector => 'my-page', '.my-page', '[my-page]'
+      use by => <my-page>, <div class="my-page">, <div my-page>
+
+    => Standalone component
+      Standalone component is not depend to anyone it will work independently. While creating standalone component its adds one flag that is 'standalone true'. If dependencies is requied to import like commonModule on the component level but not on the module level. Most important point is standalone component no need to import on app.module file.
+
+        ng g c componentName --standalone 
+        standalone component work same as module component (lazy loading).
+
+    => Dump component
+        - Dump components are primarily concerned with the presentation and display data. They are also known as 'presentational components' or 'view component'.
+        Dump component recieved data from their parent component. They dont have dependencies on service to perform complex business logic.
+
+    => Smart Component 
+        - Smart components are responsible for managing the application's state and business logic. They often interact with services to fetch or manipulate data.
+
+
+    => Component lifecycle hooks
+    Lifecycle hooks are referred to as methods on an object or component.
+      In angular, every component has lifecycle. Angular create and render there components and also 
+      destroy them before removing from the DOM. This is achieve with the help of lifecycle hook.
+      - there are total 8 types of hooks but most used hooks are 4, 
+        *1. ngOnChanges() - get execute every time input bound properties of the component changes.
+        *2. ngOnInit() - It is called when the component is initialized means on load time. this called after ngOnChanges.
+                used to perform actually business logic. We can write onload function on ngOnInit().
+        *3. ngAfterOnInit()
+        *4. ngOnDestroy()
+
+      
+      - Whichever lifecycle hooks we want to use    
+        1. import it in the class
+        2. extend the implements interface 
+        3. Implement the method  
+
+  => life cycle hook 
+      Angular automatically executes some method in our component class at each milestone to the life cycle.
+      these are called lifecycle hooks.
+
+      1.  ngOnChanges 
+        get execute every time input bound properties of the component changes.
+        Execute automatically when we have received one or more values into input properties. that are decorated by @Input decorator. 
+        It will not execute when there are no input properties. Use for examine incoming values and want some changes in incoming values.
+
+      2. OnInit 
+        Execute automatically after loading values into data-bound properties of the components. 
+        Use to call service to get initial data form the database.
+
+      3. ngDoCheck 
+        Execute every time when change detection process start in the component.
+        Execute when an event occur, before change "detection process". Use to identify whether change detection process occur or not.
+        Use for third party control.
+      
+      4. ngAfterContentInit
+        Execute only once in a lifetime of the components after initializing the content that is supply by the parent component and rendered
+        using "ng-content" tag. 
+
+      5. ngAfterContentChecked 
+        Execute every time after completion of change detection process to the content.
+
+      6. ngAfterViewInit 
+        Execute only once after initializing all the elements in the template of the component.
+
+      7. ngAfterViewChecked 
+        Execute every time after completion fo change detection process of the template. 
+
+      8. ngOnDestroy 
+        Execute before destroying (deleting) the component object deleted from memory. [ when the route has changed. ]
+
+      Injector, provider, how to get service? => services get injected inside our component
+
+  => constructor
+     The constructor is a standard Typescript class constructor. Its called when an instance of the component is created.
+    The constructor() should only be used to initialize class members but shouldn't do actual “work”. 
+    So we should use constructor() to set up Dependency Injection.
+    dependency injection is a method in which dependencies are requested by class from the external resources.
+    In the Angular constructor, a constructor argument with dependency type injects the dependencies.
+
+  => ngOnInit() 
+    - Once the constructor phase is done now the lifecycle method get started.
+    - ngOnInit is an angular life cycle hook. Its called by angular after the constructor and after angular has finished initializing the component's properties.
+    we can make api calls in ngOnInit.
+
+  => Module 
+    Module is collection of components, directives, pipes and services.
+    Module use to organize the component and directives, pipes.
+    Module mainly use to create meaning-full groups of component that are related to specific user, part of the project or achieve 
+    some goal.
+    eg: login component, register component, my profile component
+    Module load only selected/ necessary components.
+
+    export that file on module -> import on app.module.ts file -> then use those components
+
+    ng g module moduleName
+    or
+    ng generate module ModuleName --route
+    or
+    ng generate module ModuleName --route ModuleName --module app.module
+
+  => route
+      routing is nothing but navigating one page to another page.
+      basic routing, child routing, module routing, lazy loading, redirect 404, and get route values.
+
+    => route module / lazy loading
+      when we defined routing on a specific module then we call routing module.
+      with route module load only necessary route or components.
+
+      routing module component ko import krna pdta hai app.module me. (import krne pr lazy loading nhi rah jata hai.)
+
+      => Multiple Router Outlets
+        We can have multiple router Outlets by default there is always/"at least" 1 router outlet in app.component.html file 
+        When we don't provide any name for router-outlet it becomes primary 
+        There should be only 1 primary. We can define multiple router outlets by giving name to them 
+        That's why we call them "named" router outlets. we can give any name we want - give meaningful names 
+        In routing module - if you don't define outlet - it means its primary. It will NOT show if you directly access it in the URL 
+        Syntax should be like this  - http://localhost:4200/<primary-route>( <routerOutletName> : <secondaryPath> )
+
+      => HashLocationStrategy 
+        Hands-on examples for PathLocationStrategy 
+        - Default behavior of Angular apps 
+
+        Hands-on examples for HashLocationStrategy
+          - We need to import HashLocationStrategy from @angular/core 
+          - Add it to Providers array 
+          - Angular will start loading our URLs using # 
+            index.html/#/loans/add 
+
+      => Parametrized Routes - Dynamic Routes - the route paramater are the dynamic part of the route whose value can change. These paramters provide a way to pass extra infromation to a given route. 
+        - We can send dynamic data or parameters to our routes. Those are visible in the url.
+        - URLs will look something like this - http://localhost.com/user/10
+        - While writing dynamic URLs/Params - make sure you write :(colon) for dynamic data means it can be string, integer. 
+            { path: 'product/:id', component: ProductComponent }
+        - Import the ActivatedRoute class 
+        - We can read the value in the component class 
+            - Create an object in constructor 
+                constructor(private activatedRoute: ActivatedRoute){
+                  this.activatedRoute.parmas.subscribe( res => {
+                    console.log(res) // its print id means dynamic url 
+                  })
+                }
+        or 
+          { path: 'NameComponent/:itemId', component: NameComponent },
+          var urlLastVal = this.route.snapshot.params["itemId"];
+          var urlLastVal = this.route.snapshot.paramMap.get('itemId'); // this aproach is not good when redirecting on same page only changing paramertID.
+          
+          this.route.paramMap.subscribe((params: ParamMap)=>{
+             var urlLastVal = params.get('itemId');
+          })
+
+      => Router link 
+          when ever we want to create a link we use routerLink.
+          router link can be static or dynamic in nature.
+          We DO NOT have to put "/" in variables in routerLink
+
+          ex: <a routerLink="user" [routerLinkActive]=" 'active' " [routerLinkActiveOptions]=" { exact: true} ">User Page</a>
+          ex: <a [routerLink]=" 'user' ">User Page</a>
+          ex: <a [routerLink]=" ['user'] ">User Page</a>
+          ex:  adding dynamic url 
+              <div *ngFor="let user of users">
+                  <a [routerLink]=" ['/page', user.id ] " [routerLinkActive]=" 'active' " [routerLinkActiveOptions]=" { exact: true} ">User Page</a> // url should be /user/id
+                </div>
+
+      => Query Params -  url?key=value&key=value
+        We can send data from query parameter. Query params visible in the url. most used for querying, searching and filtering data etc.
+
+        import { ActivatedRoute } from '@angular/router';
+        <a [routerLink]="['/products']" [queryParams]="{ order: 'popular'}" > Products </a>
+        this.router.navigate( ['/products'], { queryParams: { order: 'popular', 'price-range': 'not-cheap' } } );
+        or  this.router.navigate(["URLPathName"]);
+        this.route.queryParams.subscribe(params => { console.log(params);  } );
+
+      => Fragment route (#)
+        A fragment in a route is a link which jump to a section or a content in the html page, Which content the ID mentioned the fragement. A fragment comes after a # sign.
+
+        localhost:4200/home#service => service is fragement
+        <a routerLink="home" fragement="service">Home</a>
+        <a routerLink="home" fragement="about">Home</a>
+        this.activatedRoute.fragment.subscribe( res => { this.jumpToSection(res); console.log(res); });
+
+        jumpToSection(selection){
+          document.getElementById(selection).scrollIntoView({behavior: 'smooth'})
+        }
+
+      => Wild card route 
+          wild card route nothing but user whenever enter the route which is invalid or something does not exist
+          then wild card route intercept
+          { path: '**', component: HomeComponent }
+          
+        => router Change detector 
+          import { Router, Event, NavigationStart, NavigationEnd, NavigationError} from '@angular/router';
+            constructor(private router: Router) {
+                this.currentRoute = "";
+                this.router.events.subscribe((event: Event) => {
+                    if (event instanceof NavigationStart) {
+                        console.log('Route change detected');
+                    }
+                    if (event instanceof NavigationEnd) {
+                        this.currentRoute = event.url;          
+                        console.log(event);
+                    }
+
+                    if (event instanceof NavigationError) {
+                        // Present error to user
+                        console.log(event.error);
+                    }
+                });
+
+            }
+
+        => Optional routing
+          exmaple => url;key=value
+
+        => Relative Navigation 
+          Only need to change routing name on routing file no need to change all the places routingName(pathName). but when navigation we need to use raltive navigation. 
+          ex. this.router.navigate('[userListId]', { realtiveTo: this.router}); //
+          ex. this.router.navigate('[../]', { realtiveTo: this.router}); //
+
+      => Activated route 
+        ActivatedRoute is a service, that provides route-specific information associated with a component that is loaded in an outlet.  We use it to find Route Parameters, Query Parameters, URL Fragments, Static Data attached to the Route, Route Configuration that is matched this route, and ActivatedRoute instance of the root, parent, firstChild, and all children components, etc
+
+      => Absolute path and relative path
+        When we use a slash(/) before the router link path, in that case it use absolute path and the path is directly append to root url.
+        If we dont use slash(/) before the route link path it is called relative path.
+        
+        <a routerLink="/about">About</a> => Absolute path
+        localhost:4200/about
+
+        <a routerLink="home">Home</a> => Relative path
+        localhost:4200/about/home
+
+      => Route guard or Auth guard
+        Angular route guards can be used to control whether the user can navigate to or way from a route based on a given condition.
+        We need to restrict the user from accessing certain routes.
+
+        In angular, guard used to control access to routes based on certain conditions.
+        AuthGuard is used to protect the routes from unauthorized access in angular. They help ensure that users navigate our application sercurely and efficiently.
+        - CanActive (route activation) -> If a route can be accessed by a user or not. Useful when user dont have authority to user that route or page.
+        - CanActiveChild (child route activation) -> If a user can leave a route or not. The guard is useful in case where the user might have some pending changes, which was not saved.
+        - CanDeactivate (route deactivation) -> It determines whether a child route can be activated or not. When the user has filed a form like registration from and tries to navigate away without submiting. In that case, before navigating the user away, we might want to confirm if he wants to submit the data.
+          - CanLoad (module loading)
+        - Resolve (data prefetching)
+
+        { path: 'contact', component: 'contactComponent' canDeactivate: [deactivateService] }  
+        { path: 'courses' canActivateChild:[canACtivateChildFn], children:[
+          { path: 'course/:id', component: xxxxx, CanActive: [canActivateGaud] }, 
+          { path: 'popular', component: xxxxx, CanActive: [canActivateGaud] }, 
+        ] }
+        
+        => Route Navigation Event 
+          In angular, when we navigate from one route to another rote, there is a sequence of navigation events that gets
+          triggered by angular router. We can subscribe to these events and execute some logic if we want.
+          RouterModule.forRoot(routes, {enableTracing: true});
+
+  => Pipe 
+    pipe use for DATA manupulation means change data one formate to another formate.
+    Angular has in-build pipe like titlecase, uppercase and lowercase, Percentage.
+    we can also create custom pipe [ ng g pipe pipeName ].
+    Pipe can be provided with argument by using colon ( : ) sign.
+
+    html => {{ 10 | pipeName: arg1}} => passing argument after the semicolon(:)
+    pipe file => const [arg1] = args; => get the argument
+
+    {{ property | uppercase }} => Convert string to upper case.
+    {{ property | slice : startIndex : endIndex }} => get part of string, between startIndex to endIndex.
+    {{ property | number : .2 }} => Provide digit grouping and controls decimal places.
+    {{ property | currency: 'USD' }} => Provide currency symbol 
+    {{ property | json }} => convert javascript object into json formate 
+    
+  => custom pipe 
+    Inherit PipeTransform interface and implement its transform method.
+
+      <p>{{ score | percentage: totalScore: 2}}</p>
+
+    import { Pipe, PipeTransform } from '@angular/core';
+      @Pipe({ name: 'percentage' })
+      export class PercentagePipe implements PipeTransform{
+          transform(value: number, totalMark: number, decimal: number = 0) : string { // value = score, decimal = 2
+              return (value / totalMark * 100).toFixed(decimal) + '%';
+          }
+      }
+
+  => Slice pipe 
+    Slice pipe take two parameter startIndex and endIndex and it get part of string, between startIndex to endIndex.
+
+  => Pure pipe
+    All the pipes are by default pure pipe. Pure pipe is faster then impure pipe.
+    Pure pipe doesn't re-execute, in case of any changes to the object properties.
+    Pure pipe doesn't re-execute, in case of any elements added or removed in the array.
+    A pure pipe is only called when Angular detects a change in the value or the parameters passed to a pipe.
+    Jispe pipe use kiya hai uski value change honi chahiye.
+
+  => Impure pipe 
+    The pipe is executed on every change detection. It re-execute automatically if any value or element added or remove.
+    impure pipe is called for every change detection cycle no matter whether the value or parameter(s) changes.
+      @Pipe {
+        name: 'pipeName',
+        pure: false
+      }
+
+  => Why Async pipe is impure?
+    Async is an example of an impure pipe. It is always checking for new input data.
+    The async pipe subscribes to an Observable or Promise and returns the latest value it has emitted. When a new value is emitted, the async pipe marks the component to be checked for changes. When the component gets destroyed, the async pipe unsubscribes automatically to avoid potential memory leaks.  
+
+    <p>Total Students: {{arrData.totalStudent | async }}
+
+  => Model Class
+    model defined for data structure and validation. Its is part of typescript. 
+    Model class reflect the data from database server.
+    ex on object for validation we have to make interface.
+
+    ng g class ModelClassName
+
+      obj = {
+        name: string = 'mike',
+        num: number = 1,
+        Indian: boolean = true,
+        add: any = '12, mumbai '
+      }
+
+  => constructor
+    The constructor is a special method in the class, which automatically execute when an object is created for the class.
+    constructor we inject our service.
+
+    constructor(private myService: Service){ } - 
+    here "myService" is reference variable. and in order to make this reference variable as a property of the current working class,
+    we require to add the keyword "private".
+
+  => Service 
+    Service where we write our common logic and interacting with API's. and sharing common logic to 
+    different components. Service is just a class. sharing data between components.
+    It does bring the injectable and has. Injectable decorator and it's provide to application level.
+
+    services is a common reusable piece of functionality shared between different components  
+    Service use for sharing data between components. add private  access modifier on constructor.
+
+    app-module.ts => import httpClientModule
+    service.ts - import httpClient
+    
+    => Master service code
+      ... ghi.component.ts
+            getUser(){
+              this.isLoading = true; var data = {};
+              this.def.getUser(data).subscribe({
+                next:(v) =>{   },
+                error:(e) => { console.log('HTTP Error', e); }
+              })
+            }
+
+      .... def.service.ts
+        getUserList(body: any): Observable<any> {
+          const url = this.api + '/College/GetUserList';
+          return this.abc.fnGetData(body, url);
+        }
+        addUpdateUser(body: any): Observable<any> {
+          var url = this.api + '/College/AddUser';
+          var updateUrl = this.api + '/College/UpdateUser';
+          return this.abc.fnAddUpdateFormData(body, "updateKrneWalaIdName", url, updateUrl);
+        }
+        deleteUser(userId: number){
+          var url = this.api + '/DeleteUserByUserId?userId=' + userId;
+          return this.masterService.fnDeleteMethod(url);
+        }
+      .... abc.service.ts
+        fnAddUpdateData(body:any, dataId:any,  url:string, updateUrl:string ){    
+          Object.keys(body).forEach(key => {      
+            body[key] = (body[key] === "0" || body[key] == "" || body[key] == "null") ? null : body[key];
+          });
+          body.modifiedBy = this.arrEmpData["empUserName"], body.modifiedDate = this.getCurrentDateTime(), body.modifiedIp = this.ipAddress;      
+          if (body == 0 || body[dataId] == "" || body[dataId] == undefined) {
+            //body[dataId] = 0;
+            body.createdBy = this.arrEmpData["empUserName"], body.createdDate = this.getCurrentDateTime(), body.createdIp = this.ipAddress;
+            return this.http.post<any>(url, JSON.stringify(body), this.headerOption)
+              .pipe(retry(1), catchError(this.handleError));
+          }
+          else {
+            return this.http.put<any>(updateUrl, JSON.stringify(body), this.headerOption)
+              .pipe(retry(1), catchError(this.handleError));
+          }
+        }
+        fnGetData(body:any, url : string){       
+          Object.keys(body).forEach(key => {      
+            body[key] = (body[key] == "0" || body[key] == "" || body[key] == "null") ? null : body[key];
+          });
+          return this.http.post<any>(url, JSON.stringify(body), this.headerOption)
+          .pipe(retry(1), catchError(this.handleError));
+        } 
+        fnDeleteMethod(url: string): Observable<any> {
+          const headers = { 'Authorization': 'Bearer my-token', 'My-Custom-Header': 'foobar' };
+          return this.http.delete<any>(url, {headers});
+        }
+
+    => search filter
+        updateFilter(event:any) {
+          var q = event.target.value.toLowerCase();
+          if (q.length == 0) {
+            this.arrData = this.arrTemp;
+            return;
+          }
+          if (q.trim() == '') {
+            return;
+          }
+          this.arrData = this.arrTemp;
+          this.arrData = this.arrData.filter((d:any) => {
+            let name = d["userName"] == null ? "" : d["userName"];
+            if (userName.toLowerCase().indexOf(q.toLowerCase()) > -1 ) {
+              return true;
+            }
+            return false;
+          })
+        }
+
+  => Cross origin error 
+    Domain and server url both are different.  
+
+  => Observable and Observer 
+    Observable(event emitter) -> Observer (Event listener Subscriber) -> Handler (Event Handler)
+
+    "Observable and Observer" is a pattern of message passing from "publisher" to "subscriber".
+    
+      -> flow of functionality
+        . Observable is created.
+        . Observer subscribe to the observable
+        . Observable can pass message (notification) to Observer.
+        . Each time, when the Observable passes a notification, it received by Observer.
+      -> Real time use 
+        . While receiving response form AJAX.
+        . While performing large tasks such as uploading the files, converting content into PDF formate etc.
+      -> Observable execute only when the observer subscribe to it.
+
+    => Observable 
+      Use observable because if we dealing with asynchronous data like fetching data from server. 
+      Observable are sequence of data that gets emitted asynchronously time to time.
+      Observable handle variety of asynchronous operations.
+      An Observable can deliver multiple values of any type - literal, message or event 
+
+      Subscribe => subscribe is listen to our data and our logic what we want to do with the data.
+
+      -) how to create Observable
+          1. import "Observable" and "of"
+          1.1 RxJs operator 'of' 
+            -> convert any array into Observable
+          1.2 new Observable
+          1.3 user '$' symbol - so we know to that variable is Observable.   
+          1.4 Observable are useless unless we subscribe to it
+            -> Subscribe
+            -> toPromise
+            -> pipe 
+          1.5 automatically the values are reflecting -> Subscribe to the Observable  
+        
+        example 
+          // Observable
+            myObservable = new  Observable((observer)=>{
+              observer.next([1,2,3,4,5]);
+            }) 
+          getObservaleValue(){
+            // Observer - next, error, complete
+            this.myObservable.subscribe((resp)=>{
+              console.log(resp); // [1,2,3,4,5]
+            })
+
+            this.myObservable.subscribe({
+              next:(v) => {    },
+              error:(e) => {   },
+              complete(){   }
+            })
+          }
+
+      => Of Operator
+        The "Of operator" create an observable from the arguments that we pass into it. we can pass any number of argument to "OF Operator". Each argument emitted separately one after the other. It send the complete signle at the end.
+
+        ex: myObservable = Of(this.arrData, this.arrTemp, 'hello');
+
+      => From Operator
+        The "From Operator" takes a single argument which can be iterated over and convers it into an observable.
+        It send the complete single at the end once the iteration completed.
+        If we want to convert a promise to observable "From Operator" is the best way to do that.
+
+      => Map and Filter Operator 
+        It returns observable
+        ex : myObservable = from[12,12,2,1 4, 3];
+          transferObs = this.myObservable.pipe(map(val)=>{ 
+            return val * 2;
+          })  
+
+      => transfer data between siblings
+        import { Subject } from 'rxjs';
+        obs = new Subject<any>();
+        // set 
+          this.ServiceName.obs.next(data);
+        //get 
+        this.ServiceName.obs.asObservable().subscribe(x => {
+            return this.getObs = x;
+          });
+
+      => Subject Observable 
+        subj = new Subject();
+        subj.subscribe((data)=>{ console.log(data) })
+        subj.next(Math.random());
+
+      => BehaviorSubject 
+        BehaviorSubject stores the "current value", which is lastly broadcasted to the observers.
+        And whenever a new observer has subscribed to the observable the BehaviorSubject automatically 
+        sends the current value to the new observer.
+          
+          import BehaviorSubject, subject 
+          var myBehSubject = new BehaviorSubject<any>(defaultValue);
+          myBehSubject.next(data);
+
+          myBehSubject.subscribe((data) => {
+            // do something with data
+          })
+
+      => AsyncSubject
+        AsyncSubject only passes the last emitted value to all its subscribers once the complete method is called on it.
+
+        var asyncSubject = new AsyncSubject();
+        asyncSubject.next(100);
+        asyncSubject.next(200);
+        asyncSubject.next(300);
+        asyncSubject.complete();
+        asyncSubject.next(400);
+
+        asyncSubject.subscribe((data)=>{
+          console.log(data); // 300
+        })
+
+
+  => template driven form 
+    It is a simple form. Validation on html file. It uses two-way data-binding directive (ngModel) to create
+
+      <form #form="ngForm" (ngSubmit)="onSubmit(form.value)" > or <form #form="ngForm" (ngSubmit)="onSubmit(form)" > 
+        <input ngModel name="name" type="text" placeholder="name" /> <br />
+        <input ngModel name="email" type="email" placeholder="email"  /> <br />
+        <input type="submit" value="Submit" />
+      </form>
+
+    ts - onSubmit(data){ console.log(data )} or onSubmit(data){ console.log(data.value )}
+    
+  => reactive form 
+    When we have complex form means more fields with the form then use reactive form. We create the form model wit form group, form controls and form arrays in component class and also we defined validation rules in the component class itself.
+    - Create dynamic controls easir, -structure of the form is defined in the typescript class.
+
+    FormGroup => will control hole form and it will handle are what we are getting in side the complete form and valid or not. Store the form control in the form of key value pair in an object.
+    FormControl => Specifically handle a input fields, form controls are classes that can hold both the data values and the validation information of any form element. 
+    formArray => Stores the form control as an element of an array.
+
+    import ReactiveFormsModule on app.module file.
+
+      <form [formGroup]="myForm" (ngSubmit)="onSubmitReactFrom()" >
+        <div formGroupName="fullName">
+          <div>
+            <input formControlName="fistName" name="fName" type="text" placeholder="first Name" 
+              [class]="{'is-invalid':{ myForm.get('fullName.firstName').invalid && (myForm.get('fullName.firstName').dirty || myForm.get('fullName.firstName').touched || myForm.submitted ) },
+              'is-valid':{ myForm.get('fullName.firstName').valid && (myForm.get('fullName.firstName').dirty || myForm.get('fullName.firstName').touched || myForm.submitted ) }
+            /> 
+
+              <span class="text-danger" *ngIf=" myForm.get('fullName.firstName').invalid && (myForm.get('fullName.firstName').dirty || myForm.get('fullName.firstName').touched || myForm.submitted ) && myForm.get('fullName.firstName').error?.required  ">
+                First name can't be blank
+              </span>
+
+              <span class="text-danger" *ngIf=" myForm.get('fullName.firstName').invalid && (myForm.get('fullName.firstName').dirty || myForm.get('fullName.firstName').touched || myForm.submitted ) && myForm.get('fullName.firstName').error?.minlength  ">
+                First name should contain at least 3 characters
+              </span>
+
+              <span class="text-danger" *ngIf="newProjectID.invalid && (newProjectID.dirty || newProjectID.touched || newForm.submitted) && newProjectID.errors?.['pattern'] ">
+                Project ID should contain numbers only
+              </span>
+
+          </div>
+          <div>
+            <input formControlName="lastName" name="lName" type="text" placeholder="Last name" /> 
+          </div>
+        </div>
+        <input formControlName="email" name="email" type="email" placeholder="email"  /> 
+        <span *ngIf="isSubmitted == true && dataFormControl['email'].errors" class="form-text text-danger">Please Enter Email Id</span>
+
+          <div formArrayName="lessons">
+            <div *ngFor="let lessonForm of lessons.controls; let i = index" >
+              <input formControlName="title" type="text" placeholder="title" /> 
+              <input formControlName="level" type="text" placeholder="level" /> 
+            </div>
+          </div>
+
+        <input type="submit" value="Submit" />
+      </form>
+      <button mat-mini-fab (click)="addSubItem(i)">Add Item</button>
+
+
+      import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+      myForm !: FormGroup;
+      constructor(private formBuilder: FormBuilder){}
+
+      myForm = this.formBuilder.group({
+        fullName: this.formBuilder.group({
+          fistName : ['', [Validators.required, Validators.minLength(3)]],
+          lastName : ['', [Validators.required, Validators.minLength(3)]],
+          email: new FormControl('', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]),
+          phone: new FormControl('', [Validators.required, Validators.pattern("^[7-9][0-9]{9}$")]),
+
+          lessons: this.formBuilder.array([]) // Initialize an empty FormArray
+        }),
+      })
+
+      get formControl(): {[key: string]: abstraction} {
+        return this.myForm.controls;
+      }
+
+      getlessons(itemIndex: number) {
+        //return (this.lessons.at(itemIndex) as FormGroup).get('lessons') as FormArray;
+        return this.myForm.controls["lessons"] as FormArray;
+      }
+      addLesson(itemIndex: number) {
+        const LessonForm = this.fb.group({
+          title: new FormControl(''),
+          level: new FormControl(''),
+        });
+        this.getlessons(itemIndex).push(LessonForm);
+      }
+      deleteLesson(itemIndex: number) {
+        this.getlessons.removeAt(itemIndex);
+      }
+
+      onSubmitReactFrom(){
+        this.myForm["submitted"] = true;
+        if(this.myForm.valid){
+        console.log(this.myForm.value)
+        }
+      }
+
+      => reset formData 
+      rest(){
+        var formData = new FormData();
+          for (var key in data) {
+          if(typeof data[key] == "string")  data[key] = data[key].trim();
+          formData.append(key, data[key]);
+        }
+      }
+
+      => specific field reset
+      this.dataForm.controls['fieldName'].reset();
+      this.addLesson().at(index).patchValue({ title: 'hellow' });
+
+      => Attached image 
+        <input type="file" name="fuAppDocumentResume" (change)="getFile($event, 'resumeFile')" />
+          docResumeFile: any = null;
+          getFile(e: any, fileType: string) {
+          var files = e.target.files[0];
+          if (fileType == 'resumeFile' && files.size <= 1000000) {  this.docResumeFile = files; }
+          else { this.docResumeFile = null; this.dataForm.controls['file'].reset(); }
+        }
+      
+      => valueChanges
+          valueChanges - is an event which is raised by angular form whenever the value of the FormControl, FromGroup and FormArray changes.
+        initForm(){
+          this.myForm.get('fistName').valueChanges.subscribe((value)=>{ console.log(value); }) // on firstName value change.
+          or 
+          this.myForm.valueChanges.subscribe((value)=>{ console.log(value); }) // all form data on any input value change.
+        }
+
+      => statusChanages
+          The statusChanges is an event which is raised by angular forms whenever angular calculates the validation status of a FormControl, FormGroup and FormArray changes.  It returns Valid or Invalid.
+            initForm(){
+              this.myForm.get('email')?.statusChanges.subscribe((val)=>{
+                console.log('First Name => '+ val);
+              })
+            }
+
+
+      => Async Validator
+        We use async validator when we need to send an HTTP request to the server to check if the data entered in a form element is valid or not.
+         - The async validator must return either a promise or an observable.
+         - Angular does not provide any build-in async validator. Angular all the validators are sync validators.
+
+      => patchValue 
+        The PatchValue is used to update only a subset of the elements of the FormGroup or FormArray. 
+        It will only update the matching objects and ignores the rest.
+        var firstName = 'Mike Tyso';
+        this.dataForm.get("firstName")?.patchValue(firstName);
+
+    => valueChanges Observable 
+      Pass notification with value, every time, when any form element's value is changed.
+      this.myForm.ValueChanges.subscribe((value)=> { console.log(value) })
+
+    => setValue 
+      Overwrite all the form element in the form group.
+      We must pass values of all the form elements.
+      this.myForm.setValue({ property: value })
+
+    => pathValue 
+      Updates specific form element in the form group.
+      We can pass only specific form element.
+      this.myForm.pathValue({ property: value })
+    
+    => reset 
+      clear all the values form the form elements.
+      this.myForm.reset()
+
+      clear all the values form the form elements.
+      And also updates the specific form elements.
+      this.myForm.reset({ property: value })
+
+  => Injector 
+    Injectors are data structures that store instructions detailing where and how services form. 
+    @Injectable is a decorator in Angular framework, it allows the service to be injected in Components or other service.
+
+  => provider 
+    A provider is an object declared to Angular so that it can be injected in the constructor of your components, directives and other classes instantiated by Angular.
+
+    => What is the use of providers in Angular?
+      Providers are classes that create and manage service objects the first time that Angular needs to resolve a dependency. Providers is used to register the classes to an angular module as a service
+
+    => Interceptors  before calling the api add some logic. HTTP Interceptors in Angular are classes that implement the HttpInterceptor interface. They can be used to perform various tasks related to HTTP requests and responses, such as adding headers, handling errors, modifying the request or response data, logging, authentication, etc
+
+      Change detection => any time any event occur its run like scroll, click, press any key.
+
+  =>  View encapsulation = Encapsulation means hiding data and behavior form outside world.
+        use for styling, Where component css styles are encapsulated into the components view and do not effect the rest of the application.
+        view encapsulation angular adds some unique HTML attributes to the component CSS style and also the view. So Each component
+        there will be a unique attribute which will be added to earch HTML element in that component.
+
+      ViewEncapsulation.ShadowDOM => Stay Private, don't get any style form others, It create own shadow DOM seperate from the main DOM.
+      ViewEncapsulation.None => style will affect to child component.
+      ViewEncapsulation.Emulated => children will not get any style form its parent
+
+      @Component({
+        encapsulation: ViewEncapsulation.None;
+      })
+
+  => ng-template 
+    It is pre-defined special element. which may contain one more html element.
+    <ng-template #myTemplate>
+      <h1>hellow</h1>
+      <p>asdasd</p>
+    </ng-template>
+
+    <div #ngTemplateOutlet="myTemplate"></div>
+
+  => ngModule 
+  => ng Content
+    Ng content use as a projection to take Html into another component with <ng-content></ng-content> user can present there own content.
+    ex: <app-home> Content </app-home>
+
+  => template statement
+    Template statement is response on event raise by target like element, component or a directive. 
+
+  => Dependencies injection 
+    Component needs something like a service, dependencies is the way to provided.
+    DI is wired into the angular framework and used everywhere to provide new component with the services or other things they need.
+
+  => Typescript 
+    Typescript is super set of javascript. That means any valid javascript code also valid typescript code. Its added type to the javascript. 
+
+  => life cycle hook 
+    In angular, every component has lifecycle. Angular create and render these component and also destroy them before removing from the DOM. This is achieve with the help of lifecycle hook.
+
+  => What is server rendering in angular?
+    Angular Universal generates static application pages on the server through a process called server-side rendering
+    Server-side rendering means using a server to generate HTML from JavaScript modules in response to a URL request. 
+    Server side Rendering (SSR) is a modern technique to convert a Single Page Application (SPA) running in the browser into a server based application.
+
+  => Subject
+    The subjects are also observers because they can subscribe to another observable and get value from it.
+
+  => subject and BehaviorSubject?
+    A BehaviorSubject holds one value (so we actually need to initialize a default value). When it is subscribed it emits that value immediately. A Subject on the other hand, does not hold a value.
+    In Subject, the subscribers will only receive the upcoming value. In BehaviorSubject, the subscribers will receive the previous value and also upcoming value.
+
+  => What is active route?
+      An active route is a route that is selected as the best path. Inactive routes are not displayed
+
+  => safe navigation 
+    The Safe Navigation Operator is also known as the "Elvis Operator". This operator is very useful to protect against null and undefined values in property paths.
+
+=> virtual scrolling
+   Virtual scrolling is an alternative to paging. 
+
+=> Infinite SCroll
+    When we scroll down it get automatically loaded the DOM. It there are lot of data taking to much time load then we use infinite scroll.
+
+=> Optimized performance 
+  - lazyloading - Split our app into smaller modules loaded on-demand. 
+  - Ahead of time compilation (AOT) - Compiler templates ahead of time for faster startup.
+  - Tree shaking - Remove unsed code and dependencies
+  - Optimized image 
+  - Bundle optimized - Use webpack to create smaller bundles.
+  - service workers - Implement caching for offline access.
+  - change detection - use OnPush and async pipe for efficient updates.
+  - component optimized - minimize by trackby, pure pipes, and detach change detectors.
+  - HTTP Request - use interceptor for bundle request 
+
+=> Check component how much time take and size of the component. 
+  - Source map explorer or webpack bundle analyzer
+
+=> Check code quality 
+  - SonarQube                                                     
+
+=> AOT and JIT 
+  AOT - Ahead of time compilation
+    AOT giving runtime errors. It will create javascript bundle files before its loading to the DOM.
+    Compiles code before the Angular application is loaded in the browser.
+    AOT produces smaller bundle sizes, which means faster downloads for users.
+    Recommended to use of production build.
+
+  JIT - Just in time compilation
+    Compiles Code during runtime when the Angular app is launched in the client’s browser.
+    Produces larger bundle sizes due to in-browser compilation, potentially impacting loading speed.
+    Recommended to use for local developement
+
+=> Stream Data 
+  Stream data can return data into in small chunks not the big chunks.
+  ex: Video steaming, when video size is arround 1GB, then streaming send data chunks data to the client.
+
+=> Promise vs Observable 
+  A promise cannot handles stream of asynchronous data. It always returns a single value. On the other hand, we can use 
+  observable to handle steam of asynchronous data. It can return multiple values.
+
+  A promise will certainly return a data even if no code is using that data. Whereas an observable will return a data 
+  only if someone is going to use that data.
+
+  A promise is native to javascript program. Whereas an objservale is not native to javascript and it is provided by 'RxJS' library.
+
+
+=> HostListner, HostBinding
+=> components vs ngOnInit
+=> What is Module 
+=> Authentication vs Authorization
+=> What is NPM 
+=> What is RXJS
+=> How routing work of standalone component
+=> How to load standalone component.
+=> How load component lazyliy
+=> Pre loading 
+=> Eager loading
+=> lazy loading
+=> environment configration
+=> smart component vs dump component
+=> Resolver 
+=> Debounce
+=> How angular loads.
+=> Dark mode to light mode how to change.
+=> Pagination
+=> Compress 
+=> ng serve vs ng build
+=> SSR 
+=> App Initializer 
+=> If don't have package file what will happen.
+=> Dependency vs dev dependencies
+=> Track by
+=> Angular Analiser
+=> PWA APP
+=> Multi step form.
+=> How to check code quality.
+=> How much components get time to load.
+=> Component size
+=> Mememory Leak
+=> How stop or delay api call.
+
+
+
+
+
+
+
+
+
+
+
+
+
+=> Form validation 
+   . noPropertyAccessFromIndexSignature check on other project                                                         

@@ -1,0 +1,72 @@
+w3c -- World Wide Web Consortium
+URI   ----Uniform Resource Identifier (URI)
+BFC(Block Formatting Context)
+SGML (Standard Generalized Markup Language) 
+
+==> GIT -------------------------------------
+    what is git?
+        git is version control. git is software.
+    steps:   stash, pull, pop stash, stage changes, commit, push
+
+    what is repository?    
+        repository is like place where we store our code, multiple person work on single project.
+        eg: github, bitbucket 
+
+    what is conflict?
+        what i have changed if someone also change that text, line or file then we will get conflict.
+    how to solve conflict?
+        we have to select required changes and push.
+
+    how to clone?
+    copy clone link, go to our folder where we want our project, right click open git bash paste clone link
+    then it will automatically clone our project.
+
+    how change directory means master to dev?
+    Open project on vs code on left side bottom you can see master or dev directory.
+    on click you can change directory.
+   
+==> OTHER -----------------------------
+
+    Which of the following is the first web browser?
+    Nexus, The first web browser was invented in 1990 called World Wide Web which was later renamed to Nexus.
+
+    What's the difference between WWW and HTTP?
+    Simply put, HTTP is the protocol that enables communication online, transferring data from one machine to another. WWW is the set
+    of linked hypertext documents that can be viewed on web browsers (such as Firefox, Google Chrome, and more). A major similarity,
+    though, is that both HTTP and WWW are used in website URLs.
+
+    Why do we use .com?
+    com in .com stands for commercial and the domains ending with .com represents a site which is related to something commercial but 
+    this is not true for all the websites nowadays. The .com at the end of many web addresses is called a top-level domain (TLD). 
+
+    What is a URL made up of?
+    A URL (Uniform Resource Locator) is a unique identifier used to locate a resource on the internet. It is also referred to as a web 
+    address.URLs consist of multiple parts -- including a protocol and domain name -- that tell a web browser how and where to retrieve
+    a resource.
+    
+    What does .com .org .gov mean?
+    Com, . Org. ... org and . net, are abbreviations for "commercial," "organization" and "network" respectively, but common use has 
+    moved away from these definitions, with .com becoming the most popular TLD even for sites with no commercial activity.
+
+    Can .org be trusted?
+    Be careful with the domain . org, because . org is usually used by non-profit organizations which may have an agenda of persuasion
+    rather than education in general org is better for organisations helping the "public" 
+
+    .net ?
+    net is better for other websites both commercial and personal
+
+    Is a .biz domain good?
+    biz sounds like it should be perfect for a business, it's not the first choice for many reasons
+
+
+
+
+
+    mail span (codeinwp.com/blog/why-are-my-emails-going-to-spam/).
+    What is the internet?
+    how does the Internet work?
+    What is HTTP and how it evolved?
+    How do browsers work?
+    What are domain names and hosting?
+    How DNS works?
+

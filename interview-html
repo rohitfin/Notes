@@ -1,0 +1,224 @@
+
+==> META TAGS -----------------------------
+
+    Viewport <meta name="viewport" content="width=device-width, initial-scale=1">
+    Viewport meta tag is necessary because it instructs web browsers (mainly mobile web browsers) on how to render a webpage on all 
+    devices.
+
+    Author and Copyright 
+    <meta name="author" content="Name of the author" />
+    <meta name="copyright" content="Copyright information" />
+    Author and copyright met tags are used to record information such as the creator of the website and the copyright ownership 
+    information.
+
+    Robots
+    Robots meta tag is used to provide index information to search engine crawlers. The following meta tags are used to determine 
+    whether a page is available for a web search 
+    <meta name="robots" content="follow"/>
+
+    Index:
+    This allows the web crawlers to index your webpage. The value follow also makes sure that any outgoing hyperlinks are also crawled.
+    <meta name="robots" content="follow"/>
+
+    Noindex
+    It is the opposite of Index. It tells web crawlers not to index your webpage.
+    <meta name="robots" content="noindex"/>
+
+    Nofollow
+    It prevents web crawlers from indexing outgoing hyperlinks on your web page.
+    <meta name="robots" content="nofollow"/>
+
+    Character encoding  <meta charset="UTF-8">
+    Web browsers understand need the character encoding information to display a webpage correctly. To define the character encoding 
+    we use charset attribute and assign it with an appropriate value. The most common character encoding used is the UTF-8. We use
+    UTF-8 because it has more than 10,000 characters.
+
+    Http equivalents
+    http-equivalents attribute is used to include information that is usually contained in HTTP header. It is used to control cache 
+    information,
+    expiration date, refresh page redirection and much more.
+
+
+    Cache control
+    When we use the meta tag “cache-control” with the value “no-cache”, we prevent caching of the webpage and that means the webpage 
+    is reloaded for every page view. This may lead to longer loading times but is helpful in cases where webpage is being updated 
+    frequently. 
+    <meta http-equiv="cache-control" content="no-cache"/>
+
+    Expires
+    We can set expiry date for the webpage data instead of preventing caching completely.
+    <meta http-equiv="expires" content="4500"/>
+    <meta http-equiv="expires" content="Thu, 06 Aug 2020 20:13:13 GMT"/>
+
+    Refresh
+    Instead of using complicated ways of redirecting web pages using JavaScript or other programming languages. HTML provides a much
+    more succinct and simple solution. To redirect a webpage, we need three attributes set to:
+    <meta http-equiv="refresh" content="time(seconds); url=http://www.your-website.com/"/>
+
+    Keywords
+    We can search using keywords in a search engine. Searching using keywords will show the internet user web webpages with keywords
+    corresponding to their search.
+    <meta name="keywords" content="keyword #1, keyword #2, keyword #3"/>
+
+
+
+==> HTML -------------------------------------
+    HTML	Tim Berners-Lee 1990
+
+    => HTML
+    HTML stands for Hyper Text Markup Language. HTML is coding, but it is not scripting, nor is it programming. It's a markup language. 
+    It is a language of World Wide Web.
+
+    semantic HTML
+    h1, h2, h3, h4, h5, h6, p, strong, b, header, footer, nav, section
+
+    List of block level elements
+    p, h1, h2, h3, h4, h5, h6, ol, ul, pre, address, blockquote, dl, div, fieldset, form, hr, noscript, table
+
+    List of inline elements
+    strong, b, label, img, input, button, textarea, sup, span, small, i, select
+
+    Does a <!DOCTYPE html> tag is a HTML tag
+    No, the <!DOCTYPE html> declaration is not an HTML tag. 
+    <!DOCTYPE html> is used to instruct the web browser about the HTML page.
+
+    What Is The < !doctype > ? Is It Necessary To Use In Html5 ?
+    The <!DOCTYPE> is an instruction to the web browser about what version of HTML the page is written in and The <!DOCTYPE> tag does 
+    not have an end tag and It is not case sensitive.
+
+    If I do not put <!DOCTYPE html> will HTML 5 work?
+    No, the browser will not be able to identify that it is an HTML document and HTML 5 tags do not function properly
+
+    What happens when DOCTYPE is not given?
+    The web page is rendered in quirks mode. The web browsers engines use quirks mode to support older browsers which does not follow 
+    the W3C spec. In quirks mode CSS class and id names are case insensitive. In standards mode they are case sensitive.
+
+    What does a DOCTYPE do?
+    DOCTYPE is an abbreviation for DOCument TYPE.
+    A DOCTYPE is always associated to a DTD for Document Type Definition. it controls whether the browsers uses "standards" or "quirks"
+    mode to render the document. Once a user agent has recognized a correct DOCTYPE, it will trigger the no-quirks mode matching this 
+    DOCTYPE for reading the document. If a user agent doesn't recognize a correct DOCTYPE, it will trigger the quirks mode.
+
+    What's the difference between standards mode and quirks mode?
+    Quirks mode was to support websites built before standards became widely implemented. quirks mode in browser allows u to render 
+    page for as old browsers. This is for backward compatibility.
+
+    What is the use of an iframe tag?
+    An iframe is used to display a web page within a web page.
+    The IFrame HTML element is often used to insert content from another source, such as an advertisement, into a Web page.
+    <iframe src="https://github.com" height="300px" width="300px"></iframe>
+
+    type of video formats, audio tag (mp3)
+    mp4, WebM, Ogg --- mp3, wav, Ogg
+
+    figure tag
+    The figure tag is used to add a photo in the document on the web page.
+
+    What Is A Hypertext Link?
+    A hypertext link is a special tag that links one page to another page or resource. If you click the link, the browser jumps to
+    the link's destination. <a target="_blank|_self|_parent|_top">
+
+    How Do I Create A Button Which Acts Like A Link?
+    <INPUT TYPE=submit VALUE="Text on button">
+
+    How are frames loaded into the browser window?
+    Top-to-bottom, left-to-right
+
+    "&" character with "&amp;"
+    "&lt;" character with "<" 
+    "&gt;" character with ">"
+    &nbsp :- Non-breaking space
+    &#x---;  for icon shortcut  
+
+    Why should a graphic containing several words should be saved in GIF instead of JPG?
+    It is preferable to store the image in GIF format if image consists of certain words because JPG has file compression features
+    which may render the fonts unreadable.
+
+    How Do I Add Scrolling Text To My Page?
+    with <marquee> tag <marquee direction="down" width="250" height="200" behavior="alternate" scrollamount="1"> 
+    The default speed of the marquee value is 6
+
+    List Out The Tags Those Are Mostly Used In Html?
+    <a href=”URL”>Link</a>, <h1> – heading1 tag., <b> – Used for Bold., <img src=”imageurl”>.
+
+    Who Is Making The Web Standards?
+    The World Wide Web Consortium (w3c Consortium).
+
+    What Is A Tag?
+    In HTML, a tag tells the browser what to do
+
+    What The Use Of Canvas Element In Html5?
+    The canvas element is used to draw graphics images on a web page by using javascript
+
+    How Do I Remove The Border Around Frames?
+    <FRAMESET ... BORDER=0 FRAMEBORDER=0 FRAMESPACING=0>. 
+
+    How To Transferring User To New Web Page Automatically?
+    <META HTTP-EQUIV="Refresh" CONTENT="2"; URL="http://www.yourname.com"> 
+
+    Cell Spacing And Cell Padding?
+    cellspacing : space between cells; cellpadding : space between the cell border and it's content.
+
+    How Do I Combine Multiple Sheets Into One?
+    TITLE attribute
+        <LINK REL=Stylesheet HREF="default.css" TITLE="combined">
+        <LINK REL=Stylesheet HREF="fonts.css" TITLE="combined">
+
+    What Are The Different Types Of Storage In Html 5?
+    cookie: A text file saved on the users computer to store and retrieve data
+        •localStorage object stores data for a longer period of time even if the browser is closed.
+        •sessionStorage object stores data for a specific session. 
+
+    W3C	
+    W3C stands for World Wide Web Consortium. Its purpose is to deliver the information of the World Wide Web. It also develops
+    rules and guidelines for the Web.
+
+    Why you would like to use semantic tag. Why Semantic HTML is Important?
+    A semantic element clearly describes its meaning to both the browser and the developer.
+    Examples of non-semantic elements: <div> and <span> - Tells nothing about its content.
+
+    Search Engine Optimization, accessibility, repurposing, light code. Many visually impaired person rely on browser speech and 
+    semantic tag helps to interpret page content clearly. Search engine needs to understand page content to rank and semantic tag helps.
+    Semantic HTML is the practice of using more descriptive and meaningful tags when coding in HTML. A tag is simply anything you use to
+    wrap content in. Some of the most common are <h1>, <header>, <footer>, <p>, <section>, <nav>, and <div>.
+
+    what is meta tag 
+    The <meta> tag defines metadata about an HTML document
+    metadata describes the contents of a Web page. the meta tags don't appear on the page itself, but only in the page's 
+    source code.Meta tags are  essentially little, content, descriptors that help tell search engines what a web page is about.
+    Metadata is used by browsers (how to display content or reload page), search engines (keywords), and other web services
+
+    What is favicon?
+    They are a small graphic that represents the website.
+
+    what is components
+    component = element block on UI
+
+    what is layout
+    the layout is the page's skeleton in which you inject components.
+
+    What is accessibility of a website?
+    Accessibility is the practice of making your websites usable by as many people as possible. By making your website accessible, 
+    you are ensuring that all of your potential users, including people with disabilities. We traditionally think of this as being
+    about people with disabilities, but the practice of making sites accessible also benefits other groups such as those using mobile 
+    devices, or those with slow network connections.
+
+    By making your website accessible, you are ensuring that all of your potential users, including people with disabilities, have a 
+    decent user experience and are able to easily access your information.
+
+    What do you understand by accessibility?
+    enabling access for people with disabilities.
+    Common accessibility features include text-to-speech, closed-captioning, and keyboard shortcuts.
+    Common examples of important accessibility features include: Image alt text. Keyboard accessibility
+    Accessibility can be viewed as the "ability to access" and benefit from some system or entity. The concept focuses on enabling 
+    access for people with disabilities, or enabling access through the use of assistive technology; however, research and development 
+    in accessibility brings benefits to everyone.
+
+    What do we mean by accessibility?
+    Accessibility refers to how software or hardware combinations are designed to make a system accessible to persons with disabilities,
+    such as visual impairment, hearing loss, or limited dexterity.
+
+    Accessibility means that people can do what they need to do in a similar amount of time and effort as someone that does not have a
+    disability. It means that people are empowered, can be independent, and will not be frustrated by something that is poorly designed
+    or implemented
+

@@ -90,6 +90,12 @@
 
 28.print 100 to 1
 
+29. Remove duplicate word form string.
+30. Enter a value in the input box and the next palindrome number in the output.
+31. Enter a number in the input and the countdown should decrement after that number. If we're changing the number, then counter should reset
+    & count should start from there.
+32. Sort array 
+33. 
 
 => ANGULAR 
 1. How to create angular application

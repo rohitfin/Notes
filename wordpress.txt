@@ -152,3 +152,70 @@ create database :- xampp- mySql - admin or localhost/phpmyadmin
 .) UX Blocks
 .) Beaver Builder
 
+
+=> Interview  WORDPRESS -----------------------------
+
+    What is WordPress?
+    WordPress is an Open Source Content Management System (CMS) and a blogging tool, based on PHP and MySQL. It is free of cost, and
+    you can use it for any personal and commercial website. WordPress was initially released on 27th May 2003 by Matt Mullenweg and 
+    Mike Little. WordPress was announced as open source in October 2009.
+
+
+    What is child theme in wordpress?
+    A child theme in WordPress is a sub theme that inherits all the functionality, features, and style of its parent theme.  Child themes
+    are a safe way to modify a WordPress theme without actually making any changes to the parent theme's files. Child themes are often
+    used when you want to customize or tweak an existing WordPress theme without losing the ability  to upgrade that theme.
+
+    Is Child Theme necessary?
+    Those updates are the reason to use a child theme. But if you have nothing specific to change for the theme you are using, then no
+    child theme is needed.
+
+    What is a parent theme?
+    A parent theme in WordPress is a theme that is declared parent by a another theme, child theme. ... The parent/child theme 
+    functionality allows users to easily upgrade their themes without worrying about losing any custom styling that they have added
+    to their site.
+
+    Where is WordPress content stored?
+    WordPress contents are stored in MySQL database on Server.
+
+    What are the system requirements for installing WordPress?
+    Database - MySQL 5.0 + , Web Server - , WAMP (Windows) , LAMP (Linux) , XAMP (Multi-platform) , MAMP (Macintosh) , 
+    Operating System - Cross-platform , Browser Support - IE (Internet Explorer 8+), Firefox, Google Chrome, Safari, Opera , 
+    PHP Compatibility - PHP 5.2+
+
+    What are the hooks? Define different types of hooks in WordPress.
+    Hooks enable users to create WordPress themes or plug-ins with shortcode without changing the original files.
+        There are two types of hooks:
+        Action hooks: Action hooks facilitate you to insert an additional code from an outside resource.
+        Filter hooks: Filter hooks facilitate you to add content or text at the end of the post.
+
+    How many tables are there in WordPress by default?
+        At present version, there are about 11 tables in WordPress by default. You can check the number of tables in WordPress by 
+        phpMyAdmin.
+        wp_commentmeta, wp_comments, wp_links, wp_options, wp_postmeta, wp_posts, wp_terms, wp_term_relationships, wp_term_taxonomy, 
+        wp_usermeta, wp_users    
+
+    Explain moderate comment in WordPress.
+    Comments by visitors on a post are not published directly unless the admin provides it. It is called moderation. To change 
+    comment moderation setting, select Settings option from the dashboard and check the option "Comment must be manually approved."
+
+    Explain Avatar and Gravatar in WordPress.
+    Word Avatar is used for a user's profile image in online communications. Gravatar is a web-based service which allows its users
+    to use
+    the Avatar image. 
+
+    How many types of users WordPress have?
+        WordPress user role determines access permission to the users of a WordPress site.
+            Administrator: They have full rights over a site.
+            Editor: They deal with the content section of a website.
+            Author: They only deal with their posts. They can delete their post even after publishing.
+            Contributor: A contributor doesn't have the right to publish their post or page. They need to send it to the administrator
+            for review.
+            Subscriber: Users who are subscribed to your site can log in and update their profile.
+            Follower: They don't have any right. They can only read and comment on your post.
+            Viewer: They can only read and comment on a post.
+
+    Explain the difference between WordPress Themes and Plugins.
+    A theme is an external effect of a website's presentation and designing. Whereas, a plugin is an interior effect which adds or 
+    remove some functions to a site. You can customize some functionality in themes instead of installing the plugin, but plugins
+    can't replace themes. 

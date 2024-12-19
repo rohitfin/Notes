@@ -1,0 +1,147 @@
+*/ create repository 
+*/ create git clone := git clone https://name-of-the-repository-link    // repository link
+*/ add user name :=  git config -global user.name "userName" or git config user.name    // user name changing or checking
+*/ add email id := git config -global user.email "emailAddress"  or git config user.email // user email change or check
+
+0/ stash changes
+1/ pull
+1.1/ stash out (pop stash)
+2/ stage file
+3/ type message 
+4/ click on commit
+5/ click on push
+
+-------------------------
+ Git Commands 
+git init 
+git status -> how many files are need to commit show in red color
+git add . -> 
+git status -> files are in green color
+git commit -m "Our comment"
+git brach =>  check the branch
+git brach -b newBranchName =>  make a new branch
+git checkout dev / master - change branch 
+git remote add origin PASTE SSL REPOSITORY LINK  
+git pull origin dev / master
+git push origin dev / master
+git push origin master --force (if not push then use --force)
+
+--------------------------
+
+remove another user  from your computer
+    - Credential Manager
+
+--------------------------
+
+-------------------------- Begin: CMD ----------------------
+    cmd - command line (command prompt)
+
+    cd..     --> for one step back 
+    cd pathName    --> go that path name
+    dir    --> show directory list
+    c:     --> change drive
+    mkdir fileName  --> make directive
+    del fileName    --> Delete file not folder
+    type nul > text.txt --> create empty text.txt  file
+    nul> text.txt --> create empty text.txt  file
+    ren oldName NewName --> rename 
+    cls   --> clear all commands
+    copy fileName pathName --> copy 
+    move fileName pathName --> move
+    RD /S "FolderName" --> Delete Folder
+
+    script.bat --> with bat call more function at a time.
+
+
+    node js version => node -v
+    npm version => npm -v
+-------------------------- End: CMD ------------------------
+
+-------------------------- Begin: English ----------------------
+    =>. do you want me to
+                        :- change that 
+                        :- the home page banner
+                        :- take a rest, take a break
+
+    I want you to :-
+                change the PDf 
+                :- take a rest
+                :- home page banner
+                :- do it fast
+                :- do as ASAP
+
+    =>. currently i am working on :-
+
+    =>. Because, i was working on  
+                                :- abhishek's issue.
+                                :- rasannand's issue.
+
+    =>. I will try to complete it in 2 days.
+        It will take minimum 2 hours, but i will try to complete ASAP.
+
+    =>. I am almost done with
+                            : home page.
+                            : athena e-learn landing page.
+
+    =>. Yes i will let you know, once i am done with
+                                                :- current task.                            
+                                                :- athena contact page.                 
+
+    =>. I have completed
+                        : home page changes.
+
+        I have to do 200 pushups.
+
+    =>. Let me know 
+
+    =>. Following task has been completed:
+                                        :- point 2, 4.
+        Pending task: 
+                    :- point 1, 3(need help).
+
+        Current working on                                                 
+                        : point 5. 
+
+        kindly check.
+                    : If any changes required let me know.
+                    : If any more changes required please let me know.
+                                                        : let us know.
+
+    =>. I need 
+            :- banner images for home page.
+
+        kindly request you to provide me
+                                        : banner images of home page.
+
+
+    => It was nice to e-meet.
+        I have made the changes on local, attached the screenshot. Can you please check and let us know the 
+        feedback/approval to go live.
+
+    =>. Please check revised
+
+
+
+
+    ---------------------- Meaning
+    => arbitrary => based on random choice
+    => omit => leave out or exclude
+    => concise => giving a lot of information clearly and in a few words
+    => sober => not affected by alcohol; not drunk.
+    => explicitly  => a clear and detailed manner, leaving no room for confusion or doubt
+    => implicitly => in a way that is not directly expressed
+    => tacitly => in a way that is understood
+    =>  => 
+    =>  => 
+    =>  => 
+
+    => inheritance => विरासत
+    => Render => le ke ana 
+    => immutable => unable to be changed.
+    => encapsulate  => समझाया,  express the essential features of something
+    => Composing => write or create
+    => Asynchronous => multiple thing can happen at a time
+    => Synchronous => only one thing can happen at a time
+
+
+-------------------------- End: English ------------------------
