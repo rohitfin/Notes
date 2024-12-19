@@ -1,20 +1,20 @@
 1. Declare a variable with userName
 2. Assign values to variables -> 'Rohit'
-3. change variable value to 'ankit'
-4. Assign number to variable 
-5. create two variable assign values like 100, 58.
+3. Change the variable value to 'Ankit'
+4. Assign a number to the variable 
+5. Create two variables and assign values like 100, 58.
 6. Perform addition, subtraction, multiplication and division
-7. store all 4 four values and show them.
+7. Store all 4 four values and show them.
 
-8. create object with name, last name, age, address.
+8. Create an object with name, last name, age, and address.
 9. Assign some values to variables
-10. Now the object name to Rohit, age to 26
-11. create same object for ankit 
+10. Now the object's name to Rohit, age 26
+11. Create the same object for Ankit 
 
-12. create array and insert rohit and ankit's values
+12. Create an array and insert Rohit and Ankit's values
 
 13. print number 1 to 100.
-14. print the odd and even numbers
+14. Print the odd and even numbers
 
 15. create function for addition, subtraction, multiplication, division and call them
 16. create function which take 4 parameters name, lastname, age, address and return object of it.
@@ -88,7 +88,7 @@
 
 27.  print 1, 2, 3, 5, 8, 13, 21
 
-28.print 100 to 1
+28. Print 100 to 1
 
 29. Remove duplicate word form string.
 30. Enter a value in the input box and the next palindrome number in the output.

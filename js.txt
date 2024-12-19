@@ -241,6 +241,7 @@ Prevent a link from following the URL
 * Event 
 	mouseover, mouseout, change, click, dblclick, keydown, load, submit, select,
 	keypress, mousemove, mouseleave, mouseenter, mousedown, mouseup, focusin, focusout
+	keypress, mousemove, mouseleave, mouseenter, mousedown, mouseup, focusin, focusout
 
 * slice(), splice(), split(), indexOf(), includes(), prop(), setAttribute(), getAttribute(),
 
@@ -493,6 +494,7 @@ Prevent a link from following the URL
 
 * filter method (<, >)
 	for comparing, greater-than, smaller-than its returns array
+	for comparing, greater-than, smaller-than its returns array
 	
 	var numberList = [["2"],["10","12","6"],"5",["15","7","20"]];	
 	var res = numberList.filter(function(element, index, array){
@@ -521,6 +523,9 @@ Prevent a link from following the URL
 	const resultSum = numbers.reduce((accumulator, value2, index, array) => {
 		return accumulator + value2;
 	}); // where to start not given so start with accumulator and value2
+	const resultSum = numbers.reduce((accumulator, value2, index, array) => {
+		return accumulator + value2;
+	}); // where to start not given so start with accumulator and value2
 
 
 	var numberList = [10,2,5,67,3,45,];
@@ -533,6 +538,7 @@ Prevent a link from following the URL
 	    }
 
 	},[]); // in array [] formate it will return;
+	},[]); // in array [] formate it will return;
 	console.log(res);
 
 
@@ -544,12 +550,41 @@ Prevent a link from following the URL
 			return accumulator;
 		}
 	},0); // where to start.
+	},0); // where to start.
 
 * forEach (need atleast one paramenter)
 	var cars = [ "mahindra bolero", "tata indica", "tata safari", "fortuner" ];
 	var each = cars.forEach(function(element, index, array){
 		console.log(index + " : " + element);
 	});
+	
+*  compare objects and string
+	var x = "John";             
+	var y = new String("John");
+	(x === y) // is false because x is a string and y is an object.
+
+* cannot compare objects
+	var x = new String("John");             
+	var y = new String("John");
+	(x == y) // is false because you cannot compare objects.
+
+** Don't Use new Object()
+	Use {} instead of new Object()
+	Use "" instead of new String()
+	Use 0 instead of new Number()
+	Use false instead of new Boolean()
+	Use [] instead of new Array()
+	Use function (){} instead of new Function()
+
+=> object
+	A collection of name value pairs. key value pairs.object same as array and in object, we can call function.
+	 
+		const courses = {
+			java: 10,
+			javascript: 55,
+			nodejs: 5,
+			php: 15
+		};
 	
 *  compare objects and string
 	var x = "John";             
@@ -695,11 +730,15 @@ Prevent a link from following the URL
 				static staticFunc(){
 					console.log('It can not be Instantiate, It can call by its parent');
 				}
+				static staticFunc(){
+					console.log('It can not be Instantiate, It can call by its parent');
+				}
 		}
 	}
 
 	const chris = new Human('Chris', 'Coyier')
 	console.log(chris.firstName);
+	Human.staticFunc();
 	Human.staticFunc();
 
 * Objects Linking to Other Objects (OLOO)
@@ -752,7 +791,18 @@ Prevent a link from following the URL
 	2. function Expression
 
 	1. function declaration
+	1. function declaration
 
+		function walk(){
+			console.log("Walk");
+		}
+		walk();
+		OR
+		[ this is a hoisting ]
+		walk();
+		function walk(){
+			console.log("Walk");
+		}
 		function walk(){
 			console.log("Walk");
 		}
@@ -769,7 +819,16 @@ Prevent a link from following the URL
 			console.log("run");
 		}
 		run();
+	2. function Expression  or anonymous function
+		var run = function() {
+			console.log("run");
+		}
+		run();
 
+	3. First class function - To ability to use function
+		var a = function ( ) {
+			return function xyz( ) { }
+		}	
 	3. First class function - To ability to use function
 		var a = function ( ) {
 			return function xyz( ) { }
@@ -849,6 +908,7 @@ Prevent a link from following the URL
 
 
     <!--  third way  -->
+    <!--  third way  -->
        var aa =`<div class="card" >
        <img  class="pok-img card-img-top p-2" src="${imgurl}" alt="Pok Name">
        <div class="card-body">
@@ -861,6 +921,56 @@ Prevent a link from following the URL
        $('#JSON-child-Result-3').append(aa);
 
 
+  => AJAX 
+    AJAX ( asynchronous JavaScript and XMl ) is not a language, but it is a concept, Which is used to "send background request to server" 
+    and also "get background response from server", without refreshing (reloading) the web page in the browser.
+    status code 200 - success and status code 404/500 - error
+    
+    Get - Used to retrieve / search data from server.
+    Post - Used to insert data to server.
+    Put - Used to update data on server.
+    Delete - Used to delete data from server.
+
+    $(function() {
+        var product = $("#product_list");
+        product.length && initProduct();
+    });
+
+    var _m = _m || {}, _apiName = "APIName"
+
+    _m.Ajax = function(methodName, apiUrl, dataType, requestData, contentType, asyncBoolean) {
+        return void 0 === o && (o = !0),
+        $.ajax({
+            type: methodName,
+            url: apiUrl,
+            dataType: dataType,
+            async: asyncBoolean,
+            data: requestData,
+            contentType: contentType,
+            success: function(e) {},
+            error: function(e, t) {
+                console.log("error->" + apiUrl + " | Error->", e, t)
+            }
+        })
+    }
+
+    function initProduct() {
+        var postData = { isActive = true; }
+        _m.Ajax("POST", "api_path_url", "json", JSON.stringify({ postData }), "application/json; charset=utf-8", false).then(response=>{
+            console.log(response);
+        })
+    }
+
+    function getCurrentDateTime(e) {
+      var a;
+      return (a = void 0 == e ? new Date : new Date(e)).getFullYear() + "-" + ("0" + (a.getMonth() + 1)).slice(-2) + "-" + ("0" + a.getDate()).slice(-2) + "T" + ("0" + a.getHours()).slice(-2) + ":" + ("0" + a.getMinutes()).slice(-2) + ":" + ("0" + a.getSeconds()).slice(-2) + "." + a.getMilliseconds() + "+05:30"
+    }
+    function getCurrentDateTime() {
+        var e = new Date;
+        return e.getFullYear() + "-" + ("0" + (e.getMonth() + 1)).slice(-2) + "-" + ("0" + e.getDate()).slice(-2) + "T" + ("0" + e.getHours()).slice(-2) + ":" + ("0" + e.getMinutes()).slice(-2) + ":" + ("0" + e.getSeconds()).slice(-2) + "." + e.getMilliseconds() + "+05:30"
+    }
+
+=> callback
   => AJAX 
     AJAX ( asynchronous JavaScript and XMl ) is not a language, but it is a concept, Which is used to "send background request to server" 
     and also "get background response from server", without refreshing (reloading) the web page in the browser.
@@ -965,12 +1075,42 @@ Prevent a link from following the URL
 		fulfilled: meaning that the operation was completed successfully.
 		rejected: meaning that the operation failed.
 	
+	Promises are important building blocks for asynchronous operations in JavaScript.
+	A Promise is a special JavaScript object. It produces a value after an asynchronous (aka, async) operation completes successfully, or an error if it does not complete successfully due to time out, network error, and so on. Successful call completions are indicated by the resolve function call, and errors are indicated by the reject function call.
+	A Promise is in one of these states:
+		pending: initial state, neither fulfilled nor rejected.
+		fulfilled: meaning that the operation was completed successfully.
+		rejected: meaning that the operation failed.
+	
 	function check( ){ 
 		return new Promise( resolve, reject ) {
 			Var error = true;
 			if ( !error ) { resolve ( )  }
 			else { reject ( ) } // or else { reject('Error: Something went wrong.')}
+			else { reject ( ) } // or else { reject('Error: Something went wrong.')}
 		}
+	}
+	check( ).then( function ( ){ console.log(123);
+		}).catch( function ( ){  console.log (' error '); } ) // or .catch(err => console.log(err) )
+
+	// async / await 
+	async function init(){
+		await check()
+		callBack(); // .then wala function 
+	}
+	init();
+
+	// Promises with fetch
+	var promise1 = 10;
+	var promise2 = fetch('https://jsonplaceholder.typicode.com/posts').then(res => res.json()) // because data on string formate so we have to convert into json format
+	// Promise.all 
+	Promise.all([promise1, promise2]).then(values => console.log(values));
+
+	// Async / await with fetch
+	async function fetchData(){
+		var res = await fetch('https://jsonplaceholder.typicode.com/posts');
+		var dataConvert = await res.json();
+		console.log(dataConvert);
 	}
 	check( ).then( function ( ){ console.log(123);
 		}).catch( function ( ){  console.log (' error '); } ) // or .catch(err => console.log(err) )
@@ -997,6 +1137,7 @@ Prevent a link from following the URL
 
 => Closure
 	Values are retain in function means when we invoke our  function the values are not lose, we can access those values on our inside functions that is called closure.
+	Values are retain in function means when we invoke our  function the values are not lose, we can access those values on our inside functions that is called closure.
 
 	function sum(a){
 		console.log(a);
@@ -1014,7 +1155,27 @@ Prevent a link from following the URL
 				return a+ c
 				}
 			}
+		console.log(a);
+		Var c = 10;
+		return function(b){
+		return a + b + c;
+			}
+		OR
+		return { 
+			getSumTwo: function(b) {
+				return a+ b
+				}
+			},
+			getSumThree: function(c) {
+				return a+ c
+				}
+			}
 
+		}
+		var call = sum(5);
+		console.log( call(10) );
+		console.log( call.getSumTwo(5) );
+		console.log( call.getSumThree(1) );
 		}
 		var call = sum(5);
 		console.log( call(10) );
