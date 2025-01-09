@@ -982,6 +982,9 @@ https://v2.angular.io/docs/ts/latest/guide/template-syntax.html#!#template-input
         })
 
 
+  => => Form validation 
+   . noPropertyAccessFromIndexSignature check on other project                                                         
+
   => template driven form 
     It is a simple form. Validation on html file. It uses two-way data-binding directive (ngModel) to create
 
@@ -1277,12 +1280,27 @@ https://v2.angular.io/docs/ts/latest/guide/template-syntax.html#!#template-input
   A promise is native to javascript program. Whereas an objservale is not native to javascript and it is provided by 'RxJS' library.
 
 
+=> CUSTOM_ELEMENTS_SCHEMA
+  "add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas'" occurs when you're trying to use custom elements (such as web components or 
+  elements that Angular doesn't recognize) within your Angular component templates.
+
+=> What is RXJS
+  RxJS (Reactive Extensions for JavaScript) is a library for reactive programming using Observables to handling asynchronous 
+  operations. Handling Asynchronous Data.
+  For accessing data we need to scubscribe the observable.
+  With the help filter, map, merge, switchMap of operators we can transform data.
+  
+  Subject is like a hybrid between an observable and an observer. A subject can have many subscriber, but it only emit the same value all of them.
+
+
+
+=> what is the use of angular.json, package file
 => HostListner, HostBinding
+=> stoppropagation, prevent default and stop immediatepropogation. 
 => components vs ngOnInit
 => What is Module 
 => Authentication vs Authorization
 => What is NPM 
-=> What is RXJS
 => How routing work of standalone component
 => How to load standalone component.
 => How load component lazyliy
@@ -1302,27 +1320,16 @@ https://v2.angular.io/docs/ts/latest/guide/template-syntax.html#!#template-input
 => App Initializer 
 => If don't have package file what will happen.
 => Dependency vs dev dependencies
+=> FormJoint
+=> switchMap
 => Track by
-=> Angular Analiser
+=> Angular Analyzer
 => PWA APP
 => Multi step form.
 => How to check code quality.
-=> How much components get time to load.
+=> How much components get time to load - angular Analyzer package.
 => Component size
 => Mememory Leak
 => How stop or delay api call.
 
 
-
-
-
-
-
-
-
-
-
-
-
-=> Form validation 
-   . noPropertyAccessFromIndexSignature check on other project                                                         

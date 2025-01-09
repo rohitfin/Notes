@@ -1249,19 +1249,12 @@ Prevent a link from following the URL
 		countDown(5);
 		
 
-=> currying
-=> lexical scope 
-=> Pure function 
-=> Temporal dead zone 
-=> IIFE function 
-=> Status of the Promises 
-=> call back function 
-=> generator function 
-=> Template literal 
-=> Arrow distrusting
-=> different between normal function and arrow function.
-=> Primative and non primative.
-  
+
+
+
+
+
+
 
 
 /*
@@ -1274,11 +1267,10 @@ Prevent a link from following the URL
 => Array => push(), pop(), unshift(), shift(), slice(), splice(), at(), toString(), concat(), join(), indexOf(), revese(), toReversed(), toSpliced(), 
     forEach(), filter(), sort(), map(), reduce(), includes(), find(), some(), every(), flat(), flatMap()
 => object => Object.assign(), Object.keys(), Object.values(), Object.is(), Object.entries() - key and value segrigate.
-=> Advance => Hoisting, spread operator, rest operator, higher order function, Recursion, Promise, Promise chaining, Async/ wait, Classes and Inheritance, 
-  Closure, class, Getters, Setters, Set operator, Get operator, Event loop, event bubbling, event capturing, Array destructring, object destructring, 
-  Class Expressions, Module, Shallow copy, deep copy, Constructor Function, Prototype Inheritance, try...catch, Optional chaining
-=> Pro =>  How to stop api call.
-
+=> Advance => Hoisting, spread operator, rest operator, Array destructring, object destructring, Shallow copy, deep copy, Recursion, CallBack, Promise, 
+  Promise chaining, Async/ wait, higher order function, Closure, Classes and Inheritance, Getters, Setters, Set operator, Get operator, Event loop, 
+  event bubbling, event capturing, Class Expressions, Module, Constructor Function, Prototype Inheritance, try...catch, Optional chaining
+=> Pro =>  How to stop api call, memory leakage
 
 
 
@@ -1350,14 +1342,26 @@ Prevent a link from following the URL
     const original = { a: 1, b: { c: 2 } };
     const deepCopy = JSON.parse(JSON.stringify(original));
 
-=> Spread operator -> using for shallow copy, merging array and object.
+=> Spread operator -> using for shallow copy or merging array or object. Take element and replace them individually.
+    const obj1 = { name: 'John', age: 30 };
+    const obj2 = { country: 'USA' };
+    // object literals
+    const merged = { ...obj1, ...obj2 }; // Output: { name: 'John', age: 30, country: 'USA' }
+    // Object Destructring
+    const newObj = { ...obj1, age: 50 }; // Output: { name: 'John', age: 50 };
 
-=> Rest Operator -> Gathers remaining elements into an array. Passing n number of paramter with the help of spread operator(...)
+=> Rest Operator -> used to collect multiple values into a single variable. Gathers remaining elements into an array. 
+    Passing n number of paramter with the help of rest operator(...)
       const nums = [5, 2, 1, 1];
-      function init(...arr){
-        console.log(arr); // [ [5, 2, 1, 1] ] -> it return in array
+      function init(...rest){
+        console.log(rest); // [ [5, 2, 1, 1] ] -> it return in array
       }
       init(nums);
+
+      const arr = [1, 2, 3, 4, 5];
+      // Array Destructring
+      const [first, second, ...rest] = arr;
+      console.log( first, second, rest); //Output: 1, 2, [3, 4, 5];
 
 => Hoisting -> var throw undefined, let const throw error, function declearation throw undefined.
 
@@ -1382,12 +1386,28 @@ Prevent a link from following the URL
 
 => Constructor: a constructor function is used to create and initialize objects.
 
-=> Promise handling asynchronous operations and chaining allows you to create complex workflows by chaining multiple .then() or .catch() methods.
+=> CallBack(): A callback is a function passed as an argument to another function and is executed later, usually after some asynchronous task.
+  function init(callback) {
+    setTimeout(function() {
+      callback('Result of async operation');
+    }, 1000);
+  }
+  init(function(result) {
+    console.log('Received:', result);
+  });
+
+=> Async/ wait : handle asynchronous code,  An async function always returns a promise, and inside that function, we can use the await keyword.
+  await: This keyword is used inside an async function to pause the execution of the function until a promise is resolved. 
+  The result of the promise is returned once it's resolved. If the promise is rejected, an error is thrown.
+   errors handling using try/catch blocks.
+
+=> Promise handling asynchronous operations and .then() or .catch() methods.
   Pending: The promise is still in progress, the operation is not finished.
   Fulfilled (Resolved): The asynchronous operation completed successfully.
   Rejected: The asynchronous operation failed, and an error occurred.
 
-  [Promise chaining, Return Values or Promises, Error Handling, Concurrent Operations(promise.all) ]
+  [Promise chaining, Return Values or Promises, Error Handling, Promise.all, Promise.allSettled, Promise.any, finally ]
+  Promise Chaining: Allows handling multiple asynchronous operations sequentially.
 
   fnFetchApi(){
     return new Promise((resolve, reject)=>{
@@ -1402,51 +1422,98 @@ Prevent a link from following the URL
   }
 
   fnFetchApi().then(()=>{
-  
   }).then(()=>{
-  
   }).catch(()=>{
-  
   })
 
-=> Async/ wait : An asynchronous function automatically returns a promise.
-  An async function always returns a promise, and inside that function, you can use the await keyword.
-  await: This keyword is used inside an async function to pause the execution of the function until a promise is resolved. 
-  The result of the promise is returned once it's resolved. If the promise is rejected, an error is thrown.
-   errors handling using try/catch blocks,
+  Promise.all() => accept an array of promise return single array of promise. If any promise rejected then reject the promise.
+  let p1 = Promise.resolve(3);
+  let p2 = Promise.reject(4);
+  let p3 = Promise.resolve(5);
+  
+  Promise.all([p1, p2, p3]).then(function(res){
+    console.log(res);
+  }).catch(function(err){
+    console.log(err);
+  })
+
+  Promise.allSettled() => accept an array of promise return each value in single array of promise. wait for all the promise to executed.
+  Promise.allSettled([p1, p2, p3]).then(results => {
+  console.log(results);
+  // Output:
+  // [
+  //   { status: 'fulfilled', value: 3 },
+  //   { status: 'rejected', reason: 'Failed' },
+  //   { status: 'fulfilled', value: 5 }
+  // ]
+  });
+
+  Promise.any() => accept an array of promise return a promise as soon as promise resolve. If all the promise rejected then return reject.
+  Promise.race() => accept an array of promise return a promise as soon as first promise resolve or reject.
+  finally() => When all the promise excuted then finally work.
+  promise.then(()=>{
+  }).then(()=>{
+  }).catch(()=>{
+  }).finally(()={
+  console.log('Finally Promise is excuted');
+  })
+  
 
 => Classes : classes provide a blueprint for creating objects with shared properties and methods.
 
   => Inheritance : where one class can inherit from another. This allows you to create subclasses that extend the functionality of a base class.
 
   => Getters, Setters :  which allow you to control how properties of an object are accessed and modified.
+
+
+=> call(), apply() and bind()
+  const person = { name: "Jane" };
+  function greet(message, punctuation) {
+    console.log(message + ", " + this.name + punctuation);
+  }
+  call() => passing arguments individually. function is invoked immediately when call() is called.
+  greet.call(person, arg1, arg2, ...)
+
+  apply() => it takes an array (or array-like object) of arguments. function is invoked immediately when call() is called.
+  greet.apply(person, [arg1, arg2, ...])
+
+  bind()=> The function is not invoked immediately. Instead, it returns a new function, and you can call it later. in simple word take a copy of
+    of function, store on variable and call when use.
+  const boundFunction = greet.bind(person, arg1, arg2, ...)
+
+=> currying function
+  a function returns another function that takes arguments one by one, instead of taking all the arguments at once.
+  currying allows you to break down a function into a series of functions that each take a single argument.
   
+	function multiply(a) {
+		return function(b) {
+			return function(c) {
+			return a * b * c;
+			};
+		};
+	}
+	const result = multiply(2)(3)(4)(); // Output: 24
+	
 
+=> Global variable
 => Set operator, Get operator
-
 => Event loop
-
-=> event bubbling
-
-=> event capturing
-
-=> Array destructring
-
-=> object destructring
-
+=> event bubbling, capturing
 => Class Expressions
-
 => Module 
-
 => Constructor Function 
-
-=> Optional chaining
-
-
-
-
-
+=> currying
+=> lexical scope 
+=> Pure function 
+=> Temporal dead zone 
+=> IIFE function 
+=> Status of the Promises 
+=> call back function 
+=> generator function 
+=> Template literal 
+=> Arrow distrusting
+=> different between normal function and arrow function.
+=> Primative and non primative.
 
 
 */
-

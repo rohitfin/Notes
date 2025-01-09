@@ -276,6 +276,8 @@
 
     What are object prototypes?
 
+    javascript is single threaded or multithreaded
+
 
 * About controller or bot controller
 * Set, get, map operator
