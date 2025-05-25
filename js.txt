@@ -1,122 +1,235 @@
----- 19 12 18
---------  Selectors 
-     $("*"), $(this), $("p:first"), $("ul li:first-child"),$("[href]"),$("a[target='_blank']"), $(":button"), $("tr:even"), $("tr:odd"), $("ul li:eq(3)"), 
-	 $("input:not(:empty)"),$(":contains('Hello')"), $("div:has(p)"),$("ul li:gt(3)") [ greater than 3], $("ul li:lt(3)") [ less than 3],	
+=> jQuery
+	=>  Selectors 
+		$("*"), $(this), $("p:first"), $("ul li:first-child"),$("[href]"),$("a[target='_blank']"), $(":button"), $("tr:even"), $("tr:odd"), $("ul li:eq(3)"), 
+		$("input:not(:empty)"),$(":contains('Hello')"), $("div:has(p)"),$("ul li:gt(3)") [ greater than 3], $("ul li:lt(3)") [ less than 3],	
 
---------  Events	 
-	Mouse Events -  click, dblclick, mouseenter, mouseleave	
-	Keyboard Events	- keypress, keydown, keyup	
-	Form Events - submit, change, focus, blur 	
-	Document/Window Events - load, resize, scroll, unload
+	=> Events	 
+		Mouse Events -  click, dblclick, mouseenter, mouseleave	
+		Keyboard Events	- keypress, keydown, keyup	
+		Form Events - submit, change, focus, blur 	
+		Document/Window Events - load, resize, scroll, unload
 
-	$(selector).event(function(){ // action goes here!!  });  // element.addEventListener("click", FUNCTION__NAME);
-	$(selector).on("event", function(){ // action goes here!! });
-	$(document).on("event", "selector" function(){ // action goes here!! });
-	$(document).on("click", ".btn", functionName); 
+		$(selector).event(function(){ // action goes here!!  });  // element.addEventListener("click", FUNCTION__NAME);
+		$(selector).on("event", function(){ // action goes here!! });
+		$(document).on("event", "selector" function(){ // action goes here!! });
+		$(document).on("click", ".btn", functionName); 
 
-	$(selector).on({
-		event: function(){  // action goes here!! },
-		event: function(){  // action goes here!! },
-		event: function(){  // action goes here!! }
-	});
-	
---------  HTML
-* Get & Set Content - text(), html(), and val()	
-----Get  the value of an attribute:
-	$(selector).attr("attribute")   // document.querySelector('#IDNAME')
-	$('input[type="radio"]:checked').val()
-	$(select option:selected).val()
+		$(selector).on({
+			event: function(){  // action goes here!! },
+			event: function(){  // action goes here!! },
+			event: function(){  // action goes here!! }
+		});
+		
+	=>  HTML
+		* Get & Set Content - text(), html(), and val()	
+	=> Get  the value of an attribute:
+		$(selector).attr("attribute")   // document.querySelector('#IDNAME')
+		$('input[type="radio"]:checked').val()
+		$(select option:selected).val()
 
-----Set the attribute and value:
-	$(selector).attr("attribute","value")
-	$(selector).prop("checked","checked")
-	$('.cls').prop("checked",false)
+	=> Set the attribute and value:
+		$(selector).attr("attribute","value")
+		$(selector).prop("checked","checked")
+		$('.cls').prop("checked",false)
 
+		=> Set multiple attributes and values:
+			$(selector).attr({"attribute":"value", "attribute":"value",...});
 
-----Set multiple attributes and values:
-	$(selector).attr({"attribute":"value", "attribute":"value",...});
+	=> Methods 
+	addClass(), removeClass(), toggleClass(), on, append(), prepend(), after(), before(), remove(), empty(), clone(), 
+	replaceWith(), replaceAll(), wrap(), Unwrap(), wrapAll(), wrapInner(), width(), innerWidth(), outerWidth(), position(), 
+	offset(), scrollTop(), scrollLeft(), has(), each(), hasClass(), 	
 
-* Methods 
-   addClass(), removeClass(), toggleClass(), on, append(), prepend(), after(), before(), remove(), empty(), clone(), 
-   replaceWith(), replaceAll(), wrap(), Unwrap(), wrapAll(), wrapInner(), width(), innerWidth(), outerWidth(), position(), 
-   offset(), scrollTop(), scrollLeft(), has(), each(), hasClass(), 	
+		remove() - Removes the selected element (and its child elements)
+		empty() - Removes the child elements from the selected element
+		position()- exact location [only top, and left location gives]
+		offset()- start location [only top, and left location gives]
 
-	remove() - Removes the selected element (and its child elements)
-	empty() - Removes the child elements from the selected element
-	position()- exact location [only top, and left location gives]
-	offset()- start location [only top, and left location gives]
+		$(selector).addClass("className");
+		$(selector).append("Some appended text.");
+		$(selector).has(selector-children).css("color","red"); or $("selector:has(selector-children)").css("border", "solid red");
+		$("<h2>Hello world!</h2>").replaceAll("p");
 
-	$(selector).addClass("className");
-	$(selector).append("Some appended text.");
-	$(selector).has(selector-children).css("color","red"); or $("selector:has(selector-children)").css("border", "solid red");
-	$("<h2>Hello world!</h2>").replaceAll("p");
+	=> Chaining method
+		$(selector).css('color','red').slideUp().slideDown();
 
-* Chaining method
-	$(selector).css('color','red').slideUp().slideDown();
+	=> css() Method - 
+		css("propertyname","value");
+		css({"propertyname":"value","propertyname":"value",...});
 
-* css() Method - 
-	css("propertyname","value");
-	css({"propertyname":"value","propertyname":"value",...});
+	=> Effects 
+		hide(), show(), toggle(speed,callback), fadeIn(), fadeOut(), fadeToggle(), fadeTo(), slideDown(), slideUp(), slideToggle() 	
+		
+		$(selector).hide(speed,callback);
+		
+	=> Animation Effects - $(selector).animate({params},speed,callback);	
+		.selector {position: absolute} // important for animate();
+		$(selector).animate({
+			left: "px",
+			opacity: "px",
+			width: "px",
+			height: "px"
+		},3000);
+		
+		Stop Animations - $(selector).stop();	
 
-* Effects 
-	hide(), show(), toggle(speed,callback), fadeIn(), fadeOut(), fadeToggle(), fadeTo(), slideDown(), slideUp(), slideToggle() 	
-	
-	$(selector).hide(speed,callback);
-	
-----Animation Effects - $(selector).animate({params},speed,callback);	
-	.selector {position: absolute} // important for animate();
-	$(selector).animate({
-		left: "px",
-		opacity: "px",
-		width: "px",
-		height: "px"
-	},3000);
-	
-----Stop Animations - $(selector).stop();	
+	=> Traversing
+		<div id="main-outer">
+			<ul id="outer">
+				<li id="inner">
+					<span> </span>	
+				</li>
+				<li id="inner">
+					<b> </b>
+				</li>
+			</ul>
+		</div>
 
-* Traversing
-<div id="main-outer">
-	<ul id="outer">
-		<li id="inner">
-			<span> </span>	
-		</li>
-		<li id="inner">
-			<b> </b>
-		</li>
-	</ul>
-</div>
+		* The <div> element is the parent of <ul>, and an ancestor of everything inside of it
+		* The <span> element is a child of the left <li> and a descendant of <ul> and <div>
+		* The two <li> elements are siblings (they share the same parent)
+		* jQuery Traversing - Ancestors :- parent(), parents(), parentsUntil(), closest(), offsetParent()
 
-* The <div> element is the parent of <ul>, and an ancestor of everything inside of it
-* The <span> element is a child of the left <li> and a descendant of <ul> and <div>
-* The two <li> elements are siblings (they share the same parent)
-* jQuery Traversing - Ancestors :- parent(), parents(), parentsUntil(), closest(), offsetParent()
+		* Traversing - Ancestors
+			$("span").parent();
+			$("span").parents("ul");	[kha tak]
+			$("span").parentsUntil("div"); [kha tak]
 
-* Traversing - Ancestors
-	 $("span").parent();
-	 $("span").parents("ul");	[kha tak]
-	 $("span").parentsUntil("div"); [kha tak]
+		* Traversing - Descendants :- children(), find()
+			$("li").children().css("color","red");
+			$('li').children('b').css('font-weight','bold');
 
-* Traversing - Descendants :- children(), find()
-	$("li").children().css("color","red");
-	$('li').children('b').css('font-weight','bold');
+		* Traversing - Siblings :-  siblings(), next(), nextAll(), nextUntil(), prev(), prevAll(), prevUntil()
+			$("h2").nextUntil("h6");
 
-* Traversing - Siblings :-  siblings(), next(), nextAll(), nextUntil(), prev(), prevAll(), prevUntil()
-	$("h2").nextUntil("h6");
+		* Traversing - Filtering :- first(), last(), eq(), filter() and not(), slice()
+				$(selector).filter(".intro");  [other than .intro]
 
-* Traversing - Filtering :- first(), last(), eq(), filter() and not(), slice()
-		$(selector).filter(".intro");  [other than .intro]
-  
--------------------------- ajax post ------------------------------------------
+=> AJAX 
+    AJAX ( asynchronous JavaScript and XMl ) is not a language, but it is a concept, Which is used to "send background request to server" 
+    and also "get background response from server", without refreshing (reloading) the web page in the browser.
+    status code 200 - success and status code 404/500 - error
+    
+    Get - Used to retrieve / search data from server.
+    Post - Used to insert data to server.
+    Put - Used to update data on server.
+    Delete - Used to delete data from server.
 
-$.ajax({
-        url: "http://localhost:4500/api/getTopWatchList",
-        type:"post",
-        data: {limit:10},
-         success: function(result){
-             console.log(result);
-    }
+    $(function() {
+        var product = $("#product_list");
+        product.length && initProduct();
     });
------------------------------------------------------------------------ 
+
+    var _m = _m || {}, _apiName = "APIName"
+
+    _m.Ajax = function(methodName, apiUrl, dataType, requestData, contentType, asyncBoolean) {
+        return void 0 === o && (o = !0),
+        $.ajax({
+            type: methodName,
+            url: apiUrl,
+            dataType: dataType,
+            async: asyncBoolean,
+            data: requestData,
+            contentType: contentType,
+            success: function(e) {},
+            error: function(e, t) {
+                console.log("error->" + apiUrl + " | Error->", e, t)
+            }
+        })
+    }
+
+    function initProduct() {
+        var postData = { isActive = true; }
+        _m.Ajax("POST", "api_path_url", "json", JSON.stringify({ postData }), "application/json; charset=utf-8", false).then(response=>{
+            console.log(response);
+        })
+    }
+  
+
+	JSON in table format in console
+	console.table(data);	
+
+  	<!-- second Way formate  start -->
+        <div class="template" style="display: none">
+            <div class="JSON-child-Result-2">
+                <div class="card" >
+                    <img  class="pok-img card-img-top p-2" src="__imagURL__" alt="Pok Name">
+                    <div class="card-body">
+                       <h5 class="pok-title card-title">__name__</h5>
+                       <ul class="types">
+                           __list__
+                       </ul>
+                   </div>
+               </div>
+            </div>
+        </div>
+
+	var imgurl= res.sprites.other.dream_world.front_default;
+     var name = res.name;
+     var list = '';
+    
+     for(var i = 0; i < res.types.length; i++){
+         list += '<li>' + res.types[i].type.name + '</li>'
+     }
+				
+	$('#img1').attr('src',imgurl);
+    $('#name1').html(name);
+    $('#list1').html(list);
+
+    // second way
+     var template = $('.template .JSON-child-Result-2').html()
+     var _html = template.replace('__imagURL__',imgurl)
+                        .replace('__name__',name)
+                        .replace('__list__',list);
+    $('#JSON-child-Result-2').append(_html);
+
+	<!-- second Way formate  end -->
+
+
+    <!--  third way  -->
+       var aa =`<div class="card" >
+       <img  class="pok-img card-img-top p-2" src="${imgurl}" alt="Pok Name">
+       <div class="card-body">
+          <h5 class="pok-title card-title">${name}</h5>
+          <ul class="types">
+          ${list}
+          </ul>
+       </div>
+       </div>`;
+    <!-- End third way  -->
+
+    $('#JSON-child-Result-3').append(aa);
+
+=> AJAX Method
+	$.ajax({
+			url: "api_url",
+			type:"post",
+			data: {limit:10},
+			dataType: 'json',
+			success: function(result){
+				console.log(result);
+			},
+			error: function(error){
+				console.log(error);
+			}
+	});
+
+=> Fetch Method
+	fetch( 'fetch url', {
+		method : 'POST ',
+		header : { 
+			'Accept' : ' application/json, plan/json, / ',
+			' Content-type' : ' application/json '
+		},
+		body : JSON.stringify( { title: title, body: desc })
+	} )
+	.then( (res) => res.json( ) )
+	.then ( ( data ) => { console.log ( data ) } )
+	.catch( ( error ) => { console.log ( error ) } );
+
+=> JavaScript -----------------------
+  -> defer keyword for default .js file
+  <script type="module" defer src="myScript.js"></script>
 
 
 event.preventDefault()
@@ -125,15 +238,14 @@ The event.preventDefault() method stops the default action of an element from ha
 Prevent a submit button from submitting a form
 Prevent a link from following the URL
 
-
-* Selectors
+=> Selectors
 	document.getElementById('selectorName')
 	document.getElementsByTagName('selectorName')
 	document.getElementsByClassName('selectorName')
 	document.querySelector('selectorName')
 	document.querySelectorAll('selectorName')
 
-* get and set the data
+=> get and set the data
 	element.innerText
 	element.innerHTML =  new html content
 
@@ -213,14 +325,13 @@ Prevent a link from following the URL
 			.classList.toggle('NEW__CLASS') ---> toggle  CLASS
 			.classList.remove('NEW__CLASS') ---> remove  CLASS
 		]
-
 	
-*  EventListener, removeEventListener() ---> attachEvent(), detachEvent()
+=>  EventListener, removeEventListener() ---> attachEvent(), detachEvent()
 	element.addEventListener("click", FUNCTION__NAME);
 	element.addEventListener("click", function() {	alert("Hello World!");  });
 	element.addEventListener("click", function(){ myFunction(p1, p2); });
 	
-* DOM 
+=> DOM 
 	-------- document
 	URL, .domain, .body, .forms, .head, .images, .links, .title, 
 	createAttribute(), .createElement(), createEvent(), createTextNode(), .designMode
@@ -238,61 +349,13 @@ Prevent a link from following the URL
 	lastElementChild, insertBefore, outerHTML, remove, removeAttribute, removeChild, removeEventListener, replaceChild, tagName, 
 	title, dataset, textContent, createTextNode, createElement
 
-* Event 
+=> Event 
 	mouseover, mouseout, change, click, dblclick, keydown, load, submit, select,
 	keypress, mousemove, mouseleave, mouseenter, mousedown, mouseup, focusin, focusout
 	keypress, mousemove, mouseleave, mouseenter, mousedown, mouseup, focusin, focusout
 
-* slice(), splice(), split(), indexOf(), includes(), prop(), setAttribute(), getAttribute(),
-
-* .contextmenu ---> for right click
-
-* <button onclick="myFunction()">Click me</button>
-
-* <button type="button" onclick="document.getElementById('IDNAME').style.color = 'red'">Click Me!</button>
-
-* \n 	
-	( just like a break </br> ) for line  break, giving break in prompt text list.
-
-	prompt("1- what is your name?\n 2- how many year's old?\n 3- enter your pet name?\n");
-
-* spread operator
-	const numbers = [1, 4, 3, 5];
-	const newNumbers = [...numbers, 10, 20];
-	console.log(newNumbers);
-
-	let arr1 = [ 1, 2, 3];
-	let arr2 = [...arr1]; // changes not effect to it's parent.
-	arr1.push(4);
-	console.log(arr1); // [1, 2, 3, 4]
-	console.log(arr2); // [1, 2, 3]
-
-* rest operator
-	When the spread operator is used as a parameter, it is known as the rest parameter.
-	You can also accept multiple arguments in a function call using the rest parameter. 
-	const filter = (...args)=>{
-		return args.filter( el => el ===1 );
-	}
-	console.log(filter(2,45, 1));
-
-
-* setInterval();
-	repeat a specified function at every given time-interval	
-* clearInterval();	
-	clears the interval which has been set by setInterval() function before that
-* setTimeout();	
-	The setTimeout() method executes a block of code after the specified time. The method executes the code only once.
-
-	setTimeout(function(){ alert("Hello"); }, 3000);	
-
-	const time = setInterval(function(){
-		console.log(new Date().toLocaleTimeString());
-	}, 1000);
-
-	const stop = setTimeout(function(){
-		clearInterval(time);
-		console.log('stop');
-	}, 5000);
+   	<button onclick="myFunction()">Click me</button>
+	<button type="button" onclick="document.getElementById('IDNAME').style.color = 'red'">Click Me!</button>
 
 * initialization or starter or starting point
 * condition for when our loop should end
@@ -300,991 +363,148 @@ Prevent a link from following the URL
 
 * loop work on the only true condition, when loop condition is false loop will stop working.
 
-* for loop  backward count
-	for(var i = 5; i > 0; i-- ) { console.log(i); }
-
-* while loop
-	var i = 0;
-	while(i <= 10 ){
-		console.log(i);
-		if( i === 5 ) {
-			break;
-		}
-		i++;
-	}	
-
-* do while loop 
-	var i = 0;
-	do{
-		console.log(i);
-		i++;
-	}while( i <= 10 );
-
-* in single variable store multiple value is called array. array is collection of data.
-	array can hold function. array is numeric index number. in javascript array start with 0 (zero) index number.
-
-	var cars = [ "mahindra bolero", "tata indica", "tata safari", "fortuner" ];
-
-	cars.indexOf(fortuner);  // find value position and if value match than give position of the value, if not match -1
-	cars.indexOf(fortuner, 0);  // array.indexOf(item, start)
-	cars.unshift('swift'); 	// beginning add
-	cars.push('jeep');	// end add
-	cars.shift();	// first remove
-	cars.pop(); 	// last remove
-	cars[cars.length] = "honda";	// add to the end
-	cars[cars.length];	// length of the array
-	cars[cars.length - 3 ] = "Maruti Suziki"    // changing array  
-	cars[cars.length - 1];         // check last array 
-	Array.isArray(cars) // checking is array or not
-	cars.slice(1,3); // slice between 1 to 3;   myArray.slice(startIndex, endIndex);
-	cars.toString();  // converting array to string
-	cars.reverse(); // reverse array
-
-* slice - Not effect on parent array, copy elements of an array
-	var array = [1, 2, 3, 4, 5, 6, 7];
-	var res = array.slice(2); //	[3, 4, 5, 6, 7]
-	var res = array.slice(2, 5); //	[3, 4, 5]
-
-* splice  - change the parent array,  manipulate elements in an array such as deleting, inserting, and replacing elements - splice(start, deleteCount, item1) - it strart from 0 zero.
-	var array = [1, 2, 3, 4, 5, 6, 7];
-	var res = array.splice(2); //	[3, 4, 5, 6, 7]
-	var res = array.splice(2, 2); // [3, 4]
-	var res = array.splice(2, 0, 10); // [1, 2, 10, 3, 4, 5, 6, 7]; // Inserts at index 2
-	var res = array.splice(2, 1, 20); // [1, 20, 3, 4, 5, 6, 7]; // Replaces 1 element at index 2
-
-* string to array
-	let text = "How are you doing today?";
-    const arr = text.split(" ", 4); // ["How", "are", "you", "doing"]
-
-* array to string
-	var a = ["a", "b", "c", "d"];
-	var b = a.join("");
-
-* subtract string value
-	var a = 'hello!';
-	var b = a.substr(-2); //"o!"
-
-* indexOf in array 
-	var JSArr = ["A", "B", "C", "D"];
-	console.log(JSArr.indexOf("B")) // 1  found at postion 1 
-	console.log(JSArr.indexOf("F")) // -1  not found
-
-* lastIndexOf() => It count the value position form the end ie. backward. If not found return -1.	
-	console.log(JSArr.lastIndexOf("c"));
-	
-* includes in array
-	var list = ["A", "B", "C", "D", "E"];
-	console.log(list.includes("A")); // true
-	console.log(list.includes("A",1)); //returns false, as "A" is not present at index 1. 
-	console.log(list.includes("B",1)); //returns True , as "B" is present at index 1. 
-	console.log(list.indexOf("A") !== -1 ); // true
-
-* concat array
-	var one = ["A", "B",];
-	var two = ["C", "D", "E"];
-	var res = one.concat(two);
-
-* join() => returns an array as a string. Not change the original array.
- 	var cars = [["mahindra bolero","tata indica"],["potato"],["football","cricket"]];
-	var bike = cars.join(" ");			//	join array  with empty space
-	var bike = cars.join("*");			//	join array  with * symbol
-	var bike = cars.join("+");			//	join array 	with + symbol
-
-	const fruits = ["Banana", "Orange", "Apple", "Mango"];
-	let text = fruits.join(" and "); // Banana and Orange and Apple and Mango
-
-* includes(); => The includes() method checks if an array contains a specified element or not.
-	let languages = ["JavaScript", "Java", "C"];
-	let check = languages.includes("Java");
-	console.log(check); // Output: true
-
-* at();
-    arr.at(2); // "you"; -> 2nd position value
-    arr.at(); // "How"; -> First Value
-    arr.at(-1); // "doing"; -> Last value
-
-* charAt() => user for string.
-
-* fill() =>  fills specified elements in an array with a value, overwrite the original array.Start and end position can be specified. If not, all elements will be filled.
-    arr.fill("Mike", 2, 4);
-
-* flat() => concatenates sub-array elements
-    const myArr = [1, 2, [3, [4, 5, 6], 7], 8];
-    const newArr = myArr.flat(2); // 1,2,3,4,5,6,7,8
-
-* some() => method executes the callback function once for each array element. it does not execute the function for empty array elements. it does not change the original array. It returns true or false.
-	const ages = [3, 10, 18, 20];
-	ages.some(checkAdult);
-	function checkAdult(age) {
-		return age > 18;
-	}
-
-* toReversed() => method does not overwrites the original array. It returns a new array.
-* toSorted() => method does not overwrites the original array. It returns a new array.
-* toSpliced() => method does not overwrites the original array. It returns a new array.
-
-* with() => Replace the value with position. method returns a new array. method does not change the original array.
-	const months = ["Januar", "Februar", "Mar", "April"];
-	const myMonths = months.with(2, "March"); // Januar,Februar,March,April
-
-* delete values from object and array 
-	const myArray = [1, 2, 3, 4, 5];
-	delete myArray[1]; // myArray : 1,undefined,3,4,5
-	or myArray.splice(3, 1); // myArray : 1, 2, 3, 5
-
-* Destructuring
-	const person = {
-		name: 'Sara',
-		age: 25,
-		gender: 'female'    
-	}
-	let { name, age, gender } = person;
-	console.log(name); // Sara
-	console.log(age); // 25
-	console.log(gender); // female
-
-* Array Destructuring
-	const arrValue = ['one', 'two', 'three'];
-	const [x, y, z] = arrValue;
-	console.log(x); // one
-	console.log(y); // two
-	console.log(z); // three
-
-* Assign Default Values
-	let arrValue = [10];
-	let [x = 5,  y = 7] = arrValue;
-	console.log(x); // 10
-	console.log(y); // 7
-
-* Swapping Variables =  two variables are swapped using the destructuring assignment syntax.
-	let x = 4;
-	let y = 7;
-	[x, y] = [y, x];
-	console.log(x); // 7
-	console.log(y); // 4
-
-* Skip Items = You can skip unwanted items in an array without assigning them to local variables.
-	const arrValue = ['one', 'two', 'three'];
-	const [x, , z] = arrValue;
-	console.log(x); // one
-	console.log(z); // three
-
-* Assign Remaining Elements to a Single Variable
-	const arrValue = ['one', 'two', 'three', 'four'];
-	// assigning remaining elements to y
-	const [x, ...y] = arrValue;
-	console.log(x); // one
-	console.log(y); // ["two", "three", "four"]
-
-* Nested Destructuring Assignment
-	const arrValue = ['one', ['two', 'three']];
-	const [x, [y, z]] = arrValue;
-	console.log(x); // one
-	console.log(y); // two
-	console.log(z); // three
-
-* sort => overwrites the original array.
-	the sort method converts the elements into strings then compares their sequences of UTF-16 code units values.
-
-	const num = [80,1,30,10,50,70,20,40,100,5,60,90];
-	console.log(num.sort(function(value1, value2){   return value1 - value2})   );
-
-	const fruits = ["Apple", "Mango", "Kiwi", "Orange", "Strawberry"];
-	console.log(fruits.sort());
-
-* filter method (<, >)
-	for comparing, greater-than, smaller-than its returns array
-	for comparing, greater-than, smaller-than its returns array
-	
-	var numberList = [["2"],["10","12","6"],"5",["15","7","20"]];	
-	var res = numberList.filter(function(element, index, array){
-		return element < 2;                        // compar with greater-than		
-		return element.length > 2;                        // compar with length		
-	})
-	console.log(typeof res);
-
-* map method 
-  add, minus, multiply, divide with map method.
-
-  var numberList = [2,4,5,1,6];
-  var res = numberList.map(function(element, index, array){
-	  return element + 2;
-  })
-
-* reduce method 
-	reduce method is combination of filter and map method.
-
-	const numbers = [450, 200, 75, 80, 90];
-	const resultSum = numbers.reduce((accumulator, currentElement, index, array) => {
-		return accumulator + currentElement;
-	}, 0);
-
-	//or
-	const resultSum = numbers.reduce((accumulator, value2, index, array) => {
-		return accumulator + value2;
-	}); // where to start not given so start with accumulator and value2
-	const resultSum = numbers.reduce((accumulator, value2, index, array) => {
-		return accumulator + value2;
-	}); // where to start not given so start with accumulator and value2
-
-
-	var numberList = [10,2,5,67,3,45,];
-	var res = numberList.reduce(function(accumulator, element, index, array){ 
-	    if(element > 10){
-	        accumulator.push(element);
-	        return accumulator;
-	    }else{
-	        return accumulator;
-	    }
-
-	},[]); // in array [] formate it will return;
-	},[]); // in array [] formate it will return;
-	console.log(res);
-
-
-	var printPrice = herosPrice.reduce(function(accumulator, element, index, array){
-		//return accumulator + element;
-		if(element > accumulator){
-			return element;
-		}else {
-			return accumulator;
-		}
-	},0); // where to start.
-	},0); // where to start.
-
-* forEach (need atleast one paramenter)
-	var cars = [ "mahindra bolero", "tata indica", "tata safari", "fortuner" ];
-	var each = cars.forEach(function(element, index, array){
-		console.log(index + " : " + element);
-	});
-	
-*  compare objects and string
-	var x = "John";             
-	var y = new String("John");
-	(x === y) // is false because x is a string and y is an object.
-
-* cannot compare objects
-	var x = new String("John");             
-	var y = new String("John");
-	(x == y) // is false because you cannot compare objects.
-
-** Don't Use new Object()
-	Use {} instead of new Object()
-	Use "" instead of new String()
-	Use 0 instead of new Number()
-	Use false instead of new Boolean()
-	Use [] instead of new Array()
-	Use function (){} instead of new Function()
-
-=> object
-	A collection of name value pairs. key value pairs.object same as array and in object, we can call function.
-	 
-		const courses = {
-			java: 10,
-			javascript: 55,
-			nodejs: 5,
-			php: 15
-		};
-	
-*  compare objects and string
-	var x = "John";             
-	var y = new String("John");
-	(x === y) // is false because x is a string and y is an object.
-
-* cannot compare objects
-	var x = new String("John");             
-	var y = new String("John");
-	(x == y) // is false because you cannot compare objects.
-
-** Don't Use new Object()
-	Use {} instead of new Object()
-	Use "" instead of new String()
-	Use 0 instead of new Number()
-	Use false instead of new Boolean()
-	Use [] instead of new Array()
-	Use function (){} instead of new Function()
-
-=> object
-	A collection of name value pairs. key value pairs.object same as array and in object, we can call function.
-	 
-		const courses = {
-			java: 10,
-			javascript: 55,
-			nodejs: 5,
-			php: 15
-		};
-
-		* Methods to loop through objects using javascript for...in Loop
-			for (const key in courses) {
-				.log(`${key}: ${courses[key]}`);
-			}	
-
-		* hasOwnProperty() 
-				for (const key in courses) {
-				if (courses.hasOwnProperty(key)) {
-					console.log(`${key}: ${courses[key]}`);
-				}
-			}
-
-		* Object.keys() Method - returns an array containing all properties name
-			const keys = Object.keys(courses);
-			console.log(keys);
-
-		* Object.values() Method -It returns the values of all properties in the object as an array
-			Object.values(courses).forEach(val => console.log(val));
-
-		* Object.create();
-		* Object.assign();
-
-=> Constructor functions  
-	Using Constructor functions :- Constructors are functions that contain a this keyword.
-	If we initialize the constructor its runs. Create Multiple Objects with Constructor Function.
-
-	function Person (person_name, person_age, person_gender) {
-		this.name = person_name,
-		this.age = person_age,
-		this.gender = person_gender,
-		this.greet = function () {
-			return ('Hi' + ' ' + this.name);
-		}
-	}
-	// creating objects
-	const person1 = new Person('John', 23, 'male');
-	const person2 = new Person('Sam', 25, 'female');
-
-	// accessing properties
-	console.log(person1.name); // "John"
-
-	// adding method to person1 object
-	person1.print = function () {
-		console.log('hello');
-	}
-
-	=> Object Literal
-		Object Literal is generally used to create a single object. The constructor function is useful if you want to create multiple objects. 
-		let person = {
-			name: 'Sam'
-		}
-
-=> Prototype
-		In JavaScript, a prototype can be used to add properties and methods to a constructor function.
-
-		// adding property to constructor function
-		Person.prototype.status = 'Married';
-
-		// prototype value of Person
-		console.log(Person.prototype);
-
-		// inheriting the property from prototype
-		console.log(person1.status);
-		
-		// changing the property value of prototype
-		Person.prototype = { status:  'UnMarried'}
-
-=> Inheritance 
-	function Human(person_name, person_age, person_gender, month){
-		Person.call(this, person_name, person_age, person_gender);
-		
-		this.month = month
-	}
-
-	// Inherit Prototype 
-	Human.prototype = Object.create(Person.prototype);
-
-	// Instantiate Human Object
-	const hum1 = new Human('Mike', '22', 'Male', 'March');
-
-	// use Human Constructor
-	Human.prototype.constructor = Human;
-	
-	console.log(hum1);
-
-=> Sub Class 
-	class Human extends Person {
-		constructor(person_name, person_age, person_gender, month){
-			super(person_name, person_age, person_gender); // get parent properties
-			this.month = month;
-		}
-	}
-
-	// Instantiate Human Object
-	const hum1 = new Human('Khabib', '22', 'Male', 'Jan');
-	hum1.greet();
-
-* Class 
-	Classes is blue print of object. Classes are said to be the “syntactic sugar” of Constructor functions. 
-
-	class Human {
-		constructor(FirstName, LastName) {
-			this.firstName = FirstName
-			this.lastName = LastName
-			
-			this.sayHello = function () {
-				console.log(`Hello, I'm ${firstName}`)
-			}
-			or 
-				sayHello () {
-					console.log(`Hello, I'm ${this.firstName}`)
-				}
-
-				static staticFunc(){
-					console.log('It can not be Instantiate, It can call by its parent');
-				}
-				static staticFunc(){
-					console.log('It can not be Instantiate, It can call by its parent');
-				}
-		}
-	}
-
-	const chris = new Human('Chris', 'Coyier')
-	console.log(chris.firstName);
-	Human.staticFunc();
-	Human.staticFunc();
-
-* Objects Linking to Other Objects (OLOO)
-
-	const Human = {
-		init (FirstName, LastName) {
-			this.firstName = FirstName
-			this.lastName = LastName
-			this.sayHello = function () {
-			console.log(`Hello, I'm ${firstName}`)
-			}
-			return this
-		}
-	}
-
-	//const chris = Object.create(Human)
-	//chris.init('Chris', 'Coyier');
-	// or
-	const chris = Object.create(Human).init('Chris', 'Coyier');
-	console.log(chris.firstName);
-
-* scope
- 	two type of scope 1.global, 2. local
-
-* paramenter and argument
- 
-	function func(paramenter-1, paramenter-2){
-		console.log("hello");
-	}
-	func(argument-1, argument-2);
-
-	Regular functions have arguments binding. That's why when you pass arguments to a regular function, you can access them using the arguments keyword. 
-	Arrow functions do not have arguments binding. When you try to access an argument using the arrow function, it will give an error.
-	To solve this issue, you can use the spread syntax.
-
-	let x = () => { console.log(arguments); }
-		x(4,6,7);
-
-	let x = (...n) => { console.log(n); } //spread syntax.
-		x(4,6,7);
-
-
-* hoisting 
-	function declaration on top is hoisting.
-	Hoisting is process of moving function declaration to the top of the file and this is done  
-	automatically by the  javascript engine that is executing this code.hoisting only work for function declarations. Functions are Objects.
-
-* Define function two ways
-	1. function declaration
-	2. function Expression
-
-	1. function declaration
-	1. function declaration
-
-		function walk(){
-			console.log("Walk");
-		}
-		walk();
-		OR
-		[ this is a hoisting ]
-		walk();
-		function walk(){
-			console.log("Walk");
-		}
-		function walk(){
-			console.log("Walk");
-		}
-		walk();
-		OR
-		[ this is a hoisting ]
-		walk();
-		function walk(){
-			console.log("Walk");
-		}
-
-	2. function Expression  or anonymous function
-		var run = function() {
-			console.log("run");
-		}
-		run();
-	2. function Expression  or anonymous function
-		var run = function() {
-			console.log("run");
-		}
-		run();
-
-	3. First class function - To ability to use function
-		var a = function ( ) {
-			return function xyz( ) { }
-		}	
-	3. First class function - To ability to use function
-		var a = function ( ) {
-			return function xyz( ) { }
-		}	
-
-* api ajax
-		$.ajax({
-            url: 'array_of_object.json', //'content.txt'
-            type: 'get', 
-            error: function(error){
-                console.log('Error: ' + error);
-              },
-            success: function(result){
-              for(var i = 0; i < result.length; i++){
-                  console.log(result[i].name + " " +  result[i].lastName);
-                }
-              }
-        
-        });
-
-	JSON is a syntax for storing and exchanging data.
-	JSON stands for JavaScript Object Notation
-	JJSON is language independent *
-	JSON uses JavaScript syntax, but the JSON format is text only.
-	Text can be read and used as a data format by any programming language.
-	SON is a lightweight data-interchange format
-	JSON is "self-describing" and easy to understand
-
-	When receiving data from a web server, the data is always a string.
-	Parse the data with JSON.parse(), and the data becomes a JavaScript object.
-
-	When sending data to a web server, the data has to be a string.
-	Convert a JavaScript object into a string with JSON.stringify().
-
-
-	myJSON = JSON.stringify(myObj);  // '{"name":"John", "age":31, "city":"New York"}';
-	myJSON = JSON.parse(myObj);    	//{name: "John", age: 31, city: "New York"};
-
-	JSON in table format in console
-	console.table(data);	
-
-  <!-- second Way formate  start -->
-        <div class="template" style="display: none">
-            <div class="JSON-child-Result-2">
-                <div class="card" >
-                    <img  class="pok-img card-img-top p-2" src="__imagURL__" alt="Pok Name">
-                    <div class="card-body">
-                       <h5 class="pok-title card-title">__name__</h5>
-                       <ul class="types">
-                           __list__
-                       </ul>
-                   </div>
-               </div>
-            </div>
-        </div>
-
-	var imgurl= res.sprites.other.dream_world.front_default;
-     var name = res.name;
-     var list = '';
+  var -> function scope.
+  let -> block scope
+  const -> block scope
+  
+=> Primitive and non primitive.
+  Primitive : store single values. just a value (copied when assigned),  Number, String, Boolean, Undefined, Null
+  Non-Primitive : reference to a value (shared when assigned),  Object, Array, function
+
+=> Let, const temporal DEAD Zone 
+    -> let and const are hoisted. we cant use them before initialization is result of "temporal dead zone".
+    -> js use diff memory than global execution context to store let and cost. which is reason behind "temporal dead zone"
+    -> level of strictness ... var<<let<<const.
+    -> var //no temporal dead zone, can redeclare and re-initialize, stored in GES
+        let //use TDZ, can't re-declare, can re-initialize, stored in separate memory
+        const //use TDZ, can't re-declare, can't re-initialize, stored in separate memory
+    -> syntax error is similar to compile error. while type and reference error falls under run time error.
+    -> syntax error ... violation of JS syntax
+        type error ...  while trying to re-initialize const variable
+        reference error ... while trying to access variable which is not there in global memory.
+
+=> Block scope
+    Block :- It is used to combine multiple statement into one statement so that we can use it at those places where javascript expects to have single statement.
+    Scope :- scope of a variable or a function is the place where these are accessible.
+    Block scope :-  The variables and function present within the scope of a block section. And block follows the lexical scope chain pattern while accessing the variable.
+    Shadowing :-  Providing same name to the variable as of those variable which are present in outer scope.
+
+    ex : {
+        var a = 10;
+        let b = 20;
+        const c = 30;
+    }
+
+    shadowing -> 
+        var a = 20; let b = 10; const c = 30;
+        {
+            let a = 200;
+            var b = 100;
+            const c = 300;
+        }
+
+=> Hoisting 
+    Hoisting means try to access variable or function before they are declared.
+    var - undefined
+    let/ const - reference error 
+    function statement/ function declaration - are hoisted
+    function expression - error
+
+=> Temporal Dead Zone
+    Temporal Dead zone means variable form the hoisting till the initialization that phase is called temporal dead zone.
+
+=> Scope Chain 
+    When javascript execute a function and we reference a variables: it first look inside the current function scope. If it does not find it, it look one level up, in the outer scope. It keep going until it reaches the global scope. If it still does not find it throw reference error.
+
+=> Lexical Scope 
+    Lexical scope means a function can access variables from the place where it was written, not from where it is called. When function is defined it remember its environment(variable/function). This remember environment is become lexical environment.
+
+=> function statement / function declaration 
+    function a(){}
+
+=> function expression  (function is like a value)
+    var b = function(){}
+
+=> Named function expression
+    var a = function sum(){ }
+
+=> First Class Functions -> 
+    The ability to to use functions as values and which can be passed as arguments to another function, and also can be returned from a functions.
+
+=> Anonymous function ->
+     A function without a name is called anonymous function. It used as values.
+
+=> First class function 
+    Assigned to variables, passed as an arguments, or returned from other function, stored in object or array.
+
+=> Higher order function
+    function takes another function as an argument or return a function.
+    or
+    A higher order function is a function that takes one or more functions as arguments, or returns a function as its result.
     
-     for(var i = 0; i < res.types.length; i++){
-         list += '<li>' + res.types[i].type.name + '</li>'
-     }
-				
-	$('#img1').attr('src',imgurl);
-    $('#name1').html(name);
-    $('#list1').html(list);
+=> Pure function 
+  Pure function is a function that always return the same output for the same input and has no side effects. Easier to use, test, debug and reuse.
 
-    // second way
-     var template = $('.template .JSON-child-Result-2').html()
-     var _html = template.replace('__imagURL__',imgurl)
-                        .replace('__name__',name)
-                        .replace('__list__',list);
-    $('#JSON-child-Result-2').append(_html);
+  function add(a, b) {
+    return a + b;
+  }
 
-	<!-- second Way formate  end -->
+  Impure -> It modifies an external variables. It doesn't always return the same result. 
+  let count = 0;
+  function increment() {
+    count++;
+  }
 
+=> IIFE function - Runs as soon as it is defined. immediately invoke after it’s 
+    defined without needing to explicitly call It create private scope and useful 
+    in module patterns and initialization code.
 
-    <!--  third way  -->
-    <!--  third way  -->
-       var aa =`<div class="card" >
-       <img  class="pok-img card-img-top p-2" src="${imgurl}" alt="Pok Name">
-       <div class="card-body">
-          <h5 class="pok-title card-title">${name}</h5>
-          <ul class="types">
-          ${list}
-          </ul>
-       </div>
-       </div>`;
-       $('#JSON-child-Result-3').append(aa);
+    (function() {
+      console.log("IIFE runs immediately!");
+    })();
 
+=> generator function - reusable block of code
+    To avoid repeating code
+    To break complex logic into smaller, manageable parts
+    To improve readability and maintainability
 
-  => AJAX 
-    AJAX ( asynchronous JavaScript and XMl ) is not a language, but it is a concept, Which is used to "send background request to server" 
-    and also "get background response from server", without refreshing (reloading) the web page in the browser.
-    status code 200 - success and status code 404/500 - error
-    
-    Get - Used to retrieve / search data from server.
-    Post - Used to insert data to server.
-    Put - Used to update data on server.
-    Delete - Used to delete data from server.
+=> different between normal function and arrow function.
+    A normal function in JavaScript is defined using the function keyword. 
+    It has its own this, arguments object, and can be used as a constructor.
 
-    $(function() {
-        var product = $("#product_list");
-        product.length && initProduct();
-    });
+    An arrow function is a shorter syntax introduced in ES6. It does not have its own this, arguments, or constructor, and is often used for writing concise functions.
 
-    var _m = _m || {}, _apiName = "APIName"
+=> Template literal 
+    that provide a cleaner and more powerful way to work with strings. They were introduced in ES6
+    String Interpolation:
+    let a = 5;
+    let b = 10;
+    let sum = `The sum of ${a} and ${b} is ${a + b}.`;
 
-    _m.Ajax = function(methodName, apiUrl, dataType, requestData, contentType, asyncBoolean) {
-        return void 0 === o && (o = !0),
-        $.ajax({
-            type: methodName,
-            url: apiUrl,
-            dataType: dataType,
-            async: asyncBoolean,
-            data: requestData,
-            contentType: contentType,
-            success: function(e) {},
-            error: function(e, t) {
-                console.log("error->" + apiUrl + " | Error->", e, t)
-            }
-        })
-    }
+=> substring() - between two indices (positions), from a string, and returns the substring. you have to enter start position or end position.
+  let text = "Hello world!";
+  let result = text.substring(1); // ello world!
+  let result = text.substring(1, 4); // ell
 
-    function initProduct() {
-        var postData = { isActive = true; }
-        _m.Ajax("POST", "api_path_url", "json", JSON.stringify({ postData }), "application/json; charset=utf-8", false).then(response=>{
-            console.log(response);
-        })
-    }
+=> lastIndexOf() - returns the index (position) of the last occurrence of a specified value in a string, returns -1 if the value is not found, is case sensitive.
+  let text = "Hello planet earth, you are a great planet.";
+  let result = text.lastIndexOf("Planet");
 
-    function getCurrentDateTime(e) {
-      var a;
-      return (a = void 0 == e ? new Date : new Date(e)).getFullYear() + "-" + ("0" + (a.getMonth() + 1)).slice(-2) + "-" + ("0" + a.getDate()).slice(-2) + "T" + ("0" + a.getHours()).slice(-2) + ":" + ("0" + a.getMinutes()).slice(-2) + ":" + ("0" + a.getSeconds()).slice(-2) + "." + a.getMilliseconds() + "+05:30"
-    }
-    function getCurrentDateTime() {
-        var e = new Date;
-        return e.getFullYear() + "-" + ("0" + (e.getMonth() + 1)).slice(-2) + "-" + ("0" + e.getDate()).slice(-2) + "T" + ("0" + e.getHours()).slice(-2) + ":" + ("0" + e.getMinutes()).slice(-2) + ":" + ("0" + e.getSeconds()).slice(-2) + "." + e.getMilliseconds() + "+05:30"
-    }
-
-=> callback
-  => AJAX 
-    AJAX ( asynchronous JavaScript and XMl ) is not a language, but it is a concept, Which is used to "send background request to server" 
-    and also "get background response from server", without refreshing (reloading) the web page in the browser.
-    status code 200 - success and status code 404/500 - error
-    
-    Get - Used to retrieve / search data from server.
-    Post - Used to insert data to server.
-    Put - Used to update data on server.
-    Delete - Used to delete data from server.
-
-    $(function() {
-        var product = $("#product_list");
-        product.length && initProduct();
-    });
-
-    var _m = _m || {}, _apiName = "APIName"
-
-    _m.Ajax = function(methodName, apiUrl, dataType, requestData, contentType, asyncBoolean) {
-        return void 0 === o && (o = !0),
-        $.ajax({
-            type: methodName,
-            url: apiUrl,
-            dataType: dataType,
-            async: asyncBoolean,
-            data: requestData,
-            contentType: contentType,
-            success: function(e) {},
-            error: function(e, t) {
-                console.log("error->" + apiUrl + " | Error->", e, t)
-            }
-        })
-    }
-
-    function initProduct() {
-        var postData = { isActive = true; }
-        _m.Ajax("POST", "api_path_url", "json", JSON.stringify({ postData }), "application/json; charset=utf-8", false).then(response=>{
-            console.log(response);
-        })
-    }
-
-    function getCurrentDateTime(e) {
-      var a;
-      return (a = void 0 == e ? new Date : new Date(e)).getFullYear() + "-" + ("0" + (a.getMonth() + 1)).slice(-2) + "-" + ("0" + a.getDate()).slice(-2) + "T" + ("0" + a.getHours()).slice(-2) + ":" + ("0" + a.getMinutes()).slice(-2) + ":" + ("0" + a.getSeconds()).slice(-2) + "." + a.getMilliseconds() + "+05:30"
-    }
-    function getCurrentDateTime() {
-        var e = new Date;
-        return e.getFullYear() + "-" + ("0" + (e.getMonth() + 1)).slice(-2) + "-" + ("0" + e.getDate()).slice(-2) + "T" + ("0" + e.getHours()).slice(-2) + ":" + ("0" + e.getMinutes()).slice(-2) + ":" + ("0" + e.getSeconds()).slice(-2) + "." + e.getMilliseconds() + "+05:30"
-    }
-
-=> callback
-	// callback function
-	function callMe() {
-		console.log('I am callback function');
-	}
-	// function
-	function greet(name, callback) {
-		console.log('Hi' + ' ' + name);
-		callback();
-	}
-	// passing function as an argument
-	greet('Peter', callMe);
-
-=> setTimeout()
-	The setTimeout() method executes a block of code after the specified time. The method executes the 
-	code only once.
-	setTimeout(function, milliseconds);
-	function - a function containing a block of code
-	milliseconds - the time after which the function is executed
-	The setTimeout() method returns an intervalID, which is a positive integer.
-
-    var n = 0;
-    function print(){
-    n = n + 1;
-    console.log(n);
-    }
-    var a =  setInterval(print, 1000);
-
-    function b(){
-    clearInterval(a);
-    }
-    setTimeout(b, 10000);
-
-=> Synchronous
-	Execution of code step by step.
-	Something is happen we want to wait to its completely finished or it's done until we move on next
-
-=> Asynchronous
-	Sequence has not been decided.
-	Something going on but you don't want to wait till that things is done to continue to run your program to you
-	 wants while it's happening
-
-=> Async / await
-	Use for fetch data, getting data from API's and calling data from third party's.
-	Async always  return promise
-
-=> Promises
-	Use to handle asynchronous data.
-	Promises are important building blocks for asynchronous operations in JavaScript.
-	A Promise is a special JavaScript object. It produces a value after an asynchronous (aka, async) operation completes successfully, or an error if it does not complete successfully due to time out, network error, and so on. Successful call completions are indicated by the resolve function call, and errors are indicated by the reject function call.
-	A Promise is in one of these states:
-		pending: initial state, neither fulfilled nor rejected.
-		fulfilled: meaning that the operation was completed successfully.
-		rejected: meaning that the operation failed.
-	
-	Promises are important building blocks for asynchronous operations in JavaScript.
-	A Promise is a special JavaScript object. It produces a value after an asynchronous (aka, async) operation completes successfully, or an error if it does not complete successfully due to time out, network error, and so on. Successful call completions are indicated by the resolve function call, and errors are indicated by the reject function call.
-	A Promise is in one of these states:
-		pending: initial state, neither fulfilled nor rejected.
-		fulfilled: meaning that the operation was completed successfully.
-		rejected: meaning that the operation failed.
-	
-	function check( ){ 
-		return new Promise( resolve, reject ) {
-			Var error = true;
-			if ( !error ) { resolve ( )  }
-			else { reject ( ) } // or else { reject('Error: Something went wrong.')}
-			else { reject ( ) } // or else { reject('Error: Something went wrong.')}
-		}
-	}
-	check( ).then( function ( ){ console.log(123);
-		}).catch( function ( ){  console.log (' error '); } ) // or .catch(err => console.log(err) )
-
-	// async / await 
-	async function init(){
-		await check()
-		callBack(); // .then wala function 
-	}
-	init();
-
-	// Promises with fetch
-	var promise1 = 10;
-	var promise2 = fetch('https://jsonplaceholder.typicode.com/posts').then(res => res.json()) // because data on string formate so we have to convert into json format
-	// Promise.all 
-	Promise.all([promise1, promise2]).then(values => console.log(values));
-
-	// Async / await with fetch
-	async function fetchData(){
-		var res = await fetch('https://jsonplaceholder.typicode.com/posts');
-		var dataConvert = await res.json();
-		console.log(dataConvert);
-	}
-	check( ).then( function ( ){ console.log(123);
-		}).catch( function ( ){  console.log (' error '); } ) // or .catch(err => console.log(err) )
-
-	// async / await 
-	async function init(){
-		await check()
-		callBack(); // .then wala function 
-	}
-	init();
-
-	// Promises with fetch
-	var promise1 = 10;
-	var promise2 = fetch('https://jsonplaceholder.typicode.com/posts').then(res => res.json()) // because data on string formate so we have to convert into json format
-	// Promise.all 
-	Promise.all([promise1, promise2]).then(values => console.log(values));
-
-	// Async / await with fetch
-	async function fetchData(){
-		var res = await fetch('https://jsonplaceholder.typicode.com/posts');
-		var dataConvert = await res.json();
-		console.log(dataConvert);
-	}
-
-=> Closure
-	Values are retain in function means when we invoke our  function the values are not lose, we can access those values on our inside functions that is called closure.
-	Values are retain in function means when we invoke our  function the values are not lose, we can access those values on our inside functions that is called closure.
-
-	function sum(a){
-		console.log(a);
-		Var c = 10;
-		return function(b){
-		return a + b + c;
-			}
-		OR
-		return { 
-			getSumTwo: function(b) {
-				return a+ b
-				}
-			},
-			getSumThree: function(c) {
-				return a+ c
-				}
-			}
-		console.log(a);
-		Var c = 10;
-		return function(b){
-		return a + b + c;
-			}
-		OR
-		return { 
-			getSumTwo: function(b) {
-				return a+ b
-				}
-			},
-			getSumThree: function(c) {
-				return a+ c
-				}
-			}
-
-		}
-		var call = sum(5);
-		console.log( call(10) );
-		console.log( call.getSumTwo(5) );
-		console.log( call.getSumThree(1) );
-		}
-		var call = sum(5);
-		console.log( call(10) );
-		console.log( call.getSumTwo(5) );
-		console.log( call.getSumThree(1) );
-
-=> Fetch API
-	Fetch is a function that happen a asynchronously.
-	Fetch return promise. With fetch we can get data or post data means call the data or send the data 
-
-	function getData( ) {
-		fetch( 'fetch url' )
-		.then( (res) => res.json( ) ) //.text() or . blob ()
-		.then ( ( data ) => { console.log ( data ) } )
-		.catch( ( error ) => { console.log ( error ) } );
-	}
-
-	Post Data adding input values
-	function getData( e ) {
-		e.preventDefault( );
-		var title= document.getElementById( 'name' );
-		var desc= document.getElementById( 'name' );
-
-		fetch( 'fetch url', {
-			method : 'POST ',
-			header : { 
-				'Accept' : ' application/json, plan/json, / ',
-				' Content-type' : ' application/json '
-			},
-			body : JSON.stringify( { title: title, body: desc })
-		} )
-
-		.then( (res) => res.json( ) )
-		.then ( ( data ) => { console.log ( data ) } )
-		.catch( ( error ) => { console.log ( error ) } );
-	}
-
-=> Shallow Copy -> Copies only the top-level properties or elements.
-	array shallow copy => [...originalArray], originalArray.slice();
-	object shallow copy => {...originialObject}, Object.assign({}, originalObject);
-
-	var original = [0, 1, 2, 3, [4, 5, 6]];
-	console.log(original); //[0, 1, 2, 3, [4, 5, 6]];
-	var copy = [...original]
-	original[1] = 10;
-	copy[2] = 20;
-	copy[4][0] = 40;
-	console.log(original); // [0, 10, 2, 3, [40, 5, 6]];
-	console.log(copy); // [0, 1, 20, 3, [40, 5, 6]];
-
-=> Deep Copy => Creating a deep copy in JavaScript means making a complete copy of an object or array, including all nested objects and arrays.  not affect the original object and array.
-	const original = { a: 1, b: { c: 2, d: [3, 4] } };
-	const deepCopy = JSON.parse(JSON.stringify(original));
-	deepCopy.b.d[0] = 10;
-	console.log(original); // Output: { a: 1, b: { c: 2, d: [3, 4] } }
-	console.log(deepCopy); // Output: { a: 1, b: { c: 2, d: [10, 4] } }
-
-=> Recursion
-	Recursion is a process of calling itself. A function that calls itself is called a recursive function.
-	A recursive function must have a condition to stop calling itself. Otherwise, the function is called indefinitely.
-	Once the condition is met, the function stops calling itself. This is called a base condition.
-	Here, the recurse() function is a recursive function. It is calling itself inside the function.
-
-		function countDown(num){
-			console.log(num);
-			var newNum = num - 1;
-			if(num >= 0){
-				countDown(newNum);
-			}
-		}
-		countDown(5);
-		
-
-
-
-
-
-
-
-
-
-/*
-=> get, set, attribute, style css, add class, remove class, hasClass, find, tree traversal functions 
-=> create element, create attribute, append, prepennd, after, before
-=> click, double click, mouseouver, mouseout, keyup, keydown, hover, focus
-=> loop => forearch, each, for loop, while loop, do while loop, for..in, for...of
-=> API => third party API Integration, ajax, fetch API
-=> String => trim(), split(), replace(), replaceAll(), substring(), search(), lastIndexOf()
-=> Array => push(), pop(), unshift(), shift(), slice(), splice(), at(), toString(), concat(), join(), indexOf(), revese(), toReversed(), toSpliced(), 
-    forEach(), filter(), sort(), map(), reduce(), includes(), find(), some(), every(), flat(), flatMap()
-=> object => Object.assign(), Object.keys(), Object.values(), Object.is(), Object.entries() - key and value segrigate.
-=> Advance => Hoisting, spread operator, rest operator, Array destructring, object destructring, Shallow copy, deep copy, Recursion, CallBack, Promise, 
-  Promise chaining, Async/ wait, higher order function, Closure, Classes and Inheritance, Getters, Setters, Set operator, Get operator, Event loop, 
-  event bubbling, event capturing, Class Expressions, Module, Constructor Function, Prototype Inheritance, try...catch, Optional chaining
-=> Pro =>  How to stop api call, memory leakage
-
-
+=> search() - searches a string for a value and returns the position of the first match, returns -1 if the value is not found, is case sensitive.
+  let text = "Mr. Blue has a blue house"
+  let position = text.search("Blue"); // 4
 
 => slice -> does not modify the original array or string; it returns a new one.
   array.slice(start, end)
   array.slice(-1) -> return last value of the array.
   array.slice(2, -1) -> It return values form 2 to 2nd last value for array.
-  array.slice(2, 4) -> It return values form 2 postion to before 3th position values. That means end value se ek kam tak.
+  array.slice(2, 4) -> It return values form 2 position to before 3th position values. That means end value se ek kam tak.
 
 => splice => Modify the original array. It returns a new one.
   array.splice(start, end);
   arr.splice(-1) -> return last value of the array.
-  array.splice(2, 0, 22) -> (position, number of value, New value) - Add the value of 22 after 2 position value.
-  array.splice(3, 2, 13) -> (position, number of values, new value) - replace the 2 values form 3 position with 13. 
+  array.splice(2, 0, 22) -> (position, number of value going to replace, New value) - Add the value of 22 after 2 position value.
+  array.splice(3, 2, 13) -> (position, number of values going to replace, new value) - replace the 2 values form 3 position with 13. 
 
 => toReversed() -> does not modify the original array or string; it returns a new one.
   array.toReversed();
@@ -1317,203 +537,583 @@ Prevent a link from following the URL
 => every() -> return boolean value, method stops checking as soon as it finds an element that does not meet the condition. Does Not Modify the Original Array   
     every.some(ele, ind, arr)
 
-=> flat() -> returns a new array and does not modify original array. it makes nested arrays into a single-level array. Concating nested array.
+=> flat() -> returns a new array and does not modify original array. it makes nested arrays into a single-level array. concat ting nested array.
     array.flat([depth]) -> The depth level specifying how deep a nested array structure should be flattened. The default is 1. 
-    If we dont know the count of nested array then we can pass "Infinity".
+    If we don't know the count of nested array then we can pass "Infinity".
     const nestedArray = [1, 2, [3, 4]]; const flatArray = nestedArray.flat(); // Output: [1, 2, 3, 4]
     const moreNestedArray = [1, [2, [3, [4]]]]; const flatDefault = moreNestedArray.flat(); // Output: [1, 2, [3, [4]]]
     const moreNestedArray = [1, [2, [3, [4]]]]; const flatDefault = moreNestedArray.flat(2); // Output: [1, 2, 3, 4]
     const infiniteNestedArray = [1, [2, [3, [4, [5]]]]]; const flatInfinite = infiniteNestedArray.flat(Infinity); // Output: [1, 2, 3, 4, 5]
 
-=> flatMap() -> return new array, does not modify original array. It is combination of flat() and map() method. 
-    It's great for working with nested structures, particularly when you want to extract or manipulate elements from arrays of objects.
+=> flatMap() -> return new array, does not modify original array. It is combination of map() and flat() method. 
+    It's great for working with nested structures, particularly when we want to extract or manipulate elements from arrays of objects.
     get the single value from each element of the array of object into a single array. Ex - form nested arrayOfObject only need userId.
     array.flatMap();
 
-=> Shallow Copy -> It craete the new reference of the array or object but not alter nested structures. 
-   If made changes on the top level it does not effect the orignal array or object but if change the nested structure it effect the original as well as reference. 
+=> Shallow Copy -> It create the new reference of the array or object but not for nested structures. Modifications does not 
+  effect on top level. Modifications affect both the copy and the if nested structure.
+  If we made changes on the top level it does not affect the original array or object but if change the nested structure it effect
+  the original as well as reference. 
     const originalArray = [1, 2, { a: 3 }];
     const shallowCopyArray = originalArray.slice(); or [...originalArray];
     
     const originalObject = { a: 1, b: 2 };
     const shallowCopyObject = Object.assign({}, originalObject);
 
-=> Deep Copy -> do not affect the original array or object.
+=> Deep Copy -> do not affect the original array or object. Creates copies of all nested objects. Modifications to the copy do not affect the original.
     const original = { a: 1, b: { c: 2 } };
     const deepCopy = JSON.parse(JSON.stringify(original));
+    let clone = structuredClone(value);
 
 => Spread operator -> using for shallow copy or merging array or object. Take element and replace them individually.
     const obj1 = { name: 'John', age: 30 };
     const obj2 = { country: 'USA' };
     // object literals
     const merged = { ...obj1, ...obj2 }; // Output: { name: 'John', age: 30, country: 'USA' }
-    // Object Destructring
+    // Object Destructing
     const newObj = { ...obj1, age: 50 }; // Output: { name: 'John', age: 50 };
 
 => Rest Operator -> used to collect multiple values into a single variable. Gathers remaining elements into an array. 
-    Passing n number of paramter with the help of rest operator(...)
-      const nums = [5, 2, 1, 1];
+    Passing n number of parameter with the help of rest operator(...)
+      const numbers = [5, 2, 1, 1];
       function init(...rest){
         console.log(rest); // [ [5, 2, 1, 1] ] -> it return in array
       }
-      init(nums);
+      init(numbers);
 
       const arr = [1, 2, 3, 4, 5];
-      // Array Destructring
+      // Array Destructuring
       const [first, second, ...rest] = arr;
       console.log( first, second, rest); //Output: 1, 2, [3, 4, 5];
 
-=> Hoisting -> var throw undefined, let const throw error, function declearation throw undefined.
+ => Array Destructuring -> extracting values from arrays and objects. Rest operator (...) is used to gather remaining elements into a new array.
+    we can provide default values for variables in case an element in the array or object is undefined.
+    const numbers = [10, 20];
+    const [x, y = 30, z = 40] = numbers; // default value y=30, z = 40
+    const person = { name: 'mike', age: 23 }
+    You can rename the variables during destructuring.
+    const { name: personName, age: personAge } = person; // renaming keys name or variables
 
-=> lexical scoping -> Inner function have access to the scrop of the outer function ie called lexical scoping. 
-    Means inner function have full access to its parent fucntion. 
-
-=> Closure: Closures are a special case of lexical scope where inner functions remember the scope in which they were created, 
-  even after the outer function has finished executing. Inner functions retain access to variables from their outer functions, 
-  which allows them to remember and use those variables even after the outer function has finished.
-  In closure return inner function but actually it is returned all things which is inside the parent function.
-  When a function is defined inside another function, it creates a closure. The inner function retains access to the outer function's scope, including its variables.
-
-=> Object.entries() : Converting object into array with looping. It segrigate key and value of the object.
-  let obj = {name: 'mike', age: 23}
-  for(const [key, value] of Object.entries(obj) ){ }
+=> Object.entries() : Converting object into array with looping. It segregate key and value of the object.
+    let obj = {name: 'mike', age: 23}
+    for(const [key, value] of Object.entries(obj) ){ }
     
 => || operator is the logical OR operator. It evaluates expressions from left to right and returns the first truthy value it encounters. 
     If all values are falsy, it returns the last value.
     let value = userInput || defaultValue; // if userInput is falsy, value gets defaultValue
 
-=> Recursion :  a function calls itself repeatedly.
-
-=> Constructor: a constructor function is used to create and initialize objects.
-
-=> CallBack(): A callback is a function passed as an argument to another function and is executed later, usually after some asynchronous task.
-  function init(callback) {
-    setTimeout(function() {
-      callback('Result of async operation');
-    }, 1000);
-  }
-  init(function(result) {
-    console.log('Received:', result);
-  });
+=> Recursion :  a function calls itself repeatedly. A recursive function generally has two main parts:
+    Base case: The condition that stops the recursion (prevents an infinite loop).
+    Recursive case: The part where the function calls itself
+      function factorial(n) {
+      if (n === 0 || n === 1) {
+        return 1;
+      } else {
+        return n * factorial(n - 1);
+      }
+    }
+    console.log(factorial(5));
 
 => Async/ wait : handle asynchronous code,  An async function always returns a promise, and inside that function, we can use the await keyword.
-  await: This keyword is used inside an async function to pause the execution of the function until a promise is resolved. 
-  The result of the promise is returned once it's resolved. If the promise is rejected, an error is thrown.
-   errors handling using try/catch blocks.
+    await: This keyword is used inside an async function to pause the execution of the function until a promise is resolved. 
+    The result of the promise is returned once it's resolved. If the promise is rejected, an error is thrown.
+    errors handling using try/catch blocks.
 
-=> Promise handling asynchronous operations and .then() or .catch() methods.
-  Pending: The promise is still in progress, the operation is not finished.
-  Fulfilled (Resolved): The asynchronous operation completed successfully.
-  Rejected: The asynchronous operation failed, and an error occurred.
+=> Promise handling asynchronous operations like fetching data from api.
+    Pending: The promise is still in progress, the operation is not finished.
+    Fulfilled (Resolved): The asynchronous operation completed successfully.
+    Rejected: The asynchronous operation failed, and an error occurred.
 
-  [Promise chaining, Return Values or Promises, Error Handling, Promise.all, Promise.allSettled, Promise.any, finally ]
-  Promise Chaining: Allows handling multiple asynchronous operations sequentially.
+    [Promise chaining, Return Values or Promises, Error Handling, Promise.all, Promise.allSettled, Promise.any, finally ]
+    Promise Chaining: Allows handling multiple asynchronous operations sequentially.
+    Promise chaining in JavaScript is a technique where multiple promises are executed in sequence. Each promise in the chain gets executed 
+    after the previous one has resolved, allowing for smooth handling of asynchronous code. 
+    
+      fnFetchApi(){
+        return new Promise((resolve, reject)=>{
+          setTimeout(()={
+            if(true){
+              resolve("Resolved");
+            }else {
+              reject("Reject");
+            }
+          }, 3000)
+        })
+      }
 
-  fnFetchApi(){
-    return new Promise((resolve, reject)=>{
-      setTimeout(()={
-        if(true){
-          resolve("Resolved");
-        }else {
-          reject("Reject");
+      fnFetchApi().then(()=>{
+      }).then(()=>{
+      }).catch(()=>{
+      }).then(()=>{
+      }).catch(()=>{
+      })
+
+      async function promiseFun() {
+        try {
+          let one = await promiseOne();
+          let two = await promiseTwo(one);
+          let three = await promiseThree(two);
+        } catch (e) {
+          console.log("Something went wrong!");
         }
-      }, 3000)
+      }
+      promiseFun();
+
+    Promise.all() => Waits for all promises to be fulfilled. If any fail, the whole operation fails. accept an array of promise return single array of promise. If any promise rejected then reject the promise. 
+      let p1 = Promise.resolve(3);
+      let p2 = Promise.reject(4);
+      let p3 = Promise.resolve(5);
+      
+      Promise.all([p1, p2, p3]).then(function(res){
+        console.log(res);
+      }).catch(function(err){
+        console.log(err);
+      })
+
+    Promise.allSettled() => Waits for all promises to settle (either resolve or reject). accept an array of promise return each value in single array of promise. wait for all the promise to executed.
+      Promise.allSettled([p1, p2, p3]).then(results => {
+      console.log(results);
+      // Output:
+      // [
+      //   { status: 'fulfilled', value: 3 },
+      //   { status: 'rejected', reason: 'Failed' },
+      //   { status: 'fulfilled', value: 5 }
+      // ]
+      });
+
+    Promise.any() => Resolves as soon as any promise resolves. Only rejects if all promises reject.  accept an array of promise return a promise as soon as promise resolve. If all the promise rejected then return reject.
+
+    Promise.race() => Resolves/rejects as soon as one of the promises settles. accept an array of promise return a promise as soon as first promise resolve or reject.
+      finally() => When all the promise executed then finally work.
+      promise.then(()=>{
+      }).then(()=>{
+      }).catch(()=>{
+      }).finally(()={
+      console.log('Finally Promise is executed');
+      })
+
+=> call(), apply() and bind()
+    call() => passing arguments individually. function is invoked immediately when call() is called.
+    greet.call(referenceObject, arg1, arg2, ...)
+
+    apply() => it takes an array (or array-like object) of arguments. function is invoked immediately when call() is called.
+    greet.apply(referenceObject, [arg1, arg2, ...])
+
+    bind()=> The function is not invoked immediately. Instead, it returns a new function, and you can call it later. in simple word take a copy of
+      of function, store on variable and call when use.
+    const boundFunction = greet.bind(referenceObject, arg1, arg2, ...)
+
+=> Event bubbling and capturing (tripling down)
+    Event bubbling -> Event start at the target element and then bubble up to the root.
+
+    Capturing -> Event start from the top (document) and trickle down to the target element.
+
+    we can stop event bubbling and capturing with stopPropagation
+    e.stopPropagation();
+    e.stopImmediatePropagation()
+
+    ex: 
+    <div id="grandParent">
+        <div id="parent">
+            <div id='child1'></div>
+            <div id='child2'></div>
+            <div id='child3'></div>
+            <div id='child4'></div>
+            <div id='child5'></div>
+        </div>
+    </div>
+    document.querySelector('#grandParent').addEventListener('click', (e)=>{
+        e.stopPropagation();
+    }, true) // => true means capturing, false means bubbling (it by Default)
+
+=> Event Delegation
+    It is a technique where we use a single event listener on a parent element instead of adding multiple event listeners to each child element.
+    or 
+    It's a technique where a single event listener is attached to a parent element, rather than attaching separate listeners to each child element.
+
+     document.querySelector('#grandParent').addEventListener('click', (e)=>{
+        if(e.target.id){
+            console.log(`${e.target.id} clicked`);
+        }
     })
-  }
 
-  fnFetchApi().then(()=>{
-  }).then(()=>{
-  }).catch(()=>{
-  })
+=> Callback
+    1. Function that is passed on as argument to another function is called callback function.
+    2. setTimeout helps turn JS which is single threaded and synchronous into asynchronous.
+    3. Event listeners can also invoke closures with scope.
+    4. Event listeners consume a lot of memory which can potentially slow down the website therefore it is good practice to remove if it is not used.
+    
+    A callback is a function passed as an argument to another function and is executed later, usually after some asynchronous task.
+    function init(callback) {
+      setTimeout(function() {
+        callback('Result of async operation');
+      }, 1000);
+    }
+    init(function(result) {
+      console.log('Received:', result);
+    });
+    
+=> Currying
+    Currying is a technique in javascript where a function is transformed into a sequence of functions, each taking a single argument.
+    or 
+    A function with multiple argument is transformed into a series of functions, each taking a single argument.
 
-  Promise.all() => accept an array of promise return single array of promise. If any promise rejected then reject the promise.
-  let p1 = Promise.resolve(3);
-  let p2 = Promise.reject(4);
-  let p3 = Promise.resolve(5);
-  
-  Promise.all([p1, p2, p3]).then(function(res){
-    console.log(res);
-  }).catch(function(err){
-    console.log(err);
-  })
+    function add(a){
+        return function (b){
+            return a + b;
+        }
+    }
+    let total = add(5)(5) // output = 10;
 
-  Promise.allSettled() => accept an array of promise return each value in single array of promise. wait for all the promise to executed.
-  Promise.allSettled([p1, p2, p3]).then(results => {
-  console.log(results);
-  // Output:
-  // [
-  //   { status: 'fulfilled', value: 3 },
-  //   { status: 'rejected', reason: 'Failed' },
-  //   { status: 'fulfilled', value: 5 }
-  // ]
-  });
+=> Closure
+    Closure is a function which is surrounded by its lexical environment. It's remember there reference memory location not values. in closure inner function can access outside of its variable which is present there parent environments.
 
-  Promise.any() => accept an array of promise return a promise as soon as promise resolve. If all the promise rejected then return reject.
-  Promise.race() => accept an array of promise return a promise as soon as first promise resolve or reject.
-  finally() => When all the promise excuted then finally work.
-  promise.then(()=>{
-  }).then(()=>{
-  }).catch(()=>{
-  }).finally(()={
-  console.log('Finally Promise is excuted');
-  })
-  
+    Uses 
+        - User for data encapsulation and data hiding
+        - Module design pattern
+        - currying 
+        - function like once - can run once
+        - memoize
+        - Maintaining state in async world
+        - setTimeouts
 
-=> Classes : classes provide a blueprint for creating objects with shared properties and methods.
+=> Debouncing and throttling
+    Debouncing -> Function is called only after a creation period of time. If the event keeps triggering, the timer resets each time.
+
+    Debouncing makes sure a function only runs after the user stops performing an action for a certain amount of time.
+
+    Trigger time - after user stops
+    use case - typing, search box
+    Purpose - not called too frequently or Delay function call until idle (Nothing is happening for a certain period of time.)
+    
+        <input type="text" id="searchInput">
+
+        const debouncing = function(fn, d){
+          let timer;
+          return function(...args){
+            clearTimeout(timer);
+            timer = setTimeout(()=>{
+              fn.apply(this, args);
+            }, d)
+          }
+        }
+
+        function onSearch(event){
+          console.log(' Search - ' + event.target.value);
+        }
+
+        document.getElementById('searchInput').addEventListener('keyup', debouncing(onSearch, 500))
+
+    Throttling -> Function is called at most once in a specific time interval, no matter how many times the event occurs.
+    Trigger time - At fixed intervals
+    User case - scrolling and re-sizing
+    Purpose - Limit how often function is called
+        
+      <input type="text" id="searchInput">
+      const throttle = function (func, limit) {
+        let isThrottle = false;
+        return function (...args) {
+          if (!isThrottle) {
+            func.apply(this, args);
+            isThrottle = true;
+            setTimeout(() => {
+              isThrottle = false;
+            }, limit)
+          }
+        }
+      }
+      function onInput(event){
+        console.log('Throttled Input : '+ event.target.value);
+      }
+      const throttledInput = throttle(onInput, 1000);
+      document.getElementById('searchInput').addEventListener('keyup', throttledInput)
+    
+=> Event Loop
+    The Event  Loop pushes the "queue" into the Call Stack only when the Call Stack is empty (i.e. the global execution context has been pushed off the call stack).
+    The order in which the Event Loop works is:
+    1. Call Stack
+    2. Micro task Queue
+    3. Callback Queue
+
+    Call Stack: => The call stack is a data structure that keeps track of the function calls in your code.  the last function that gets pushed onto the stack is the first one to be popped off when the function completes.
+
+    Callback Queue (Task Queue) =>  holds tasks (callbacks or events) that are ready to be executed. These tasks usually come from asynchronous operations, such as DOM events, HTTP requests, or timers.
+
+    Event Loop =>  The event loop is responsible for continuously checking the call stack and the callback queue. If the call stack is empty, the event loop takes the first task from the callback queue and pushes it onto the call stack for execution.
+
+    Microtask Queue: => The microtask queue holds tasks that are also ready to be executed but has a higher priority than the callback queue. Microtasks are usually scheduled by JavaScript promises, mutation observers
+
+    => Micro and Macro task
+      Microtasks are scheduled via:
+        Promise.then() / Promise.catch() / Promise.finally()
+        queueMicrotask()
+        MutationObserver
+
+      Macrotasks are scheduled via:
+        setTimeout()
+        setInterval()
+
+=> This keyword
+    this is not about where a function is written; it's about how it's called.
+
+    The this keyword is a fundamental part of JavaScript that refers to the context in which a function is executed. It is dynamic and can change depending on how and where a function is called:
+
+    In the global context, this refers to the global object (window in browsers).
+
+    In object methods, this refers to the object the method belongs to.
+
+    In regular functions, this defaults to the global object (in non-strict mode) or undefined (in strict mode).
+
+    In arrow functions, this is lexically bound – it uses this from the surrounding context.
+      
+    const person = {
+        fname: 'Mike',
+        lname: 'Tyson',
+        fullName: () => {
+            console.log(`${this.fname} ${this.lname}`);
+        },
+        greet: function () {
+            setTimeout(() => {
+                console.log(this);
+            }, 1000);
+        },
+        arrow: () => {
+            setTimeout(() => {
+                console.log(this);
+            }, 1000);
+        },
+        print() {
+            console.log(this);
+        }
+    }
+    person.arrow();
+
+=> Prototype and Prototype inheritance
+    EVERYTHING IN JAVASCRIPT IS AN OBJECT because of prototype
+
+    inheritance in JS => When an object trying to access variables and properties of another object
+
+    prototype is an Object that get attach to function/method/object and this object has some hidden properties
+
+    Whenever we create object/ function/ methods/ array/ variable, these all are attached with some hidden properties, which we call prototype
+
+    _proto_ is reference to prototype ( or it points towards prototype ), if we want to access prototype, we do _proto_
+
+    prototype object has a prototype of its own, and so on until an object is reached with null as its prototype,  this is called prototype chaining
+
+=> reduce method 
+	reduce method is combination of filter and map method.
+
+	const numbers = [450, 200, 75, 80, 90];
+	const resultSum = numbers.reduce((accumulator, currentElement, index, array) => {
+		return accumulator + currentElement;
+	}, 0);  // where to start not given so start with accumulator and value2
+
+	var numberList = [10,2,5,67,3,45,];
+	var res = numberList.reduce(function(accumulator, element, index, array){ 
+	    if(element > 10){
+	        accumulator.push(element);
+	        return accumulator;
+	    }else{
+	        return accumulator;
+	    }
+
+	},[]); // in array [] formate it will return;
+	console.log(res);
+
+=> object
+	A collection of name value pairs. key value pairs.object same as array and in object, we can call function.
+		const courses = { java: 10, javascript: 55, nodejs: 5, php: 15 };
+		* Methods to loop through objects using javascript for...in Loop
+			for (const key in courses) {
+				.log(`${key}: ${courses[key]}`);
+			}	
+		* Object.keys() Method - returns an array containing all properties name
+		* Object.values() Method -It returns the values of all properties in the object as an array
+		* Object.create();
+		* Object.assign();
+
+=> Module : 
+  A module in JavaScript is a file that encapsulates code and can export and import variables, functions, classes, etc., so they can be used in other files. This helps in organizing, maintaining, and reusing code across a project.
+
+    Each module has its own scope.
+    Modules are loaded once (cached).
+    Modules can import other modules.
+
+    <script type="module" src="main.js"></script>
+
+    master.js -> file
+        export var add = (a, b) => a + b;
+
+    main.js -> file
+        import { add } from './index.js';
+        let sum = add(2, 5);
+        console.log(sum);
+
+=> Constructor functions  
+  a constructor function is used to create and initialize objects. Constructors are functions that contain a this keyword.
+	If we initialize the constructor its runs. Create Multiple Objects with Constructor Function.
+
+	function Person (name, age, gender) {
+		this.name = name,
+		this.age = age,
+		this.gender = gender,
+		this.greet = function () {
+			return ('Hi' + ' ' + this.name);
+		}
+	}
+	const person1 = new Person('John', 23, 'male'); // creating objects
+	const person2 = new Person('Sam', 25, 'female');
+	
+	person1.print = function () { // adding method to person1 object
+		console.log('hello');
+	}
+
+=> Prototype
+		In JavaScript, a prototype can be used to add properties and methods to a constructor function.
+
+		// adding property to constructor function
+		Person.prototype.status = 'Married';
+
+		// prototype value of Person
+		console.log(Person.prototype);
+
+		// inheriting the property from prototype
+		console.log(person1.status);
+		
+		// changing the property value of prototype
+		Person.prototype = { status:  'UnMarried'}
+
+=> Inheritance 
+	function Human(person_name, person_age, person_gender, month){
+		Person.call(this, person_name, person_age, person_gender);
+		this.month = month
+	}
+
+	// Inherit Prototype 
+	Human.prototype = Object.create(Person.prototype);
+
+	// Instantiate Human Object
+	const hum1 = new Human('Mike', '22', 'Male', 'March');
+
+	// use Human Constructor
+	Human.prototype.constructor = Human;
+	
+	console.log(hum1);
+
+=> Sub Class 
+	class Human extends Person {
+		constructor(person_name, person_age, person_gender, month){
+			super(person_name, person_age, person_gender); // get parent properties
+			this.month = month;
+		}
+	}
+
+	// Instantiate Human Object
+	const hum1 = new Human('Khabib', '22', 'Male', 'Jan');
+	hum1.greet();
+
+=> Class 
+	Classes is blue print of object. Classes are said to be the “syntactic sugar” of Constructor functions. 
+
+  classes provide a blueprint for creating objects with shared properties and methods.
 
   => Inheritance : where one class can inherit from another. This allows you to create subclasses that extend the functionality of a base class.
 
   => Getters, Setters :  which allow you to control how properties of an object are accessed and modified.
 
+  class Person {
+      constructor(firstName, lastName) {
+          this.fname = firstName,
+          this.lname = lastName,
+          this.greet = function () {
+              console.log(`Hello, I'm ${this.fname} ${this.lname}`);
+              }
+      }
 
-=> call(), apply() and bind()
-  const person = { name: "Jane" };
-  function greet(message, punctuation) {
-    console.log(message + ", " + this.name + punctuation);
+      static ask(){ // only parent can access this function
+          console.log(`How are you ${this.fname} ${this.lname}?`);
+      }
+
+      fullName(){
+          console.log(`${this.fname} ${this.lname}`);
+      }
+
+      get name() {
+          return this.fname;
+      }
+
+      set changeName(newName) {
+          if (newName.length > 0) {
+              this.fname = newName;
+          } else {
+              console.log('Name must not be empty.');
+          }
+      } 
+
+
   }
-  call() => passing arguments individually. function is invoked immediately when call() is called.
-  greet.call(person, arg1, arg2, ...)
 
-  apply() => it takes an array (or array-like object) of arguments. function is invoked immediately when call() is called.
-  greet.apply(person, [arg1, arg2, ...])
+  const person1 = new Person("Mike", "Tyson");
+  console.log(person1);
+  // person1.ask(); // child will not able to access
+  // Person.ask();
+  // console.log(person1.name());
+  person1.changeName = "Bruce lee"; // Change name with set operator
+  console.log(person1);
 
-  bind()=> The function is not invoked immediately. Instead, it returns a new function, and you can call it later. in simple word take a copy of
-    of function, store on variable and call when use.
-  const boundFunction = greet.bind(person, arg1, arg2, ...)
+=> Objects Linking to Other Objects (OLOO)
 
-=> currying function
-  a function returns another function that takes arguments one by one, instead of taking all the arguments at once.
-  currying allows you to break down a function into a series of functions that each take a single argument.
-  
-	function multiply(a) {
-		return function(b) {
-			return function(c) {
-			return a * b * c;
-			};
-		};
+	const Human = {
+		init (FirstName, LastName) {
+			this.firstName = FirstName
+			this.lastName = LastName
+			this.sayHello = function () {
+			console.log(`Hello, I'm ${firstName}`)
+			}
+			return this
+		}
 	}
-	const result = multiply(2)(3)(4)(); // Output: 24
-	
 
-=> Global variable
-=> Set operator, Get operator
-=> Event loop
-=> event bubbling, capturing
-=> Class Expressions
-=> Module 
-=> Constructor Function 
-=> currying
-=> lexical scope 
-=> Pure function 
-=> Temporal dead zone 
-=> IIFE function 
-=> Status of the Promises 
-=> call back function 
-=> generator function 
-=> Template literal 
-=> Arrow distrusting
-=> different between normal function and arrow function.
-=> Primative and non primative.
+	//const chris = Object.create(Human)
+	//chris.init('Chris', 'Coyier');
+	// or
+	const chris = Object.create(Human).init('Chris', 'Coyier');
+	console.log(chris.firstName);
+
+=> web socket
+    - One time TCP connection (handshake)
+    - Bi-directional messaging
+    - Used for realtime applications
+    ex- notification (whatsapp)
+
+=> REST API - 
+  Representational State Transfer Application Programming Interface
+
+=> graphQL
+  GraphQL stands for Graph Query Language. It is a query language for your API and a runtime for executing those queries with your existing data.
+  - Flexible Queries: Clients can ask for exactly the data they need—no more, no less.
+  - Single endpoint (e.g., /graphql)
+  - A unified schema handles all resources.
+  - You want to avoid over-fetching or under-fetching
+ 
 
 
-*/
+
+
+
+
+
+
+=> Garbage Collector
+=> OOps concept
+=> Memory Management and Garbage Collection, 
+=> Memory Optimization, Algorithm and Data Structure
+=> How to stop api call, memory leakage
+
+
+
+
+
+
+
