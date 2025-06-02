@@ -144,6 +144,13 @@ https://v2.angular.io/docs/ts/latest/guide/template-syntax.html#!#template-input
       It required 3 things node, npm, angular cli.
       ng new applicationName
 
+
+  => Angular 
+  Angular is a TypeScript-based open-source web application framework developed and maintained by Google. It is used to build single-page applications (SPAs)—fast, dynamic, and scalable web apps that load a single HTML page and update dynamically as the user interacts with the app.
+
+    Angular is javascript framework. Angular is a component based single page application framework that is written in typescript. It is developed and maintained by google.
+
+
   * Which File Executes First in Angular?
     First it goes to the angular.json file, It loads up main.ts (first file that executes) and read its content.
     index.html, main.ts, app-module(Know all about component in this file).
@@ -228,9 +235,6 @@ https://v2.angular.io/docs/ts/latest/guide/template-syntax.html#!#template-input
       - tree shaking (removes unused code),
       - Ahead of time (AOT) compilation - pre-compiles for better performance
       - Enable caching - Hashes are added to filenames to help with caching.
-
-  => Angular 
-    Angular is javascript framework. Angular is a component based single page application that is written in typescript. It is maintained by google.
 
   => Directive - ng g directive directive-name
     Directive use for DOM manipulation.Directives are classes that add additional behavior to elements. 
@@ -1404,6 +1408,7 @@ https://v2.angular.io/docs/ts/latest/guide/template-syntax.html#!#template-input
 
 
 
+  => Jasmine/Karma – for unit testing
 
 
 

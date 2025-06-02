@@ -74,11 +74,12 @@
 ==> JAVASCRIPT -----------------------------
 
     What is JavaScript and why it is used?
-    JavaScript is a very powerful client-side and server-side scripting language.This allows us to create dynamic content for the web. JavaScript is a 
-    lightweight language that is open-source and allows cross-platform.it works with various other programming languages And this is 
-    the reason for its vast use all around the world.
+    JavaScript is a programming language used to make websites interactive and dynamic.
+    JavaScript is a very powerful client-side and server-side scripting language.This allows us to create dynamic content for the web. 
+    JavaScript is a lightweight language that is open-source and allows cross-platform. it works with various other programming languages
+    And this is the reason for its vast use all around the world.
 
-    the code is always visible to everyone anyone can view JavaScript code
+    the code is always visible to everyone, anyone can view JavaScript code
 
     var
     var is function scoped, can be re-declared and re-assign. access 'var' before initialization gives 'undefined' (means hoisting)
@@ -89,7 +90,7 @@
         a = 30; // re-assigning
 
     let 
-    block level scope, can not re-declared but re-assign. let variables can be updated but not re-declared.Cannot access 'let' before 
+    block level scope, can not re-declared but re-assign. Cannot access 'let' before 
     initialization gives 'error' (means hoisting)
 
     const 
@@ -111,6 +112,10 @@
     Is Const faster than let?
     It appears that using const would inherently make code a little faster, because it seems to reduce the amount of hoisting necessary. 
 
+    const use 
+    we know the value should stay the same.
+    Example: API keys, fixed settings, or names that don’t change.
+
     What Are Javascript Types?
     Number, String, Boolean, Function, Object, Null, Undefined.
 
@@ -120,13 +125,7 @@
     What Is The Difference Between An Alert Box And A Confirmation Box?
     An alert box displays only one button which is the OK button whereas the Confirm box displays two buttons namely OK and cancel.
 
-    What Does "1"+2+4 Evaluate To?
-    Since 1 is a string, everything is a string, so the result is 124.
-
-    How Do You Convert Numbers to String In Javascript?
-    Use the  toString()  function
-
-    When is the mouseout event fired?
+    When is the mouseOut event fired?
     When mouse is no longer over an element
 
     When is the mouseover event fired?
@@ -172,22 +171,6 @@
     arr.at(); // "How"; -> First Value
     arr.at(-1); // "doing"; -> Last value
 
-    contact(); => create new array, not change the existing arrays.
-
-    fill() =>  fills specified elements in an array with a value, overwrite the original array.Start and end position can be specified. If not, all elements will be filled.
-    arr.fill("Mike", 2, 4);
-
-    flat() => concatenates sub-array elements
-    const myArr = [1, 2, [3, [4, 5, 6], 7], 8];
-    const newArr = myArr.flat(2); // 1,2,3,4,5,6,7,8
-
-    includes() => returns true if an array contains a specified value, returns false if the value is not found. is case sensitive
-        const fruits = ["Banana", "Orange", "Apple", "Mango"];
-        fruits.includes("Mango"); // true
-
-        fruits.includes("Banana", 3); // false
-
-
     what is object in javascript
     object is key value pair. access from .(dot) notation. object is a collection of properties, and a property is an association 
     between a key and a value.
@@ -216,12 +199,46 @@
     The JavaScript this keyword refers to the object it belongs to. It has different values depending on where it is used: In a method, 
     this refers to the owner object. Alone, this refers to the global object. In a function, this refers to the global object.
 
-    difference between typescript and javascript ?
-    JavaScript is a scripting language. 
-    typescript  is an object-oriented programming language and has a compiler.
-    TypeScript is an object-oriented programming language developed by Microsoft Corporation, whereas JavaScript is the programming language 
-    for the web. TypeScript is an open-source language to build large-scale web apps, whereas JavaScript is a server-side programming language
-    that helps to develop interactive web pages.
+   Difference Between JavaScript and TypeScript
+    JavaScript is a scripting language used to make web pages interactive. It is flexible and runs directly in all browsers. However,
+     because it is loosely typed, errors often appear only when the code is running, which can sometimes cause bugs.
+
+    TypeScript is a superset of JavaScript developed by Microsoft. It adds static typing and other features to help catch errors before
+     the code runs. TypeScript code needs to be compiled into JavaScript before it can run in a browser.
+
+    Key points to remember:
+        JavaScript runs directly in browsers, while TypeScript requires compilation to JavaScript.
+        JavaScript is flexible but can lead to runtime errors.
+        TypeScript is stricter, helping developers write safer and more maintainable code.
+        JavaScript detects errors at runtime; TypeScript catches errors during development.
+        TypeScript supports object-oriented programming concepts and provides better tooling.
+        JavaScript is ideal for small to medium projects; TypeScript is especially helpful for large-scale applications.
+
+
+    Compiler - Preparer
+        Translates code from one language into another, usually from high-level code (like TypeScript or C++) into low-level machine code or another high-level language.
+        Converts your whole code into another language before it runs.
+        Example: TypeScript gets compiled into JavaScript.
+        👉 Like writing a full letter in English, then translating the whole letter into Hindi before giving it to someone.
+        - Checks for syntax and type errors.
+        - Optimizes and converts it into another form (often binary or JavaScript).
+
+    Interpreter - Live Reader
+     An interpreted scripting language like JavaScript is a programming language that:
+     Does not need to be compiled into machine code before running. Instead, it is executed line-by-line by an interpreter at runtime.
+        Reads and runs your code line by line, as it goes.
+        Example: JavaScript runs directly in the browser.
+        👉 Like someone reading a sentence in English, then immediately speaking it in Hindi.
+
+    Transformer - Rewriter
+        Runs the code line-by-line without creating a separate output file.
+        - No separate compiled file is created.
+        - x`Errors show up at runtime.
+
+        Changes the way code looks but keeps its meaning.
+        Example: Babel turns modern JavaScript into old JavaScript so old browsers can understand it.
+        👉 Like rewriting fancy English into simple English.
+
 
     Is TypeScript frontend or backend?
     Typescript is a programming language. You can use it for front end development (eg Angular) or backend development using Node js environment.
@@ -244,7 +261,8 @@
             Return filterArr array after going through all the elements.
 
     Spread Operator
-    The spread operator ... is used to expand or spread an iterable or an array. ou can also use the spread syntax ... to copy the items into a single array.
+    The spread operator ... is used to expand or spread an iterable or an array. ou can also use the spread syntax ... to copy the items 
+    into a single array.
 
     what is map method  in javascript?
 
@@ -260,6 +278,7 @@
     The biggest difference is that Promises won't change their value once they have been fulfilled. They can only emit (reject, resolve) a single
     value. On the other hand, observables can emit multiple results. The subscriber will be receiving results until the observer is completed or 
     unsubscribed from.
+    
 
     what is async await in javascript?
 
@@ -284,16 +303,16 @@
 * Javascript Module.
 * Deep copy, shallow copy.
 * Structure clone
-* Array, object refrence
+* Array, object reference
 * Micro, macro task
 * What is this.
-* Seal method, freage method
+* Seal method, frize method
 * How to use immediately invoke function 
 * Optional chaining
 * call, apply and binding
 * Arrow function vs normal function
 * Event loop
-* Debouncing and throtling
+* Debouncing and throttling
 * IIFE
 * Real time data base
 * Live tracking
@@ -311,6 +330,10 @@
     typescript is not entirely new language, typescript super set of javascript that means any valid javascript code is also valid
     typescript code but typescript have additional features that do not exist in current version of javascript supported.
     typescript strong or static typing like #c and java language.
+
+
+    compiler
+    Transformer
 
     Access modifiers
         1. Public
@@ -336,3 +359,15 @@
             const person = new Human();
             person.FName = 'Mike';
             console.log(person.sayHello());
+
+
+
+
+
+
+
+
+
+
+
+

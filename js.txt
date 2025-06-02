@@ -371,18 +371,6 @@ Prevent a link from following the URL
   Primitive : store single values. just a value (copied when assigned),  Number, String, Boolean, Undefined, Null
   Non-Primitive : reference to a value (shared when assigned),  Object, Array, function
 
-=> Let, const temporal DEAD Zone 
-    -> let and const are hoisted. we cant use them before initialization is result of "temporal dead zone".
-    -> js use diff memory than global execution context to store let and cost. which is reason behind "temporal dead zone"
-    -> level of strictness ... var<<let<<const.
-    -> var //no temporal dead zone, can redeclare and re-initialize, stored in GES
-        let //use TDZ, can't re-declare, can re-initialize, stored in separate memory
-        const //use TDZ, can't re-declare, can't re-initialize, stored in separate memory
-    -> syntax error is similar to compile error. while type and reference error falls under run time error.
-    -> syntax error ... violation of JS syntax
-        type error ...  while trying to re-initialize const variable
-        reference error ... while trying to access variable which is not there in global memory.
-
 => Block scope
     Block :- It is used to combine multiple statement into one statement so that we can use it at those places where javascript expects to have single statement.
     Scope :- scope of a variable or a function is the place where these are accessible.
@@ -403,6 +391,18 @@ Prevent a link from following the URL
             const c = 300;
         }
 
+=> Let, const temporal DEAD Zone 
+    -> let and const are hoisted. we cant use them before initialization is result of "temporal dead zone".
+    -> js use diff memory than global execution context to store let and cost. which is reason behind "temporal dead zone"
+    -> level of strictness ... var<<let<<const.
+    -> var //no temporal dead zone, can redeclare and re-initialize, stored in GES
+        let //use TDZ, can't re-declare, can re-initialize, stored in separate memory
+        const //use TDZ, can't re-declare, can't re-initialize, stored in separate memory
+    -> syntax error is similar to compile error. while type and reference error falls under run time error.
+    -> syntax error ... violation of JS syntax
+        type error ...  while trying to re-initialize const variable
+        reference error ... while trying to access variable which is not there in global memory.
+
 => Hoisting 
     Hoisting means try to access variable or function before they are declared.
     var - undefined
@@ -411,7 +411,7 @@ Prevent a link from following the URL
     function expression - error
 
 => Temporal Dead Zone
-    Temporal Dead zone means variable form the hoisting till the initialization that phase is called temporal dead zone.
+    Temporal Dead zone means variable from the hoisting till the initialization that phase is called temporal dead zone.
 
 => Scope Chain 
     When javascript execute a function and we reference a variables: it first look inside the current function scope. If it does not find it, it look one level up, in the outer scope. It keep going until it reaches the global scope. If it still does not find it throw reference error.
@@ -428,14 +428,29 @@ Prevent a link from following the URL
 => Named function expression
     var a = function sum(){ }
 
-=> First Class Functions -> 
+=> First Class Functions
+    Assigned to variables, passed as an arguments, or returned from other function, stored in object or array.
+
     The ability to to use functions as values and which can be passed as arguments to another function, and also can be returned from a functions.
 
-=> Anonymous function ->
-     A function without a name is called anonymous function. It used as values.
+    function greet(){
+      console.log("How are your?");
+    }
 
-=> First class function 
-    Assigned to variables, passed as an arguments, or returned from other function, stored in object or array.
+    function outer() {
+      greet();
+      return function inner() {
+        console.log("Hello from inner!");
+      };
+    }
+
+    const fn = outer(); // outer returns a function
+    fn(); // Output: Hello from inner!
+
+
+=> Anonymous function
+     A function without a name is called anonymous function. It used as values. No need to reuse, use only one time, keeps variables private.
+     ex: setTimeout, array methods
 
 => Higher order function
     function takes another function as an argument or return a function.
@@ -472,7 +487,8 @@ Prevent a link from following the URL
     A normal function in JavaScript is defined using the function keyword. 
     It has its own this, arguments object, and can be used as a constructor.
 
-    An arrow function is a shorter syntax introduced in ES6. It does not have its own this, arguments, or constructor, and is often used for writing concise functions.
+    An arrow function is a shorter syntax introduced in ES6. It does not have its own this, arguments, or constructor, 
+    and is often used for writing concise functions.
 
 => Template literal 
     that provide a cleaner and more powerful way to work with strings. They were introduced in ES6
@@ -486,7 +502,8 @@ Prevent a link from following the URL
   let result = text.substring(1); // ello world!
   let result = text.substring(1, 4); // ell
 
-=> lastIndexOf() - returns the index (position) of the last occurrence of a specified value in a string, returns -1 if the value is not found, is case sensitive.
+=> lastIndexOf() - returns the index (position) of the last occurrence of a specified value in a string, returns -1 if the value is not found, 
+    is case sensitive.
   let text = "Hello planet earth, you are a great planet.";
   let result = text.lastIndexOf("Planet");
 
@@ -537,7 +554,7 @@ Prevent a link from following the URL
 => every() -> return boolean value, method stops checking as soon as it finds an element that does not meet the condition. Does Not Modify the Original Array   
     every.some(ele, ind, arr)
 
-=> flat() -> returns a new array and does not modify original array. it makes nested arrays into a single-level array. concat ting nested array.
+=> flat() -> returns a new array and does not modify original array. it makes nested arrays into a single-level array. flatting / concat ting nested array.
     array.flat([depth]) -> The depth level specifying how deep a nested array structure should be flattened. The default is 1. 
     If we don't know the count of nested array then we can pass "Infinity".
     const nestedArray = [1, 2, [3, 4]]; const flatArray = nestedArray.flat(); // Output: [1, 2, 3, 4]
@@ -614,7 +631,7 @@ Prevent a link from following the URL
     }
     console.log(factorial(5));
 
-=> Async/ wait : handle asynchronous code,  An async function always returns a promise, and inside that function, we can use the await keyword.
+=> Async/ wait : handle asynchronous code, An async function always returns a promise, and inside that function, we can use the await keyword.
     await: This keyword is used inside an async function to pause the execution of the function until a promise is resolved. 
     The result of the promise is returned once it's resolved. If the promise is rejected, an error is thrown.
     errors handling using try/catch blocks.
@@ -692,7 +709,7 @@ Prevent a link from following the URL
       console.log('Finally Promise is executed');
       })
 
-=> call(), apply() and bind()
+=> call(), apply() and bind() - borrow functions from other objects.
     call() => passing arguments individually. function is invoked immediately when call() is called.
     greet.call(referenceObject, arg1, arg2, ...)
 

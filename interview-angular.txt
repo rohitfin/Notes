@@ -1,0 +1,4 @@
+
+How angular works
+Which file load First
+Which file show on when we run angular
